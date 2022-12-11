@@ -1,3 +1,51 @@
+/* ****************************** */
+/*       Universal selector       */
+/* ****************************** */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ****************************** */
+/*        Color selectors         */
+/* ****************************** */
+
+:root {
+--white: #64B0FF;
+--darkGreen: #034001;
+--lightGreen: #ABD904;
+--black: #010101;
+--orange: #C84C0C;
+--white: #FFFFFF
+}
+
+/* ****************************** */
+/*       Element selectors        */
+/* ****************************** */
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+}
+
+/* ****************************** */
+/*        Class selectors         */
+/* ****************************** */
+
 .App {
   text-align: center;
 }
@@ -5,12 +53,6 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -28,11 +70,25 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ****************************** */
+/*          ID selectors          */
+/* ****************************** */
+
+/* ****************************** */
+/* Formatting for media inquiries */
+/* ****************************** */
+
+/* Laptop */
+@media screen and (max-width: 1024px) {
+
+}
+
+/* iPads and Tablets */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+
 }

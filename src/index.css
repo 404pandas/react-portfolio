@@ -1,13 +1,51 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ****************************** */
+/*       Universal selector       */
+/* ****************************** */
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ****************************** */
+/*        Color selectors         */
+/* ****************************** */
+
+:root {
+--white: #64B0FF;
+--darkGreen: #034001;
+--lightGreen: #ABD904;
+--black: #010101;
+--orange: #C84C0C;
+--white: #FFFFFF
+}
+
+/* ****************************** */
+/*       Element selectors        */
+/* ****************************** */
+
+/* ****************************** */
+/*        Class selectors         */
+/* ****************************** */
+
+/* ****************************** */
+/*          ID selectors          */
+/* ****************************** */
+
+/* ****************************** */
+/* Formatting for media inquiries */
+/* ****************************** */
+
+/* Laptop */
+@media screen and (max-width: 1024px) {
+
+}
+
+/* iPads and Tablets */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+
 }
