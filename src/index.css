@@ -11,17 +11,25 @@
 /* ****************************** */
 
 :root {
---white: #64B0FF;
---darkGreen: #034001;
---lightGreen: #ABD904;
+--red: #F23847;
+--pink: #D95f8C;
+--blue: #ADB6D7;
+--lightBlue: #DFE2F2;
 --black: #010101;
---orange: #C84C0C;
---white: #FFFFFF
+--salmon: #D97777;
+--tan: #F8F5F0;
 }
 
 /* ****************************** */
 /*       Element selectors        */
 /* ****************************** */
+
+body {
+  margin: 0;
+  /* font-family will be League Spartan from google */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /* ****************************** */
 /*        Class selectors         */

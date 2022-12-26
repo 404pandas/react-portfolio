@@ -1,3 +1,5 @@
+Notes about React taken during build process
+
 React ES6
 React Render HTML
 React JSX Syntax
