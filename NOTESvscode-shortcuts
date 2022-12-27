@@ -1,6 +1,9 @@
 Notes about handy vscode shorcuts used during build process
 
-Open terminal- `control + `
+Open terminal- `control + ``
+
+Open new terminal `Shift + Control + ``
+
 
 `rafce`- Creates a React Arrow Function Component with ES7 module system
 This snippet originates from the ES7+ React/Redux/React-Native snippets VS Code plugin
@@ -8,3 +11,5 @@ This snippet originates from the ES7+ React/Redux/React-Native snippets VS Code 
 - `command + D`
 
 Quick fix- `command + .`
+
+- Shift + Option + Down Arrow

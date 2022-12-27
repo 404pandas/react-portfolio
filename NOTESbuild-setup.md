@@ -140,7 +140,7 @@ What it does- Changes current working directory to src
 Where it goes- CMD/Bash/Terminal/etc running the root directory of the app
 What it does- Makes a new directory in the src directory called "pages"
 `cd pages`
-Where it goes- CMD/Bash/Terminal/etc running the root directory of the app
+Where it goes- CMD/Bash/Terminal/etc running the pages directory of the app
 What it does- Changes current working directory to pages
 `touch About.js Contact.js Donate.js Landing.js Projects.js`
 Where it goes- CMD/Bash/Terminal/etc running the root directory of the app
@@ -202,6 +202,12 @@ import Projects from "./pages/Projects.js"
 Where it goes- Top of src/App.js
 What it does- Imports each page into app
 
+Step - Import Route and Routes
+`import { Route, Routes } from react-router-dom`
+
+Where it goes- Top of src/app.js
+What it does- Route element is an element whose props are read to create a route by `<Routes>`
+
 Step - Add Routes to app
 
 Route is self closing (`<Route />`)
@@ -219,8 +225,3 @@ Route is self closing (`<Route />`)
 Where it goes- src/app.js
 What it does- Matches the path against the URL to determine if correct route is matched to the correct URL, link href, or form action. When the path pattern matches the current URL, the element is rendered
 
-Step - Import Route and Routes
-`import { Route, Routes } from react-router-dom`
-
-Where it goes- Top of src/app.js
-What it does- Route element is an element whose props are read to create a route by `<Routes>`
