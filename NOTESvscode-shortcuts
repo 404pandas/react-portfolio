@@ -28,3 +28,31 @@ Shortcuts denoted by a &#8902; are Mac commands unspecific to VS Code
 ### &#8902;Delete the character to the right of the insertion point
 `fn + delete`
 
+`fn + Up Arrow(`&#8593;`)`
+
+### &#8902;Move insertion point backward one word in terminal
+`Command(`&#8984;`) + Left Arrow`
+
+### &#8902;Move insertion point forward one word in terminal
+`Command(`&#8984;`) + Right Arrow`
+
+### Move insertion point to front of line
+`Command(`&#8984;`) + Left Arrow`
+
+### Move insertion point to back of line
+`Command(`&#8984;`) + Right Arrow`
+
+### Move insertion point backward one word
+`Option(`⌥`) + Left Arrow`
+
+### Move insertion point forward one word
+`Option(`⌥`) + Left Arrow`
+
+### Open Markdown preview to the side
+`Command(`&#8984;`) + K + V`
+
+### &#8902;Zoom in on Chrome
+`Control(`⌃`) + Mousewheel Up`
+
+### &#8902;Zoom out on Chrome
+`Control(`⌃`) + Mousewheel Down``Command(`&#8984;`) + .`

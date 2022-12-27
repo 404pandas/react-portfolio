@@ -191,34 +191,78 @@ const Navbar = () => {
 Where it goes- On the <a> tag and <ul> tag on src/components/Navbar/Navbar.js
 What it does- Adds the class names "nav-left" and "nav-right" to the Navbar to use for css styling
 
-Step 11- Import hamburger icon
+Step 11- Import hamburger icons
 
 `
 import { RxDropdownMenu } from "react-icons/rx";
+import { IoMdArrowDropup } from "react-icons/io";
 `
 
 Where it goes- Top of src/components/Navbar/Navbar.js
-What it does- Imports to RxDropdownMenu icon from react-icons/rx
+What it does- Imports hamburger icons from react-icons/rx and react-icons/io
 
-Step 12- Add hamburger icon
+Step 12- Add hamburger icons
 
 `
 <div>
 	<RxDropdownMenu size={30} style={{ color: "#D97777" }} />
+	<IoMdArrowDropup size={30} style={{ color: "#D97777" }} />
 </div>
 `
 
 Where it goes- After the unordered list inside the "nav" div in src/components/Navbar/Navbar.js
-What it does- Adds the RxDropdownMenu icon to the navbar with in-line
-styling that sets its size to 30 and color to the salmon variable
+What it does- Adds the RxDropdownMenu icon to the navbar with in-line styling that sets its size to 30 and color to the salmon variable
 
-Step 13- Add className
+Step 13- Add className to icons
 
 `
 <div className="hamburger">
+	<IoMdArrowDropup size={30} style={{ color: "#D97777" }} />
 	<RxDropdownMenu size={30} style={{ color: "#D97777" }} />
 </div>
 `
 
 Where it goes- In the div that holds the hamburger icon in src/components/Navbar/Navbar.js
 What it does- Adds the class name "hamburger" to the icon for css styling
+
+Step 14- Add click event state logic to icons
+`
+	const [click, setClick] = useState(false);
+	const handleClick = () => setClick(!click);
+`
+Where it goes- Before the return statement in the Navbar functional component
+What it does- 
+
+Step 15- Add click event if/else logic to icons
+
+`
+<div className="hamburger">
+	{click ? (
+		<IoMdArrowDropup size={30} style={{ color: "#D97777" }} />
+	) : (
+		<RxDropdownMenu size={30} style={{ color: "#D97777" }} />
+	)}
+</div>
+`
+Where it goes- In the <div> containing the hamburger class name
+What it does- Logic that says if the div is clicked, render the first icon. Else, render the second icon.
+
+Step 16- Add event handler to icons
+
+`
+<div className="hamburger" onClick={handleClick}>
+`
+
+Where it goes- In the <div> tag containing the hamburger class name
+What it does- Calls the arrow function handleClick when the hamburger icon is clicked
+
+Step 17- Add click event if/else logic to menu
+
+`
+<ul className={click ? "nav-right active" : "nav-right"}>
+	...
+</ul>
+`
+
+Where it goes- In the <ul> tag containing the list items menu
+What it does- Logic that says if nav-right is active, render the list items. Else, return to regular menu
