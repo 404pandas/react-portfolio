@@ -49,7 +49,7 @@ Step 6- Add classname
 `
 const Navbar = () => {
 	return (
-		<div className="header">
+		<div className="nav">
 		Navbar
 		</div>
 	)
@@ -59,12 +59,12 @@ const Navbar = () => {
 Where it goes- On the div in the functional component in src/components/Navbar/Navbar.js
 What it does- 
 
-Step 6- Add classname
+Step 6- Add className
 
 `
 const Navbar = () => {
 	return (
-		<div className="header">
+		<div className="nav">
 		Navbar
 		</div>
 	)
@@ -72,7 +72,7 @@ const Navbar = () => {
 `
 
 Where it goes- On the div in the functional component in src/components/Navbar/Navbar.js
-What it does- 
+What it does- Adds the className "Nav" to the entire Navbar to use for css styling
 
 Step 7- Import link
 
@@ -86,7 +86,7 @@ Step 8- Add an `<a href>` for Name
 `
 const Navbar = () => {
 	return (
-	  <div className="header">
+	  <div className="nav">
 		<a href="https://github.com/404pandas">
 		  <h1>Mary Elenius</h1>
 		</a>
@@ -94,7 +94,7 @@ const Navbar = () => {
 	);
   };
 `
-Where it goes- In the div with the className "Header", replacing the placeholder "Navbar"
+Where it goes- In the div with the className "nav", replacing the placeholder "Navbar"
 What it does- Renders an accessible `<a>` element with a real `href` that points to the resource it's linked to
 The link will be an <h1> element with Mary Elenius in it that redirects people to my github
 
@@ -128,7 +128,7 @@ const Navbar = () => {
 	);
   };
 `
-Where it goes- Below the <a> tag on Navbar.js
+Where it goes- Below the <a> tag on Navbar.js, before the closing div
 What it does- Renders an accessible `<a>` element with a real `href` that points to the resource it's linked to
 The links will be <h1> elements with page names that redirect people to
 the different "pages" on my portfolio
@@ -141,7 +141,7 @@ import Navbar from '../components/Navbar/Navbar'
 
 const Landing = () => {
   return (
-    <div>Landing
+    <div>
       <Navbar/>
     </div>
   )
@@ -151,7 +151,74 @@ export default Landing
 `
 
 Where it goes- On src/pages/Landing.js, /About.js, Contact.js, Donate.js, and Projects.js
+Replaced the placeholder words "Landing", "About", "Contact", "Donate", and Projects
 What it does- Imports Navbar component onto the listed pages
 note- I only have to type <Navbar/> between the divs on these pages and
 my IDE auto imports it up top. If it isn't auto importing and you're following these notes,
 please remember to add the `import Navbar from '../components/Navbar/Navbar' at the top of the page.
+
+Step 10- Add ClassName
+
+`
+const Navbar = () => {
+	return (
+	  <div className="nav">
+		<a href="https://github.com/404pandas" className="nav-left">
+		  <h1>Mary Elenius</h1>
+		</a>
+		<ul className="nav-right">
+			  <li>
+				  <Link to="/">Home</Link>
+			  </li>
+			  <li>
+				  <Link to="/Projects">Projects</Link>
+			  </li>
+			  <li>
+				  <Link to="/About">About</Link>
+			  </li>
+			  <li>
+				  <Link to="/Contact">Contact</Link>
+			  </li>
+			  <li>
+				  <Link to="/Donate">Donate</Link>
+			  </li>
+		  </ul>
+	  </div>
+	);
+};
+`
+  
+Where it goes- On the <a> tag and <ul> tag on src/components/Navbar/Navbar.js
+What it does- Adds the class names "nav-left" and "nav-right" to the Navbar to use for css styling
+
+Step 11- Import hamburger icon
+
+`
+import { RxDropdownMenu } from "react-icons/rx";
+`
+
+Where it goes- Top of src/components/Navbar/Navbar.js
+What it does- Imports to RxDropdownMenu icon from react-icons/rx
+
+Step 12- Add hamburger icon
+
+`
+<div>
+	<RxDropdownMenu size={30} style={{ color: "#D97777" }} />
+</div>
+`
+
+Where it goes- After the unordered list inside the "nav" div in src/components/Navbar/Navbar.js
+What it does- Adds the RxDropdownMenu icon to the navbar with in-line
+styling that sets its size to 30 and color to the salmon variable
+
+Step 13- Add className
+
+`
+<div className="hamburger">
+	<RxDropdownMenu size={30} style={{ color: "#D97777" }} />
+</div>
+`
+
+Where it goes- In the div that holds the hamburger icon in src/components/Navbar/Navbar.js
+What it does- Adds the class name "hamburger" to the icon for css styling

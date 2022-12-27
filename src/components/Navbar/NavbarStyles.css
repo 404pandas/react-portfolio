@@ -1,1 +1,158 @@
+/*       Navbar CSS styling       */
 
+/* REM is a relative unit that specifies a font size
+for the root element. REM stands for Root Ephemeral.
+It has a default conversion of 1 rem = 16 pixels.
+To change the ratio of REM, set the html element
+font-size to something other than 16 pixels */
+
+/* ****************************** */
+/*        Class selectors         */
+/* ****************************** */
+
+div.nav {
+  /* Sets whether an element is treated as a block or
+  inline element and the layout used for its children.
+  Flexbox is a one-dimensional layout method for arranging
+  items in rows or columns. Items flex (expand) to fill
+  additional space or shrink to fit into smaller spaces.  */
+  display: flex;
+  /* Defines how the browser distributes space between and
+  around content items along the main-axis of a flex container.
+  Space-between distributes items evenly. The first item is
+  flush with the start and the last is flush with the end */
+  justify-content: space-between;
+  /* Sets the align-self value on all direct children as a group.
+  In Flexbox, it controls the alignment of items on the Cross Axis.
+  Center packs items around the center */
+  align-items: center;
+  /* Sets the padding on all sides to 1 rem.
+  Values are listed in order from left to right as:
+    Top    |    Right   |    Bottom    |    Left
+  If left is omitted, it is the same as right.
+  If bottom is omitted it is the same as top.
+  If right is omitted it is the same as top.
+  Neither 4 values may be a negative value. */
+  padding: 1rem;
+}
+
+.nav-right {
+  /* Sets whether an element is treated as a block or
+  inline element and the layout used for its children.
+  Flexbox is a one-dimensional layout method for arranging
+  items in rows or columns. Items flex (expand) to fill
+  additional space or shrink to fit into smaller spaces.  */   
+  display: flex;
+  /* Sets the padding on the top and bottom to 0.
+  Sets the padding on the right and left to 1 rem.
+  Values are listed in order from left to right as:
+    Top    |    Right   |    Bottom    |    Left
+  If left is omitted, it is the same as right.
+  If bottom is omitted it is the same as top.
+  If right is omitted it is the same as top.
+  Neither 4 values may be a negative value. */
+  padding: 0 1rem;
+}
+
+.nav-right li {
+  /* Sets the padding on the top and bottom to 0.
+  Sets the padding on the right and left to 1 rem.
+  Values are listed in order from left to right as:
+    Top    |    Right   |    Bottom    |    Left
+  If left is omitted, it is the same as right.
+  If bottom is omitted it is the same as top.
+  If right is omitted it is the same as top.
+  Neither 4 values may be a negative value. */
+  padding: 0 1rem;
+}
+
+.nav-right li a {
+  /* Sets the size of the font in the list items and a.
+  Changing the font size also updates the sizes of the
+  font size-relative <length> units, such as em */
+  font-size: 1.2rem;
+  /* Sets the weight (or boldness) of the font.
+  The weights available depend on the font-family */
+  font-weight: 500;
+}
+
+.hamburger {
+  /* Sets the hamburger to not display unless media queried */
+  display: none;
+}
+
+/* ****************************** */
+/*         Media Queries          */
+/* ****************************** */
+
+/* Laptop */
+/* @media can be used to apply part of a style sheet
+based on the result of one or more media queries.
+The screen value specifies the css properties are
+intended primarily for screens.
+The max-width value specifies the css properties are
+intended to test the maximum width of the viewport */
+@media screen and (max-width: 1040px) {
+  .nav-right{
+    /* Sets the direction in which lines of text are stacked.
+    The flex container's main-axis is the same as the block-axis. */
+    flex-direction: column;
+    /* Defines how the browser distributes space between and
+    around content items along the main-axis of a flex container.
+    The center value specifies the items are packed flush to each
+    other toward the center of the container along the main axis. */
+    justify-content: center;
+    /* Sets the align-self value on all direct children as a group.
+    In Flexbox, it controls the alignment of items on the Cross Axis.
+    Center packs items around the center */
+    align-items: center;
+    /* Defines the width as 100% of the containing block's width. */
+    width: 100%;
+    /* Height of right navbar is equal to 100% of the viewport height.  */
+    height: 100vh;
+    /* Sets navbar color to blue variable with an optional alpha component
+    that represents the color's transparency */
+    background: rgba(173, 182, 215, 0.9);
+    /* Sets how the navbar is positioned in a document.
+    The absolute value specifies that the navbar is removed from the
+    normal document flow, and no space is created for it in the page layout. */
+    position: absolute;
+    /* Sets the vertical position of the navbar. Top: 0 in an absolutely
+    positioned navbar specifies the distance between the navbars's outer
+    margin of the top edge and the inner border of the top edge of its
+    containing block will be 0. */
+    top: 0;
+    /* Sets horizontal position of the navbar. Left: 0 in an absolutely
+    positioned navbar specifies the distance between the navbar's outer
+    margin of left edge and the inner border of left edge of its
+    containing block will be 0. */
+    left: 0;
+    /* sets the z-order positioned of the navbar. Z-index: -3 is the
+    stack level of the navbar in the current stacking context. 
+    Negative values lower the priority */
+    z-index: -3;
+  }
+
+  .nav-right li {
+    /* Sets the padding on all sides of the line items to 1 rem.
+    Values are listed in order from left to right as:
+      Top    |    Right   |    Bottom    |    Left
+    If left is omitted, it is the same as right.
+    If bottom is omitted it is the same as top.
+    If right is omitted it is the same as top.
+    Neither 4 values may be a negative value. */
+    padding: 1rem;
+  }
+
+  .nav-right li a {
+  /* Sets the size of the font in the list items and a.
+  Changing the font size also updates the sizes of the
+  font size-relative <length> units, such as em */
+    font-size: 2rem;
+  }
+
+  .hamburger {
+    /* When animated, visi */
+    display: initial;
+  }
+}

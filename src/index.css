@@ -1,19 +1,49 @@
+/*       Global CSS styling       */
+
+/* Imports the League Spartan font from Google */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* ****************************** */
 /*       Universal selector       */
 /* ****************************** */
 
 * {
+  /* Sets global box sizing to border box.
+  This sets how the total width and height of an
+  element is calculated. Border-box tells the browser
+  to account for any border and padding in the values
+  you specify for an element's width and height. If you
+  set an element's width to 100 pixels, that 100 pixels
+  will include any border or padding you added, and the
+  content box will shrink to absorb that extra width. */
   box-sizing: border-box;
+  /* Sets global margin to 0 on all sides.
+  The margin area, bounded by the margin edge, extends
+  the border area to include an empty area used to
+  separate the element from its neighbors. */
+  margin: 0;
+  /* Sets global padding to 0 on all sides.
+  Values are listed in order from left to right as:
+    Top    |    Right   |    Bottom    |    Left
+  If left is omitted, it is the same as right.
+  If bottom is omitted it is the same as top.
+  If right is omitted it is the same as top.
+  Neither 4 values may be a negative value. */
+  padding: 0;
+  /* Sets global font-family to League Spartan */
+  font-family: 'League Spartan', sans-serif;
 }
 
 /* ****************************** */
 /*        Color selectors         */
 /* ****************************** */
 
+/* Sets variables to call colors from color palette */
+/* For example, var(--red) would be used for #F23847 */
 :root {
 --red: #F23847;
 --pink: #D95f8C;
---blue: #ADB6D7;
+--blue: #adb6d7;
 --lightBlue: #DFE2F2;
 --black: #010101;
 --salmon: #D97777;
@@ -25,26 +55,98 @@
 /* ****************************** */
 
 body {
-  margin: 0;
-  /* font-family will be League Spartan from google */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Sets background color of body to the tan variable */
+  background: var(--tan);
 }
+
+h1, h4, p, a {
+  /* Sets font color of h1, h4, p, and a to the salmon variable */
+  color: var(--salmon);
+  /* Removes the underline from h1, h4, p, and a */
+  text-decoration: none;
+}
+
+ul {
+  /* Removes the disc icon from unorganized list in Navbar */
+  list-style-type: none;
+}
+
 
 /* ****************************** */
 /*        Class selectors         */
 /* ****************************** */
+
+.btn {
+  /* Sets button padding on top and bottom to 12 pixels.
+  Sets button padding on right and left to 32 pixels.
+  Values are listed in order from left to right as:
+    Top    |    Right   |    Bottom    |    Left
+  If left is omitted, it is the same as right.
+  If bottom is omitted it is the same as top.
+  If right is omitted it is the same as top.
+  Neither 4 values may be a negative value. */
+  padding: 12px 32px;
+  /* Sets the size of the font in buttons to 1rem.
+  Changing the font size also updates the sizes of the
+  font size-relative <length> units, such as em */
+  font-size: 1rem;
+  /* Specifies how to capitalize an element's text.
+  It can be used to make text appear in all-uppercase
+  or all-lowercase, or with each word capitalized. */
+  text-transform: uppercase;
+  /* Sets background color of button to the blue variable */
+  background: var(--blue);
+  /* Sets font color of button to the black variable */
+  color: var(--black);
+  /* Sets a button's border values to a width of
+  1 pixel, style of solid, and color to salmon.
+  Values are listed in order from left to right as:
+   border-width  |  border-style  |  border-color */
+  border: 1px solid var(--salmon);
+  /* Sets a button's weight (or boldness) of the font
+  The weights available depend on the font-family */
+  font-weight: 600;
+  /* Sets the mouse cursor (if any) to show when the
+  mouse pointer is over a button. The option of Pointer
+  is a cursor that indicates a link. It is typically an
+  image of a pointing hand. */
+  cursor: pointer;
+}
+
+.btn-contact {
+  /* Sets background color of contact button to transparent.
+  Transparent is a special keyword value for 0 opacity */
+  background: transparent;
+  color: white;
+}
+
+/* Hover triggers when the user hovers over a button with
+a pointing device, but does not necessarily activate it. */
+.btn:hover {
+  /* Sets background color of button when it's hovered
+  over with a cursor to the lightBlue variable */
+  background: var(--lightBlue);
+  /* Sets font color of button when it's hovered over
+  with a cursor to the black variable */
+  color: var(--black);
+  /* Sets the length of time a transition animation
+  should take to complete of a button when it's hovered
+  over with a cursor. Transition values are listed in
+  order from left to right as:
+   property name | duration | easing function | delay */
+  transition: 0.3s;
+}
 
 /* ****************************** */
 /*          ID selectors          */
 /* ****************************** */
 
 /* ****************************** */
-/* Formatting for media inquiries */
+/*         Media Queries          */
 /* ****************************** */
 
 /* Laptop */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1040px) {
 
 }
 

@@ -1,14 +1,15 @@
 import "./NavbarStyles.css";
 import React from "react";
 import { Link } from "react-router-dom";
+import { RxDropdownMenu } from "react-icons/rx";
 
 const Navbar = () => {
   return (
-    <div className="header">
+    <div className="nav">
       <a href="https://github.com/404pandas">
         <h1>Mary Elenius</h1>
       </a>
-      <ul>
+      <ul className="nav-right">
 			<li>
 				<Link to="/">Home</Link>
 			</li>
@@ -25,6 +26,9 @@ const Navbar = () => {
 				<Link to="/Donate">Donate</Link>
 			</li>
 		</ul>
+		<div className="hamburger">
+			<RxDropdownMenu size={30} style={{ color: "#D97777" }} />
+		</div>
     </div>
   );
 };

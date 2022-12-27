@@ -1,15 +1,30 @@
-Notes about handy vscode shorcuts used during build process
+# Notes about handy mac shortcuts used during build process.
 
-Open terminal- `control + ``
+Shortcuts denoted by a &#8902; are Mac commands unspecific to VS Code
 
-Open new terminal `Shift + Control + ``
+### Open terminal
+`Control(`⌃`) + Backtick (`&#96;`)`
 
+### Open new terminal
+`Shift(`⇧`) + Control(`⌃`) + Backtick (`&#96;`)`
 
-`rafce`- Creates a React Arrow Function Component with ES7 module system
-This snippet originates from the ES7+ React/Redux/React-Native snippets VS Code plugin
+### Create a React Arrow Function Component with ES7 module system
+`Type "rafce" + tab`
 
-- `command + D`
+-This snippet originates from the ES7+ React/Redux/React-Native snippets VS Code plugin
 
-Quick fix- `command + .`
+### Add selection to next Find match
+`Command + D`
 
-- Shift + Option + Down Arrow
+### Quick fix
+`Command(`&#8984;`) + .`
+
+### Copy line down
+`Shift(`⇧`) + Option(`⌥`) + Down Arrow(`&#8595;`)`
+
+### Copy line up
+`Shift(`⇧`) + Option(`⌥`) + Up Arrow(`	&#8593;`)`
+
+### &#8902;Delete the character to the right of the insertion point
+`fn + delete`
+
