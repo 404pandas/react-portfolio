@@ -5,6 +5,7 @@ const Donate = () => {
   return (
     <div>
       <Navbar/>
+      <h1>Donate Page Placeholder</h1>
     </div>
   )
 }

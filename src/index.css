@@ -1,7 +1,7 @@
 /*       Global CSS styling       */
 
 /* Imports the League Spartan font from Google */
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* ****************************** */
 /*       Universal selector       */
@@ -31,7 +31,7 @@
   Neither 4 values may be a negative value. */
   padding: 0;
   /* Sets global font-family to League Spartan */
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
 }
 
 /* ****************************** */
@@ -41,13 +41,13 @@
 /* Sets variables to call colors from color palette */
 /* For example, var(--red) would be used for #F23847 */
 :root {
---red: #F23847;
---pink: #D95f8C;
---blue: #adb6d7;
---lightBlue: #DFE2F2;
---black: #010101;
---salmon: #D97777;
---tan: #F8F5F0;
+  --red: #f23847;
+  --pink: #d95f8c;
+  --blue: #adb6d7;
+  --lightBlue: #dfe2f2;
+  --black: #010101;
+  --salmon: #d97777;
+  --tan: #f8f5f0;
 }
 
 /* ****************************** */
@@ -59,7 +59,10 @@ body {
   background: var(--tan);
 }
 
-h1, h4, p, a {
+h1,
+h4,
+p,
+a {
   /* Sets font color of h1, h4, p, and a to the salmon variable */
   color: var(--salmon);
   /* Removes the underline from h1, h4, p, and a */
@@ -70,7 +73,6 @@ ul {
   /* Removes the disc icon from unorganized list in Navbar */
   list-style-type: none;
 }
-
 
 /* ****************************** */
 /*        Class selectors         */
@@ -95,7 +97,7 @@ ul {
   or all-lowercase, or with each word capitalized. */
   text-transform: uppercase;
   /* Sets background color of button to the blue variable */
-  background: var(--blue);
+  background: var(--pink);
   /* Sets font color of button to the black variable */
   color: var(--black);
   /* Sets a button's border values to a width of
@@ -117,15 +119,15 @@ ul {
   /* Sets background color of contact button to transparent.
   Transparent is a special keyword value for 0 opacity */
   background: transparent;
-  color: white;
+  color: var(--black);
 }
 
 /* Hover triggers when the user hovers over a button with
 a pointing device, but does not necessarily activate it. */
 .btn:hover {
   /* Sets background color of button when it's hovered
-  over with a cursor to the lightBlue variable */
-  background: var(--lightBlue);
+  over with a cursor to the lightBlue variable at an opacity of 20%*/
+  background-color: rgba(var(--blue), 0.9);
   /* Sets font color of button when it's hovered over
   with a cursor to the black variable */
   color: var(--black);
@@ -136,6 +138,26 @@ a pointing device, but does not necessarily activate it. */
    property name | duration | easing function | delay */
   transition: 0.3s;
 }
+/* Hover triggers when the user hovers over a button with
+a pointing device, but does not necessarily activate it. */
+.btn-contact:hover {
+  /* Sets background color of button when it's hovered
+  over with a cursor to the lightBlue variable at an opacity of 20%*/
+  background-color: var(--pink);
+  /* Sets font color of button when it's hovered over
+  with a cursor to the black variable */
+  color: var(--black);
+  /* Sets the length of time a transition animation
+  should take to complete of a button when it's hovered
+  over with a cursor. Transition values are listed in
+  order from left to right as:
+   property name | duration | easing function | delay */
+  transition: 0.5s;
+}
+
+/* h1.glow h4.glow p.glow a.glow {
+  text-shadow: 2px 2px 3px rgba(86, 92, 116, 0.9);
+} */
 
 /* ****************************** */
 /*          ID selectors          */
@@ -147,15 +169,12 @@ a pointing device, but does not necessarily activate it. */
 
 /* Laptop */
 @media screen and (max-width: 1040px) {
-
 }
 
 /* iPads and Tablets */
 @media screen and (max-width: 768px) {
-
 }
 
 /* Mobile devices */
 @media screen and (max-width: 480px) {
-
 }

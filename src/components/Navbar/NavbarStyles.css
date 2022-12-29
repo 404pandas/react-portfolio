@@ -10,13 +10,16 @@ font-size to something other than 16 pixels */
 /*        Class selectors         */
 /* ****************************** */
 
-div.nav {
+.nav {
   /* Sets whether an element is treated as a block or
   inline element and the layout used for its children.
   Flexbox is a one-dimensional layout method for arranging
   items in rows or columns. Items flex (expand) to fill
   additional space or shrink to fit into smaller spaces.  */
   display: flex;
+  width: 100%;
+  height: 90px;
+  z-index: 10;
   /* Defines how the browser distributes space between and
   around content items along the main-axis of a flex container.
   Space-between distributes items evenly. The first item is
@@ -33,7 +36,28 @@ div.nav {
   If bottom is omitted it is the same as top.
   If right is omitted it is the same as top.
   Neither 4 values may be a negative value. */
+  align-content: center;
   padding: 1rem;
+  position: fixed;
+}
+
+.nav::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: radial-gradient(ellipse 100% 45px, var(--tan) 5%, transparent);
+}
+
+.nameZindex {
+  z-index: 5;
+}
+
+.nav-solid {
+  background-color: rgba(173, 182, 215, 0.9);
+  transition: 0.5s;
 }
 
 .nav-right {
@@ -63,22 +87,35 @@ div.nav {
   If bottom is omitted it is the same as top.
   If right is omitted it is the same as top.
   Neither 4 values may be a negative value. */
+  display: flex;
+  align-items: center;
   padding: 0 1rem;
 }
 
 .nav-right li a {
+  display: flex;
   /* Sets the size of the font in the list items and a.
   Changing the font size also updates the sizes of the
   font size-relative <length> units, such as em */
   font-size: 1.2rem;
   /* Sets the weight (or boldness) of the font.
   The weights available depend on the font-family */
+  align-content: center;
   font-weight: 500;
+  z-index: 5
 }
 
 .hamburger {
   /* Sets the hamburger to not display unless media queried */
   display: none;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+img.reactLogo {
+  max-height: 1.5rem;
+  align-items: center;
+  z-index: 5
 }
 
 /* ****************************** */
@@ -86,6 +123,18 @@ div.nav {
 /* ****************************** */
 
 /* Laptop */
+
+/* @media can be used to apply part of a style sheet
+based on the result of one or more media queries.
+The screen value specifies the css properties are
+intended primarily for screens.
+The max-width value specifies the css properties are
+intended to test the maximum width of the viewport */
+@media screen and (max-width: 1040px) {
+}
+
+/* Mobile devices */
+
 /* @media can be used to apply part of a style sheet
 based on the result of one or more media queries.
 The screen value specifies the css properties are
@@ -93,6 +142,21 @@ intended primarily for screens.
 The max-width value specifies the css properties are
 intended to test the maximum width of the viewport */
 @media screen and (max-width: 480px) {
+  
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .hamburger {
+    /* Displays hamburger icon on screens with a max-width of 480 pixels */
+    display: initial;
+    z-index: 4;
+  }
+
   .nav-right {
     /* Sets the direction in which lines of text are stacked.
     The flex container's main-axis is the same as the block-axis. */
@@ -109,9 +173,9 @@ intended to test the maximum width of the viewport */
     /* Defines the width as 100% of the containing block's width. */
     width: 100%;
     /* Height of right navbar is equal to 50% of the viewport height.  */
-    height: 50%;
+    height: 100vh;
     /* Sets navbar color to blue variable with an optional alpha component
-    that represents the color's transparency */
+    that represents the color's alpha transparency */
     background: rgba(173, 182, 215, 0.9);
     /* Sets how the navbar is positioned in a document.
     The absolute value specifies that the navbar is removed from the
@@ -138,26 +202,72 @@ intended to test the maximum width of the viewport */
     transition: 0.3s;
   }
 
-  /* Adding an active pseudo-class to nav-right represents an
-  element that is being activated by the user.*/
-  .nav-right.active {
-    /* Sets horizontal position of the navbar. Top: 0 in an absolutely
-    positioned navbar specifies the distance between the navbar's outer
-    margin of left edge and the inner border of top edge of its
-    containing block will be 0. */
-    top: 0;
-    /* Sets the padding on top and bottom of the unorganized list to 4 rem.
-    Sets the padding on the right and left of the unorganized list to 0.
+  .nav-right li {
+    /* Sets the padding on all sides of the line items to 1 rem.
     Values are listed in order from left to right as:
       Top    |    Right   |    Bottom    |    Left
     If left is omitted, it is the same as right.
     If bottom is omitted it is the same as top.
     If right is omitted it is the same as top.
     Neither 4 values may be a negative value. */
-    padding: 4rem 0;
+    padding: 1rem 0;
   }
 
-    /* Adding an active pseudo-class to nav-right li represents an
+  .nav-right li a {
+    /* Sets the size of the font in the list items and a tags.
+  Changing the font size also updates the sizes of the
+  font size-relative <length> units, such as em */
+    font-size: 2rem;
+  }
+  
+  /* Adding an active pseudo-class to nav-right represents an
+  element that is being activated by the user.*/
+  .nav-right.active {
+  /* Sets the direction in which lines of text are stacked.
+    The flex container's main-axis is the same as the block-axis. */
+    flex-direction: column;
+    /* Defines how the browser distributes space between and
+    around content items along the main-axis of a flex container.
+    The center value specifies the items are packed flush to each
+    other toward the center of the container along the main axis. */
+    justify-content: center;
+    /* Sets the align-self value on all direct children as a group.
+    In Flexbox, it controls the alignment of items on the Cross Axis.
+    Center packs items around the center */
+    align-items: center;
+    /* Defines the width as 100% of the containing block's width. */
+    width: 100%;
+    /* Height of right navbar is equal to 50% of the viewport height.  */
+    height: 100%;
+    /* Sets navbar color to blue variable with an optional alpha component
+    that represents the color's alpha transparency */
+    background: rgba(173, 182, 215, 0.9);
+    /* Sets how the navbar is positioned in a document.
+    The absolute value specifies that the navbar is removed from the
+    normal document flow, and no space is created for it in the page layout. */
+    position: absolute;
+    /* Sets the vertical position of the navbar. Top: -100% in an absolutely
+    positioned navbar specifies the distance between the navbars's outer
+    margin of the top edge and the inner border of the top edge of its
+    containing block will be -200% (off-screen). */
+    top: -200%;
+    /* Sets horizontal position of the navbar. Left: 0 in an absolutely
+    positioned navbar specifies the distance between the navbar's outer
+    margin of left edge and the inner border of left edge of its
+    containing block will be 0. */
+    left: 0;
+    /* sets the z-order positioned of the navbar. Z-index: -3 is the
+    stack level of the navbar in the current stacking context. 
+    Negative values lower the priority */
+    z-index: -3;
+    /* Sets the length of time a transition animation
+    should take to complete if the menu icon is clicked.
+    Transition values are listed in order from left to right as:
+      property name | duration | easing function | delay */
+    transition: 0.3s;
+  }
+
+  /* Adding an active pseudo-class to nav-right li represents an
   element that is being activated by the user.*/
   .nav-right.active li {
     /* Sets the padding on top of line items to 5% of the screen.
@@ -172,35 +282,5 @@ intended to test the maximum width of the viewport */
     padding: 5% 0 0;
   }
 
-  .nav-right li {
-    /* Sets the padding on all sides of the line items to 1 rem.
-    Values are listed in order from left to right as:
-      Top    |    Right   |    Bottom    |    Left
-    If left is omitted, it is the same as right.
-    If bottom is omitted it is the same as top.
-    If right is omitted it is the same as top.
-    Neither 4 values may be a negative value. */
-    padding: 1rem;
-  }
 
-  .nav-right li a {
-    /* Sets the size of the font in the list items and a tags.
-  Changing the font size also updates the sizes of the
-  font size-relative <length> units, such as em */
-    font-size: 2rem;
-  }
-}
-
-/* Mobile devices */
-/* @media can be used to apply part of a style sheet
-based on the result of one or more media queries.
-The screen value specifies the css properties are
-intended primarily for screens.
-The max-width value specifies the css properties are
-intended to test the maximum width of the viewport */
-@media screen and (max-width: 480px) {
-  .hamburger {
-    /* Displays hamburger icon on screens with a max-width of 480 pixels */
-    display: initial;
-  }
 }

@@ -5,6 +5,8 @@ const Projects = () => {
   return (
     <div>
       <Navbar/>
+      <h1>Projects Page Placeholder</h1>
+
     </div>
   )
 }
