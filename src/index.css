@@ -78,81 +78,13 @@ ul {
 /*        Class selectors         */
 /* ****************************** */
 
-.btn {
-  /* Sets button padding on top and bottom to 12 pixels.
-  Sets button padding on right and left to 32 pixels.
-  Values are listed in order from left to right as:
-    Top    |    Right   |    Bottom    |    Left
-  If left is omitted, it is the same as right.
-  If bottom is omitted it is the same as top.
-  If right is omitted it is the same as top.
-  Neither 4 values may be a negative value. */
-  padding: 12px 32px;
-  /* Sets the size of the font in buttons to 1rem.
-  Changing the font size also updates the sizes of the
-  font size-relative <length> units, such as em */
-  font-size: 1rem;
-  /* Specifies how to capitalize an element's text.
-  It can be used to make text appear in all-uppercase
-  or all-lowercase, or with each word capitalized. */
-  text-transform: uppercase;
-  /* Sets background color of button to the blue variable */
-  background: var(--pink);
-  /* Sets font color of button to the black variable */
-  color: var(--black);
-  /* Sets a button's border values to a width of
-  1 pixel, style of solid, and color to salmon.
-  Values are listed in order from left to right as:
-   border-width  |  border-style  |  border-color */
-  border: 1px solid var(--salmon);
-  /* Sets a button's weight (or boldness) of the font
-  The weights available depend on the font-family */
-  font-weight: 600;
-  /* Sets the mouse cursor (if any) to show when the
-  mouse pointer is over a button. The option of Pointer
-  is a cursor that indicates a link. It is typically an
-  image of a pointing hand. */
-  cursor: pointer;
-}
-
-.btn-contact {
-  /* Sets background color of contact button to transparent.
-  Transparent is a special keyword value for 0 opacity */
-  background: transparent;
-  color: var(--black);
-}
-
-/* Hover triggers when the user hovers over a button with
-a pointing device, but does not necessarily activate it. */
-.btn:hover {
-  /* Sets background color of button when it's hovered
-  over with a cursor to the lightBlue variable at an opacity of 20%*/
-  background-color: rgba(var(--blue), 0.9);
-  /* Sets font color of button when it's hovered over
-  with a cursor to the black variable */
-  color: var(--black);
-  /* Sets the length of time a transition animation
-  should take to complete of a button when it's hovered
-  over with a cursor. Transition values are listed in
-  order from left to right as:
-   property name | duration | easing function | delay */
-  transition: 0.3s;
-}
-/* Hover triggers when the user hovers over a button with
-a pointing device, but does not necessarily activate it. */
-.btn-contact:hover {
-  /* Sets background color of button when it's hovered
-  over with a cursor to the lightBlue variable at an opacity of 20%*/
-  background-color: var(--pink);
-  /* Sets font color of button when it's hovered over
-  with a cursor to the black variable */
-  color: var(--black);
-  /* Sets the length of time a transition animation
-  should take to complete of a button when it's hovered
-  over with a cursor. Transition values are listed in
-  order from left to right as:
-   property name | duration | easing function | delay */
-  transition: 0.5s;
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  margin-top: auto;
 }
 
 /* h1.glow h4.glow p.glow a.glow {

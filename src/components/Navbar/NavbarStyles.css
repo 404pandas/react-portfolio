@@ -53,10 +53,11 @@ font-size to something other than 16 pixels */
 
 .nameZindex {
   z-index: 5;
+    white-space: nowrap;
 }
 
 .nav-solid {
-  background-color: rgba(173, 182, 215, 0.9);
+  background-color: var(--tan);
   transition: 0.5s;
 }
 
@@ -176,7 +177,7 @@ intended to test the maximum width of the viewport */
     height: 100vh;
     /* Sets navbar color to blue variable with an optional alpha component
     that represents the color's alpha transparency */
-    background: rgba(173, 182, 215, 0.9);
+    background: rgba(248, 245, 240, 0.9);
     /* Sets how the navbar is positioned in a document.
     The absolute value specifies that the navbar is removed from the
     normal document flow, and no space is created for it in the page layout. */
@@ -241,7 +242,7 @@ intended to test the maximum width of the viewport */
     height: 100%;
     /* Sets navbar color to blue variable with an optional alpha component
     that represents the color's alpha transparency */
-    background: rgba(173, 182, 215, 0.9);
+    background: rgba(var(--tan) 0.9);
     /* Sets how the navbar is positioned in a document.
     The absolute value specifies that the navbar is removed from the
     normal document flow, and no space is created for it in the page layout. */

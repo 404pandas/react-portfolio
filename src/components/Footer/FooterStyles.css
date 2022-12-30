@@ -1,0 +1,124 @@
+.footer {
+    width: 100%;
+    padding: 3rem 0 0;
+    background-color: var(--tan);
+}
+
+.footerContainer {
+    max-width: 1140px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+}
+
+.leftFooter {
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.leftFooter p {
+    line-height: 2rem;
+}
+
+
+
+.rightFooter {
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.rightFooter p {
+    margin-top: 1rem;
+    line-height: 1.5rem;
+}
+.socialIcons {
+    margin-top: 1rem
+}
+
+.location {
+    display: flex;
+    align-items: center;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        width: 100%;
+        display: flex;
+    }
+    
+    .footerContainer {
+        width: 100%;
+        display: flex;
+    }
+    
+    .leftFooter {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    
+    .leftFooter p {
+        display: none;
+    }
+    
+    .leftFooter svg {
+        height: 3rem;
+        width: 3rem;
+        margin: 0px 0px 0px 0px!important; 
+        line-height: 1rem;
+    }
+    
+    .rightFooter {
+        height: 100%;
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .rightFooter p {
+        margin-top: 1rem;
+        line-height: 1.5rem;
+    }
+    .socialIcons {
+        margin-top: 1rem
+    }
+    
+    .location {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    
+    .phone {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    
+    .email {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+    }
+}
