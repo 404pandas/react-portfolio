@@ -12,19 +12,19 @@ const Navbar = () => {
   const changeScrollColor = () => {
     if (window.scrollY >= 100) {
       scrollColor(true);
-    } else { 
+    } else {
       scrollColor(false);
     }
-    };
-  
+  };
+
   window.addEventListener("scroll", changeScrollColor);
 
   return (
     <div className={color ? "nav nav-solid" : "nav"}>
       <div className="nameZindex">
-      <a href="https://github.com/404pandas">
-        <h1>Mary Elenius</h1>
-      </a>
+        <a href="https://github.com/404pandas">
+          <h1>Mary Elenius</h1>
+        </a>
       </div>
       <ul className={click ? "nav-right" : "nav-right active"}>
         <li>
@@ -44,10 +44,7 @@ const Navbar = () => {
           <Link to="/About">About</Link>
         </li>
         <li>
-          <Link to="/Contact">Contact</Link>
-        </li>
-        <li>
-          <Link to="/Donate">Donate</Link>
+          <Link to="/Technologies">Technologies</Link>
         </li>
       </ul>
       <div className="hamburger" onClick={handleClick}>

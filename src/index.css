@@ -81,10 +81,35 @@ ul {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   height: 100vh;
-  margin-top: auto;
+  width: 100vw;
+}
+
+.content-body {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.cardContainer .MuiPaper-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px !important;
+  max-height: 500px !important;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.list-box {
+  margin: auto;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 40vh;
+  max-height: 40vh;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 /* h1.glow h4.glow p.glow a.glow {
@@ -94,6 +119,69 @@ ul {
 /* ****************************** */
 /*          ID selectors          */
 /* ****************************** */
+
+#projectCardContainer {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  top: 10%;
+}
+
+#content-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5%;
+}
+
+#about-pic {
+  height: 400px;
+  border-radius: 20px;
+  margin: 2%;
+}
+
+#about-body1 {
+  align-self: flex-start;
+  margin: 2%;
+  text-indent: 2rem;
+}
+
+#tab-box {
+  width: 100%;
+}
+
+#technology-content {
+  min-height: 80vh;
+  max-height: 80vh;
+  margin-bottom: 0px;
+}
+#landing-content {
+  /* justify-content: space-around; */
+}
+#landing-body1 {
+  margin: 10%;
+}
+#panda-drawing {
+  position: relative;
+  width: 300px;
+  align-items: center;
+  z-index: 7;
+}
+#landing-box {
+  display: flex;
+  flex-direction: column;
+}
+#landing-h4 {
+  text-align: center;
+  margin-top: 10%;
+}
+#landing-text {
+  position: relative;
+  background-color: pink;
+  top: -58px;
+  width: 80vw;
+}
 
 /* ****************************** */
 /*         Media Queries          */

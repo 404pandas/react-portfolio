@@ -56,7 +56,6 @@
   white-space: nowrap;
   font-size: 2.5rem;
   padding: 0.6rem 0 1.5rem;
-  
 }
 
 .btn {
@@ -96,7 +95,7 @@
   cursor: pointer;
 }
 
-.btn-contact {
+.btn-technologies {
   /* Sets background color of contact button to transparent.
   Transparent is a special keyword value for 0 opacity */
   background: transparent;
@@ -121,7 +120,7 @@ a pointing device, but does not necessarily activate it. */
 }
 /* Hover triggers when the user hovers over a button with
 a pointing device, but does not necessarily activate it. */
-.btn-contact:hover {
+.btn-technologies:hover {
   /* Sets background color of button when it's hovered
   over with a cursor to the lightBlue variable at an opacity of 20%*/
   background-color: var(--pink);
@@ -141,19 +140,17 @@ a pointing device, but does not necessarily activate it. */
 }
 
 .heroBtns {
-  display: box;
+  display: flex;
   position: relative;
   top: 50px;
 }
 
 @media screen and (max-width: 480px) {
-
   .mask {
     width: 100%;
     height: 64vh;
     position: relative;
   }
-
 
   .heroImg {
     width: 100%;
@@ -162,9 +159,9 @@ a pointing device, but does not necessarily activate it. */
     background-position: center;
     object-fit: cover;
   }
-  
+
   .mask::after {
-display: none
+    display: none;
   }
 
   .imgContent {
@@ -174,10 +171,9 @@ display: none
     text-align: center;
     opacity: 1;
     background: radial-gradient(var(--tan) 20%, transparent 80%);
-
   }
 
-    .maskImgContent {
+  .maskImgContent {
     position: absolute;
     top: 30%;
     left: 0;
@@ -186,23 +182,22 @@ display: none
     height: 40%;
     width: 100%;
   }
-  
+
   .hero .heroImgH1 {
     display: flex;
     flex-direction: column;
   }
-  
+
   .hero .imgContent h1 {
     flex-direction: column;
     font-size: 2.5rem;
     padding: 0.6rem 0 1.5rem;
-    
   }
-  
+
   .imgContent .btn {
     margin: 1rem 0.2rem;
   }
-  
+
   .heroBtns {
     position: relative;
     top: 90px;
@@ -210,35 +205,34 @@ display: none
 
   /* Hover triggers when the user hovers over a button with
 a pointing device, but does not necessarily activate it. */
-.btn:hover {
-  /* Sets background color of button when it's hovered
+  .btn:hover {
+    /* Sets background color of button when it's hovered
   over with a cursor to the lightBlue variable at an opacity of 20%*/
-  background-color: rgba(var(--blue), 0.9);
-  /* Sets font color of button when it's hovered over
+    background-color: rgba(var(--blue), 0.9);
+    /* Sets font color of button when it's hovered over
   with a cursor to the black variable */
-  color: var(--black);
-  /* Sets the length of time a transition animation
+    color: var(--black);
+    /* Sets the length of time a transition animation
   should take to complete of a button when it's hovered
   over with a cursor. Transition values are listed in
   order from left to right as:
    property name | duration | easing function | delay */
-  transition: 0.3s;
-}
-/* Hover triggers when the user hovers over a button with
+    transition: 0.3s;
+  }
+  /* Hover triggers when the user hovers over a button with
 a pointing device, but does not necessarily activate it. */
-.btn-contact:hover {
-  /* Sets background color of button when it's hovered
+  .btn-technologies:hover {
+    /* Sets background color of button when it's hovered
   over with a cursor to the lightBlue variable at an opacity of 20%*/
-  background-color: var(--pink);
-  /* Sets font color of button when it's hovered over
+    background-color: var(--pink);
+    /* Sets font color of button when it's hovered over
   with a cursor to the black variable */
-  color: var(--black);
-  /* Sets the length of time a transition animation
+    color: var(--black);
+    /* Sets the length of time a transition animation
   should take to complete of a button when it's hovered
   over with a cursor. Transition values are listed in
   order from left to right as:
    property name | duration | easing function | delay */
-  transition: 0.5s;
-}
-
+    transition: 0.5s;
+  }
 }

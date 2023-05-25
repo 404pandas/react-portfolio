@@ -1,18 +1,23 @@
-import React from 'react'
-import Navbar from '../components/Navbar/Navbar'
-import Footer from '../components/Footer/Footer'
+import React from "react";
+import { projectData } from "../components/ProjectCard/data";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 const Projects = () => {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div className="content">
-      <h1>Projects Page Placeholder</h1>
-      <p>Future home of project cards</p>
+        <div id="projectCardContainer">
+          {projectData.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+          <Footer />
+        </div>
       </div>
-      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

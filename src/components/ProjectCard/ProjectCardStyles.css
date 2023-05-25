@@ -1,0 +1,15 @@
+.cardContainer img {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 230px;
+  max-height: 230px;
+  position: relative;
+  top: 0px;
+  align-self: center;
+}
+
+#card-buttons {
+  display: flex;
+  justify-items: flex-end;
+  justify-content: space-around;
+}

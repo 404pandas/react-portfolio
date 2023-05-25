@@ -1,13 +1,42 @@
 import "./ProjectCardStyles.css";
 
-import React from 'react'
+import React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
-const ProjectCard = () => {
+const ProjectCard = ({ project }) => {
   return (
     <div className="cardContainer">
-        <h1 className="cardHeading"></h1>
+      <Card sx={{ maxWidth: 345 }} key={project.id}>
+        <CardMedia
+          component="img"
+          alt="placeholder drawings of travelers at different locations that match color pallette"
+          height="140"
+          image={project.image}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {project.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {project.description}
+          </Typography>
+        </CardContent>
+        <CardActions id="card-buttons">
+          <Button size="small" href={`${project.repo}`}>
+            Github Repo
+          </Button>
+          <Button size="small" href={`${project.live}`}>
+            Deployed Site
+          </Button>
+        </CardActions>
+      </Card>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

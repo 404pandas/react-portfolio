@@ -20,8 +20,8 @@ const HeroImg = () => {
             <Link to="/projects" className="btn">
               Projects
             </Link>
-            <Link to="/contact" className="btn btn-contact">
-              Contact
+            <Link to="/technologies" className="btn btn-technologies">
+              Technologies
             </Link>
           </div>
         </div>

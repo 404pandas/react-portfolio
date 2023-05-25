@@ -17,7 +17,6 @@ font-size to something other than 16 pixels */
   items in rows or columns. Items flex (expand) to fill
   additional space or shrink to fit into smaller spaces.  */
   display: flex;
-  width: 100%;
   height: 90px;
   z-index: 10;
   /* Defines how the browser distributes space between and
@@ -53,7 +52,7 @@ font-size to something other than 16 pixels */
 
 .nameZindex {
   z-index: 5;
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .nav-solid {
@@ -103,7 +102,7 @@ font-size to something other than 16 pixels */
   The weights available depend on the font-family */
   align-content: center;
   font-weight: 500;
-  z-index: 5
+  z-index: 5;
 }
 
 .hamburger {
@@ -116,7 +115,7 @@ font-size to something other than 16 pixels */
 img.reactLogo {
   max-height: 1.5rem;
   align-items: center;
-  z-index: 5
+  z-index: 5;
 }
 
 /* ****************************** */
@@ -143,13 +142,12 @@ intended primarily for screens.
 The max-width value specifies the css properties are
 intended to test the maximum width of the viewport */
 @media screen and (max-width: 480px) {
-  
   h1 {
     font-size: 1.5em;
   }
 
   .nav {
-    width: 100%;
+    width: 100vw;
   }
 
   .hamburger {
@@ -220,11 +218,11 @@ intended to test the maximum width of the viewport */
   font size-relative <length> units, such as em */
     font-size: 2rem;
   }
-  
+
   /* Adding an active pseudo-class to nav-right represents an
   element that is being activated by the user.*/
   .nav-right.active {
-  /* Sets the direction in which lines of text are stacked.
+    /* Sets the direction in which lines of text are stacked.
     The flex container's main-axis is the same as the block-axis. */
     flex-direction: column;
     /* Defines how the browser distributes space between and
@@ -251,7 +249,7 @@ intended to test the maximum width of the viewport */
     positioned navbar specifies the distance between the navbars's outer
     margin of the top edge and the inner border of the top edge of its
     containing block will be -200% (off-screen). */
-    top: -200%;
+    top: -220%;
     /* Sets horizontal position of the navbar. Left: 0 in an absolutely
     positioned navbar specifies the distance between the navbar's outer
     margin of left edge and the inner border of left edge of its
@@ -282,6 +280,4 @@ intended to test the maximum width of the viewport */
     Neither 4 values may be a negative value. */
     padding: 5% 0 0;
   }
-
-
 }
