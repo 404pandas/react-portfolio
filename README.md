@@ -59,7 +59,6 @@
 <div align="center">
 
 [![Javascript](https://img.shields.io/badge/Language-JavaScript-ff0000?style=plastic&logo=JavaScript&logoWidth=10)](https://javascript.info/)
-[![Heroku](https://img.shields.io/badge/Cloud-Heroku-00ff00?style=plastic&logo=Heroku&logoWidth=10)](https://devcenter.heroku.com/categories/reference)
 [![npm](https://img.shields.io/badge/Tools-npm-ff0000?style=plastic&logo=npm&logoWidth=10)](https://www.npmjs.com/)
 [![homebrew](https://img.shields.io/badge/Tools-Homebrew-80ff00?style=plastic&logo=Homebrew&logoWidth=10)](https://brew.sh/)
 [![React](https://img.shields.io/badge/Framework-React.js-ff8000?style=plastic&logo=React&logoWidth=10)](https://reactjs.org/docs/getting-started.html)
