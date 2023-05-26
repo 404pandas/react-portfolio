@@ -32,7 +32,7 @@ const Footer = () => {
               style={{ color: "#d97777", marginRight: "2rem" }}
             />
             <Typography variant="body1" id="footer-body1">
-              1 (772) 834 2341
+              1 (772) 834 2342
             </Typography>
           </div>
           <div className="email">
