@@ -70,25 +70,23 @@
 
 ### Prerequisites
 
-There are no prerequisites for this portfolio! Simply visit the deployed site [here](https://young-sea-98173.herokuapp.com/).
+There are no prerequisites for this portfolio! Simply visit the deployed site [here](https://404pandas.netlify.app).
 
 ## Usage
 
-This portfolio is optimized for smaller screens! Open the live app on mobile to see for yourself!
+This portfolio is optimized for smaller screens!
+
+https://github.com/404pandas/react-portfolio/assets/113853550/30a3aab9-dc70-411e-ac08-950c8ef3def0
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
 - [ X ] Folder Structure
-- [ X ] Routes
-- [ X ] Seeds
 - [ X ] Styling
-- [ ] Landing Page
-- [ ] Contact Page
-- [ ] About Page
-- [ ] Donate Page
-- [ ] Projects Page
+- [ X ] Landing Page
+- [ X ] About Page
+- [ X ] Projects Page
 
 See the [open issues](https://github.com/404pandas/react-portfolio/issues) for a full list of proposed features (and known issues).
 
