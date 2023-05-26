@@ -17,7 +17,7 @@
     <a href="https://github.com/404pandas/react-portfolio"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://young-sea-98173.herokuapp.com/">View Demo</a>
+    <a href="https://mary-elenius-react-portfolio.herokuapp.com/">View Deployment</a>
     ·
     <a href="https://github.com/404pandas/react-portfolio/issues">Report Bug</a>
     ·
@@ -64,6 +64,7 @@
 [![homebrew](https://img.shields.io/badge/Tools-Homebrew-80ff00?style=plastic&logo=Homebrew&logoWidth=10)](https://brew.sh/)
 [![React](https://img.shields.io/badge/Framework-React.js-ff8000?style=plastic&logo=React&logoWidth=10)](https://reactjs.org/docs/getting-started.html)
 [![VS Code](https://img.shields.io/badge/IDE-VSCode-ff0000?style=plastic&logo=VisualStudioCode&logoWidth=10)](https://code.visualstudio.com/docs)
+
 </div>
 
 ## Getting Started
@@ -71,7 +72,6 @@
 ### Prerequisites
 
 There are no prerequisites for this portfolio! Simply visit the deployed site [here](https://young-sea-98173.herokuapp.com/).
-
 
 ## Usage
 
