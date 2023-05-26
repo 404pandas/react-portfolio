@@ -8,7 +8,7 @@ const Projects = () => {
   return (
     <div>
       <Navbar />
-      <div className="content">
+      <div className="content" id="project-content">
         <div id="projectCardContainer">
           {projectData.map((project) => (
             <ProjectCard key={project.id} project={project} />

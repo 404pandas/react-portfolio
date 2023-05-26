@@ -8,7 +8,7 @@ import panda from "../assets/images/bigsmilepanda.png";
 
 const Landing = () => {
   return (
-    <div>
+    <div id="whole-page">
       <Navbar />
       <HeroImg />
       <div className="content" id="landing-content">

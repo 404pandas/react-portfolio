@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div>
       <Navbar />
-      <div className="content">
+      <div className="content" id="content-container">
         <div className="content-body" id="content-body">
           <img
             alt="Witcher themed maternity shot of Mary"

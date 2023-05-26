@@ -17,6 +17,7 @@ font-size to something other than 16 pixels */
   items in rows or columns. Items flex (expand) to fill
   additional space or shrink to fit into smaller spaces.  */
   display: flex;
+  width: 100vw;
   height: 90px;
   z-index: 10;
   /* Defines how the browser distributes space between and
@@ -42,12 +43,12 @@ font-size to something other than 16 pixels */
 
 .nav::after {
   content: "";
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 90px;
   position: absolute;
   top: 0;
   left: 0;
-  background: radial-gradient(ellipse 100% 45px, var(--tan) 5%, transparent);
+  background: radial-gradient(ellipse 100% 52px, var(--tan) 5%, transparent);
 }
 
 .nameZindex {
@@ -141,7 +142,7 @@ The screen value specifies the css properties are
 intended primarily for screens.
 The max-width value specifies the css properties are
 intended to test the maximum width of the viewport */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   h1 {
     font-size: 1.5em;
   }
@@ -235,7 +236,7 @@ intended to test the maximum width of the viewport */
     Center packs items around the center */
     align-items: center;
     /* Defines the width as 100% of the containing block's width. */
-    width: 100%;
+    width: 100vw;
     /* Height of right navbar is equal to 50% of the viewport height.  */
     height: 100%;
     /* Sets navbar color to blue variable with an optional alpha component
@@ -249,7 +250,7 @@ intended to test the maximum width of the viewport */
     positioned navbar specifies the distance between the navbars's outer
     margin of the top edge and the inner border of the top edge of its
     containing block will be -200% (off-screen). */
-    top: -220%;
+    top: -250%;
     /* Sets horizontal position of the navbar. Left: 0 in an absolutely
     positioned navbar specifies the distance between the navbar's outer
     margin of left edge and the inner border of left edge of its

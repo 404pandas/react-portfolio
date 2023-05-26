@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <div className={color ? "nav nav-solid" : "nav"}>
       <div className="nameZindex">
-        <a href="https://github.com/404pandas">
+        <a href="/">
           <h1>Mary Elenius</h1>
         </a>
       </div>
@@ -32,6 +32,7 @@ const Navbar = () => {
             className="reactLogo"
             src={PortfolioLogo}
             alt="ME logo with portfolio color palette"
+            href="https://github.com/404pandas"
           />
         </li>
         <li>

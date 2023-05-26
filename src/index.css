@@ -120,14 +120,6 @@ ul {
 /*          ID selectors          */
 /* ****************************** */
 
-#projectCardContainer {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  top: 10%;
-}
-
 #content-body {
   display: flex;
   justify-content: space-between;
@@ -156,9 +148,7 @@ ul {
   max-height: 80vh;
   margin-bottom: 0px;
 }
-#landing-content {
-  /* justify-content: space-around; */
-}
+
 #landing-body1 {
   margin: 10%;
 }
@@ -171,6 +161,7 @@ ul {
 #landing-box {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 #landing-h4 {
   text-align: center;
@@ -178,21 +169,59 @@ ul {
 }
 #landing-text {
   position: relative;
-  background-color: pink;
+  border: 1px solid var(--red);
+  box-shadow: 5px 5px 10px 1px rgba(16, 16, 16, 0.05);
   top: -58px;
   width: 80vw;
 }
+#landing-content {
+  height: 160vh;
+  justify-content: center;
+  margin: auto 0px;
+}
 
+#project-content {
+  display: flex;
+  height: 100vh;
+  position: absolute;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#projectCardContainer {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  top: 10vh;
+  height: 160vh;
+  justify-items: center;
+}
+#whole-page {
+  display: flex;
+  flex-wrap: wrap;
+}
 /* ****************************** */
 /*         Media Queries          */
 /* ****************************** */
 
 /* Laptop */
-@media screen and (max-width: 1040px) {
+@media screen and (max-width: 1007px) {
+  #projectCardContainer {
+    height: 250vh;
+  }
 }
 
 /* iPads and Tablets */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 671px) {
+  #projectCardContainer {
+    overflow: scroll;
+  }
+  #content-body {
+    flex-direction: column;
+  }
+  #content-container {
+    height: auto;
+  }
 }
 
 /* Mobile devices */

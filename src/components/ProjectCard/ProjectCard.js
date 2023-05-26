@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 const ProjectCard = ({ project }) => {
   return (
     <div className="cardContainer">
-      <Card sx={{ maxWidth: 345 }} key={project.id}>
+      <Card sx={{ maxWidth: 320 }} key={project.id} className="cardContent">
         <CardMedia
           component="img"
           alt="placeholder drawings of travelers at different locations that match color pallette"

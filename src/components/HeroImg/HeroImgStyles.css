@@ -1,47 +1,20 @@
-.mask {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
 .heroImg {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 50vh;
   background-size: cover;
   background-position: center;
   object-fit: cover;
 }
 
-.mask::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: black;
-  opacity: 0.3;
-}
-
 .hero {
-  height: 100%;
-  width: 100%;
-}
-
-.maskImgContent {
-  position: absolute;
-  top: 30%;
-  left: 0;
-  background: radial-gradient(ellipse 100% 45px, var(--tan) 5%, transparent);
-  z-index: 0;
-  height: 40%;
-  width: 100%;
+  height: 50vh;
+  width: 100vw;
 }
 
 .imgContent {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 60%;
+  top: 65vh;
   left: 50%;
   text-align: center;
   opacity: 1;
@@ -49,13 +22,17 @@
 
 .hero .heroImgH1 {
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 100vw;
 }
 
-.hero .imgContent h1 {
+.h1 {
   flex-direction: row;
   white-space: nowrap;
-  font-size: 2.5rem;
+  font-size: 2.5rem !important;
   padding: 0.6rem 0 1.5rem;
+  font-weight: 800;
 }
 
 .btn {
@@ -93,6 +70,7 @@
   is a cursor that indicates a link. It is typically an
   image of a pointing hand. */
   cursor: pointer;
+  box-shadow: 5px 5px 10px 1px rgba(16, 16, 16, 0.05);
 }
 
 .btn-technologies {
@@ -142,19 +120,15 @@ a pointing device, but does not necessarily activate it. */
 .heroBtns {
   display: flex;
   position: relative;
-  top: 50px;
+  justify-content: space-evenly;
+  top: 1vh;
 }
 
-@media screen and (max-width: 480px) {
-  .mask {
-    width: 100%;
-    height: 64vh;
-    position: relative;
-  }
-
+/* Media Query */
+@media screen and (max-width: 768px) {
   .heroImg {
-    width: 100%;
-    height: 80%;
+    width: 100vw;
+    height: 50vh;
     background-size: cover;
     background-position: center;
     object-fit: cover;
@@ -166,32 +140,17 @@ a pointing device, but does not necessarily activate it. */
 
   .imgContent {
     position: absolute;
-    top: 10%;
-    left: 50%;
     text-align: center;
     opacity: 1;
     background: radial-gradient(var(--tan) 20%, transparent 80%);
   }
 
-  .maskImgContent {
-    position: absolute;
-    top: 30%;
-    left: 0;
-    background: radial-gradient(ellipse 100% 45px, var(--tan) 5%, transparent);
-    z-index: 0;
-    height: 40%;
-    width: 100%;
-  }
-
-  .hero .heroImgH1 {
-    display: flex;
-    flex-direction: column;
-  }
-
   .hero .imgContent h1 {
     flex-direction: column;
     font-size: 2.5rem;
+    line-height: 0.5rem;
     padding: 0.6rem 0 1.5rem;
+    align-content: center;
   }
 
   .imgContent .btn {
@@ -200,7 +159,7 @@ a pointing device, but does not necessarily activate it. */
 
   .heroBtns {
     position: relative;
-    top: 90px;
+    top: -1vh;
   }
 
   /* Hover triggers when the user hovers over a button with
@@ -234,5 +193,19 @@ a pointing device, but does not necessarily activate it. */
   order from left to right as:
    property name | duration | easing function | delay */
     transition: 0.5s;
+  }
+}
+
+/* iPads and Tablets */
+@media screen and (max-width: 671px) {
+  .h1 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+  .h1 {
+    font-size: 1rem !important;
   }
 }

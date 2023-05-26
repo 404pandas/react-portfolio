@@ -1,20 +1,24 @@
 .footer {
-  position: relative;
   width: 100vw;
   background-color: var(--tan);
   z-index: 50;
   display: flex;
+  bottom: -140vh;
+  box-shadow: 0px -5px 10px 1px rgba(16, 16, 16, 0.05);
 }
 
 .footerContainer {
   display: flex;
   height: auto;
+  width: 100vw;
+  justify-content: space-evenly;
 }
 .leftFooter {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   justify-content: center;
+  width: 30vw;
 }
 
 .leftFooter p {
@@ -26,6 +30,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
+  width: 30vw;
 }
 
 .rightFooter p {
@@ -69,7 +74,16 @@
 
 /* Mobile devices */
 @media screen and (max-width: 480px) {
+  .footer {
+    bottom: 10vh;
+  }
   .footerContainer {
     flex-direction: column;
+  }
+  .rightFooter {
+    width: 100vw;
+  }
+  .leftFooter {
+    width: 100vw;
   }
 }

@@ -13,3 +13,8 @@
   justify-items: flex-end;
   justify-content: space-around;
 }
+
+.cardContainer {
+  margin-left: 8px;
+  margin-right: 8px;
+}
