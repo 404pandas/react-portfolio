@@ -17,7 +17,7 @@
     <a href="https://github.com/404pandas/react-portfolio"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://mary-elenius-react-portfolio.herokuapp.com/">View Deployment</a>
+    <a href="https://404pandas.netlify.app/">View Deployment</a>
     ·
     <a href="https://github.com/404pandas/react-portfolio/issues">Report Bug</a>
     ·
