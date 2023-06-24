@@ -96,8 +96,8 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 500px !important;
-  max-height: 500px !important;
+  min-height: 600px !important;
+  max-height: 600px !important;
   margin-top: 5%;
   margin-bottom: 5%;
 }
