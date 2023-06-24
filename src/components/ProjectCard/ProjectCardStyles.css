@@ -17,7 +17,7 @@
 .cardContainer {
   margin-left: 8px;
   margin-right: 8px;
-  max-height: 600px;
+  max-height: 600px !important;
 }
 
 #technologies-li #text {
@@ -27,5 +27,5 @@
 
 .cardContent {
   padding-bottom: 9px;
-  max-height: 575px !important;
+  max-height: 600px !important;
 }
