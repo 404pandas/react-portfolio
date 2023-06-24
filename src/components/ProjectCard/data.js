@@ -12,73 +12,291 @@ export let projectData = [
   {
     id: 0,
     image: image1,
-    title: "Project 1",
+    title: "Readme Generator",
     description:
-      "This is where a description for each project would go. It's designed to auto format regardless of how long the description is.",
-    repo: "https://github.com/404pandas/react-portfolio",
+      "This is a command line application that generates a formatted README.md.",
+    technologies: ["• Node ", "• Inquirer "],
+    repo: "https://github.com/404pandas/sarcasticProfessionalReadme",
     live: "https://404pandas.github.io",
   },
   {
     id: 1,
     image: image2,
-    title: "Project 2",
+    title: "Team Profile Generator",
     description:
-      "This is where a description for each project would go. It's designed to auto format regardless of how long the description is.",
-    repo: "https://github.com/404pandas/react-portfolio",
+      "This is a command line application that creates an html page for a team profile based on user input.",
+    technologies: ["• HTML ", "• CSS3 ", "• Node ", "• Inquirer "],
+
+    repo: "https://github.com/404pandas/teamProfileGenerator",
     live: "https://404pandas.github.io",
   },
   {
     id: 2,
     image: image3,
-    title: "Project 3",
+    title: "Note Taker",
     description:
-      "This is where a description for each project would go. It's designed to auto format regardless of how long the description is. For example, these cards have a longer description than the children above it.",
-    repo: "https://github.com/404pandas/react-portfolio",
+      "This is an express app that uses localStorage to take and save notes.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Express ",
+      "• Javascript ",
+      "• Netlify ",
+      "• MySQL ",
+    ],
+
+    repo: "https://github.com/404pandas/notetaker",
     live: "https://404pandas.github.io",
   },
   {
     id: 3,
     image: image4,
-    title: "Project 4",
+    title: "Password Generator",
     description:
-      "This is where a description for each project would go. It's designed to auto format regardless of how long the description is. For example, these cards have a longer description than the children above it.",
-    repo: "https://github.com/404pandas/react-portfolio",
+      "This is a web app that generates a password based on user input.",
+    technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
+
+    repo: "https://github.com/404pandas/password-generator",
     live: "https://404pandas.github.io",
   },
   {
     id: 4,
     image: image5,
-    title: "Project 5",
+    title: "Coding Quiz",
     description:
-      "This is where a description for each project would go. It's designed to auto format regardless of how long the description is. For example, these cards have a longer description than the children above it.",
-    repo: "https://github.com/404pandas/react-portfolio",
+      "This is a coding quiz that allows users to save their scores with localStorage.",
+    technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
+
+    repo: "https://github.com/404pandas/coding-quiz",
     live: "https://404pandas.github.io",
   },
   {
     id: 5,
     image: image6,
-    title: "Project 6",
+    title: "Weather Dashboard",
     description:
-      "This is where a description for each project would go. It's designed to auto format regardless of how long the description is. This child is completely different from the others. All you have to do it edit the description in data.js",
-    repo: "https://github.com/404pandas/react-portfolio",
+      "This is a web app that allows users to look up current weather and forecast data based on city. Previous searches are stored in local Storage for easy reuse.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• GSAP ",
+      "• Javascript ",
+      "• JQuery ",
+      "• Dayjs ",
+      "• Materialize ",
+      "• Node ",
+    ],
+
+    repo: "https://github.com/404pandas/pooh-weather-dashboard",
     live: "https://404pandas.github.io",
   },
   {
     id: 6,
     image: image7,
-    title: "Project 7",
+    title: "Employee Tracker",
     description:
-      "This is where a description for each project would go. It's designed to auto format regardless of how long the description is. I'm looking for a job! Please contact me using the information on the footer.",
-    repo: "https://github.com/404pandas/react-portfolio",
+      "This is an express app that tracks an employee roster using Inquirer for command line prompts.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• MySQL ",
+      "• Node ",
+      "• Express ",
+      "• Inquirer ",
+    ],
+
+    repo: "https://github.com/404pandas/employee-tracker",
     live: "https://404pandas.github.io",
   },
   {
     id: 7,
     image: image8,
-    title: "Project 8",
+    title: "Workday Scheduler",
     description:
-      "This is where a description for each project would go. It's designed to auto format regardless of how long the description is. I hope you enjoyed this sample site!",
+      "This is a daily scheduling app that uses Moment.js and saves using localStorage. Auto formats rows based on past, present, and future.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• Node ",
+      "• Express ",
+      "• Moment.js ",
+    ],
+
+    repo: "https://github.com/404pandas/workday-scheduler",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 8,
+    image: image1,
+    title: "Blue Dog API",
+    description:
+      "This is the start of a open source Bluey database for developers to use to develop Bluey themed apps. Currently, the front end will display the data. Future development will allow for games and activities that are Bluey themed.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• MUI ",
+      "• React ",
+      "• MongoDB ",
+      "• Express ",
+      "• Node ",
+      "• Apollo/GraphQL ",
+    ],
+
+    repo: "https://github.com/404pandas/blue-dog-api",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 9,
+    image: image2,
+    title: "Alien Tech Blog",
+    description:
+      "This is a full stack app using MySQL and Express to create an alien themed blog site.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• Bcrypt ",
+      "• MySQL ",
+      "• Express",
+      "• Handlebars ",
+      "• Materialize ",
+      "• Sequelize ",
+    ],
+
+    repo: "https://github.com/404pandas/alien-tech-blog",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 10,
+    image: image3,
+    title: "All Animal Rehab & Release",
+    description: "This is a website I'm currently building for my charity.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• JQuery ",
+      "• Materialize ",
+      "• Node ",
+      "• Express ",
+    ],
+
+    repo: "https://github.com/404pandas/all-animal-r-r",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 11,
+    image: image4,
+    title: "Classic Portfolio",
+    description:
+      "This is my portfolio built without the use of React given a tech-themed steroid shot.",
+    technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
+
+    repo: "https://github.com/404pandas/404pandas.github.io",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 12,
+    image: image5,
+    title: "Empty Resources (Shields)",
+    description:
+      "This is a repo for storing code snippets, boiler plate code, and extra resources like easy tech shields.",
+    technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
+
+    repo: "https://github.com/404pandas/empty-resources",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 13,
+    image: image6,
+    title: "Normalize Rework",
+    description:
+      "This is the fan favorite Normalize with formatting that is easy on the human brain.",
+    technologies: ["• CSS3 "],
+
+    repo: "https://github.com/404pandas/normalize.css",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 14,
+    image: image7,
+    title: "Jacob Elenius Website",
+    description:
+      "This is a website I built for my husband to aid in his job search.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• React ",
+      "• Express ",
+      "• Node ",
+    ],
+
+    repo: "https://github.com/404pandas/jacob-elenius",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 15,
+    image: image8,
+    title: "K.I.T.T.I.E.S.",
+    description:
+      "This is a progressive web app. It's a cat themed text editor that can be downloaded and used offline.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• Node ",
+      "• Express ",
+      "• Webpack ",
+      "• Babel ",
+    ],
+
+    repo: "https://github.com/404pandas/pwa-kitties",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 16,
+    image: image1,
+    title: "Social Network API",
+    description:
+      "This is a project I have planned to re-create a social media API.",
+    technologies: ["• HTML ", "• CSS3 ", "• GSAP ", "• Javascript "],
+
+    repo: "https://github.com/404pandas/social-network-api",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 17,
+    image: image2,
+    title: "Booksearch",
+    description:
+      "This is a project I have planned to use google books to create book reading lists.",
+    technologies: ["• HTML ", "• CSS3 ", "• GSAP ", "• Javascript "],
+
     repo: "https://github.com/404pandas/react-portfolio",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 18,
+    image: image3,
+    title: "PARSR",
+    description:
+      "This is a MERNAG app I'm currently building to assist owners in locating their missing pets. Primary focus will be Google Maps to mark search grids.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• MongoDB ",
+      "• Apollo/GraphQL ",
+      "• React ",
+      "• Express ",
+      "• Node ",
+    ],
+
+    repo: "https://github.com/404pandas/PARSR",
     live: "https://404pandas.github.io",
   },
 ];

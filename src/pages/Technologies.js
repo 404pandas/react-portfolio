@@ -18,14 +18,14 @@ function TabPanel(props) {
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }} id="tab-box">
+        <Box sx={{ p: 3 }} id='tab-box'>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -49,43 +49,43 @@ const Technologies = (props) => {
   return (
     <div>
       <Navbar />
-      <div className="content" id="technology-content">
+      <div className='content' id='technology-content'>
         <Box sx={{ width: "80%" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs
               value={value}
               onChange={handleChange}
-              aria-label="basic tabs example"
-              variant="scrollable"
+              aria-label='basic tabs example'
+              variant='scrollable'
             >
-              <Tab label="Languages" {...a11yProps(0)} />
-              <Tab label="Databases" {...a11yProps(1)} />
-              <Tab label="Frameworks" {...a11yProps(2)} />
-              <Tab label="Technologies" {...a11yProps(3)} />
-              <Tab label="Tools" {...a11yProps(4)} />
+              <Tab label='Languages' {...a11yProps(0)} />
+              <Tab label='Databases' {...a11yProps(1)} />
+              <Tab label='Frameworks' {...a11yProps(2)} />
+              <Tab label='Technologies' {...a11yProps(3)} />
+              <Tab label='Tools' {...a11yProps(4)} />
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
             <Box
-              className="list-box"
+              className='list-box'
               sx={{
                 width: "90%",
                 maxWidth: 400,
                 bgcolor: "background.paper",
               }}
             >
-              <nav aria-label="main mailbox folders">
+              <nav aria-label='main mailbox folders'>
                 <List>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="JavaScript" />
+                      <ListItemText primary='JavaScript' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="TypeScript" />
+                      <ListItemText primary='TypeScript' />
                     </ListItemButton>
                   </ListItem>
 
@@ -93,35 +93,35 @@ const Technologies = (props) => {
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="CSS3" />
+                      <ListItemText primary='CSS3' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="HTML5" />
+                      <ListItemText primary='HTML5' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Swift" />
+                      <ListItemText primary='Swift' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Kotlin" />
+                      <ListItemText primary='Kotlin' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Python" />
+                      <ListItemText primary='Python' />
                     </ListItemButton>
                   </ListItem>
                 </List>
@@ -130,25 +130,25 @@ const Technologies = (props) => {
           </TabPanel>
           <TabPanel value={value} index={1}>
             <Box
-              className="list-box"
+              className='list-box'
               sx={{
                 width: "90%",
                 maxWidth: 400,
                 bgcolor: "background.paper",
               }}
             >
-              <nav aria-label="main mailbox folders">
+              <nav aria-label='main mailbox folders'>
                 <List>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="NoSQL" />
+                      <ListItemText primary='NoSQL' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="mySQL" />
+                      <ListItemText primary='mySQL' />
                     </ListItemButton>
                   </ListItem>
 
@@ -156,14 +156,14 @@ const Technologies = (props) => {
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="MongoDB" />
+                      <ListItemText primary='MongoDB' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="PostgreSQL" />
+                      <ListItemText primary='Postgres' />
                     </ListItemButton>
                   </ListItem>
                 </List>
@@ -172,25 +172,25 @@ const Technologies = (props) => {
           </TabPanel>
           <TabPanel value={value} index={2}>
             <Box
-              className="list-box"
+              className='list-box'
               sx={{
                 width: "80%",
                 maxWidth: 400,
                 bgcolor: "background.paper",
               }}
             >
-              <nav aria-label="main mailbox folders">
+              <nav aria-label='main mailbox folders'>
                 <List>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="Node.js" />
+                      <ListItemText primary='Node.js' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="React.js" />
+                      <ListItemText primary='React.js' />
                     </ListItemButton>
                   </ListItem>
 
@@ -198,21 +198,21 @@ const Technologies = (props) => {
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="React Native" />
+                      <ListItemText primary='React Native' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Zeppelin" />
+                      <ListItemText primary='Zeppelin' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Express.js" />
+                      <ListItemText primary='Express.js' />
                     </ListItemButton>
                   </ListItem>
                 </List>
@@ -221,25 +221,25 @@ const Technologies = (props) => {
           </TabPanel>
           <TabPanel value={value} index={3}>
             <Box
-              className="list-box"
+              className='list-box'
               sx={{
                 width: "80%",
                 maxWidth: 400,
                 bgcolor: "background.paper",
               }}
             >
-              <nav aria-label="main mailbox folders">
+              <nav aria-label='main mailbox folders'>
                 <List>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="Bootstrap" />
+                      <ListItemText primary='Bootstrap' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="Materialize/MUI" />
+                      <ListItemText primary='Materialize/MUI' />
                     </ListItemButton>
                   </ListItem>
 
@@ -247,70 +247,70 @@ const Technologies = (props) => {
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Tailwind" />
+                      <ListItemText primary='Tailwind' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Webpack" />
+                      <ListItemText primary='Webpack' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Apollo/GraphQL" />
+                      <ListItemText primary='Apollo/GraphQL' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Mongoose" />
+                      <ListItemText primary='Mongoose' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Sequelize" />
+                      <ListItemText primary='Sequelize' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="JWT" />
+                      <ListItemText primary='JWT' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="GSAP" />
+                      <ListItemText primary='GSAP' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="JQuery" />
+                      <ListItemText primary='JQuery' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Axios" />
+                      <ListItemText primary='Axios' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Handlebars" />
+                      <ListItemText primary='Handlebars' />
                     </ListItemButton>
                   </ListItem>
                 </List>
@@ -319,25 +319,25 @@ const Technologies = (props) => {
           </TabPanel>
           <TabPanel value={value} index={4}>
             <Box
-              className="list-box"
+              className='list-box'
               sx={{
                 width: "80%",
                 maxWidth: 400,
                 bgcolor: "background.paper",
               }}
             >
-              <nav aria-label="main mailbox folders">
+              <nav aria-label='main mailbox folders'>
                 <List>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="Git" />
+                      <ListItemText primary='Git' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
-                      <ListItemText primary="Docker" />
+                      <ListItemText primary='Docker' />
                     </ListItemButton>
                   </ListItem>
 
@@ -345,42 +345,42 @@ const Technologies = (props) => {
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Homebrew" />
+                      <ListItemText primary='Homebrew' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="npm" />
+                      <ListItemText primary='npm' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="yarn" />
+                      <ListItemText primary='yarn' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Adobe Creative Suite" />
+                      <ListItemText primary='Adobe Creative Suite' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="Google Developer Suite" />
+                      <ListItemText primary='Google Developer Suite' />
                     </ListItemButton>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{/* TODO- icon  */}</ListItemIcon>
 
-                      <ListItemText primary="arcGIS" />
+                      <ListItemText primary='arcGIS' />
                     </ListItemButton>
                   </ListItem>
                 </List>

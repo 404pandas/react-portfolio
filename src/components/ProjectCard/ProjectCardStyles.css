@@ -17,4 +17,15 @@
 .cardContainer {
   margin-left: 8px;
   margin-right: 8px;
+  max-height: 600px;
+}
+
+#technologies-li #text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardContent {
+  padding-bottom: 9px;
+  max-height: 575px !important;
 }
