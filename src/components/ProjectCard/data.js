@@ -12,11 +12,23 @@ export let projectData = [
   {
     id: 0,
     image: image1,
-    title: "Readme Generator",
+    title: "Blue Dog API",
     description:
-      "This is a command line application that generates a formatted README.md.",
-    technologies: ["• Node ", "• Inquirer "],
-    repo: "https://github.com/404pandas/sarcasticProfessionalReadme",
+      "This is an open source API with a styled front end and games..",
+    technologies: [
+      "• HTML ",
+      "• Javascript ",
+      "• CSS ",
+      "• MUI ",
+      "• MongoDB ",
+      "• Express ",
+      "• React ",
+      "• Node ",
+      "• Mongoose ",
+      "• JSON Web Token ",
+      "• Bcrypt ",
+    ],
+    repo: "https://github.com/404pandas/blue-dog-api",
     live: "https://404pandas.github.io",
   },
   {
