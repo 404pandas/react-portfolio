@@ -1,9 +1,11 @@
 .footer {
+  position: relative;
   width: 100vw;
   background-color: var(--tan);
   z-index: 50;
   display: flex;
-  bottom: -140vh;
+  position: fixed;
+  bottom: 0;
   box-shadow: 0px -5px 10px 1px rgba(16, 16, 16, 0.05);
 }
 
@@ -74,9 +76,6 @@
 
 /* Mobile devices */
 @media screen and (max-width: 480px) {
-  .footer {
-    bottom: 10vh;
-  }
   .footerContainer {
     flex-direction: column;
   }

@@ -227,3 +227,23 @@ ul {
 /* Mobile devices */
 @media screen and (max-width: 480px) {
 }
+
+.DialogBox {
+  background-color: #e2b27e;
+  border: solid;
+  padding: 15px;
+  position: relative;
+}
+
+.dialogTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.dialogFooter {
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  text-align: end;
+}
