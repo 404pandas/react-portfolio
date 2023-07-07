@@ -1,5 +1,5 @@
 .footer {
-  position: relative;
+  position: relative !important;
   width: 100vw;
   background-color: var(--tan);
   z-index: 50;

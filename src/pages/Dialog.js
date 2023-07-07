@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import D20 from "../components/D20/D20";
 import Nat1Message from "../components/Dialog/Nat1Message";
 import Nat20Message from "../components/Dialog/Nat20Message";
 import NormalMessage from "../components/Dialog/NormalMessage";
-import $ from "jquery";
+// import $ from "jquery";
 
 export default function Dialog() {
   const [isNat20, setNat20] = React.useState(false);
@@ -44,7 +43,7 @@ export default function Dialog() {
       <div className='dialogContainer'>
         <div className='dialogTitle'>Roll for Perception</div>
         <>
-          <D20 />
+          <p>rolling area</p>
         </>
         <div>{content}</div>
         <div className='dialogFooter'>Next</div>

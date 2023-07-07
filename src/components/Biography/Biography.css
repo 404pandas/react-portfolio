@@ -1,0 +1,91 @@
+/* Imports the League Spartan font from Google */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+#test {
+  position: relative;
+  height: 100px;
+  margin: 100 auto;
+  text-align: center;
+  width: 100%;
+  color: #d97777 !important;
+  font-size: 80p !important;
+}
+
+#test p {
+  width: 100%;
+  font-family: "Roboto";
+  font-size: 80px !important;
+  text-align: center;
+  margin-top: -40px;
+  -webkit-animation: fadeInLeft 5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeInLeft 5s; /* Firefox < 16 */
+  -ms-animation: fadeInLeft 5s; /* Internet Explorer */
+  -o-animation: fadeInLeft 5s; /* Opera < 12.1 */
+  animation: fadeInLeft 5s;
+  color: #d97777 !important;
+}
+
+#test canvas {
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 80px;
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-15px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
