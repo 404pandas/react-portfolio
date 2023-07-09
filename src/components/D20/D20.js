@@ -2,11 +2,14 @@ import React from "react";
 import "./style.css";
 import { Button, Typography } from "@mui/material";
 import { DiceRoller } from "@dice-roller/rpg-dice-roller";
+import { createStore } from "redux";
 
-export const D20 = () => {
+function D20() {
   var resultText = document.getElementById("roll-result");
-  function rollDice() {
+
+  function rollDiceAndStore() {
     const roller = new DiceRoller();
+
     const roll1 = roller.roll("1d20");
     if (roll1.total > 19) {
       resultText.innerHTML = "Congrats! You rolled a Nat20!";
@@ -20,7 +23,7 @@ export const D20 = () => {
   return (
     <div>
       <div id='roll-container'>
-        <Button variant='outlined' onClick={rollDice} id='roll-button'>
+        <Button variant='outlined' onClick={rollDiceAndStore} id='roll-button'>
           D20
         </Button>
         <Typography variant='body2'>You rolled a: </Typography>
@@ -28,4 +31,6 @@ export const D20 = () => {
       </div>
     </div>
   );
-};
+}
+
+export { D20 };

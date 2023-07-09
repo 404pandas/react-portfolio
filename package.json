@@ -21,6 +21,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.2",
     "react-swipeable-views": "^0.14.0",
+    "redux": "^4.2.1",
     "sass": "^1.63.6",
     "typewriter-effect": "^2.20.1"
   },

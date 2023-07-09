@@ -29,3 +29,16 @@
   top: -49%;
   margin-left: 70px;
 }
+
+.hexagon-button {
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+  background-image: radial-gradient(
+    200% 70% at center 20%,
+    rgba(217, 119, 119, 1) -30%,
+    rgba(219, 123, 121, 1) 49%,
+    rgba(192, 103, 103, 1) 50%,
+    rgba(192, 103, 103, 1) 150%
+  );
+  border: 0 !important;
+  color: black !important;
+}
