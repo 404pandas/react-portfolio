@@ -124,5 +124,3 @@ Project Link: [https://github.com/404pandas/react-portfolio](https://github.com/
 ## Acknowledgments
 
 A special shout out to my daughter, Yennefer! She proves every day that she's small but mighty!!
-
-The writing text effect was initially created by [Vivekk Upadhyay](https://github.com/vivekkupadhyay)

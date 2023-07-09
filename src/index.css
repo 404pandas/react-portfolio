@@ -84,7 +84,6 @@ ul {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
   width: 100vw;
 }
 
@@ -200,6 +199,32 @@ ul {
 #whole-page {
   display: flex;
   flex-wrap: wrap;
+}
+.text-adventure {
+  overflow: hidden;
+  margin: 0 auto;
+  /* white-space: nowrap; */
+  border-right: 0.15em solid #d97777;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: transparent;
+  }
 }
 /* ****************************** */
 /*         Media Queries          */

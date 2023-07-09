@@ -1,0 +1,31 @@
+#cs-header {
+  height: auto;
+  width: 100%;
+}
+#cs-appearance {
+  height: auto;
+  width: 100%;
+}
+#cs-backstory {
+  height: auto;
+  width: 100%;
+}
+#cs-traits {
+  height: auto;
+  width: 100%;
+}
+#cs-allies {
+  height: auto;
+  width: 100%;
+}
+#cs-treasure {
+  height: auto;
+  width: 100%;
+}
+
+#character-name {
+  position: relative;
+  font-size: 2vw;
+  top: -49%;
+  margin-left: 70px;
+}

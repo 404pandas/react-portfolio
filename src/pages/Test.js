@@ -7,7 +7,11 @@ const Test = () => {
   return (
     <>
       <Navbar />
-      <Biography />
+      <div className='content' id='test-content'>
+        <div id='text-adventure'>
+          <Biography />
+        </div>
+      </div>
       <Footer />
     </>
   );
