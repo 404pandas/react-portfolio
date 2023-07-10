@@ -92,7 +92,7 @@
 .trait-text {
   margin-left: 11% !important;
   font-size: 40% !important;
-  animation: appear 15s both, shimmer 2s infinite !important;
+  animation: appear 8s both, shimmer 2s infinite !important;
   background-repeat: no-repeat;
   background-position: -4rem top;
   background-size: 125px 100% !important;
