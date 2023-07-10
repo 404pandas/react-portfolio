@@ -41,9 +41,6 @@ export const CharacterSheet = () => {
     }
     localStorage.setItem("headerRoll", randomNumHeader);
   };
-  const headerIncrement2 = (headerCounter) => {
-    headerCounter.setState = 100;
-  };
 
   var headerNumber = localStorage.getItem("headerRoll");
 
