@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { RxDropdownMenu } from "react-icons/rx";
 import { IoMdArrowDropup } from "react-icons/io";
+import { FaDiceD20 } from "react-icons/fa";
+
 import PortfolioLogo from "../../assets/images/react-portfolio-logo.png";
 const Navbar = () => {
   const [click, unClick] = useState(false);
@@ -21,34 +23,37 @@ const Navbar = () => {
 
   return (
     <div className={color ? "nav nav-solid" : "nav"}>
-      <div className="nameZindex">
-        <a href="/">
+      <div className='nameZindex'>
+        <a href='/'>
           <h1>Mary Elenius</h1>
         </a>
+        <Link to='/d20' id='die'>
+          <FaDiceD20 />
+        </Link>
       </div>
       <ul className={click ? "nav-right" : "nav-right active"}>
         <li>
           <img
-            className="reactLogo"
+            className='reactLogo'
             src={PortfolioLogo}
-            alt="ME logo with portfolio color palette"
-            href="https://github.com/404pandas"
+            alt='ME logo with portfolio color palette'
+            href='https://github.com/404pandas'
           />
         </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to='/'>Home</Link>
         </li>
         <li>
-          <Link to="/Projects">Projects</Link>
+          <Link to='/Projects'>Projects</Link>
         </li>
         <li>
-          <Link to="/About">About</Link>
+          <Link to='/About'>About</Link>
         </li>
         <li>
-          <Link to="/Technologies">Technologies</Link>
+          <Link to='/Technologies'>Technologies</Link>
         </li>
       </ul>
-      <div className="hamburger" onClick={handleClick}>
+      <div className='hamburger' onClick={handleClick}>
         {click ? (
           <IoMdArrowDropup size={30} style={{ color: "#D97777" }} />
         ) : (

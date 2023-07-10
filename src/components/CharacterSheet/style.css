@@ -3,12 +3,13 @@
   width: 100%;
 }
 #cs-appearance {
-  height: auto;
+  min-height: 300px;
   width: 100%;
 }
 #cs-backstory {
   height: auto;
   width: 100%;
+  margin-top: 30px;
 }
 #cs-traits {
   height: auto;
@@ -23,13 +24,6 @@
   width: 100%;
 }
 
-#character-name {
-  position: relative;
-  font-size: 2vw;
-  top: -49%;
-  margin-left: 70px;
-}
-
 .hexagon-button {
   clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
   background-image: radial-gradient(
@@ -41,4 +35,174 @@
   );
   border: 0 !important;
   color: black !important;
+  bottom: 0px;
+  height: 2em;
+  justify-content: center;
+  margin: 5px !important;
+}
+
+#left-header {
+  display: flex !important;
+  position: relative;
+  align-self: center !important;
+  justify-items: center;
+}
+
+#right-header {
+  position: relative;
+  margin: 0 auto;
+  font-size: 2.5em;
+}
+
+.cs-text {
+  font-size: 90% !important;
+  line-height: 180% !important;
+}
+
+.flexbox-turn-on {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column !important;
+  padding: 0 !important;
+  flex-wrap: wrap;
+}
+
+#header-container {
+  position: absolute;
+  justify-content: center;
+  width: 80%;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  margin-top: -11%;
+  min-height: 60px;
+}
+
+.right-text {
+  display: flex;
+  margin-bottom: 5% !important;
+  margin-top: 2% !important;
+}
+
+#char-name {
+  font-size: 2em !important;
+}
+
+.trait-text {
+  margin-left: 11% !important;
+  font-size: 40% !important;
+  animation: appear 15s both, shimmer 2s infinite !important;
+  background-repeat: no-repeat;
+  background-position: -4rem top;
+  background-size: 125px 100% !important;
+  background-clip: text;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background: #d97777 -webkit-gradient(linear, 100% 50, 0 0, from(#d97777), color-stop(0.5, #f7be5c), to(#d97777));
+  -webkit-background-size: 4rem 100%; /*50px*/
+  color: black;
+  /* text-shadow: rgb(190, 148, 44) 1px 0 15px !important; */
+}
+
+/* @keyframes duration | easing-function | delay |
+iteration-count | direction | fill-mode | play-state | name */
+@keyframes appear {
+  0% {
+    text-shadow: 0 0 40px #cbc7c7;
+    opacity: 0;
+  }
+  to {
+    text-shadow: 0 0 20px #cbc7c7;
+    opacity: 100;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: top right;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+.trait-items {
+  padding: 10px;
+  position: relative;
+}
+
+#full-header-container {
+  padding: 0;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.appearance-text {
+  font-size: 1.5em !important;
+  text-indent: 1em;
+}
+
+#appearance-trait {
+  position: absolute;
+  top: 5%;
+  width: 270px;
+  font-size: 0.4rem;
+  height: 275px;
+  overflow-y: scroll;
+}
+
+#appearance-container {
+  height: 300px;
+  width: 285px;
+}
+
+.backstory-text {
+  font-size: 1.5em !important;
+  text-indent: 1em;
+}
+
+#backstory-trait {
+  position: absolute;
+  top: 545px;
+  width: 270px;
+  font-size: 0.4rem;
+  height: 355px;
+  overflow-y: scroll;
+}
+
+#backstory-container {
+  margin-top: 175px;
+  height: 500px;
+  width: 285px;
+}
+
+.individual-rolls {
+  position: relative;
+  display: flex;
+  top: 30px;
+  margin-bottom: 5%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* ****************************** */
+/*         Media Queries          */
+/* ****************************** */
+
+/* Laptop */
+@media screen and (max-width: 1007px) {
+}
+
+/* iPads and Tablets */
+@media screen and (max-width: 671px) {
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
 }

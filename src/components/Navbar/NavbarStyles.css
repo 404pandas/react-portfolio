@@ -52,6 +52,8 @@ font-size to something other than 16 pixels */
 }
 
 .nameZindex {
+  display: flex;
+  align-items: center;
   z-index: 5;
   white-space: nowrap;
 }
@@ -117,6 +119,10 @@ img.reactLogo {
   max-height: 1.5rem;
   align-items: center;
   z-index: 5;
+}
+
+#die {
+  margin-left: 20px;
 }
 
 /* ****************************** */

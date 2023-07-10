@@ -10,29 +10,27 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { CharacterSheet } from "../CharacterSheet/CharacterSheet";
 import { CharacterImage } from "../CharacterImage/CharacterImage";
-import { D20 } from "../D20/D20";
 import { TypingDialog } from "../TypingDialog";
 
 const dialogSteps = [
   {
     label: 0,
     description:
-      "Blinking, your eyes adjust on a shockingly empty page. Could this be a mistake? You squint... slowly, your eyes adjust and you see a faint glimmer of light.",
+      "Blinking, your eyes adjust to see a panda performing spells on her keyboard...",
   },
   {
     label: 1,
     description:
-      "A familiar item appears; it's a Fifth Edition character sheet from Dungeons & Dragons. ",
+      "A familiar item is below. It's a Fifth Edition character sheet from Dungeons & Dragons... ",
   },
   {
     label: 2,
     description:
-      "Suddenly, an image appears. It shows a panda. Not much is evident about the panda without further investigation.",
+      "Your intuition tells you that the panda's spells are linked to the character sheet...",
   },
   {
     label: 3,
-    description:
-      "As you roll to discover facts about the panda, the empty character sheet magically starts to fill in...",
+    description: "To display details, please roll the respective button.",
   },
 ];
 
@@ -123,7 +121,6 @@ export default function Biography() {
               </SwipeableViews>
             </Box>
           </div>
-          <D20 />
         </Grid>
         <Grid item xs={6}>
           <CharacterImage />

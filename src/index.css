@@ -57,6 +57,8 @@
 body {
   /* Sets background color of body to the tan variable */
   background: var(--tan);
+  margin-bottom: 100px;
+  clear: both;
 }
 
 h1,
@@ -200,9 +202,12 @@ ul {
   display: flex;
   flex-wrap: wrap;
 }
+
+#d20-content {
+  margin: 20 !important;
+}
 .text-adventure {
-  overflow: hidden;
-  margin: 0 auto;
+  margin-bottom: 300px;
   /* white-space: nowrap; */
   border-right: 0.15em solid #d97777;
   letter-spacing: 0.15em;
@@ -252,24 +257,23 @@ ul {
 
 /* Mobile devices */
 @media screen and (max-width: 480px) {
-}
+  .DialogBox {
+    background-color: #e2b27e;
+    border: solid;
+    padding: 15px;
+    position: relative;
+  }
 
-.DialogBox {
-  background-color: #e2b27e;
-  border: solid;
-  padding: 15px;
-  position: relative;
-}
+  .dialogTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
 
-.dialogTitle {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.dialogFooter {
-  cursor: pointer;
-  font-size: 0.9rem;
-  margin-top: 15px;
-  text-align: end;
+  .dialogFooter {
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-align: end;
+  }
 }
