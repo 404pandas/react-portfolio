@@ -1,5 +1,7 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+
+// external imports
+import Typography from "@mui/material/Typography";
 
 export const CSTreasure3 = ({ treasureCounter }) => {
   return (

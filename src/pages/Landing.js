@@ -1,10 +1,14 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import HeroImg from "../components/HeroImg/HeroImg";
-import Footer from "../components/Footer/Footer";
+
+// local imports
+import Navbar from "../components/Navbar";
+import HeroImg from "../components/HeroImg";
+import Footer from "../components/Footer";
+import panda from "../assets/images/bigsmilepanda.png";
+
+// external imports
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import panda from "../assets/images/bigsmilepanda.png";
 
 const Landing = () => {
   return (

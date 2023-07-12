@@ -8,29 +8,11 @@
 /* ****************************** */
 
 * {
-  /* Sets global box sizing to border box.
-  This sets how the total width and height of an
-  element is calculated. Border-box tells the browser
-  to account for any border and padding in the values
-  you specify for an element's width and height. If you
-  set an element's width to 100 pixels, that 100 pixels
-  will include any border or padding you added, and the
-  content box will shrink to absorb that extra width. */
   box-sizing: border-box;
-  /* Sets global margin to 0 on all sides.
-  The margin area, bounded by the margin edge, extends
-  the border area to include an empty area used to
-  separate the element from its neighbors. */
+
   margin: 0;
-  /* Sets global padding to 0 on all sides.
-  Values are listed in order from left to right as:
-    Top    |    Right   |    Bottom    |    Left
-  If left is omitted, it is the same as right.
-  If bottom is omitted it is the same as top.
-  If right is omitted it is the same as top.
-  Neither 4 values may be a negative value. */
+
   padding: 0;
-  /* Sets global font-family to League Spartan */
   font-family: "League Spartan", sans-serif;
 }
 
@@ -38,8 +20,6 @@
 /*        Color selectors         */
 /* ****************************** */
 
-/* Sets variables to call colors from color palette */
-/* For example, var(--red) would be used for #F23847 */
 :root {
   --red: #f23847;
   --pink: #d95f8c;
@@ -55,7 +35,6 @@
 /* ****************************** */
 
 body {
-  /* Sets background color of body to the tan variable */
   background: var(--tan);
   margin-bottom: 100px;
   clear: both;
@@ -65,14 +44,11 @@ h1,
 h4,
 p,
 a {
-  /* Sets font color of h1, h4, p, and a to the salmon variable */
   color: var(--salmon);
-  /* Removes the underline from h1, h4, p, and a */
   text-decoration: none;
 }
 
 ul {
-  /* Removes the disc icon from unorganized list in Navbar */
   list-style-type: none;
 }
 
@@ -114,10 +90,6 @@ ul {
   overflow-y: scroll;
 }
 
-/* h1.glow h4.glow p.glow a.glow {
-  text-shadow: 2px 2px 3px rgba(86, 92, 116, 0.9);
-} */
-
 /* ****************************** */
 /*          ID selectors          */
 /* ****************************** */
@@ -129,7 +101,12 @@ ul {
   margin: 5%;
 }
 
+#content-container {
+  height: auto;
+}
+
 #about-pic {
+  margin-top: 50px !important;
   height: 400px;
   border-radius: 20px;
   margin: 2%;
@@ -138,6 +115,7 @@ ul {
 #about-body1 {
   align-self: flex-start;
   margin: 2%;
+  margin-top: 50px;
   text-indent: 2rem;
 }
 
@@ -164,6 +142,7 @@ ul {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-top: 20px;
 }
 #landing-h4 {
   text-align: center;
@@ -231,6 +210,7 @@ ul {
     border-color: transparent;
   }
 }
+
 /* ****************************** */
 /*         Media Queries          */
 /* ****************************** */
@@ -249,9 +229,6 @@ ul {
   }
   #content-body {
     flex-direction: column;
-  }
-  #content-container {
-    height: auto;
   }
 }
 

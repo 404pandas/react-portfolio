@@ -1,5 +1,7 @@
-import Typography from "@mui/material/Typography";
 import React from "react";
+
+// external imports
+import Typography from "@mui/material/Typography";
 
 export const CSBackstory2 = ({ backstoryCounter }) => {
   return (

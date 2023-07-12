@@ -1,6 +1,7 @@
 import React from "react";
+
+// external imports
 import { useTheme } from "@mui/material/styles";
-import "./Biography.css";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -8,8 +9,11 @@ import MobileStepper from "@mui/material/MobileStepper";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
-import { CharacterSheet } from "../CharacterSheet/CharacterSheet";
-import { CharacterImage } from "../CharacterImage/CharacterImage";
+
+// local imports
+import "./Biography.css";
+import { CharacterSheet } from "../CharacterSheet";
+import { CharacterImage } from "../CharacterImage";
 import { TypingDialog } from "../TypingDialog";
 
 const dialogSteps = [

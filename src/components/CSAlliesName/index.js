@@ -1,5 +1,6 @@
 import React from "react";
 
+// external imports
 import Typography from "@mui/material/Typography";
 
 export const CSAlliesName = ({ alliesCounter }) => {

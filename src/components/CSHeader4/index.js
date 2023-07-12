@@ -1,5 +1,8 @@
 import React from "react";
+
+// External imports
 import Typography from "@mui/material/Typography";
+
 const CSHeader4 = ({ headerCounter }) => {
   const charName = "Mary";
   return (

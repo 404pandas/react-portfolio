@@ -1,10 +1,14 @@
 import * as React from "react";
-import "./index.css";
+
+// local imports
+import "./style.css";
 import Landing from "./pages/Landing.js";
 import About from "./pages/About.js";
 import Technologies from "./pages/Technologies";
 import Projects from "./pages/Projects.js";
 import D20 from "./pages/D20";
+
+// external imports
 import { Route, Routes } from "react-router-dom";
 
 function App() {

@@ -1,11 +1,15 @@
-import "./NavbarStyles.css";
 import React, { useState } from "react";
+
+// local imports
+import "./style.css";
+import PortfolioLogo from "../../assets/images/react-portfolio-logo.png";
+
+// external imports
 import { Link } from "react-router-dom";
 import { RxDropdownMenu } from "react-icons/rx";
 import { IoMdArrowDropup } from "react-icons/io";
 import { FaDiceD20 } from "react-icons/fa";
 
-import PortfolioLogo from "../../assets/images/react-portfolio-logo.png";
 const Navbar = () => {
   const [click, unClick] = useState(false);
   const handleClick = () => unClick(!click);

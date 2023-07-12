@@ -12,7 +12,7 @@
 <h3 align="center">React Portfolio</h3>
 
   <p align="center">
-    This is a portfolio built with create-react-app to display my projects and learn react.
+    This is a portfolio built with React
     <br />
     <a href="https://github.com/404pandas/react-portfolio"><strong>Explore the docs »</strong></a>
     <br />

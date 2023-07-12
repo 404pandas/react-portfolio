@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
-import Typography from "@mui/material/Typography";
 
-// MUI Imports
+// local imports
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+// external imports
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -12,6 +13,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

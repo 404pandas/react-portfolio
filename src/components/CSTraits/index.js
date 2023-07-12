@@ -1,5 +1,9 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+
+// external imports
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+
 export const CSTraits = ({ traitsCounter }) => {
   return (
     traitsCounter > 25 && (

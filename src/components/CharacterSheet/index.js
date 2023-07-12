@@ -38,6 +38,7 @@ import { CSTreasure1 } from "../CSTreasure1";
 import { CSTreasure2 } from "../CSTreasure2";
 
 export const CharacterSheet = () => {
+  // State
   const [headerCounter, setHeaderCounter] = useState(0);
   const [appearanceCounter, setAppearanceCounter] = useState(0);
   const [backstoryCounter, setBackstoryCounter] = useState(0);
@@ -45,6 +46,7 @@ export const CharacterSheet = () => {
   const [traitsCounter, setTraitsCounter] = useState(0);
   const [treasureCounter, setTreasureCounter] = useState(0);
 
+  // Header
   const headerIncrement = () => {
     var randomNumHeader = getRandomInt(20);
     if (randomNumHeader > 19) {
@@ -59,6 +61,7 @@ export const CharacterSheet = () => {
 
   var headerNumber = localStorage.getItem("headerRoll");
 
+  // Appearance
   const appearanceIncrement = () => {
     var randomNumAppearance = getRandomInt(20);
     if (randomNumAppearance > 19) {
@@ -73,6 +76,7 @@ export const CharacterSheet = () => {
 
   var appearanceNumber = localStorage.getItem("appearanceRoll");
 
+  // Backstory
   const backstoryIncrement = () => {
     var randomNumBackstory = getRandomInt(20);
     if (randomNumBackstory > 19) {
@@ -87,6 +91,7 @@ export const CharacterSheet = () => {
 
   var backstoryNumber = localStorage.getItem("backstoryRoll");
 
+  // Allies
   const alliesIncrement = () => {
     var randomNumAllies = getRandomInt(20);
     if (randomNumAllies > 19) {
@@ -101,6 +106,7 @@ export const CharacterSheet = () => {
 
   var alliesNumber = localStorage.getItem("alliesRoll");
 
+  // Traits
   const traitsIncrement = () => {
     var randomNumTraits = getRandomInt(20);
     if (randomNumTraits > 19) {
@@ -115,6 +121,7 @@ export const CharacterSheet = () => {
 
   var traitsNumber = localStorage.getItem("traitsRoll");
 
+  // Treasure
   const treasureIncrement = () => {
     var randomNumTreasure = getRandomInt(20);
     if (randomNumTreasure > 19) {
@@ -128,6 +135,7 @@ export const CharacterSheet = () => {
   };
   var treasureNumber = localStorage.getItem("treasureRoll");
 
+  // Random number
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -143,7 +151,7 @@ export const CharacterSheet = () => {
             alt='test'
             id='cs-header'
           />
-          {/* Left grid */}
+          {/* LEFT HEADER */}
           <Grid container id='header-container'>
             <Grid item xs={5} className='flexbox-turn-on'>
               <Grid container class='text-container'>
@@ -151,7 +159,7 @@ export const CharacterSheet = () => {
               </Grid>
             </Grid>
             <Grid item xs={7} className='flexbox-turn-on'>
-              {/* Right grid */}
+              {/* RIGHT HEADER */}
               <Grid container spacing={4} id='right-header'>
                 <Grid item xs={4} className='trait-items flexbox-turn-on '>
                   <CSHeader3 headerCounter={headerCounter} />
@@ -165,7 +173,7 @@ export const CharacterSheet = () => {
               </Grid>
             </Grid>
           </Grid>
-
+          {/* HEADER ROLLS */}
           <div className='individual-rolls' id='header-rolls'>
             <Button
               variant='outlined'
@@ -196,7 +204,6 @@ export const CharacterSheet = () => {
             <RollResponse />
           </div>
         </Grid>
-        {/* END OF HEADER */}
         <Grid item xs={12} md={4} id='flex-fix' className='trait-items'>
           {/* APPEARANCE */}
           <div className='trait-containers' id='appearance-container'>
@@ -213,6 +220,7 @@ export const CharacterSheet = () => {
 
               <CSAppearance3 appearanceCounter={appearanceCounter} />
             </div>
+            {/* APPERANCE ROLLS */}
             <div className='individual-rolls'>
               <Button
                 variant='outlined'
@@ -241,7 +249,6 @@ export const CharacterSheet = () => {
               <Typography variant='body2'>Roll: {appearanceNumber}</Typography>
             </div>
           </div>{" "}
-          {/* END OF APPEARANCE */}
           {/* BACKSTORY */}
           <div className='trait-containers' id='backstory-container'>
             <img
@@ -257,6 +264,7 @@ export const CharacterSheet = () => {
               <CSBackstory4 backstoryCounter={backstoryCounter} />
               <CSBackstory5 backstoryCounter={backstoryCounter} />
             </div>
+            {/* BACKSTORY ROLLS */}
             <div className='individual-rolls'>
               <Button
                 variant='outlined'
@@ -285,7 +293,6 @@ export const CharacterSheet = () => {
             </div>
           </div>
         </Grid>
-        {/* END OF BACKSTORY */}
 
         <Grid item xs={12} md={7} id='right-container'>
           {/* ALLIES */}
@@ -304,6 +311,7 @@ export const CharacterSheet = () => {
               <CSAlliesName alliesCounter={alliesCounter} />
               <CSAlliesLogo alliesCounter={alliesCounter} />
             </Grid>
+            {/* ALLIES ROLLS */}
             <div className='individual-rolls' id='allies-rolls'>
               <Button
                 variant='outlined'
@@ -331,7 +339,6 @@ export const CharacterSheet = () => {
               <Typography variant='body2'>Roll: {alliesNumber}</Typography>
             </div>
           </Grid>
-          {/* END OF ALLIES */}
           {/* TRAITS */}
           <div id='trait-fix'>
             <img
@@ -341,6 +348,7 @@ export const CharacterSheet = () => {
               id='cs-traits'
             />
             <CSTraits traitsCounter={traitsCounter} />
+            {/* TRAITS ROLLS */}
             <div className='individual-rolls' id='traits-rolls'>
               <Button
                 variant='outlined'
@@ -368,7 +376,6 @@ export const CharacterSheet = () => {
               <Typography variant='body2'>Roll: {traitsNumber}</Typography>
             </div>
           </div>
-          {/* END OF TRAITS */}
           {/* TREASURE */}
           <div className='trait-containers' id='treasure-container'>
             <img
@@ -389,7 +396,7 @@ export const CharacterSheet = () => {
                 <CSTreasure3 treasureCounter={treasureCounter} />
               </Grid>
             </Grid>
-
+            {/* TREASURE ROLLS */}
             <div className='individual-rolls' id='treasure-rolls'>
               <Button
                 variant='outlined'
@@ -417,7 +424,6 @@ export const CharacterSheet = () => {
               <Typography variant='body2'>Roll: {treasureNumber}</Typography>
             </div>
           </div>
-          {/* END OF TREASURE */}
         </Grid>
       </Grid>
     </div>

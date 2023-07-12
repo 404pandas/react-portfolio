@@ -1,22 +1,25 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
+
+// local imports
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import image from "../assets/images/about-picture.jpg";
 
+// external imports
 import Typography from "@mui/material/Typography";
 
 const About = () => {
   return (
     <div>
       <Navbar />
-      <div className="content" id="content-container">
-        <div className="content-body" id="content-body">
+      <div className='content' id='content-container'>
+        <div className='content-body' id='content-body'>
           <img
-            alt="Witcher themed maternity shot of Mary"
+            alt='Witcher themed maternity shot of Mary'
             src={image}
-            id="about-pic"
+            id='about-pic'
           />
-          <Typography variant="body1" gutterBottom id="about-body1">
+          <Typography variant='body1' gutterBottom id='about-body1'>
             Full Stack Web Developer with a background in Computer Science,
             Veterinary Technology, and Zoology. Possesses a life-long dedication
             to learning and helping animals. Knowledgeable in user interface,

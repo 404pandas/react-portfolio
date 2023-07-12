@@ -1,4 +1,6 @@
 import React from "react";
+
+// local imports
 import edx from "../../assets/images/edx.png";
 import twoU from "../../assets/images/2U.png";
 

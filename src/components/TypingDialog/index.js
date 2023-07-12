@@ -1,5 +1,9 @@
 import React from "react";
+
+// local imports
 import "./style.css";
+
+// external imports
 import Typewriter from "typewriter-effect";
 
 export const TypingDialog = ({ activeStep, index, description }) => {

@@ -1,7 +1,9 @@
 import React from "react";
-import Biography from "../components/Biography/Biography";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
+
+// local imports
+import Biography from "../components/Biography";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const D20 = () => {
   return (
