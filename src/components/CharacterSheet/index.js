@@ -48,7 +48,7 @@ export const CharacterSheet = () => {
 
   // Header
   const headerIncrement = () => {
-    var randomNumHeader = getRandomInt(20);
+    var randomNumHeader = getRandomInt(1, 20);
     if (randomNumHeader > 19) {
       setHeaderCounter((prevCounter) => prevCounter + 100);
     } else if (randomNumHeader < 2) {
@@ -63,7 +63,7 @@ export const CharacterSheet = () => {
 
   // Appearance
   const appearanceIncrement = () => {
-    var randomNumAppearance = getRandomInt(20);
+    var randomNumAppearance = getRandomInt(1, 20);
     if (randomNumAppearance > 19) {
       setAppearanceCounter((prevCounter) => prevCounter + 100);
     } else if (randomNumAppearance < 2) {
@@ -78,7 +78,7 @@ export const CharacterSheet = () => {
 
   // Backstory
   const backstoryIncrement = () => {
-    var randomNumBackstory = getRandomInt(20);
+    var randomNumBackstory = getRandomInt(1, 20);
     if (randomNumBackstory > 19) {
       setBackstoryCounter((prevCounter) => prevCounter + 100);
     } else if (randomNumBackstory < 2) {
@@ -93,7 +93,7 @@ export const CharacterSheet = () => {
 
   // Allies
   const alliesIncrement = () => {
-    var randomNumAllies = getRandomInt(20);
+    var randomNumAllies = getRandomInt(1, 20);
     if (randomNumAllies > 19) {
       setAlliesCounter((prevCounter) => prevCounter + 100);
     } else if (randomNumAllies < 2) {
@@ -108,7 +108,7 @@ export const CharacterSheet = () => {
 
   // Traits
   const traitsIncrement = () => {
-    var randomNumTraits = getRandomInt(20);
+    var randomNumTraits = getRandomInt(1, 20);
     if (randomNumTraits > 19) {
       setTraitsCounter((prevCounter) => prevCounter + 100);
     } else if (randomNumTraits < 2) {
@@ -123,7 +123,7 @@ export const CharacterSheet = () => {
 
   // Treasure
   const treasureIncrement = () => {
-    var randomNumTreasure = getRandomInt(20);
+    var randomNumTreasure = getRandomInt(1, 20);
     if (randomNumTreasure > 19) {
       setTreasureCounter((prevCounter) => prevCounter + 100);
     } else if (randomNumTreasure < 2) {
@@ -136,8 +136,13 @@ export const CharacterSheet = () => {
   var treasureNumber = localStorage.getItem("treasureRoll");
 
   // Random number
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  function randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   return (
