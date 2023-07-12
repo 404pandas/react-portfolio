@@ -1,6 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
-
+import Typography from "@mui/material/Typography";
 export const CSAppearance2 = ({ appearanceCounter }) => {
   return (
     appearanceCounter > 50 && (

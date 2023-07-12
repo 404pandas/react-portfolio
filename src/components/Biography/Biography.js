@@ -54,7 +54,7 @@ export default function Biography() {
   return (
     <>
       <Grid container spacing={2} alignItems={"flex-start"}>
-        <Grid item xs={6} id='text-adventure'>
+        <Grid item xs={12} md={6} id='text-adventure'>
           <div id='adventure-buttons'>
             <Box sx={{ width: "100%" }}>
               <MobileStepper
@@ -122,10 +122,10 @@ export default function Biography() {
             </Box>
           </div>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <CharacterImage />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} id='character-sheet-container'>
           <CharacterSheet />
         </Grid>
       </Grid>

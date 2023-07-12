@@ -1,5 +1,4 @@
-import { Typography } from "@mui/material";
-
+import Typography from "@mui/material/Typography";
 import React from "react";
 
 export const CSAppearance3 = ({ appearanceCounter }) => {

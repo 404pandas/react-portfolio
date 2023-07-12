@@ -1,6 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
-
+import Typography from "@mui/material/Typography";
 const CSHeader3 = ({ headerCounter }) => {
   return (
     headerCounter > 50 && (

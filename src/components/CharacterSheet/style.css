@@ -13,15 +13,16 @@
 }
 #cs-traits {
   height: auto;
-  width: 100%;
+  width: 515px;
 }
 #cs-allies {
+  position: absolute;
   height: auto;
-  width: 100%;
+  width: 515px;
 }
 #cs-treasure {
   height: auto;
-  width: 100%;
+  width: 515px;
 }
 
 .hexagon-button {
@@ -148,6 +149,11 @@ iteration-count | direction | fill-mode | play-state | name */
   text-indent: 1em;
 }
 
+.header-buttons {
+  position: absolute;
+  text-wrap: nowrap;
+}
+
 #appearance-trait {
   position: absolute;
   top: 5%;
@@ -172,14 +178,102 @@ iteration-count | direction | fill-mode | play-state | name */
   top: 545px;
   width: 270px;
   font-size: 0.4rem;
-  height: 355px;
+  height: 90%;
   overflow-y: scroll;
+}
+#treasure-uls {
+  position: absolute;
+  top: 60px;
 }
 
 #backstory-container {
   margin-top: 175px;
   height: 500px;
   width: 285px;
+}
+#inner-left {
+  font-size: 1.5em !important;
+  text-indent: 1em;
+}
+
+#inner-right {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#allies-trait {
+  position: relative;
+  left: 0;
+  top: 0;
+  font-size: 0.4rem;
+  height: 275px;
+  overflow-y: scroll;
+}
+
+#allies-container {
+  font-size: 0.4em !important;
+  position: relative;
+  width: 515px;
+  height: 350px;
+
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#allies-logos {
+  width: 125px;
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.allies-logo {
+  width: 70px;
+  height: auto;
+}
+
+#right-rolls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 515px;
+  position: relative;
+  bottom: -400px;
+  margin-bottom: 50px;
+  height: 50px;
+  top: 50px;
+}
+
+#allies-rolls {
+  flex-wrap: wrap;
+  align-content: space-around;
+  top: 350px;
+  position: absolute;
+  width: 515px;
+}
+
+#allies-name {
+  font-size: 1.5em !important;
+  position: absolute;
+  top: 50px;
+  margin-left: 0 !important;
+}
+
+#allies-text {
+  font-size: 2em !important;
+  height: 100%;
+  position: relative;
+  left: -25px;
+}
+
+#edx {
+  position: relative;
+  top: -50px;
 }
 
 .individual-rolls {
@@ -191,18 +285,208 @@ iteration-count | direction | fill-mode | play-state | name */
   justify-content: space-around;
 }
 
+#traits-rolls {
+  flex-wrap: wrap;
+  align-content: space-around;
+  top: 330px;
+  position: absolute;
+  width: 515px;
+}
+
+#treasure-rolls {
+  width: 515px;
+}
+
+#right-container {
+  margin-left: auto;
+}
+
+#trait-containers {
+  position: relative;
+  margin-top: 50px;
+}
+
+#cs-traits-list {
+  position: absolute;
+  top: 65px;
+  width: 515px;
+}
+
+#treasure-container {
+  position: relative;
+  top: 75px;
+}
+
+#treasure-uls {
+  justify-content: space-around;
+  width: 515px;
+}
+
+#traits-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#traits-left,
+#traits-right {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+#traits-left li,
+#traits-right li {
+  margin-top: 6%;
+}
+
+#trait-fix {
+  position: relative;
+  margin-top: 50px !important;
+}
+
 /* ****************************** */
 /*         Media Queries          */
 /* ****************************** */
 
 /* Laptop */
-@media screen and (max-width: 1007px) {
+@media screen and (max-width: 900px) {
+  #text-adventure {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+
+  #right-container {
+    position: relative;
+    margin-top: 250px;
+  }
+  #header-rolls {
+    margin-bottom: 45px;
+  }
+  .individual-rolls {
+    margin-bottom: 20%;
+  }
+  #flex-fix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* iPads and Tablets */
 @media screen and (max-width: 671px) {
-}
+  #left-container {
+    width: 400px;
+    flex-direction: column;
+  }
+  #right-container {
+    margin-left: 0px;
+    margin-top: 40px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #full-header-container {
+    display: flex;
+    flex-direction: column;
+  }
 
-/* Mobile devices */
-@media screen and (max-width: 480px) {
+  #header-container {
+    font-size: 0.5em;
+    position: relative;
+    top: -15px;
+  }
+
+  #allies-container {
+    margin-top: 40px;
+    width: auto;
+  }
+
+  .img-containers {
+    height: auto;
+    width: 100% !important;
+  }
+
+  #cs-backstory {
+    height: 500px;
+  }
+
+  .individual-rolls {
+    width: 300px !important;
+  }
+
+  .trait-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #flex-fix {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #header-rolls {
+    flex-wrap: wrap;
+  }
+
+  #allies-logos {
+    width: 85%;
+  }
+
+  #allies-name {
+    top: 50px;
+  }
+
+  .allies-logo {
+    width: 50% !important;
+  }
+
+  #traits-rolls {
+    position: absolute;
+    top: 240px;
+  }
+
+  #cs-traits-list {
+    width: 100%;
+    font-size: 0.5em !important;
+    top: 15px;
+  }
+
+  #treasure-container {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #trait-fix {
+    margin-top: 50px;
+    display: flex !important;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+  }
+  #treasure-uls {
+    position: absolute;
+    top: 25px;
+    width: 95% !important;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .footer {
+    margin-bottom: 200px;
+  }
+
+  #text-adventure {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #backstory-trait {
+    height: 450px;
+  }
 }

@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import HeroImg from "../components/HeroImg/HeroImg";
 import Footer from "../components/Footer/Footer";
 import Box from "@mui/material/Box";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import panda from "../assets/images/bigsmilepanda.png";
 
 const Landing = () => {

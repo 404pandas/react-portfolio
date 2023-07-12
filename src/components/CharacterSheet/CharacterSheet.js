@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+
+// external imports
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+
+// local imports
 import header from "../../assets/images/cs-header.png";
 import appearance from "../../assets/images/cs-appearance.png";
 import allies from "../../assets/images/cs-allies.png";
 import backstory from "../../assets/images/cs-backstory.png";
 import traits from "../../assets/images/cs-features-traits.png";
 import treasure from "../../assets/images/cs-treasure.png";
-import Grid from "@mui/material/Grid";
-import { Typography, Button } from "@mui/material";
+
 import "./style.css";
+
+// components
 import CSHeader1 from "../CSHeader1";
 import CSHeader2 from "../CSHeader2";
 import CSHeader3 from "../CSHeader3";
@@ -21,6 +29,13 @@ import { CSBackstory2 } from "../CSBackstory2";
 import { CSBackstory3 } from "../CSBackstory3";
 import { CSBackstory4 } from "../CSBackstory4";
 import { CSBackstory5 } from "../CSBackstory5";
+import { CSAlliesLogo } from "../CSAlliesLogo";
+import { CSAlliesName } from "../CSAlliesName";
+import { CSAlliesText } from "../CSAlliesText";
+import { CSTraits } from "../CSTraits";
+import { CSTreasure3 } from "../CSTreasure3";
+import { CSTreasure1 } from "../CSTreasure1";
+import { CSTreasure2 } from "../CSTreasure2";
 
 export const CharacterSheet = () => {
   const [headerCounter, setHeaderCounter] = useState(0);
@@ -73,35 +88,45 @@ export const CharacterSheet = () => {
   var backstoryNumber = localStorage.getItem("backstoryRoll");
 
   const alliesIncrement = () => {
-    var randomNum = getRandomInt(20);
-    if (randomNum > 19) {
+    var randomNumAllies = getRandomInt(20);
+    if (randomNumAllies > 19) {
       setAlliesCounter((prevCounter) => prevCounter + 100);
-    } else if (randomNum < 2) {
+    } else if (randomNumAllies < 2) {
       setAlliesCounter((prevCounter) => prevCounter - prevCounter);
     } else {
-      setAlliesCounter((prevCounter) => prevCounter + randomNum);
+      setAlliesCounter((prevCounter) => prevCounter + randomNumAllies);
     }
+    localStorage.setItem("alliesRoll", randomNumAllies);
   };
+
+  var alliesNumber = localStorage.getItem("alliesRoll");
+
   const traitsIncrement = () => {
-    var randomNum = getRandomInt(20);
-    if (randomNum > 19) {
+    var randomNumTraits = getRandomInt(20);
+    if (randomNumTraits > 19) {
       setTraitsCounter((prevCounter) => prevCounter + 100);
-    } else if (randomNum < 2) {
+    } else if (randomNumTraits < 2) {
       setTraitsCounter((prevCounter) => prevCounter - prevCounter);
     } else {
-      setTraitsCounter((prevCounter) => prevCounter + randomNum);
+      setTraitsCounter((prevCounter) => prevCounter + randomNumTraits);
     }
+    localStorage.setItem("traitsRoll", randomNumTraits);
   };
+
+  var traitsNumber = localStorage.getItem("traitsRoll");
+
   const treasureIncrement = () => {
-    var randomNum = getRandomInt(20);
-    if (randomNum > 19) {
+    var randomNumTreasure = getRandomInt(20);
+    if (randomNumTreasure > 19) {
       setTreasureCounter((prevCounter) => prevCounter + 100);
-    } else if (randomNum < 2) {
+    } else if (randomNumTreasure < 2) {
       setTreasureCounter((prevCounter) => prevCounter - prevCounter);
     } else {
-      setTreasureCounter((prevCounter) => prevCounter + randomNum);
+      setTreasureCounter((prevCounter) => prevCounter + randomNumTreasure);
     }
+    localStorage.setItem("treasureRoll", randomNumTreasure);
   };
+  var treasureNumber = localStorage.getItem("treasureRoll");
 
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -112,7 +137,12 @@ export const CharacterSheet = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} id='full-header-container'>
           {/* HEADER */}
-          <img src={header} alt='test' id='cs-header' />
+          <img
+            className='img-containers'
+            src={header}
+            alt='test'
+            id='cs-header'
+          />
           {/* Left grid */}
           <Grid container id='header-container'>
             <Grid item xs={5} className='flexbox-turn-on'>
@@ -136,18 +166,18 @@ export const CharacterSheet = () => {
             </Grid>
           </Grid>
 
-          <div className='individual-rolls'>
+          <div className='individual-rolls' id='header-rolls'>
             <Button
               variant='outlined'
               onClick={headerIncrement}
-              className='hexagon-button'
+              className='hexagon-button header-buttons'
             >
               Roll!
             </Button>
             <Button
               variant='outlined'
               onClick={() => setHeaderCounter(200)}
-              className='hexagon-button'
+              className='hexagon-button header-buttons'
               headerCounter={headerCounter}
             >
               Crit Success
@@ -155,7 +185,7 @@ export const CharacterSheet = () => {
             <Button
               variant='outlined'
               onClick={() => setHeaderCounter(0)}
-              className='hexagon-button'
+              className='hexagon-button header-buttons'
               headerCounter={headerCounter}
             >
               Crit Failure
@@ -167,10 +197,15 @@ export const CharacterSheet = () => {
           </div>
         </Grid>
         {/* END OF HEADER */}
-        <Grid item xs={4} className='trait-items'>
+        <Grid item xs={12} md={4} id='flex-fix' className='trait-items'>
           {/* APPEARANCE */}
           <div className='trait-containers' id='appearance-container'>
-            <img src={appearance} alt='' id='cs-appearance' />
+            <img
+              className='img-containers'
+              src={appearance}
+              alt=''
+              id='cs-appearance'
+            />
             <div id='appearance-trait'>
               <CSAppearance1 appearanceCounter={appearanceCounter} />
 
@@ -184,7 +219,7 @@ export const CharacterSheet = () => {
                 onClick={appearanceIncrement}
                 className='hexagon-button'
               >
-                ROLL!
+                ROLL
               </Button>
               <Button
                 variant='outlined'
@@ -209,7 +244,12 @@ export const CharacterSheet = () => {
           {/* END OF APPEARANCE */}
           {/* BACKSTORY */}
           <div className='trait-containers' id='backstory-container'>
-            <img src={backstory} alt='' id='cs-backstory' />
+            <img
+              className='img-containers'
+              src={backstory}
+              alt=''
+              id='cs-backstory'
+            />
             <div id='backstory-trait'>
               <CSBackstory1 backstoryCounter={backstoryCounter} />
               <CSBackstory2 backstoryCounter={backstoryCounter} />
@@ -223,7 +263,7 @@ export const CharacterSheet = () => {
                 onClick={backstoryIncrement}
                 className='hexagon-button'
               >
-                {backstoryCounter}{" "}
+                Roll
               </Button>
               <Button
                 variant='outlined'
@@ -247,43 +287,135 @@ export const CharacterSheet = () => {
         </Grid>
         {/* END OF BACKSTORY */}
 
-        <Grid item xs={7}>
+        <Grid item xs={12} md={7} id='right-container'>
           {/* ALLIES */}
-          <div className='trait-containers'>
-            <img src={allies} alt='allies dnd character box' id='cs-allies' />
-            <Button
-              variant='outlined'
-              onClick={alliesIncrement}
-              className='hexagon-button'
-            >
-              {alliesCounter}
-            </Button>
-          </div>
+          <Grid container spacing={1} id='allies-container'>
+            <img
+              className='img-containers'
+              src={allies}
+              alt='allies dnd character box'
+              id='cs-allies'
+            />{" "}
+            <Grid item xs={6} id='innert-left'>
+              <CSAlliesText alliesCounter={alliesCounter} />
+            </Grid>
+            <Grid item xs={5} id='inner-right'>
+              {" "}
+              <CSAlliesName alliesCounter={alliesCounter} />
+              <CSAlliesLogo alliesCounter={alliesCounter} />
+            </Grid>
+            <div className='individual-rolls' id='allies-rolls'>
+              <Button
+                variant='outlined'
+                onClick={alliesIncrement}
+                className='hexagon-button'
+              >
+                Roll
+              </Button>
+              <Button
+                variant='outlined'
+                onClick={() => setAlliesCounter(200)}
+                className='hexagon-button'
+                alliesCounter={alliesCounter}
+              >
+                Succ
+              </Button>
+              <Button
+                variant='outlined'
+                onClick={() => setAlliesCounter(0)}
+                className='hexagon-button'
+                alliesCounter={alliesCounter}
+              >
+                Fail
+              </Button>
+              <Typography variant='body2'>Roll: {alliesNumber}</Typography>
+            </div>
+          </Grid>
           {/* END OF ALLIES */}
-
           {/* TRAITS */}
-          <div className='trait-containers'>
-            <img src={traits} alt='test' id='cs-traits' />
-            <Button
-              variant='outlined'
-              onClick={traitsIncrement}
-              className='hexagon-button'
-            >
-              {traitsCounter}
-            </Button>
+          <div id='trait-fix'>
+            <img
+              className='img-containers'
+              src={traits}
+              alt='test'
+              id='cs-traits'
+            />
+            <CSTraits traitsCounter={traitsCounter} />
+            <div className='individual-rolls' id='traits-rolls'>
+              <Button
+                variant='outlined'
+                onClick={traitsIncrement}
+                className='hexagon-button'
+              >
+                Roll
+              </Button>
+              <Button
+                variant='outlined'
+                onClick={() => setTraitsCounter(200)}
+                className='hexagon-button'
+                traitsCounter={traitsCounter}
+              >
+                Succ
+              </Button>
+              <Button
+                variant='outlined'
+                onClick={() => setTraitsCounter(0)}
+                className='hexagon-button'
+                traitsCounter={traitsCounter}
+              >
+                Fail
+              </Button>
+              <Typography variant='body2'>Roll: {traitsNumber}</Typography>
+            </div>
           </div>
           {/* END OF TRAITS */}
-
           {/* TREASURE */}
-          <div className='trait-containers'>
-            <img src={treasure} alt='test' id='cs-treasure' />
-            <Button
-              variant='outlined'
-              onClick={treasureIncrement}
-              className='hexagon-button'
-            >
-              {treasureCounter}
-            </Button>
+          <div className='trait-containers' id='treasure-container'>
+            <img
+              className='img-containers'
+              src={treasure}
+              alt='test'
+              id='cs-treasure'
+            />
+
+            <Grid container id='treasure-uls'>
+              <Grid item sx={3}>
+                <CSTreasure1 treasureCounter={treasureCounter} />
+              </Grid>
+              <Grid item sx={3}>
+                <CSTreasure2 treasureCounter={treasureCounter} />
+              </Grid>
+              <Grid item sx={3}>
+                <CSTreasure3 treasureCounter={treasureCounter} />
+              </Grid>
+            </Grid>
+
+            <div className='individual-rolls' id='treasure-rolls'>
+              <Button
+                variant='outlined'
+                onClick={treasureIncrement}
+                className='hexagon-button'
+              >
+                Roll
+              </Button>
+              <Button
+                variant='outlined'
+                onClick={() => setTreasureCounter(200)}
+                className='hexagon-button'
+                treasureCounter={treasureCounter}
+              >
+                Succ
+              </Button>
+              <Button
+                variant='outlined'
+                onClick={() => setTreasureCounter(0)}
+                className='hexagon-button'
+                treasureCounter={treasureCounter}
+              >
+                Fail
+              </Button>
+              <Typography variant='body2'>Roll: {treasureNumber}</Typography>
+            </div>
           </div>
           {/* END OF TREASURE */}
         </Grid>

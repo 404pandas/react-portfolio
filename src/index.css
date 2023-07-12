@@ -276,4 +276,9 @@ ul {
     margin-top: 15px;
     text-align: end;
   }
+
+  #text-adventure {
+    margin-top: 50px !important;
+    margin-bottom: 5px !important;
+  }
 }
