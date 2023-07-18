@@ -45,7 +45,6 @@ export const CharacterSheet = (props) => {
   const [alliesCounter, setAlliesCounter] = useState(0);
   const [traitsCounter, setTraitsCounter] = useState(0);
   const [treasureCounter, setTreasureCounter] = useState(0);
-  const [value, setValue] = React.useState(0);
 
   // Header
   const headerIncrement = () => {
