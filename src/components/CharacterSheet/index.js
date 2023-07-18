@@ -37,7 +37,7 @@ import { CSTreasure3 } from "../CSTreasure3";
 import { CSTreasure1 } from "../CSTreasure1";
 import { CSTreasure2 } from "../CSTreasure2";
 
-export const CharacterSheet = () => {
+export const CharacterSheet = (props) => {
   // State
   const [headerCounter, setHeaderCounter] = useState(0);
   const [appearanceCounter, setAppearanceCounter] = useState(0);
@@ -45,6 +45,7 @@ export const CharacterSheet = () => {
   const [alliesCounter, setAlliesCounter] = useState(0);
   const [traitsCounter, setTraitsCounter] = useState(0);
   const [treasureCounter, setTreasureCounter] = useState(0);
+  const [value, setValue] = React.useState(0);
 
   // Header
   const headerIncrement = () => {
@@ -142,7 +143,7 @@ export const CharacterSheet = () => {
 
   return (
     <div className='trait-containers'>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} id='full-grid'>
         <Grid item xs={12} id='full-header-container'>
           {/* HEADER */}
           <img
@@ -154,9 +155,7 @@ export const CharacterSheet = () => {
           {/* LEFT HEADER */}
           <Grid container id='header-container'>
             <Grid item xs={5} className='flexbox-turn-on'>
-              <Grid container class='text-container'>
-                <CSHeader4 headerCounter={headerCounter} />
-              </Grid>
+              <CSHeader4 headerCounter={headerCounter} />
             </Grid>
             <Grid item xs={7} className='flexbox-turn-on'>
               {/* RIGHT HEADER */}
@@ -186,7 +185,6 @@ export const CharacterSheet = () => {
               variant='outlined'
               onClick={() => setHeaderCounter(200)}
               className='hexagon-button header-buttons'
-              headerCounter={headerCounter}
             >
               Crit Success
             </Button>
@@ -194,7 +192,6 @@ export const CharacterSheet = () => {
               variant='outlined'
               onClick={() => setHeaderCounter(0)}
               className='hexagon-button header-buttons'
-              headerCounter={headerCounter}
             >
               Crit Failure
             </Button>
@@ -204,7 +201,7 @@ export const CharacterSheet = () => {
             <RollResponse />
           </div>
         </Grid>
-        <Grid item xs={12} md={4} id='flex-fix' className='trait-items'>
+        <Grid item xs={12} lg={4} id='flex-fix' className='trait-items'>
           {/* APPEARANCE */}
           <div className='trait-containers' id='appearance-container'>
             <img
@@ -233,7 +230,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setAppearanceCounter(200)}
                 className='hexagon-button'
-                appearanceCounter={appearanceCounter}
               >
                 Succ
               </Button>
@@ -241,7 +237,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setAppearanceCounter(0)}
                 className='hexagon-button'
-                appearanceCounter={appearanceCounter}
               >
                 Fail
               </Button>
@@ -277,7 +272,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setBackstoryCounter(200)}
                 className='hexagon-button'
-                backstoryCounter={backstoryCounter}
               >
                 Succ
               </Button>
@@ -285,7 +279,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setBackstoryCounter(0)}
                 className='hexagon-button'
-                backstoryCounter={backstoryCounter}
               >
                 Fail
               </Button>
@@ -294,7 +287,7 @@ export const CharacterSheet = () => {
           </div>
         </Grid>
 
-        <Grid item xs={12} md={7} id='right-container'>
+        <Grid item xs={12} lg={7} id='right-container'>
           {/* ALLIES */}
           <Grid container spacing={1} id='allies-container'>
             <img
@@ -324,7 +317,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setAlliesCounter(200)}
                 className='hexagon-button'
-                alliesCounter={alliesCounter}
               >
                 Succ
               </Button>
@@ -332,7 +324,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setAlliesCounter(0)}
                 className='hexagon-button'
-                alliesCounter={alliesCounter}
               >
                 Fail
               </Button>
@@ -349,7 +340,7 @@ export const CharacterSheet = () => {
             />
             <CSTraits traitsCounter={traitsCounter} />
             {/* TRAITS ROLLS */}
-            <div className='individual-rolls' id='traits-rolls'>
+            <div className='individual-rolls'>
               <Button
                 variant='outlined'
                 onClick={traitsIncrement}
@@ -361,7 +352,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setTraitsCounter(200)}
                 className='hexagon-button'
-                traitsCounter={traitsCounter}
               >
                 Succ
               </Button>
@@ -369,7 +359,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setTraitsCounter(0)}
                 className='hexagon-button'
-                traitsCounter={traitsCounter}
               >
                 Fail
               </Button>
@@ -377,23 +366,37 @@ export const CharacterSheet = () => {
             </div>
           </div>
           {/* TREASURE */}
-          <div className='trait-containers' id='treasure-container'>
+          <div className='trait-containers' id='treasure-containers'>
             <img
               className='img-containers'
               src={treasure}
               alt='test'
               id='cs-treasure'
             />
-
-            <Grid container id='treasure-uls'>
-              <Grid item sx={3}>
-                <CSTreasure1 treasureCounter={treasureCounter} />
+            <Grid container id='treasure-lists'>
+              <Grid item xs='4' className='treasure-lists'>
+                <CSTreasure1
+                  props={props}
+                  treasureCounter={treasureCounter}
+                  value={value}
+                  index={0}
+                />
               </Grid>
-              <Grid item sx={3}>
-                <CSTreasure2 treasureCounter={treasureCounter} />
+              <Grid item xs='4' className='treasure-lists'>
+                <CSTreasure2
+                  props={props}
+                  treasureCounter={treasureCounter}
+                  value={value}
+                  index={1}
+                />
               </Grid>
-              <Grid item sx={3}>
-                <CSTreasure3 treasureCounter={treasureCounter} />
+              <Grid item xs='4' className='treasure-lists'>
+                <CSTreasure3
+                  props={props}
+                  treasureCounter={treasureCounter}
+                  value={value}
+                  index={2}
+                />
               </Grid>
             </Grid>
             {/* TREASURE ROLLS */}
@@ -409,7 +412,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setTreasureCounter(200)}
                 className='hexagon-button'
-                treasureCounter={treasureCounter}
               >
                 Succ
               </Button>
@@ -417,7 +419,6 @@ export const CharacterSheet = () => {
                 variant='outlined'
                 onClick={() => setTreasureCounter(0)}
                 className='hexagon-button'
-                treasureCounter={treasureCounter}
               >
                 Fail
               </Button>

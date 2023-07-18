@@ -193,6 +193,12 @@ ul {
   animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
 }
 
+#cs-traits-list {
+  font-size: 2.5m !important;
+  line-height: normal;
+  text-align: center;
+}
+
 @keyframes typing {
   from {
     width: 0;
@@ -230,6 +236,39 @@ ul {
   #content-body {
     flex-direction: column;
   }
+  #appearance-trait {
+    font-size: 0.5em !important;
+  }
+  #flex-fix {
+    margin-bottom: 50px !important;
+    height: auto;
+  }
+  #text-adventure {
+    margin-top: 50px !important;
+    margin-bottom: 5px !important;
+  }
+
+  #allies-container {
+    height: 250px !important;
+    width: 350px !important;
+  }
+
+  #allies-rolls {
+    position: absolute !important;
+    top: 250px !important;
+  }
+
+  #traits-rolls {
+    top: 275px !important;
+  }
+
+  #allies-name {
+    top: 36px !important;
+  }
+
+  #backstory-trait {
+    font-size: 0.5em !important;
+  }
 }
 
 /* Mobile devices */
@@ -254,8 +293,26 @@ ul {
     text-align: end;
   }
 
+  #flex-fix {
+    margin-bottom: 50px !important;
+    height: auto;
+  }
   #text-adventure {
     margin-top: 50px !important;
     margin-bottom: 5px !important;
+  }
+
+  #allies-container {
+    height: 250px !important;
+    width: 350px !important;
+  }
+
+  #allies-rolls {
+    position: absolute !important;
+    top: 250px !important;
+  }
+
+  #allies-name {
+    top: 36px !important;
   }
 }

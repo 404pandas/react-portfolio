@@ -69,6 +69,12 @@
   flex-wrap: wrap;
 }
 
+#flex-fix {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #header-container {
   position: absolute;
   justify-content: center;
@@ -85,7 +91,14 @@
   margin-bottom: 5% !important;
   margin-top: 2% !important;
 }
-
+#treasure-containers {
+  position: relative;
+  margin-bottom: 100px;
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #char-name {
   font-size: 2em !important;
 }
@@ -188,7 +201,7 @@ iteration-count | direction | fill-mode | play-state | name */
 
 #backstory-container {
   margin-top: 175px;
-  height: 500px;
+  height: auto;
   width: 285px;
 }
 #inner-left {
@@ -285,10 +298,9 @@ iteration-count | direction | fill-mode | play-state | name */
   justify-content: space-around;
 }
 
-#traits-rolls {
+#allies-rolls {
   flex-wrap: wrap;
   align-content: space-around;
-  top: 330px;
   position: absolute;
   width: 515px;
 }
@@ -298,7 +310,10 @@ iteration-count | direction | fill-mode | play-state | name */
 }
 
 #right-container {
-  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 #trait-containers {
@@ -308,13 +323,9 @@ iteration-count | direction | fill-mode | play-state | name */
 
 #cs-traits-list {
   position: absolute;
-  top: 65px;
-  width: 515px;
-}
-
-#treasure-container {
-  position: relative;
-  top: 75px;
+  top: 7%;
+  width: 100%;
+  font-size: 2.5em !important;
 }
 
 #treasure-uls {
@@ -322,18 +333,19 @@ iteration-count | direction | fill-mode | play-state | name */
   width: 515px;
 }
 
+#treasure-lists {
+  position: absolute;
+  top: 9%;
+  left: auto;
+  font-size: 2.4em;
+  width: 60%;
+}
+
 #traits-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-#traits-left,
-#traits-right {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: center;
-}
 #traits-left li,
 #traits-right li {
   margin-top: 6%;
@@ -365,11 +377,7 @@ iteration-count | direction | fill-mode | play-state | name */
   .individual-rolls {
     margin-bottom: 20%;
   }
-  #flex-fix {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+
   #right-container {
     display: flex;
     flex-direction: column;
@@ -385,7 +393,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
   #right-container {
     margin-left: 0px;
-    margin-top: 40px;
+    margin-top: 0px;
     width: auto;
     display: flex;
     flex-direction: column;
@@ -425,8 +433,10 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 
   #flex-fix {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   #header-rolls {
@@ -437,6 +447,13 @@ iteration-count | direction | fill-mode | play-state | name */
     width: 85%;
   }
 
+  #full-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
   #allies-name {
     top: 50px;
   }
@@ -445,23 +462,6 @@ iteration-count | direction | fill-mode | play-state | name */
     width: 50% !important;
   }
 
-  #traits-rolls {
-    position: absolute;
-    top: 240px;
-  }
-
-  #cs-traits-list {
-    width: 100%;
-    font-size: 0.5em !important;
-    top: 15px;
-  }
-
-  #treasure-container {
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   #trait-fix {
     margin-top: 50px;
     display: flex !important;
@@ -477,10 +477,6 @@ iteration-count | direction | fill-mode | play-state | name */
     align-items: center;
   }
 
-  .footer {
-    margin-bottom: 200px;
-  }
-
   #text-adventure {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -488,5 +484,15 @@ iteration-count | direction | fill-mode | play-state | name */
 
   #backstory-trait {
     height: 450px;
+  }
+  #flex-fix {
+    margin-bottom: 0px !important;
+  }
+  #cs-traits {
+    font-size: 0.7em;
+  }
+  #treasure-lists {
+    font-size: 0.7em;
+    width: 90%;
   }
 }
