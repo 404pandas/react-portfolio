@@ -377,7 +377,6 @@ export const CharacterSheet = (props) => {
                 <CSTreasure1
                   props={props}
                   treasureCounter={treasureCounter}
-                  value={value}
                   index={0}
                 />
               </Grid>
@@ -385,7 +384,6 @@ export const CharacterSheet = (props) => {
                 <CSTreasure2
                   props={props}
                   treasureCounter={treasureCounter}
-                  value={value}
                   index={1}
                 />
               </Grid>
@@ -393,7 +391,6 @@ export const CharacterSheet = (props) => {
                 <CSTreasure3
                   props={props}
                   treasureCounter={treasureCounter}
-                  value={value}
                   index={2}
                 />
               </Grid>
