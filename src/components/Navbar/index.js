@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { RxDropdownMenu } from "react-icons/rx";
 import { IoMdArrowDropup } from "react-icons/io";
 import { FaDiceD20 } from "react-icons/fa";
+import Typography from "@mui/material/Typography";
 
 const Navbar = () => {
   const [click, unClick] = useState(false);
@@ -31,8 +32,12 @@ const Navbar = () => {
         <a href='/'>
           <h1>Mary Elenius</h1>
         </a>
-        <Link to='/d20' id='die'>
+
+        <Link to='/d20' className='flexbox-turn-on' id='die'>
           <FaDiceD20 />
+          <Typography variant='body1' id='roll'>
+            Roll!
+          </Typography>
         </Link>
       </div>
       <ul className={click ? "nav-right" : "nav-right active"}>

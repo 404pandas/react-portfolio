@@ -199,6 +199,15 @@ ul {
   text-align: center;
 }
 
+.flexbox-turn-on {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column !important;
+  padding: 0 !important;
+  flex-wrap: wrap;
+}
+
 @keyframes typing {
   from {
     width: 0;

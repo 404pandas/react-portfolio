@@ -60,15 +60,6 @@
   line-height: 180% !important;
 }
 
-.flexbox-turn-on {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column !important;
-  padding: 0 !important;
-  flex-wrap: wrap;
-}
-
 #flex-fix {
   display: flex;
   flex-direction: column;
