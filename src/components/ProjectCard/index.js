@@ -25,6 +25,9 @@ const ProjectCard = ({ project }) => {
           <Typography gutterBottom variant='h5' component='div'>
             {project.title}
           </Typography>
+          <Typography gutterBottom variant='h6' component='div'>
+            {project.subtitle}
+          </Typography>
           <Typography variant='body2' color='text.secondary'>
             {project.description}
           </Typography>

@@ -35,7 +35,7 @@ const Footer = () => {
               style={{ color: "#d97777", marginRight: "2rem" }}
             />
             <Typography variant='body1' id='footer-body1'>
-              1 (772) 834 2342
+              <a href='tel:7728342342'>1 (772) 834 2342</a>
             </Typography>
           </div>
           <div className='email'>
@@ -44,7 +44,10 @@ const Footer = () => {
               style={{ color: "#d97777", marginRight: "2rem" }}
             />
             <Typography variant='body1' id='footer-body1'>
-              mary.panda.jackson@gmail.com
+              <a href='mailto:mary.panda.jackson@gmail.com'>
+                {" "}
+                mary.panda.jackson@gmail.com
+              </a>
             </Typography>
           </div>
         </div>
@@ -55,18 +58,18 @@ const Footer = () => {
             home. If you are interested in hiring me, please contact me!
           </Typography>
           <div className='socialIcons'>
-            <AiOutlineLinkedin
-              size={20}
-              style={{ color: "#d97777", marginRight: "2rem" }}
-            />
-            <AiOutlineShareAlt
-              size={20}
-              style={{ color: "#d97777", marginRight: "2rem" }}
-            />
-            <AiOutlineGithub
-              size={20}
-              style={{ color: "#d97777", marginRight: "2rem" }}
-            />
+            <a href='https://www.linkedin.com/in/404pandas'>
+              <AiOutlineLinkedin
+                size={20}
+                style={{ color: "#d97777", marginRight: "2rem" }}
+              />
+            </a>
+            <a href='https://www.github.com/404pandas'>
+              <AiOutlineGithub
+                size={20}
+                style={{ color: "#d97777", marginRight: "2rem" }}
+              />
+            </a>
           </div>
         </div>
       </div>
