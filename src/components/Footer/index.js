@@ -11,7 +11,6 @@ import {
   AiOutlinePhone,
   AiOutlineMail,
   AiOutlineLinkedin,
-  AiOutlineShareAlt,
   AiOutlineGithub,
 } from "react-icons/ai";
 
