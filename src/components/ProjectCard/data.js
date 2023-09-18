@@ -53,28 +53,83 @@ export let projectData = [
   {
     id: 2,
     image: image3,
-    title: "K.I.T.T.I.E.S.",
+    title: "Jacob Elenius Website",
     subtitle: "",
     description:
-      "This is a progressive web app. It's a cat themed text editor that can be downloaded and used offline.",
+      "This is a website I built for my husband to aid in his job search.",
     technologies: [
       "• HTML ",
       "• CSS3 ",
       "• Javascript ",
-      "• Node ",
+      "• React ",
       "• Express ",
-      "• Webpack ",
-      "• Babel ",
+      "• Node ",
     ],
 
-    repo: "https://github.com/404pandas/pwa-kitties",
-    live: "https://404pandas.github.io",
+    repo: "https://github.com/404pandas/jacob-elenius",
+    live: "https://jacobelenius.netlify.app/",
   },
   {
     id: 3,
     image: image4,
+    title: "Momentum",
+    subtitle: "",
+    description: "This is a blog created for a freelance customer.",
+    technologies: ["• HTML ", "• CSS3 ", "• Javascript ", "• Handlebars "],
+
+    repo: "https://github.com/404pandas/momentum-blog",
+    live: "https://momentum.ghost.io/",
+  },
+  {
+    id: 4,
+    image: image5,
+    title: "Classic Portfolio",
+    subtitle: "",
+    description:
+      "This is my portfolio built without the use of React given a tech-themed steroid shot.",
+    technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
+
+    repo: "https://github.com/404pandas/404pandas.github.io",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 5,
+    image: image6,
+    title: "Alien Tech Blog",
+    subtitle: "",
+    description:
+      "This is a full stack app using MySQL and Express to create an alien themed blog site.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• Bcrypt ",
+      "• MySQL ",
+      "• Express",
+      "• Handlebars ",
+      "• Materialize ",
+      "• Sequelize ",
+    ],
+
+    repo: "https://github.com/404pandas/alien-tech-blog",
+    live: "https://alien-blog-aa7191e041e1.herokuapp.com/",
+  },
+  {
+    id: 6,
+    image: image7,
+    title: "Pokemon E-Commerce",
+    subtitle: "No Front End",
+    description: "Classic e-commerce backend with a Pokemon theme.",
+    technologies: ["• Javascript ", "• Node ", "• Express ", "• MySQL2 "],
+
+    repo: "https://github.com/404pandas/new-e-commerce",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 7,
+    image: image8,
     title: "Bluey API",
-    subtitle: "Not Deployed",
+    subtitle: "In Development",
     description:
       "This is an open source API with a styled front end and games.",
     technologies: [
@@ -95,10 +150,10 @@ export let projectData = [
   },
 
   {
-    id: 4,
-    image: image5,
+    id: 8,
+    image: image1,
     title: "PARSR",
-    subtitle: "Not Deployed",
+    subtitle: "In Development",
     description:
       "This is a MERNAG app I'm currently building to assist owners in locating their missing pets. Primary focus will be Google Maps to mark search grids.",
     technologies: [
@@ -117,23 +172,10 @@ export let projectData = [
   },
 
   {
-    id: 5,
-    image: image6,
-    title: "Classic Portfolio",
-    subtitle: "",
-    description:
-      "This is my portfolio built without the use of React given a tech-themed steroid shot.",
-    technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
-
-    repo: "https://github.com/404pandas/404pandas.github.io",
-    live: "https://404pandas.github.io",
-  },
-
-  {
-    id: 6,
-    image: image7,
+    id: 9,
+    image: image2,
     title: "Pooh Weather App",
-    subtitle: "",
+    subtitle: "In Development",
     description:
       "This is a web app that allows users to look up current weather and forecast data based on city. Previous searches are stored in local Storage for easy reuse.",
     technologies: [
@@ -148,13 +190,13 @@ export let projectData = [
     ],
 
     repo: "https://github.com/404pandas/pooh-weather-dashboard",
-    live: "https://404pandas.github.io",
+    live: "https://pooh-weather-dashboard.netlify.app",
   },
   {
-    id: 7,
-    image: image8,
+    id: 10,
+    image: image3,
     title: "Team Profile Generator",
-    subtitle: "",
+    subtitle: "No front end",
     description:
       "This is a command line application that creates an html page for a team profile based on user input.",
     technologies: ["• HTML ", "• CSS3 ", "• Node ", "• Inquirer "],
@@ -163,10 +205,10 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 8,
-    image: image1,
+    id: 11,
+    image: image4,
     title: "Note Taker",
-    subtitle: "",
+    subtitle: "Not Deployed",
     description:
       "This is an express app that uses localStorage to take and save notes.",
     technologies: [
@@ -182,8 +224,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 9,
-    image: image2,
+    id: 12,
+    image: image5,
     title: "Password Generator",
     subtitle: "",
     description:
@@ -191,11 +233,11 @@ export let projectData = [
     technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
 
     repo: "https://github.com/404pandas/password-generator",
-    live: "https://404pandas.github.io",
+    live: "https://pswrd-gen.netlify.appo",
   },
   {
-    id: 10,
-    image: image3,
+    id: 13,
+    image: image6,
     title: "Coding Quiz",
     subtitle: "",
     description:
@@ -203,11 +245,11 @@ export let projectData = [
     technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
 
     repo: "https://github.com/404pandas/coding-quiz",
-    live: "https://404pandas.github.io",
+    live: "https://web-coder-quiz.netlify.app/",
   },
   {
-    id: 11,
-    image: image4,
+    id: 14,
+    image: image7,
     title: "Employee Tracker",
     subtitle: "",
     description:
@@ -226,8 +268,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 12,
-    image: image5,
+    id: 15,
+    image: image8,
     title: "Workday Scheduler",
     subtitle: "",
     description:
@@ -242,34 +284,12 @@ export let projectData = [
     ],
 
     repo: "https://github.com/404pandas/workday-scheduler",
-    live: "https://404pandas.github.io",
-  },
-  {
-    id: 13,
-    image: image6,
-    title: "Alien Tech Blog",
-    subtitle: "",
-    description:
-      "This is a full stack app using MySQL and Express to create an alien themed blog site.",
-    technologies: [
-      "• HTML ",
-      "• CSS3 ",
-      "• Javascript ",
-      "• Bcrypt ",
-      "• MySQL ",
-      "• Express",
-      "• Handlebars ",
-      "• Materialize ",
-      "• Sequelize ",
-    ],
-
-    repo: "https://github.com/404pandas/alien-tech-blog",
-    live: "https://404pandas.github.io",
+    live: "https://workday-schedule.netlify.app",
   },
 
   {
-    id: 14,
-    image: image7,
+    id: 16,
+    image: image1,
     title: "Empty Resources (Shields)",
     subtitle: "",
     description:
@@ -280,8 +300,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 15,
-    image: image8,
+    id: 17,
+    image: image2,
     title: "Normalize Rework",
     subtitle: "",
     description:
@@ -291,28 +311,10 @@ export let projectData = [
     repo: "https://github.com/404pandas/normalize.css",
     live: "https://404pandas.github.io",
   },
-  {
-    id: 16,
-    image: image1,
-    title: "Jacob Elenius Website",
-    subtitle: "",
-    description:
-      "This is a website I built for my husband to aid in his job search.",
-    technologies: [
-      "• HTML ",
-      "• CSS3 ",
-      "• Javascript ",
-      "• React ",
-      "• Express ",
-      "• Node ",
-    ],
 
-    repo: "https://github.com/404pandas/jacob-elenius",
-    live: "https://404pandas.github.io",
-  },
   {
-    id: 17,
-    image: image2,
+    id: 18,
+    image: image3,
     title: "Social Network API",
     subtitle: "",
     description:
@@ -323,8 +325,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 18,
-    image: image3,
+    id: 19,
+    image: image4,
     title: "Booksearch",
     subtitle: "",
     description:
