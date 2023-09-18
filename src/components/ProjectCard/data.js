@@ -12,6 +12,67 @@ export let projectData = [
   {
     id: 0,
     image: image1,
+    title: "All Animal Rehab & Release",
+    subtitle: "",
+    description: "This is a website I'm currently building for my charity.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• JQuery ",
+      "• Materialize ",
+      "• Node ",
+      "• Express ",
+    ],
+
+    repo: "https://github.com/404pandas/all-animal-r-r",
+    live: "http://www.allanimalrr.org/",
+  },
+  {
+    id: 1,
+    image: image2,
+    title: "Shocase",
+    description:
+      "A collaborative effort for a spotify-esque anime social media app.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• Node ",
+      "• Express ",
+      "• Sequelize ",
+      "• mySQL ",
+      "• Heroku ",
+      "• Handlebars ",
+      "• Materialize ",
+    ],
+
+    repo: "https://github.com/404pandas/Shocase",
+    live: "https://shocase-mary-96d07dad4eea.herokuapp.com/",
+  },
+  {
+    id: 2,
+    image: image3,
+    title: "K.I.T.T.I.E.S.",
+    subtitle: "",
+    description:
+      "This is a progressive web app. It's a cat themed text editor that can be downloaded and used offline.",
+    technologies: [
+      "• HTML ",
+      "• CSS3 ",
+      "• Javascript ",
+      "• Node ",
+      "• Express ",
+      "• Webpack ",
+      "• Babel ",
+    ],
+
+    repo: "https://github.com/404pandas/pwa-kitties",
+    live: "https://404pandas.github.io",
+  },
+  {
+    id: 3,
+    image: image4,
     title: "Bluey API",
     subtitle: "Not Deployed",
     description:
@@ -34,8 +95,8 @@ export let projectData = [
   },
 
   {
-    id: 1,
-    image: image3,
+    id: 4,
+    image: image5,
     title: "PARSR",
     subtitle: "Not Deployed",
     description:
@@ -54,70 +115,23 @@ export let projectData = [
     repo: "https://github.com/404pandas/PARSR",
     live: "https://404pandas.github.io",
   },
-  {
-    id: 2,
-    image: image3,
-    title: "All Animal Rehab & Release",
-    subtitle: "Not deployed",
-    description: "This is a website I'm currently building for my charity.",
-    technologies: [
-      "• HTML ",
-      "• CSS3 ",
-      "• Javascript ",
-      "• JQuery ",
-      "• Materialize ",
-      "• Node ",
-      "• Express ",
-    ],
 
-    repo: "https://github.com/404pandas/all-animal-r-r",
-    live: "https://404pandas.github.io",
-  },
   {
-    id: 15,
-    image: image8,
-    title: "Shocase",
-    description:
-      "A collaborative effort for a spotify-esque anime social media app.",
-    technologies: [
-      "• HTML ",
-      "• CSS3 ",
-      "• Javascript ",
-      "• Node ",
-      "• Express ",
-      "• Sequelize ",
-      "• mySQL ",
-      "• Heroku ",
-      "• Handlebars ",
-      "• Materialize ",
-    ],
-
-    repo: "https://github.com/404pandas/Shocase",
-    live: "https://shocase-mary-96d07dad4eea.herokuapp.com/",
-  },
-  {
-    id: 15,
-    image: image8,
-    title: "K.I.T.T.I.E.S.",
+    id: 5,
+    image: image6,
+    title: "Classic Portfolio",
     subtitle: "",
     description:
-      "This is a progressive web app. It's a cat themed text editor that can be downloaded and used offline.",
-    technologies: [
-      "• HTML ",
-      "• CSS3 ",
-      "• Javascript ",
-      "• Node ",
-      "• Express ",
-      "• Webpack ",
-      "• Babel ",
-    ],
+      "This is my portfolio built without the use of React given a tech-themed steroid shot.",
+    technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
 
-    repo: "https://github.com/404pandas/pwa-kitties",
+    repo: "https://github.com/404pandas/404pandas.github.io",
     live: "https://404pandas.github.io",
   },
+
   {
-    id: 7,
-    image: image6,
+    id: 6,
+    image: image7,
     title: "Pooh Weather App",
     subtitle: "",
     description:
@@ -137,8 +151,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 3,
-    image: image2,
+    id: 7,
+    image: image8,
     title: "Team Profile Generator",
     subtitle: "",
     description:
@@ -149,8 +163,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 4,
-    image: image3,
+    id: 8,
+    image: image1,
     title: "Note Taker",
     subtitle: "",
     description:
@@ -168,8 +182,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 5,
-    image: image4,
+    id: 9,
+    image: image2,
     title: "Password Generator",
     subtitle: "",
     description:
@@ -180,8 +194,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 6,
-    image: image5,
+    id: 10,
+    image: image3,
     title: "Coding Quiz",
     subtitle: "",
     description:
@@ -192,8 +206,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 8,
-    image: image7,
+    id: 11,
+    image: image4,
     title: "Employee Tracker",
     subtitle: "",
     description:
@@ -212,8 +226,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 9,
-    image: image8,
+    id: 12,
+    image: image5,
     title: "Workday Scheduler",
     subtitle: "",
     description:
@@ -231,8 +245,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 10,
-    image: image2,
+    id: 13,
+    image: image6,
     title: "Alien Tech Blog",
     subtitle: "",
     description:
@@ -252,21 +266,10 @@ export let projectData = [
     repo: "https://github.com/404pandas/alien-tech-blog",
     live: "https://404pandas.github.io",
   },
-  {
-    id: 11,
-    image: image4,
-    title: "Classic Portfolio",
-    subtitle: "",
-    description:
-      "This is my portfolio built without the use of React given a tech-themed steroid shot.",
-    technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
 
-    repo: "https://github.com/404pandas/404pandas.github.io",
-    live: "https://404pandas.github.io",
-  },
   {
-    id: 12,
-    image: image5,
+    id: 14,
+    image: image7,
     title: "Empty Resources (Shields)",
     subtitle: "",
     description:
@@ -277,8 +280,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 13,
-    image: image6,
+    id: 15,
+    image: image8,
     title: "Normalize Rework",
     subtitle: "",
     description:
@@ -289,8 +292,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 14,
-    image: image7,
+    id: 16,
+    image: image1,
     title: "Jacob Elenius Website",
     subtitle: "",
     description:
@@ -308,8 +311,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 16,
-    image: image1,
+    id: 17,
+    image: image2,
     title: "Social Network API",
     subtitle: "",
     description:
@@ -320,8 +323,8 @@ export let projectData = [
     live: "https://404pandas.github.io",
   },
   {
-    id: 17,
-    image: image2,
+    id: 18,
+    image: image3,
     title: "Booksearch",
     subtitle: "",
     description:
