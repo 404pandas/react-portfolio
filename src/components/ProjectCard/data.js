@@ -233,7 +233,7 @@ export let projectData = [
     technologies: ["• HTML ", "• CSS3 ", "• Javascript "],
 
     repo: "https://github.com/404pandas/password-generator",
-    live: "https://pswrd-gen.netlify.appo",
+    live: "https://pswrd-gen.netlify.app",
   },
   {
     id: 13,
