@@ -20,7 +20,7 @@ const InterviewQuestions = () => {
             <ListItemButton>
               <ListItemText primary={question.question} />
               {question.bulletpoint && (
-                <>
+                <List>
                   <ListItemText
                     component='span'
                     primary={question.bulletpoint?.key}
@@ -29,7 +29,7 @@ const InterviewQuestions = () => {
                     component='span'
                     primary={question.bulletpoint?.value}
                   />
-                </>
+                </List>
               )}
             </ListItemButton>
           </ListItem>

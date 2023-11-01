@@ -82,11 +82,18 @@ https://github.com/404pandas/react-portfolio/assets/113853550/30a3aab9-dc70-411e
 
 ## Roadmap
 
-- [ X ] Folder Structure
-- [ X ] Styling
-- [ X ] Landing Page
-- [ X ] About Page
-- [ X ] Projects Page
+- [x] Folder Structure
+- [x] Styling
+- [x] Landing Page
+- [x] About Page
+- [x] Projects Page
+- [x] Interactive D&D About Me page
+- [ ] Tech Interview page
+  - [x] Layout
+  - [x] JSON pull
+  - [ ] Fill in data
+  - [ ] Filter functionality
+  - [ ] Need to review functionality
 
 See the [open issues](https://github.com/404pandas/react-portfolio/issues) for a full list of proposed features (and known issues).
 
@@ -119,8 +126,14 @@ Mary Elenius - mary.panda.jackson@gmail.com
 
 Project Link: [https://github.com/404pandas/react-portfolio](https://github.com/404pandas/react-portfolio)
 
+Deployed Site: [https://maryelenius.com](https://maryelenius.com)
+
 <!-- ACKNOWLEDGMENTS -->
 
 ## Acknowledgments
 
 A special shout out to my daughter, Yennefer! She proves every day that she's small but mighty!!
+
+Common ReactJS Interview Questions and Answers pulled from the following amazing prep resources:
+
+- [Interviewbit.com](https://www.interviewbit.com/react-interview-questions/)

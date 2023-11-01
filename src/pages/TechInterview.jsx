@@ -51,6 +51,18 @@ const TechInterview = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  // Todo-
+  // State handling for "need to review"
+
+  // Todo-
+  // State for "display details"
+
+  // Todo-
+  // onclick for display details state
+
+  // Todo-
+  // onclick for need to review
+
   return (
     <>
       <Navbar />
@@ -59,7 +71,7 @@ const TechInterview = () => {
           <Tabs
             value={value}
             onChange={handleChange}
-            aria-label='basic tabs example'
+            aria-label='technical interview example questions'
           >
             <Tab label='Prefilled' {...a11yProps(0)} />
             <Tab label='Click to Display' {...a11yProps(1)} />

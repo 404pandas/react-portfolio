@@ -19,26 +19,5 @@
         "value": "Information from fourth bullet"
       }
     ]
-  },
-  {
-    "question": "Second example question",
-    "bulletpoint": [
-      {
-        "key": "First bullet",
-        "value": "Information from first bullet"
-      },
-      {
-        "key": "Second bullet",
-        "value": "Information from second bullet"
-      },
-      {
-        "key": "Third bullet",
-        "value": "Information from third bullet"
-      },
-      {
-        "key": "Fourth bullet",
-        "value": "Information from fourth bullet"
-      }
-    ]
   }
 ]
