@@ -128,6 +128,11 @@ ul {
   max-height: 80vh;
   margin-bottom: 0px;
 }
+#tech-interview-content {
+  min-height: 80vh;
+  max-height: 80vh;
+  margin-bottom: 0px;
+}
 
 #landing-body1 {
   margin: 10%;
