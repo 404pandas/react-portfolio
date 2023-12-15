@@ -1,7 +1,6 @@
 import React from "react";
 
 // local imports
-import "./style.css";
 import data from "./questions.json";
 
 // external imports

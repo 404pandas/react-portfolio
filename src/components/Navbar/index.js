@@ -65,7 +65,7 @@ const Navbar = () => {
           <Link to='/Interview-practice'>Interview Prep</Link>
         </li>
       </ul>
-      <div className='hamburger' onClick={handleClick}>
+      <div onClick={handleClick}>
         {click ? (
           <IoMdArrowDropup size={30} style={{ color: "#D97777" }} />
         ) : (

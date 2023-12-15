@@ -23,7 +23,7 @@
 }
 
 .leftFooter p {
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
 .rightFooter {
@@ -83,5 +83,8 @@
   }
   .leftFooter {
     width: 100vw;
+  }
+  #footer-body1 {
+    display: hidden;
   }
 }

@@ -1,7 +1,6 @@
 import React from "react";
 
 // local imports
-import "./style.css";
 import App from "./App";
 
 // external imports

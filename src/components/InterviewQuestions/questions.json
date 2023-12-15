@@ -244,12 +244,25 @@
     "bulletpoint": [
       {
         "concept": "Controlled component",
-        "more-information": "",
-        "image": "https://drive.google.com/file/d/1dRU5gbmUTEPwHIYgnXBXzkcrfyb0Ca7c/view?usp=sharing",
-        "code-snippet": ""
+        "more-information": "The value of the input element is controlled by React. State of the input element is stored inside the code, and by using event-based callbacks, any changes made to the inpute element will be reflected in the code as well. When a user enters data inside the input elemeent of a controlled component, onChange gets triggered and inside the code, the data is checked whether it's valid or invalid. If the value is valid, state is changed and re-renders the input element with a new value.",
+        "image": "https://drive.google.com/file/d/1dRU5gbmUTEPwHIYgnXBXzkcrfyb0Ca7c/view?usp=drive_link",
+        "code-snippet": "function FormValidation(props) {\\nlet [inputValue, setInputValue] = useState(\"\");\\nlet updateInput = e => {\\nsetInputValue(e.target.value);\\n};\\nreturn (\\n<div>\\n<form>\\n<input type=\"text\" value={inputValue} onChange={updateInput} />\\n</form>\\n</div>\\n);\\n}"
       },
       {
         "concept": "Uncontrolled component",
+        "more-information": "The value of the input element is handled by the DOM itself. Input elements inside uncontrolled components work just like normal HTML input form elements. State of the input eleent is handled by the DOM. Whenever the value of the input element is changed, event-based callbacks are not called. React does not perform any action when there are changes made to the input element. Whenever a user enters data inside the input field, the updated data is shown directly. To access the value of the input element, 'ref' is used.",
+        "image": "",
+        "code-snippet": "function FormValidation(props) {\\nlet inputValue = React.createRef();\\nlet handleSubmit = e => {\\nalert(`Input value: ${inputValue.current.value}`);\\ne.preventDefault();\\n};\\nreturn (\\n<div>\\n<form onSubmit={handleSubmit}>\\n<input type=\"text\" ref={inputValue} />\\n<button type=\"submit\">Submit</button>\\n</form>\\n</div>\\n);\\n}"
+      }
+    ]
+  },
+  {
+    "question": "What are props in React?",
+    "category": "props",
+    "to-review": "false",
+    "bulletpoint": [
+      {
+        "concept": "Props in React are the inputs to a component. They can be single-valued or objects having a set of values to be passed to components of React during creation by using a naming convention that almost looks similar to HTML-tag attributes. Essentially, props are the data based from a parent component into a child component. Props provide different component functionalities such as passing custom data to the react component using this.props.reactProp inside the render() method of the component and trigger and triggering state changes.",
         "more-information": "",
         "image": "",
         "code-snippet": ""
@@ -257,33 +270,14 @@
     ]
   },
   {
-    "question": "",
-    "category": "",
+    "question": "Explain React state and props",
+    "category": "props, state",
     "to-review": "false",
     "bulletpoint": [
       {
         "concept": "",
         "more-information": "",
-        "image": "",
-        "code-snippet": ""
-      },
-      {
-        "concept": "",
-        "more-information": "",
-        "image": "",
-        "code-snippet": ""
-      }
-    ]
-  },
-  {
-    "question": "",
-    "category": "",
-    "to-review": "false",
-    "bulletpoint": [
-      {
-        "concept": "",
-        "more-information": "",
-        "image": "",
+        "image": "https://drive.google.com/file/d/1v9YF9e5fXvpXcNrcvIFiR-XrAdOVu06C/view?usp=sharing",
         "code-snippet": ""
       },
       {

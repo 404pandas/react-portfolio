@@ -74,8 +74,6 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 600px !important;
-  max-height: 600px !important;
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -181,6 +179,8 @@ ul {
   top: 10vh;
   height: 160vh;
   justify-items: center;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 #whole-page {
   display: flex;
@@ -239,6 +239,8 @@ ul {
 @media screen and (max-width: 1007px) {
   #projectCardContainer {
     height: 250vh;
+    padding-left: 3%;
+    padding-right: 3%;
   }
 }
 
@@ -246,6 +248,8 @@ ul {
 @media screen and (max-width: 671px) {
   #projectCardContainer {
     overflow: scroll;
+    /* padding-left: 3%;
+    padding-right: 3%; */
   }
   #content-body {
     flex-direction: column;

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // local imports
-import "./style.css";
+import "../src/assets/css/style.css";
 import Landing from "./pages/Landing.js";
 import About from "./pages/About.js";
 import Technologies from "./pages/Technologies";

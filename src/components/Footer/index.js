@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 // local imports
 import "./style.css";
@@ -15,6 +15,17 @@ import {
 } from "react-icons/ai";
 
 const Footer = () => {
+  const [isSmallScreen, setDesktop] = useState(window.innerWidth > 1450);
+
+  const hideFooter = () => {
+    setDesktop(window.innerWidth > 900);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", hideFooter);
+    return () => window.removeEventListener("resize", hideFooter);
+  });
+
   return (
     <div className='footer'>
       <div className='footerContainer'>
@@ -51,11 +62,17 @@ const Footer = () => {
           </div>
         </div>
         <div className='rightFooter'>
-          <h4>Adopt Me</h4>
-          <Typography variant='body1' id='footer-body1'>
-            I am a purebred Overwhelmed Homosapien looking for a place to call
-            home. If you are interested in hiring me, please contact me!
-          </Typography>
+          {isSmallScreen ? (
+            <>
+              {" "}
+              <h4>Adopt Me</h4>
+              <Typography variant='body1' id='footer-body1'>
+                I am a purebred Overwhelmed Homosapien looking for a place to
+                call home. If you are interested in hiring me, please contact
+                me!
+              </Typography>
+            </>
+          ) : null}
           <div className='socialIcons'>
             <a href='https://www.linkedin.com/in/404pandas'>
               <AiOutlineLinkedin
