@@ -156,7 +156,7 @@ export const CharacterSheet = (props) => {
             <Grid item xs={5} className='flexbox-turn-on'>
               <CSHeader4 headerCounter={headerCounter} />
             </Grid>
-            <Grid item xs={7} className='flexbox-turn-on'>
+            <Grid item xs={7} id='right-margin' className='flexbox-turn-on'>
               {/* RIGHT HEADER */}
               <Grid container spacing={4} id='right-header'>
                 <Grid item xs={4} className='trait-items flexbox-turn-on '>

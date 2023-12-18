@@ -68,13 +68,15 @@
 
 #header-container {
   position: absolute;
-  justify-content: center;
   width: 80%;
   align-self: center;
   justify-self: center;
   display: flex;
   margin-top: -11%;
   min-height: 60px;
+}
+#right-margin {
+  margin-top: 1.5%;
 }
 
 .right-text {
