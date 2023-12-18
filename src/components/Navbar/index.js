@@ -26,6 +26,8 @@ const Navbar = () => {
 
   window.addEventListener("scroll", changeScrollColor);
 
+  let width = window.innerWidth;
+
   return (
     <div className={color ? "nav nav-solid" : "nav"}>
       <div className='nameZindex'>
@@ -65,17 +67,18 @@ const Navbar = () => {
           <Link to='/Interview-practice'>Interview Prep</Link>
         </li>
       </ul>
-      {isSmallScreen ? (
-            <>
-      <div onClick={handleClick}>
-        {click ? (
-          <IoMdArrowDropup size={30} style={{ color: "#D97777" }} />
-        ) : (
-          <RxDropdownMenu size={30} style={{ color: "#D97777" }} />
-        )}
-      </div>
-    </div></>
-    ) : null}
+      {width > 768 ? (
+        <>
+          <div onClick={handleClick}>
+            {click ? (
+              <IoMdArrowDropup size={30} style={{ color: "#D97777" }} />
+            ) : (
+              <RxDropdownMenu size={30} style={{ color: "#D97777" }} />
+            )}
+          </div>
+        </>
+      ) : null}
+    </div>
   );
 };
 
