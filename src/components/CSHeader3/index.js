@@ -12,7 +12,7 @@ const CSHeader3 = ({ headerCounter }) => {
           id=''
           className='cs-text trait-text right-text'
         >
-          5'4"
+          31
         </Typography>
         <Typography
           variant='body2'

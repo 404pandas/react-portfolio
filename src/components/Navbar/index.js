@@ -65,6 +65,8 @@ const Navbar = () => {
           <Link to='/Interview-practice'>Interview Prep</Link>
         </li>
       </ul>
+      {isSmallScreen ? (
+            <>
       <div onClick={handleClick}>
         {click ? (
           <IoMdArrowDropup size={30} style={{ color: "#D97777" }} />
@@ -72,7 +74,8 @@ const Navbar = () => {
           <RxDropdownMenu size={30} style={{ color: "#D97777" }} />
         )}
       </div>
-    </div>
+    </div></>
+    ) : null}
   );
 };
 

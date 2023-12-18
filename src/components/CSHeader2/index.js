@@ -12,14 +12,14 @@ const CSHeader2 = ({ headerCounter }) => {
           id=''
           className='cs-text trait-text  right-text'
         >
-          Average
+          5'4"
         </Typography>
         <Typography
           variant='body2'
           id=''
           className='cs-text trait-text  right-text'
         >
-          Blonde
+          Caucasian
         </Typography>
       </>
     )
