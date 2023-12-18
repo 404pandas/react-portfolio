@@ -137,6 +137,7 @@ iteration-count | direction | fill-mode | play-state | name */
 .trait-items {
   padding: 10px;
   position: relative;
+  justify-content: flex-end;
 }
 
 #full-header-container {
