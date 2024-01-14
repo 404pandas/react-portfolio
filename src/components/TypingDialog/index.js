@@ -16,7 +16,7 @@ export const TypingDialog = ({ activeStep, index, description }) => {
   };
   return (
     <div>
-      <Typewriter onInit={onInit} />
+      <Typewriter onInit={onInit} options={{ cursor: "" }} />
     </div>
   );
 };

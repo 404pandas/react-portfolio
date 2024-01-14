@@ -24,10 +24,19 @@
   flex-direction: column;
 }
 
+#tech-ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+.tech-li {
+  display: flex;
+  text-wrap: nowrap;
+}
 .cardContent {
   padding-bottom: 9px;
-  max-height: 600px !important;
-  height: 460px !important;
   flex-basis: fit-content;
   border-radius: 30px !important;
 }
@@ -37,6 +46,9 @@
   flex-basis: fit-content;
   padding-bottom: 0px !important;
   border-radius: 30px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .MuiCardMedia-img {
