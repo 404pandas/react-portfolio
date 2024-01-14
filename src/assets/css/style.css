@@ -77,7 +77,7 @@ svg {
   width: 80vw;
   background: url(../images/parchment.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   height: auto;
   padding: 10% 15%;
   background-position-x: center;
@@ -90,6 +90,20 @@ top padding is 25px
 right padding is 50px
 bottom padding is 75px
 left padding is 100px */
+.MuiMobileStepper-dot.MuiMobileStepper-dotActive.css-26w9jf-MuiMobileStepper-dot {
+  background-color: #f23847;
+  width: 10px;
+  height: 10px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  fill: #010101 !important;
+}
+
+.arrow {
+  height: 40px !important;
+  width: 40px !important;
+}
 
 .content-body {
   margin-top: 5%;
@@ -166,6 +180,10 @@ left padding is 100px */
   height: auto;
 }
 
+#swipe-container {
+  display: flex;
+  justify-content: center;
+}
 #about-pic {
   margin-top: 50px !important;
   height: 400px;
@@ -203,11 +221,9 @@ left padding is 100px */
 }
 
 #projectCardContainer {
-  position: absolute;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  top: 10vh;
   height: 160vh;
   justify-items: center;
   padding-left: 3%;
