@@ -1,8 +1,6 @@
 import React from "react";
 
 // local imports
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 // external imports
 import Tabs from "@mui/material/Tabs";
@@ -50,7 +48,6 @@ const Technologies = (props) => {
   };
   return (
     <div>
-      <Navbar />
       <div className='content' id='technology-content'>
         <Box sx={{ width: "80%" }}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -391,7 +388,6 @@ const Technologies = (props) => {
           </TabPanel>
         </Box>
       </div>
-      <Footer />
     </div>
   );
 };

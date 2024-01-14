@@ -1,8 +1,7 @@
 import React from "react";
 
 // local imports
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import image from "../assets/images/about-picture.jpg";
 
 // external imports
@@ -11,7 +10,6 @@ import Typography from "@mui/material/Typography";
 const About = () => {
   return (
     <div>
-      <Navbar />
       <div className='content' id='content-container'>
         <div className='content-body' id='content-body'>
           <img
@@ -34,7 +32,6 @@ const About = () => {
           </Typography>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

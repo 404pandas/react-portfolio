@@ -1,7 +1,10 @@
 /*       Global CSS styling       */
 
 /* Imports the League Spartan font from Google */
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+/* Imports the Open Sans font from Google */
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 /* ****************************** */
 /*       Universal selector       */
@@ -13,7 +16,7 @@
   margin: 0;
 
   padding: 0;
-  font-family: "League Spartan", sans-serif;
+  font-family: "Kaushan Script", cursive !important;
 }
 
 /* ****************************** */
@@ -35,21 +38,30 @@
 /* ****************************** */
 
 body {
-  background: var(--tan);
+  background: black;
   margin-bottom: 100px;
-  clear: both;
 }
-
-h1,
-h4,
-p,
 a {
-  color: var(--salmon);
+  font-family: "Kaushan Script", cursive !important;
+  text-decoration: none;
+}
+h1,
+h2,
+h4 {
   text-decoration: none;
 }
 
 ul {
   list-style-type: none;
+}
+p {
+  font-family: "Open Sans", Courier, monospace !important;
+  text-indent: 8%;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
 }
 
 /* ****************************** */
@@ -58,12 +70,26 @@ ul {
 
 .content {
   position: relative;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  width: 100vw;
+  width: 80vw;
+  background: url(../images/parchment.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  padding: 10% 15%;
+  background-position-x: center;
+  margin-top: -15% !important;
+  margin-bottom: 3%;
 }
+
+/* padding: 25px 50px 75px 100px;
+top padding is 25px
+right padding is 50px
+bottom padding is 75px
+left padding is 100px */
 
 .content-body {
   margin-top: 5%;
@@ -88,17 +114,54 @@ ul {
   overflow-y: scroll;
 }
 
+.landing-page {
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+.background {
+  display: flex;
+  justify-content: center;
+}
+
+.background-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 /* ****************************** */
 /*          ID selectors          */
 /* ****************************** */
 
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#page-content {
+  width: 90vw;
+}
+#landing-box {
+  margin-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #content-body {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 5%;
 }
-
+#logo {
+  width: 80%;
+  margin-bottom: 8%;
+}
 #content-container {
   height: auto;
 }
@@ -132,45 +195,13 @@ ul {
   margin-bottom: 0px;
 }
 
-#landing-body1 {
-  margin: 10%;
-}
 #panda-drawing {
   position: relative;
   width: 300px;
   align-items: center;
   z-index: 7;
 }
-#landing-box {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-top: 20px;
-}
-#landing-h4 {
-  text-align: center;
-  margin-top: 10%;
-}
-#landing-text {
-  position: relative;
-  border: 1px solid var(--red);
-  box-shadow: 5px 5px 10px 1px rgba(16, 16, 16, 0.05);
-  top: -58px;
-  width: 80vw;
-}
-#landing-content {
-  height: 160vh;
-  justify-content: center;
-  margin: auto 0px;
-}
 
-#project-content {
-  display: flex;
-  height: 100vh;
-  position: absolute;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 #projectCardContainer {
   position: absolute;
   display: flex;
@@ -185,10 +216,6 @@ ul {
 #whole-page {
   display: flex;
   flex-wrap: wrap;
-}
-
-#d20-content {
-  margin: 20 !important;
 }
 .text-adventure {
   margin-bottom: 300px;

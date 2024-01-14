@@ -15,80 +15,25 @@ import {
 } from "react-icons/ai";
 
 const Footer = () => {
-  const [isSmallScreen, setDesktop] = useState(window.innerWidth > 1450);
-
-  const hideFooter = () => {
-    setDesktop(window.innerWidth > 900);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", hideFooter);
-    return () => window.removeEventListener("resize", hideFooter);
-  });
-
   return (
     <div className='footer'>
-      <div className='footerContainer'>
-        <div className='leftFooter'>
-          <div className='location'>
-            <AiOutlineHome
-              size={20}
-              style={{ color: "#d97777", marginRight: "2rem" }}
-            />
-            <Typography variant='body1' id='footer-body1'>
-              United States
-            </Typography>
-          </div>
-          <div className='phone'>
-            <AiOutlinePhone
-              size={20}
-              style={{ color: "#d97777", marginRight: "2rem" }}
-            />
-            <Typography variant='body1' id='footer-body1'>
-              <a href='tel:7728342342'>1 (772) 834 2342</a>
-            </Typography>
-          </div>
-          <div className='email'>
-            <AiOutlineMail
-              size={20}
-              style={{ color: "#d97777", marginRight: "2rem" }}
-            />
-            <Typography variant='body1' id='footer-body1'>
-              <a href='mailto:mary.panda.jackson@gmail.com'>
-                {" "}
-                mary.panda.jackson@gmail.com
-              </a>
-            </Typography>
-          </div>
-        </div>
-        <div className='rightFooter'>
-          {isSmallScreen ? (
-            <>
-              {" "}
-              <h4>Adopt Me</h4>
-              <Typography variant='body1' id='footer-body1'>
-                I am a purebred Overwhelmed Homosapien looking for a place to
-                call home. If you are interested in hiring me, please contact
-                me!
-              </Typography>
-            </>
-          ) : null}
-          <div className='socialIcons'>
-            <a href='https://www.linkedin.com/in/404pandas'>
-              <AiOutlineLinkedin
-                size={20}
-                style={{ color: "#d97777", marginRight: "2rem" }}
-              />
-            </a>
-            <a href='https://www.github.com/404pandas'>
-              <AiOutlineGithub
-                size={20}
-                style={{ color: "#d97777", marginRight: "2rem" }}
-              />
-            </a>
-          </div>
-        </div>
-      </div>
+      <ul className='flexbox-turn-on' id='footer-ul'>
+        <Typography variant='body1'>Knoxville, TN</Typography>
+        <a href='tel:7728342342'>
+          {" "}
+          <AiOutlinePhone size={20} style={{ marginRight: "2rem" }} />
+        </a>
+        <a href='mailto:mary.panda.jackson@gmail.com'>
+          {" "}
+          <AiOutlineMail size={20} style={{ marginRight: "2rem" }} />
+        </a>
+        <a href='https://www.linkedin.com/in/404pandas'>
+          <AiOutlineLinkedin size={20} style={{ marginRight: "2rem" }} />
+        </a>
+        <a href='https://www.github.com/404pandas'>
+          <AiOutlineGithub size={20} style={{ marginRight: "2rem" }} />
+        </a>
+      </ul>
     </div>
   );
 };

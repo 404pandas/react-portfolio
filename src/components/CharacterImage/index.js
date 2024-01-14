@@ -16,6 +16,7 @@ export const CharacterImage = () => {
           image={wizardPanda}
           height='300'
           alt='wizard panda'
+          id='panda-img'
         />
       </Card>
     </div>

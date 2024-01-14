@@ -1,13 +1,39 @@
 .footer {
-  width: 100vw;
-  background-color: var(--tan);
-  z-index: 50;
   display: flex;
-  position: fixed;
-  bottom: 0;
-  box-shadow: 0px -5px 10px 1px rgba(16, 16, 16, 0.05);
+  flex-direction: row;
+  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 1rem;
+  background-image: url("../../assets/images/navbar.png");
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 150px;
+  align-items: center;
+  z-index: 10000 !important;
+  position: relative;
+  margin-top: -10%;
+  justify-content: center;
 }
 
+#footer-ul {
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  width: 80%;
+  justify-content: space-around;
+}
+#footer-ul > * {
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
+}
+#location {
+  display: flex;
+  flex-wrap: nowrap !important;
+}
 .footerContainer {
   display: flex;
   height: auto;
@@ -20,6 +46,10 @@
   padding: 1rem;
   justify-content: center;
   width: 30vw;
+}
+
+.flexbx-turn-on {
+  display: flex;
 }
 
 .leftFooter p {

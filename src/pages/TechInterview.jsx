@@ -1,8 +1,7 @@
 import React from "react";
 
 // local imports
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import InterviewQuestions from "../components/InterviewQuestions";
 
 // external imports
@@ -65,7 +64,6 @@ const TechInterview = () => {
 
   return (
     <>
-      <Navbar />
       <div className='content' id='tech-interview-content'>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
@@ -85,7 +83,6 @@ const TechInterview = () => {
           <InterviewQuestions />{" "}
         </CustomTabPanel>
       </div>{" "}
-      <Footer />
     </>
   );
 };

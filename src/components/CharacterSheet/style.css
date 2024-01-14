@@ -55,6 +55,10 @@
   font-size: 2.5em;
 }
 
+#panda-img {
+  height: 100%;
+}
+
 .cs-text {
   font-size: 90% !important;
   line-height: 180% !important;
