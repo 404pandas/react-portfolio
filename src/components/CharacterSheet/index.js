@@ -153,7 +153,7 @@ export const CharacterSheet = (props) => {
           />
           {/* LEFT HEADER */}
           <Grid container id='header-container'>
-            <Grid item xs={5} className='flexbox-turn-on'>
+            <Grid item xs={5} className='flexbox-turn-on' id='name'>
               <CSHeader4 headerCounter={headerCounter} />
             </Grid>
             <Grid item xs={7} id='right-margin' className='flexbox-turn-on'>
@@ -217,31 +217,31 @@ export const CharacterSheet = (props) => {
               <CSAppearance3 appearanceCounter={appearanceCounter} />
             </div>
             {/* APPERANCE ROLLS */}
-            <div className='individual-rolls'>
-              <Button
-                variant='outlined'
-                onClick={appearanceIncrement}
-                className='hexagon-button'
-              >
-                ROLL
-              </Button>
-              <Button
-                variant='outlined'
-                onClick={() => setAppearanceCounter(200)}
-                className='hexagon-button'
-              >
-                Succ
-              </Button>
-              <Button
-                variant='outlined'
-                onClick={() => setAppearanceCounter(0)}
-                className='hexagon-button'
-              >
-                Fail
-              </Button>
+          </div>
+          <div className='individual-rolls' id='appearance-fix'>
+            <Button
+              variant='outlined'
+              onClick={appearanceIncrement}
+              className='hexagon-button'
+            >
+              ROLL
+            </Button>
+            <Button
+              variant='outlined'
+              onClick={() => setAppearanceCounter(200)}
+              className='hexagon-button'
+            >
+              Succ
+            </Button>
+            <Button
+              variant='outlined'
+              onClick={() => setAppearanceCounter(0)}
+              className='hexagon-button'
+            >
+              Fail
+            </Button>
 
-              <Typography variant='body2'>Roll: {appearanceNumber}</Typography>
-            </div>
+            <Typography variant='body2'>Roll: {appearanceNumber}</Typography>
           </div>{" "}
           {/* BACKSTORY */}
           <div className='trait-containers' id='backstory-container'>
@@ -258,31 +258,31 @@ export const CharacterSheet = (props) => {
               <CSBackstory4 backstoryCounter={backstoryCounter} />
               <CSBackstory5 backstoryCounter={backstoryCounter} />
             </div>
-            {/* BACKSTORY ROLLS */}
-            <div className='individual-rolls'>
-              <Button
-                variant='outlined'
-                onClick={backstoryIncrement}
-                className='hexagon-button'
-              >
-                Roll
-              </Button>
-              <Button
-                variant='outlined'
-                onClick={() => setBackstoryCounter(200)}
-                className='hexagon-button'
-              >
-                Succ
-              </Button>
-              <Button
-                variant='outlined'
-                onClick={() => setBackstoryCounter(0)}
-                className='hexagon-button'
-              >
-                Fail
-              </Button>
-              <Typography variant='body2'>Roll: {backstoryNumber}</Typography>
-            </div>
+          </div>{" "}
+          {/* BACKSTORY ROLLS */}
+          <div className='individual-rolls'>
+            <Button
+              variant='outlined'
+              onClick={backstoryIncrement}
+              className='hexagon-button'
+            >
+              Roll
+            </Button>
+            <Button
+              variant='outlined'
+              onClick={() => setBackstoryCounter(200)}
+              className='hexagon-button'
+            >
+              Succ
+            </Button>
+            <Button
+              variant='outlined'
+              onClick={() => setBackstoryCounter(0)}
+              className='hexagon-button'
+            >
+              Fail
+            </Button>
+            <Typography variant='body2'>Roll: {backstoryNumber}</Typography>
           </div>
         </Grid>
 
@@ -303,32 +303,32 @@ export const CharacterSheet = (props) => {
               <CSAlliesName alliesCounter={alliesCounter} />
               <CSAlliesLogo alliesCounter={alliesCounter} />
             </Grid>
-            {/* ALLIES ROLLS */}
-            <div className='individual-rolls' id='allies-rolls'>
-              <Button
-                variant='outlined'
-                onClick={alliesIncrement}
-                className='hexagon-button'
-              >
-                Roll
-              </Button>
-              <Button
-                variant='outlined'
-                onClick={() => setAlliesCounter(200)}
-                className='hexagon-button'
-              >
-                Succ
-              </Button>
-              <Button
-                variant='outlined'
-                onClick={() => setAlliesCounter(0)}
-                className='hexagon-button'
-              >
-                Fail
-              </Button>
-              <Typography variant='body2'>Roll: {alliesNumber}</Typography>
-            </div>
-          </Grid>
+          </Grid>{" "}
+          {/* ALLIES ROLLS */}
+          <div className='individual-rolls'>
+            <Button
+              variant='outlined'
+              onClick={alliesIncrement}
+              className='hexagon-button'
+            >
+              Roll
+            </Button>
+            <Button
+              variant='outlined'
+              onClick={() => setAlliesCounter(200)}
+              className='hexagon-button'
+            >
+              Succ
+            </Button>
+            <Button
+              variant='outlined'
+              onClick={() => setAlliesCounter(0)}
+              className='hexagon-button'
+            >
+              Fail
+            </Button>
+            <Typography variant='body2'>Roll: {alliesNumber}</Typography>
+          </div>
           {/* TRAITS */}
           <div id='trait-fix'>
             <img
@@ -338,31 +338,31 @@ export const CharacterSheet = (props) => {
               id='cs-traits'
             />
             <CSTraits traitsCounter={traitsCounter} />
-            {/* TRAITS ROLLS */}
-            <div className='individual-rolls'>
-              <Button
-                variant='outlined'
-                onClick={traitsIncrement}
-                className='hexagon-button'
-              >
-                Roll
-              </Button>
-              <Button
-                variant='outlined'
-                onClick={() => setTraitsCounter(200)}
-                className='hexagon-button'
-              >
-                Succ
-              </Button>
-              <Button
-                variant='outlined'
-                onClick={() => setTraitsCounter(0)}
-                className='hexagon-button'
-              >
-                Fail
-              </Button>
-              <Typography variant='body2'>Roll: {traitsNumber}</Typography>
-            </div>
+          </div>{" "}
+          {/* TRAITS ROLLS */}
+          <div className='individual-rolls'>
+            <Button
+              variant='outlined'
+              onClick={traitsIncrement}
+              className='hexagon-button'
+            >
+              Roll
+            </Button>
+            <Button
+              variant='outlined'
+              onClick={() => setTraitsCounter(200)}
+              className='hexagon-button'
+            >
+              Succ
+            </Button>
+            <Button
+              variant='outlined'
+              onClick={() => setTraitsCounter(0)}
+              className='hexagon-button'
+            >
+              Fail
+            </Button>
+            <Typography variant='body2'>Roll: {traitsNumber}</Typography>
           </div>
           {/* TREASURE */}
           <div className='trait-containers' id='treasure-containers'>
@@ -396,7 +396,7 @@ export const CharacterSheet = (props) => {
               </Grid>
             </Grid>
             {/* TREASURE ROLLS */}
-            <div className='individual-rolls' id='treasure-rolls'>
+            <div className='individual-rolls'>
               <Button
                 variant='outlined'
                 onClick={treasureIncrement}

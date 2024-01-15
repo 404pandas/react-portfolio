@@ -10,7 +10,7 @@ export const CSAlliesLogo = ({ alliesCounter }) => {
       <>
         <div id='allies-logos'>
           <img src={edx} id='edx' alt='edx logo' className='allies-logo' />
-          <img src={twoU} alt='2u logo' className='allies-logo' />
+          <img src={twoU} id='twou' alt='2u logo' className='allies-logo' />
         </div>{" "}
       </>
     )

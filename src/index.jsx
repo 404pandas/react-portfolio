@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // local imports
 import App from "./App.jsx";
-import About from "./pages/About";
+
 import D20 from "./pages/D20";
 import Landing from "./pages/Landing";
 import Projects from "./pages/Projects";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Landing /> },
-      { path: "/about", element: <About /> },
+
       { path: "/projects", element: <Projects /> },
       { path: "/technologies", element: <Technologies /> },
       { path: "/d20", element: <D20 /> },

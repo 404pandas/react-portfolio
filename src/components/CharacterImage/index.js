@@ -10,7 +10,10 @@ import wizardPanda from "../../assets/images/panda-wizard.png";
 export const CharacterImage = () => {
   return (
     <div>
-      <Card>
+      <Card
+        id='panda-character'
+        style={{ backgroundColor: "transparent", height: "80% !important" }}
+      >
         <CardMedia
           component='img'
           image={wizardPanda}

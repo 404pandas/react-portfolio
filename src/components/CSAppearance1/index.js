@@ -9,7 +9,7 @@ export const CSAppearance1 = ({ appearanceCounter }) => {
       <>
         <Typography
           variant='body2'
-          id=''
+          id='test'
           className='cs-text trait-text appearance-text'
         >
           Mary appears to the naked eye a typical developer. She has blonde

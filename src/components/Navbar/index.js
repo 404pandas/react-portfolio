@@ -19,7 +19,7 @@ const Navbar = () => {
           <li className='nav-items'>
             {isOnHomePage && <FaDiceD20 className='die' />}{" "}
             {/* Conditionally render the icon */}
-            <Link to='/' id='name'>
+            <Link to='/' id='name-header'>
               Mary Elenius
             </Link>
           </li>

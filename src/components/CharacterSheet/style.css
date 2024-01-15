@@ -1,6 +1,7 @@
 #cs-header {
   height: auto;
   width: 100%;
+  margin-top: 25px;
 }
 #cs-appearance {
   min-height: 300px;
@@ -25,17 +26,23 @@
   width: 515px;
 }
 
+#text-adventure {
+  align-items: center;
+  margin-bottom: 15% !important;
+  margin-top: 25%;
+}
+
 .hexagon-button {
   clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
   background-image: radial-gradient(
     200% 70% at center 20%,
-    rgba(217, 119, 119, 1) -30%,
-    rgba(219, 123, 121, 1) 49%,
-    rgba(192, 103, 103, 1) 50%,
-    rgba(192, 103, 103, 1) 150%
+    rgb(151, 139, 67) -30%,
+    rgb(63, 43, 10) 49%,
+    rgb(94, 53, 15) 50%,
+    rgb(53, 30, 30) 150%
   );
   border: 0 !important;
-  color: black !important;
+  color: white !important;
   bottom: 0px;
   height: 2em;
   justify-content: center;
@@ -56,7 +63,7 @@
 }
 
 #panda-img {
-  height: 100%;
+  height: 60% !important;
 }
 
 .cs-text {
@@ -71,16 +78,19 @@
 }
 
 #header-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   position: absolute;
   width: 80%;
   align-self: center;
   justify-self: center;
   display: flex;
-  margin-top: -11%;
+  margin-top: -19%;
   min-height: 60px;
 }
 #right-margin {
-  margin-top: 1.5%;
+  margin-top: 11%;
 }
 
 .right-text {
@@ -98,28 +108,31 @@
 }
 #char-name {
   font-size: 2em !important;
+  margin-left: -20% !important;
+  margin-top: 35%;
+}
+.trait-items {
+  justify-content: flex-end !important;
 }
 
 .trait-text {
   margin-left: 11% !important;
   font-size: 40% !important;
-  animation: appear 5s both, shimmer 2s infinite !important;
+  position: relative;
+  color: black !important;
+  animation: appear 5s both, shimmer 10s linear infinite !important;
   background-repeat: no-repeat;
   background-position: -4rem top;
-  background-size: 125px 100% !important;
+  background-image: linear-gradient(
+    90deg,
+    transparent 25%,
+    #e0e0e0 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
   background-clip: text;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent;
-  background: #d97777 -webkit-gradient(linear, 100% 50, 0 0, from(#d97777), color-stop(0.5, #f7be5c), to(#d97777));
-  -webkit-background-size: 4rem 100%; /*50px*/
-  color: black;
-  /* text-shadow: rgb(190, 148, 44) 1px 0 15px !important; */
 }
-.trait-items {
-  justify-content: flex-end !important;
-}
-/* @keyframes duration | easing-function | delay |
-iteration-count | direction | fill-mode | play-state | name */
+
 @keyframes appear {
   0% {
     text-shadow: 0 0 40px #cbc7c7;
@@ -133,10 +146,11 @@ iteration-count | direction | fill-mode | play-state | name */
 
 @keyframes shimmer {
   0% {
-    background-position: top right;
+    background-position: -200% 0;
   }
+
   100% {
-    background-position: top left;
+    background-position: 200% 0;
   }
 }
 
@@ -169,16 +183,26 @@ iteration-count | direction | fill-mode | play-state | name */
 
 #appearance-trait {
   position: absolute;
-  top: 5%;
-  width: 270px;
+  top: 11%;
+  width: 100%;
   font-size: 0.4rem;
   height: 275px;
   overflow-y: scroll;
 }
 
 #appearance-container {
-  height: 300px;
-  width: 285px;
+  margin-top: 175px;
+  height: auto;
+
+  margin-top: 40px;
+  width: 100% !important;
+
+  font-size: 0.4em !important;
+  position: relative;
+
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .backstory-text {
@@ -188,8 +212,8 @@ iteration-count | direction | fill-mode | play-state | name */
 
 #backstory-trait {
   position: absolute;
-  top: 545px;
-  width: 270px;
+  top: 9% !important;
+  width: 100%;
   font-size: 0.4rem;
   height: 90%;
   overflow-y: scroll;
@@ -200,10 +224,18 @@ iteration-count | direction | fill-mode | play-state | name */
 }
 
 #backstory-container {
-  margin-top: 175px;
   height: auto;
-  width: 285px;
+
+  width: 100% !important;
+
+  font-size: 0.4em !important;
+  position: relative;
+
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
+
 #inner-left {
   font-size: 1.5em !important;
   text-indent: 1em;
@@ -230,7 +262,8 @@ iteration-count | direction | fill-mode | play-state | name */
   position: relative;
   width: 515px;
   height: 350px;
-
+  margin-bottom: -47% !important;
+  margin-top: -47% !important;
   align-items: center;
   align-content: center;
   justify-content: center;
@@ -284,9 +317,17 @@ iteration-count | direction | fill-mode | play-state | name */
   left: -25px;
 }
 
+#name {
+  text-align: center;
+  font-size: 1em;
+  margin-left: 5%;
+  margin-top: -4%;
+}
+
 #edx {
-  position: relative;
-  top: -50px;
+  left: 58%;
+  position: absolute;
+  top: 24%;
 }
 
 .individual-rolls {
@@ -295,7 +336,12 @@ iteration-count | direction | fill-mode | play-state | name */
   top: 30px;
   margin-bottom: 5%;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 90%;
+  flex-wrap: wrap;
+  text-align: center;
+
+  align-content: center;
 }
 
 #allies-rolls {
@@ -338,7 +384,7 @@ iteration-count | direction | fill-mode | play-state | name */
   top: 9%;
   left: auto;
   font-size: 2.4em;
-  width: 60%;
+  width: 90%;
 }
 
 #traits-list {
@@ -353,7 +399,14 @@ iteration-count | direction | fill-mode | play-state | name */
 
 #trait-fix {
   position: relative;
-  margin-top: 50px !important;
+  margin-top: 0px !important;
+}
+
+#right-margin {
+  font-size: 0.5em;
+}
+#full-grid {
+  justify-content: space-around;
 }
 
 /* ****************************** */
@@ -361,15 +414,26 @@ iteration-count | direction | fill-mode | play-state | name */
 /* ****************************** */
 
 /* Laptop */
-@media screen and (max-width: 900px) {
-  #text-adventure {
-    margin-top: 50px;
-    margin-bottom: 10px;
+@media screen and (max-width: 1199px) {
+  #treasure-lists {
+    width: 60% !important;
+    top: 5% !important;
   }
+  #appearance-trait {
+    top: 7% !important;
+  }
+  #backstory-trait {
+    top: 9% !important;
+  }
+  #allies-text {
+    margin-left: 20% !important;
+  }
+}
 
+/* Laptop */
+@media screen and (max-width: 900px) {
   #right-container {
     position: relative;
-    margin-top: 250px;
   }
   #header-rolls {
     margin-bottom: 45px;
@@ -377,16 +441,41 @@ iteration-count | direction | fill-mode | play-state | name */
   .individual-rolls {
     margin-bottom: 20%;
   }
-
+  .trait-items {
+    margin-left: -2% !important;
+    margin-top: -4% !important;
+  }
+  #name {
+    margin-top: -6% !important;
+  }
   #right-container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  #treasure-lists {
+    top: 6% !important;
+    font-size: 2rem;
+    width: 80%;
+  }
+  #text-adventure {
+    margin-top: 15% !important;
+  }
 }
 
 /* iPads and Tablets */
 @media screen and (max-width: 671px) {
+  #name {
+    margin-top: -1% !important;
+    margin-left: 0% !important;
+  }
+  #twou {
+    width: 30% !important;
+    margin-right: -38% !important;
+  }
+  #right-margin {
+    margin-top: 15% !important;
+  }
   #left-container {
     width: 400px;
     flex-direction: column;
@@ -410,8 +499,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 
   #allies-container {
-    margin-top: 40px;
-    width: auto;
+    width: 100% !important;
   }
 
   .img-containers {
@@ -424,7 +512,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 
   .individual-rolls {
-    width: 300px !important;
+    width: 90%;
   }
 
   .trait-items {
@@ -441,6 +529,8 @@ iteration-count | direction | fill-mode | play-state | name */
 
   #header-rolls {
     flex-wrap: wrap;
+    align-self: center;
+    text-align: center;
   }
 
   #allies-logos {
@@ -455,11 +545,12 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 
   #allies-name {
-    top: 50px;
+    top: 12% !important;
   }
 
   .allies-logo {
-    width: 50% !important;
+    width: 16% !important;
+    top: 28% !important;
   }
 
   #trait-fix {
@@ -478,7 +569,7 @@ iteration-count | direction | fill-mode | play-state | name */
   }
 
   #text-adventure {
-    margin-top: 10px;
+    margin-top: 38px;
     margin-bottom: 10px;
   }
 
@@ -492,7 +583,69 @@ iteration-count | direction | fill-mode | play-state | name */
     font-size: 0.7em;
   }
   #treasure-lists {
-    font-size: 0.7em;
+    font-size: 1.5em;
     width: 90%;
+  }
+  #edx {
+    top: 32% !important;
+  }
+  #appearance-fix {
+  }
+}
+
+/* Phones */
+@media screen and (max-width: 550px) {
+  #edx {
+    top: 36% !important;
+  }
+  #right-margin {
+    font-size: 0.5rem;
+    margin-top: 20% !important;
+  }
+  .trait-text {
+    margin-left: 15% !important;
+    font-size: 0.3rem !important;
+  }
+  #name {
+    margin-top: -1% !important;
+  }
+  #treasure-lists {
+    font-size: 2rem !important;
+  }
+  #treasures {
+    font-size: 0.5rem !important;
+  }
+  #allies-text {
+    font-size: 0.6rem !important;
+  }
+  #allies-name {
+    top: 20% !important;
+  }
+}
+
+/* Why does anyone own a phone this small */
+@media screen and (max-width: 375px) {
+  #name {
+    font-size: 0.3rem !important;
+    margin-top: -5% !important;
+  }
+  #right-margin {
+    font-size: 0.3rem;
+    margin-top: 13% !important;
+  }
+  #treasures {
+    font-size: 0.3rem !important;
+  }
+  #allies-text {
+    font-size: 0.5rem !important;
+  }
+  #allies-name {
+    top: 25% !important;
+  }
+  #edx {
+    top: 40% !important;
+  }
+  #twou {
+    width: 30% !important;
   }
 }

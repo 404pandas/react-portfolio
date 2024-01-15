@@ -161,6 +161,7 @@ left padding is 100px */
 #page-content {
   width: 90vw;
 }
+
 #landing-box {
   margin-top: 8%;
   display: flex;
@@ -190,6 +191,12 @@ left padding is 100px */
   height: 400px;
   border-radius: 20px;
   margin: 2%;
+}
+
+.contentt#about {
+  background-size: cover !important;
+  width: 90%;
+  padding: 10% !important;
 }
 
 #about-body1 {
@@ -235,9 +242,8 @@ left padding is 100px */
   flex-wrap: wrap;
 }
 .text-adventure {
-  margin-bottom: 300px;
   /* white-space: nowrap; */
-  border-right: 0.15em solid #d97777;
+  border-right: 0.15em solid #ac3333;
   letter-spacing: 0.15em;
   animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
 }
@@ -305,10 +311,6 @@ left padding is 100px */
     margin-bottom: 50px !important;
     height: auto;
   }
-  #text-adventure {
-    margin-top: 50px !important;
-    margin-bottom: 5px !important;
-  }
 
   #allies-container {
     height: 250px !important;
@@ -336,7 +338,7 @@ left padding is 100px */
 /* Mobile devices */
 @media screen and (max-width: 480px) {
   .DialogBox {
-    background-color: #e2b27e;
+    background-color: #0a0908;
     border: solid;
     padding: 15px;
     position: relative;
@@ -358,10 +360,6 @@ left padding is 100px */
   #flex-fix {
     margin-bottom: 50px !important;
     height: auto;
-  }
-  #text-adventure {
-    margin-top: 50px !important;
-    margin-bottom: 5px !important;
   }
 
   #allies-container {
