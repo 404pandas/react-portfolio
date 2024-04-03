@@ -22,13 +22,11 @@
 /* ****************************** */
 
 :root {
-  --red: #f23847;
-  --pink: #d95f8c;
-  --blue: #adb6d7;
-  --lightBlue: #dfe2f2;
-  --black: #010101;
-  --salmon: #d97777;
-  --tan: #f8f5f0;
+  --tan: #f2dbae;
+  --brown: #594b39;
+  --dark-tan: #d9b991;
+  --white: #f2f2f2;
+  --black: #0d0d0d;
 }
 
 /* ****************************** */
@@ -38,11 +36,28 @@
 body {
   background: black;
   margin-bottom: 100px;
+  background-image: url("../images/background.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow-y: scroll;
+  display: flex;
+  animation: slideDown 1.5s ease forwards;
+}
+@keyframes slideDown {
+  from {
+    background-position: 0% 200%; /* Start the animation from top */
+    height: 0%;
+  }
+  to {
+    background-position: 0% 0%; /* End the animation at the top of the page */
+    height: 100%;
+  }
 }
 a {
   font-family: "Kaushan Script", cursive !important;
   text-decoration: none;
 }
+
 h1,
 h2,
 h4 {
@@ -64,7 +79,13 @@ p {
 /* ****************************** */
 /*          ID selectors          */
 /* ****************************** */
-
+#name {
+  background-color: var(--tan);
+  box-shadow: -10px 5px var(--brown);
+  margin: 20% 0 0 20%;
+  padding: 5%;
+  width: 35vw;
+}
 /* ****************************** */
 /*         Media Queries          */
 /* ****************************** */
