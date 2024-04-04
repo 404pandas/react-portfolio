@@ -75,6 +75,9 @@ p {
   font-family: "Open Sans", Courier, monospace !important;
   text-indent: 8%;
 }
+a {
+  color: var(--black);
+}
 
 /* ****************************** */
 /*        Class selectors         */

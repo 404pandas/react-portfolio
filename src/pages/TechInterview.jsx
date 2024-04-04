@@ -3,7 +3,11 @@
 // external imports
 
 const TechInterview = () => {
-  return <></>;
+  return (
+    <>
+      <h1>Tech Interview</h1>
+    </>
+  );
 };
 
 export default TechInterview;

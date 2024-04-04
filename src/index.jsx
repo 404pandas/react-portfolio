@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import Landing from "./pages/Landing";
 import Projects from "./pages/Projects";
 import Technologies from "./pages/Technologies";
+import About from "./pages/About";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
 
       { path: "/projects", element: <Projects /> },
       { path: "/technologies", element: <Technologies /> },
+      { path: "/about", element: <About /> },
     ],
   },
 ]);

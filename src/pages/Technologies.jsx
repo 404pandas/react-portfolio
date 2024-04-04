@@ -3,7 +3,7 @@
 // external imports
 
 const Technologies = () => {
-  return <></>;
+  return <h1>Technologies</h1>;
 };
 
 export default Technologies;
