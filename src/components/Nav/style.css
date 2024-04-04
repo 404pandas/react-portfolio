@@ -1,0 +1,34 @@
+#nav {
+  position: absolute;
+  z-index: 5;
+  background-color: var(--tan);
+  box-shadow: -10px 5px var(--brown);
+  margin: 10% 0 0 10%;
+  padding: 2%;
+  width: fit-content;
+  display: flex;
+}
+#home {
+  align-self: center;
+  margin-right: 3%;
+}
+.nav-items {
+  display: flex;
+  flex-direction: column;
+}
+
+#home-nav {
+  margin-right: 3%;
+  text-align: center;
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  #nav > h1 {
+    font-size: 1.3rem;
+  }
+
+  .subtitles {
+    font-size: 0.5rem;
+  }
+}

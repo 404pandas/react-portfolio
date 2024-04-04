@@ -1,0 +1,74 @@
+body {
+  background-image: unset;
+}
+#about-cont {
+  z-index: 5;
+  background-color: var(--tan);
+  box-shadow: -10px 5px var(--brown);
+  margin: 15% 0 0 10%;
+  padding: 2%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+#about-cont > div:nth-child(odd) {
+  flex-direction: row-reverse !important;
+}
+.about-sect > img:nth-child(even) {
+  margin-right: 3%;
+}
+.about-sect > img:nth-child(even) {
+  margin-left: 3%;
+}
+.about-sect {
+  display: flex;
+  align-items: center;
+  margin-top: 3% !important;
+  margin-bottom: 3% !important;
+}
+.about-imgs {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-p {
+  width: 65%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+/* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
+@media only screen and (min-width: 900px) {
+  .about-sect {
+    flex-direction: row !important;
+  }
+}
+
+/* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
+@media only screen and (max-width: 600px) {
+  .about-sect {
+    flex-direction: column !important;
+  }
+  #about-cont > div:nth-child(odd) {
+    flex-direction: column !important;
+  }
+  .about-imgs {
+    width: 50%;
+    margin-top: 3%;
+  }
+  #about-cont {
+    margin-top: 25% !important;
+  }
+  #first {
+    margin-top: 20% !important;
+  }
+}
+/* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
+@media only screen and (min-width: 600px) {
+  /* .about-sect {
+    flex-direction: column !important;
+  } */
+  #about-cont {
+    margin-top: 20% !important;
+  }
+}
