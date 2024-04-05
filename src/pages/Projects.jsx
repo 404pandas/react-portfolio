@@ -12,26 +12,26 @@ import Grid from "@mui/material/Grid";
 // local imports
 import comingSoon from "../assets/images/coming-soon.jpg";
 import Nav from "../components/Nav";
-import image1 from "../assets/images/1.svg";
-import image2 from "../assets/images/2.svg";
-import image3 from "../assets/images/3.svg";
-import image4 from "../assets/images/4.svg";
-import image5 from "../assets/images/5.svg";
-import image6 from "../assets/images/6.svg";
-import image7 from "../assets/images/7.svg";
-import image8 from "../assets/images/8.svg";
-import image9 from "../assets/images/9.svg";
-import image10 from "../assets/images/10.svg";
-import image11 from "../assets/images/11.svg";
-import image12 from "../assets/images/12.svg";
-import image13 from "../assets/images/13.svg";
-import image14 from "../assets/images/14.svg";
-import image15 from "../assets/images/15.svg";
-import image16 from "../assets/images/16.svg";
-import image17 from "../assets/images/17.svg";
-import image18 from "../assets/images/18.svg";
-import image19 from "../assets/images/19.svg";
-import image20 from "../assets/images/20.svg";
+import image1 from "..react-portfolio/assets/images/1.svg";
+import image2 from "..react-portfolio/assets/images/2.svg";
+import image3 from "..react-portfolio/assets/images/3.svg";
+import image4 from "..react-portfolio/assets/images/4.svg";
+import image5 from "..react-portfolio/assets/images/5.svg";
+import image6 from "..react-portfolio/assets/images/6.svg";
+import image7 from "..react-portfolio/assets/images/7.svg";
+import image8 from "..react-portfolio/assets/images/8.svg";
+import image9 from "..react-portfolio/assets/images/9.svg";
+import image10 from "..react-portfolio/assets/images/10.svg";
+import image11 from "..react-portfolio/assets/images/11.svg";
+import image12 from "..react-portfolio/assets/images/12.svg";
+import image13 from "..react-portfolio/assets/images/13.svg";
+import image14 from "..react-portfolio/assets/images/14.svg";
+import image15 from "..react-portfolio/assets/images/15.svg";
+import image16 from "..react-portfolio/assets/images/16.svg";
+import image17 from "..react-portfolio/assets/images/17.svg";
+import image18 from "..react-portfolio/assets/images/18.svg";
+import image19 from "..react-portfolio/assets/images/19.svg";
+import image20 from "..react-portfolio/assets/images/20.svg";
 
 // Project data
 const data = [
