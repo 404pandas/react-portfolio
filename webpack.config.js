@@ -13,7 +13,9 @@ module.exports = {
     // The `hot` option is to use the webpack-dev-server in combination with the hot module replacement API.
     hot: "only",
   },
-
+  resolve: {
+    root: path.resolve("./src/assets"),
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html",
