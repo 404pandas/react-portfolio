@@ -32,14 +32,6 @@
 /*       Element selectors        */
 /* ****************************** */
 
-body {
-  background-image: url("../images/background.svg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  overflow-y: scroll;
-  display: flex;
-  animation: slideDown 2s ease forwards;
-}
 img {
   width: 30%;
 }
