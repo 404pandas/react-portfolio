@@ -1,7 +1,7 @@
 // external imports
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // local imports
 import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
@@ -11,6 +11,7 @@ import "./style.css";
 const MapIcon = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredIconId, setHoveredIconId] = useState(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   function applyRandomClass(e, iconId) {
     console.log("Applying random class function run");
@@ -38,6 +39,18 @@ const MapIcon = () => {
     icon.classList.remove("wiggle");
   }
 
+  const isTouchScreen = () => {
+    return (
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia("(pointer: coarse)").matches
+    );
+  };
+
+  useEffect(() => {
+    setIsTouchDevice(isTouchScreen());
+  }, []);
+
   return (
     <Grid container spacing={2} className='flexbox-turn-on' id='icons'>
       <Grid className='nav-items' item xs={8} sm={6} md={4} lg={4}>
@@ -50,19 +63,25 @@ const MapIcon = () => {
             id='knight'
             className='landing-icons'
             onMouseEnter={(e) => {
-              setIsHovered(true);
-              setHoveredIconId(e.target.id);
-              removeClasses(e, e.target.id);
+              if (!isTouchDevice) {
+                setIsHovered(true);
+                setHoveredIconId(e.target.id);
+                removeClasses(e, e.target.id);
+              }
             }}
             onMouseLeave={(e) => {
-              setIsHovered(false);
-              applyRandomClass(e, e.target.id);
+              if (!isTouchDevice) {
+                setIsHovered(false);
+                applyRandomClass(e, e.target.id);
+              }
             }}
           ></img>
           <h2
             id='knight'
             className={
-              isHovered && hoveredIconId === "knight" ? "show" : "hide"
+              isTouchDevice || (isHovered && hoveredIconId === "knight")
+                ? "show"
+                : "hide"
             }
           >
             About Me
@@ -75,13 +94,17 @@ const MapIcon = () => {
           <img
             className='landing-icons'
             onMouseEnter={(e) => {
-              setIsHovered(true);
-              setHoveredIconId(e.target.id);
-              removeClasses(e, e.target.id);
+              if (!isTouchDevice) {
+                setIsHovered(true);
+                setHoveredIconId(e.target.id);
+                removeClasses(e, e.target.id);
+              }
             }}
             onMouseLeave={(e) => {
-              setIsHovered(false);
-              applyRandomClass(e, e.target.id);
+              if (!isTouchDevice) {
+                setIsHovered(false);
+                applyRandomClass(e, e.target.id);
+              }
             }}
             src={dragonBuilding}
             alt='dragon building icon'
@@ -90,7 +113,9 @@ const MapIcon = () => {
           <h2
             id='dragon'
             className={
-              isHovered && hoveredIconId === "dragon" ? "show" : "hide"
+              isTouchDevice || (isHovered && hoveredIconId === "dragon")
+                ? "show"
+                : "hide"
             }
           >
             Projects
@@ -103,13 +128,17 @@ const MapIcon = () => {
           <img
             className='landing-icons'
             onMouseEnter={(e) => {
-              setIsHovered(true);
-              setHoveredIconId(e.target.id);
-              removeClasses(e, e.target.id);
+              if (!isTouchDevice) {
+                setIsHovered(true);
+                setHoveredIconId(e.target.id);
+                removeClasses(e, e.target.id);
+              }
             }}
             onMouseLeave={(e) => {
-              setIsHovered(false);
-              applyRandomClass(e, e.target.id);
+              if (!isTouchDevice) {
+                setIsHovered(false);
+                applyRandomClass(e, e.target.id);
+              }
             }}
             src={building}
             alt='building icon'
@@ -118,7 +147,9 @@ const MapIcon = () => {
           <h2
             id='building'
             className={
-              isHovered && hoveredIconId === "building" ? "show" : "hide"
+              isTouchDevice || (isHovered && hoveredIconId === "building")
+                ? "show"
+                : "hide"
             }
           >
             Technologies

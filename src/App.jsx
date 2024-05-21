@@ -21,11 +21,9 @@ function App() {
   console.log("app-" + currentPage);
 
   return (
-    <div className='App'>
-      <main>
-        <Page currentPage={currentPage} />
-      </main>
-    </div>
+    <main>
+      <Page currentPage={currentPage} />
+    </main>
   );
 }
 

@@ -1,5 +1,4 @@
 #nav {
-  position: absolute;
   z-index: 5;
   background-color: var(--tan);
   box-shadow: -10px 5px var(--brown);

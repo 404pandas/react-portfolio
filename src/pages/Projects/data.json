@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Project 1",
+    "description": "This is a description of project 1",
+    "code": "https://github.com",
+    "deployment": "https://maryelenius.com",
+    "image": "comingSoon",
+    "key": 100
+  },
+  {
+    "title": "Project 2",
+    "description": "This is a description of project 2",
+    "code": "https://github.com",
+    "deployment": "https://maryelenius.com",
+    "image": "comingSoon",
+    "key": 101
+  },
+  {
+    "title": "Project 3",
+    "description": "This is a description of project 3",
+    "code": "https://github.com",
+    "deployment": "https://maryelenius.com",
+    "image": "comingSoon",
+    "key": 102
+  },
+  {
+    "title": "Project 4",
+    "description": "This is a description of project 4",
+    "code": "https://github.com",
+    "deployment": "https://maryelenius.com",
+    "image": "comingSoon",
+    "key": 103
+  },
+  {
+    "title": "Project 5",
+    "description": "This is a description of project 5",
+    "code": "https://github.com",
+    "deployment": "https://maryelenius.com",
+    "image": "comingSoon",
+    "key": 104
+  }
+]

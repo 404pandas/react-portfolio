@@ -1,4 +1,6 @@
 // local imports
+import "../../assets/css/technologies.css";
+
 // external imports
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";

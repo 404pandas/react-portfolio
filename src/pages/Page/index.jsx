@@ -16,11 +16,12 @@ function Page({ currentPage }) {
   }, [pageName]);
 
   return (
-    <section>
+    <>
+      {!isRootPage && <Nav />}
       <PageContent>
-        {!isRootPage && <Nav />} <Outlet />
+        <Outlet />
       </PageContent>
-    </section>
+    </>
   );
 }
 export default Page;

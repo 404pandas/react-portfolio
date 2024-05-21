@@ -1,15 +1,16 @@
-// external imports
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import IconButton from "@mui/material/IconButton";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  ImageList,
+  ImageListItem,
+  IconButton,
+  Typography,
+  Container,
+  Grid,
+} from "@mui/material";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import { useState, useEffect } from "react";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
+import data from "./data.json";
+import "../../assets/css/projects.css";
 
-// local imports
 import comingSoon from "../../assets/images/coming-soon.jpg";
 import image1 from "../../assets/images/1.svg";
 import image2 from "../../assets/images/2.svg";
@@ -32,50 +33,6 @@ import image18 from "../../assets/images/18.svg";
 import image19 from "../../assets/images/19.svg";
 import image20 from "../../assets/images/20.svg";
 
-// Project data
-const data = [
-  {
-    title: "Project 1",
-    description: "This is a description of project 1",
-    code: "https://github.com",
-    deployment: "https://maryelenius.com",
-    image: comingSoon,
-    key: 100,
-  },
-  {
-    title: "Project 2",
-    description: "This is a description of project 2",
-    code: "https://github.com",
-    deployment: "https://maryelenius.com",
-    image: comingSoon,
-    key: 101,
-  },
-  {
-    title: "Project 3",
-    description: "This is a description of project 3",
-    code: "https://github.com",
-    deployment: "https://maryelenius.com",
-    image: comingSoon,
-    key: 102,
-  },
-  {
-    title: "Project 4",
-    description: "This is a description of project 4",
-    code: "https://github.com",
-    deployment: "https://maryelenius.com",
-    image: comingSoon,
-    key: 103,
-  },
-  {
-    title: "Project 5",
-    description: "This is a description of project 5",
-    code: "https://github.com",
-    deployment: "https://maryelenius.com",
-    image: comingSoon,
-    key: 104,
-  },
-];
-// Image data
 const placeholderImages = [
   image1,
   image2,
@@ -98,12 +55,48 @@ const placeholderImages = [
   image19,
   image20,
 ];
+
+const imageMap = {
+  comingSoon,
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
+  image16,
+  image17,
+  image18,
+  image19,
+  image20,
+};
+
 const getRandomImage = () => {
   const randomIndex = Math.floor(Math.random() * placeholderImages.length);
   return placeholderImages[randomIndex];
 };
+
 const Projects = () => {
   const [expandedItem, setExpandedItem] = useState(null);
+  const expandedRef = useRef(null);
+  const [itemsToShow, setItemsToShow] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setItemsToShow((prevItems) => Math.min(prevItems + 1, data.length));
+    }, 300); // Adjust timing between each item's appearance
+
+    return () => clearTimeout(timer);
+  }, [itemsToShow]);
 
   const handleExpand = (project) => {
     setExpandedItem(project);
@@ -115,9 +108,9 @@ const Projects = () => {
 
   const handleClickOutside = (event) => {
     if (
-      expandedItem &&
-      expandedItem.ref &&
-      !expandedItem.ref.contains(event.target)
+      expandedRef.current &&
+      !expandedRef.current.contains(event.target) &&
+      event.target.closest("#expanded-project") === null
     ) {
       handleClose();
     }
@@ -129,66 +122,72 @@ const Projects = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   });
+
   return (
     <>
       <Container>
         <Grid container id='projects-cont'>
           <ImageList variant='masonry' id='image-list'>
-            {data.map((project, index) => (
-              <ImageListItem key={project.key}>
-                <img
-                  srcSet={`${project.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  src={`${project.image}?w=248&fit=crop&auto=format`}
-                  alt={project.title}
-                  loading='lazy'
-                />
-                {expandedItem === project ? (
+            {data.slice(0, itemsToShow).map((project, index) => (
+              <ImageListItem
+                key={project.key}
+                className={`image-item ${index % 2 === 0 ? "even" : "odd"}`}
+              >
+                <div className='image-inner'>
                   <div
-                    ref={(node) => (project.ref = node)}
-                    id='expanded-project'
-                    onClick={handleClose}
-                  >
-                    <div id='inner-box'>
-                      <img
-                        src={getRandomImage()} // Use random image path here
-                        alt='pirate themed icon'
-                        loading='lazy'
-                        id='expanded-image'
-                      />{" "}
-                      <Typography variant='h6'>{project.title}</Typography>
-                      <Typography variant='body1' className='expanded-text'>
-                        {project.description}
-                      </Typography>
-                      <Container id='project-a-cont'>
-                        <a class='project-a' href={project.deployment}>
-                          Deployment
-                        </a>
-                        <a class='project-a' href={project.code}>
-                          Code
-                        </a>
-                      </Container>
-                    </div>
+                    className='image-front'
+                    style={{
+                      backgroundImage: `url(${imageMap[project.image]})`,
+                    }}
+                  ></div>
+                  <div className='image-back'>
+                    <Typography variant='h6'>{project.title}</Typography>
+                    <Typography variant='body1'>
+                      {project.description}
+                    </Typography>
+                    <IconButton
+                      onClick={() => handleExpand(project)}
+                      style={{ color: "rgba(0, 0, 0, 0.54)" }}
+                      aria-label={`info about ${project.title}`}
+                    >
+                      <ExpandLessIcon />
+                    </IconButton>
                   </div>
-                ) : (
-                  <ImageListItemBar
-                    title={project.title}
-                    subtitle={project.description}
-                    actionIcon={
-                      <IconButton
-                        onClick={() => handleExpand(project)}
-                        style={{ color: "rgba(255, 255, 255, 0.54)" }}
-                        aria-label={`info about ${project.title}`}
-                      >
-                        <ExpandLessIcon id='expand-icon' />
-                      </IconButton>
-                    }
-                  />
-                )}
+                </div>
               </ImageListItem>
             ))}
           </ImageList>
         </Grid>
       </Container>
+      {expandedItem && (
+        <div
+          id='expanded-project'
+          className={expandedItem ? "show" : ""}
+          ref={expandedRef}
+          onClick={handleClose}
+        >
+          <div id='inner-box' onClick={(e) => e.stopPropagation()}>
+            <img
+              src={getRandomImage()}
+              alt='pirate themed icon'
+              loading='lazy'
+              id='expanded-image'
+            />
+            <Typography variant='h6'>{expandedItem.title}</Typography>
+            <Typography variant='body1' className='expanded-text'>
+              {expandedItem.description}
+            </Typography>
+            <Container id='project-a-cont'>
+              <a className='project-a' href={expandedItem.deployment}>
+                Deployment
+              </a>
+              <a className='project-a' href={expandedItem.code}>
+                Code
+              </a>
+            </Container>
+          </div>
+        </div>
+      )}
     </>
   );
 };

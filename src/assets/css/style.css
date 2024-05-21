@@ -45,6 +45,7 @@ body {
   overflow-y: scroll;
   display: flex;
   animation: slideDown 2s ease forwards;
+  flex-direction: column;
 }
 @keyframes slideDown {
   from {
