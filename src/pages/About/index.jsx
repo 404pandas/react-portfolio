@@ -1,12 +1,9 @@
 // external imports
-import { useEffect } from "react";
-
 import Container from "@mui/material/Container";
-import Nav from "../components/Nav";
 import Grid from "@mui/material/Grid";
-// external imports
-import "../assets/css/about.css";
 
+// local imports
+import "../../assets/css/about.css";
 const images = [
   "https://i.imgur.com/BQIb9su.jpg",
   "https://i.imgur.com/FzMG846.jpg",
@@ -14,11 +11,10 @@ const images = [
   "https://i.imgur.com/vNqUGEw.jpg",
   "https://i.imgur.com/NWDMGYc.jpg",
 ];
-// local imports
+
 const About = () => {
   return (
     <>
-      <Nav />
       <Container>
         <Grid container id='about-cont'>
           <Grid item xs={12} className='about-sect' id='first'>

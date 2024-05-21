@@ -35,6 +35,17 @@
 img {
   width: 30%;
 }
+
+body {
+  background-image: url("../images/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Make sure the entire image is stretched */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Ensure the image stays fixed during scrolling */
+  overflow-y: scroll;
+  display: flex;
+  animation: slideDown 2s ease forwards;
+}
 @keyframes slideDown {
   from {
     background-position: 0% 100%; /* Start the animation from top */
@@ -97,7 +108,7 @@ a {
   box-shadow: -10px 5px var(--brown);
   margin: 10% 0 0 10%;
   padding: 2%;
-  width: 35vw;
+  width: max-content;
   display: flex;
 }
 #name > * {
@@ -170,9 +181,6 @@ a {
 
 /* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
 @media only screen and (max-width: 600px) {
-  body {
-    background-size: 100% 100%;
-  }
   .subtitles {
     display: none;
   }
@@ -190,9 +198,6 @@ a {
   h2 {
     font-size: 0.75rem;
   }
-  body {
-    background-size: auto;
-  }
   #image-list {
     column-count: 2 !important;
     column-gap: 1rem !important;
@@ -206,9 +211,6 @@ a {
 
   h2 {
     font-size: 1.25rem;
-  }
-  body {
-    background-image: url("../images/background-h.svg");
   }
   #image-list {
     column-count: 3 !important;

@@ -37,6 +37,7 @@ const ProjectCard = (props) => {
           >
             {project.description}
           </Typography>
+          <p>Hi</p>
         </CardContent>
         <CardActions>
           {project.deployment && (

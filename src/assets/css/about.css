@@ -1,6 +1,3 @@
-body {
-  background-image: unset;
-}
 #about-cont {
   z-index: 5;
   background-color: var(--tan);

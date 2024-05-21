@@ -1,8 +1,8 @@
 // external imports
 import { useEffect, useState } from "react";
 // local imports
-import MapIcon from "../components/MapIcon";
-import "../assets/css/landing.css";
+import MapIcon from "../../components/MapIcon";
+import "../../assets/css/landing.css";
 
 const Landing = () => {
   const [isHovered, setIsHovered] = useState(false);
