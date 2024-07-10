@@ -14,10 +14,7 @@ const MapIcon = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   function applyRandomClass(e, iconId) {
-    console.log("Applying random class function run");
     const icon = e.target;
-    console.log("icons", icon);
-    console.log("hovered icon id", iconId);
 
     const randomNumber = Math.random();
     if (randomNumber < 0.5) {
@@ -30,10 +27,7 @@ const MapIcon = () => {
   }
 
   function removeClasses(e, iconId) {
-    console.log("Removing classes function run");
     const icon = e.target;
-    console.log("icons", icon);
-    console.log("hovered icon id", iconId);
 
     icon.classList.remove("jump");
     icon.classList.remove("wiggle");

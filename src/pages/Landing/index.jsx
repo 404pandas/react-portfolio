@@ -2,23 +2,15 @@
 import { useEffect, useState } from "react";
 // local imports
 import MapIcon from "../../components/MapIcon";
+import Ship from "../../components/Ship";
 import "../../assets/css/landing.css";
 
 const Landing = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [shouldApplyRandomClass, setShouldApplyRandomClass] = useState(true);
+
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (!isHovered && shouldApplyRandomClass) {
-        applyRandomClass();
-      }
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, [isHovered, shouldApplyRandomClass]);
-
-  function applyRandomClass() {
     const icons = document.querySelectorAll(".landing-icons");
+
     icons.forEach((icon) => {
       const randomNumber = Math.random();
       if (randomNumber < 0.5) {
@@ -29,9 +21,26 @@ const Landing = () => {
         icon.classList.remove("jump");
       }
     });
-  }
 
-  setInterval(applyRandomClass, 5000);
+    return () => {
+      icons.forEach((icon) => {
+        icon.classList.remove("jump");
+        icon.classList.remove("wiggle");
+      });
+    };
+  }, [isHovered]);
+
+  const handleIconProximity = (proximity, icon) => {
+    if (proximity) {
+      setIsHovered(true);
+      console.log("Proximity detected");
+      icon.classList.add("jump");
+      icon.classList.remove("wiggle");
+    } else {
+      setIsHovered(false);
+      console.log("Proximity not detected");
+    }
+  };
   return (
     <>
       <div id='name'>
@@ -43,6 +52,7 @@ const Landing = () => {
         </div>
       </div>
       <MapIcon />
+      <Ship onIconProximity={handleIconProximity} />
     </>
   );
 };

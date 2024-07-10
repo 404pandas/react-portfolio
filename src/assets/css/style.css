@@ -26,6 +26,7 @@
   --dark-tan: #d9b991;
   --white: #f2f2f2;
   --black: #0d0d0d;
+  --icons: #77684e;
 }
 
 /* ****************************** */
@@ -38,14 +39,16 @@ img {
 
 body {
   background-image: url("../images/background.svg");
+
   background-repeat: no-repeat;
   background-size: cover; /* Make sure the entire image is stretched */
   background-position: center; /* Center the image */
   background-attachment: fixed; /* Ensure the image stays fixed during scrolling */
-  overflow-y: scroll;
+  overflow-x: clip;
   display: flex;
   animation: slideDown 2s ease forwards;
   flex-direction: column;
+  width: 100vw;
 }
 @keyframes slideDown {
   from {
@@ -220,6 +223,9 @@ a {
 }
 /* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
 @media only screen and (min-width: 992px) {
+  body {
+    background-image: url("../images/background-h.svg");
+  }
   h1 {
     font-size: 1.5rem;
   }

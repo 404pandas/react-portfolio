@@ -9,6 +9,7 @@
 }
 .landing-icons {
   width: 40%;
+  color: var(--icons);
 }
 @keyframes grow {
   from {
@@ -123,7 +124,10 @@
   }
   #building {
     top: -220px;
-    left: -117px;
+    left: 30px;
+  }
+  .landing-icons {
+    width: 50%;
   }
 }
 /* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
@@ -136,6 +140,8 @@
   }
   #building {
   }
+  .landing-icons {
+  }
 }
 /* ------------------       Up to screen size 992px (Large Desktop Devices)       ------------------ */
 @media only screen and (min-width: 1200px) {
@@ -144,5 +150,7 @@
   #knight {
   }
   #building {
+  }
+  .landing-icons {
   }
 }
