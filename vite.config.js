@@ -8,9 +8,4 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
-  build: {
-    rollupOptions: {
-      external: ["/images/coming-soon.jpg"],
-    },
-  },
 });

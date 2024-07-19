@@ -1,5 +1,5 @@
 import React from "react";
-import withWind from "/images/with-wind.svg";
+import withWind from "./images/with-wind.svg";
 const WithWind = () => {
   return (
     <>

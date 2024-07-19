@@ -1,4 +1,4 @@
-import WithWind from "./withWind";
+import WithWind from "./WithWind";
 import WithoutWind from "./WithoutWind";
 import React, { useEffect, useState, useRef } from "react";
 const Ship = ({ onIconProximity }) => {
@@ -101,7 +101,7 @@ const Ship = ({ onIconProximity }) => {
   };
 
   return (
-    <div ref={shipRef} id='ship-container' style={shipStyle}>
+    <div ref={shipRef} id="ship-container" style={shipStyle}>
       {showWindSails ? <WithWind /> : <WithoutWind />}
     </div>
   );
