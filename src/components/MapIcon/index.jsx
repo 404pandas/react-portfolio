@@ -3,9 +3,9 @@ import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // local imports
-import knight from "./images/knight.svg";
-import dragonBuilding from "./images/dragon-bldg.svg";
-import building from "./images/bldg.svg";
+import knight from "../../assets/images/knight.svg";
+import dragonBuilding from "../../assets/images/dragon-bldg.svg";
+import building from "../../assets/images/bldg.svg";
 import "./style.css";
 
 const MapIcon = () => {
