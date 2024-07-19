@@ -1,5 +1,5 @@
 import React from "react";
-import withoutWind from "../../assets/images/without-wind.svg";
+import withoutWind from "../../../assets/images/without-wind.svg";
 const WithoutWind = () => {
   return (
     <>
