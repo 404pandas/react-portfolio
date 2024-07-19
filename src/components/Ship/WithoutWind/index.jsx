@@ -1,10 +1,10 @@
 import React from "react";
-import withoutWind from "../../../assets/images/without-wind.svg";
+import withoutWind from "/images/without-wind.svg";
 const WithoutWind = () => {
   return (
     <>
       {" "}
-      <img src={withoutWind} id='withoutWind' className='ship'></img>
+      <img src={withoutWind} id="withoutWind" className="ship"></img>
     </>
   );
 };

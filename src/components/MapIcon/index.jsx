@@ -3,9 +3,9 @@ import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 // local imports
-import knight from "../../assets/images/knight.svg";
-import dragonBuilding from "../../assets/images/dragon-bldg.svg";
-import building from "../../assets/images/bldg.svg";
+import knight from "/images/knight.svg";
+import dragonBuilding from "/images/dragon-bldg.svg";
+import building from "/images/bldg.svg";
 import "./style.css";
 
 const MapIcon = () => {
@@ -46,16 +46,16 @@ const MapIcon = () => {
   }, []);
 
   return (
-    <Grid container spacing={2} className='flexbox-turn-on' id='icons'>
-      <Grid className='nav-items' item xs={8} sm={6} md={4} lg={4}>
+    <Grid container spacing={2} className="flexbox-turn-on" id="icons">
+      <Grid className="nav-items" item xs={8} sm={6} md={4} lg={4}>
         {" "}
-        <Link to='/about'>
+        <Link to="/about">
           {" "}
           <img
             src={knight}
-            alt='knight icon'
-            id='knight'
-            className='landing-icons'
+            alt="knight icon"
+            id="knight"
+            className="landing-icons"
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
@@ -71,7 +71,7 @@ const MapIcon = () => {
             }}
           ></img>
           <h2
-            id='knight'
+            id="knight"
             className={
               isTouchDevice || (isHovered && hoveredIconId === "knight")
                 ? "show"
@@ -82,11 +82,11 @@ const MapIcon = () => {
           </h2>
         </Link>{" "}
       </Grid>
-      <Grid className='nav-items' item xs={8} sm={6} md={4} lg={4}>
+      <Grid className="nav-items" item xs={8} sm={6} md={4} lg={4}>
         {" "}
-        <Link to='/projects'>
+        <Link to="/projects">
           <img
-            className='landing-icons'
+            className="landing-icons"
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
@@ -101,11 +101,11 @@ const MapIcon = () => {
               }
             }}
             src={dragonBuilding}
-            alt='dragon building icon'
-            id='dragon'
+            alt="dragon building icon"
+            id="dragon"
           ></img>
           <h2
-            id='dragon'
+            id="dragon"
             className={
               isTouchDevice || (isHovered && hoveredIconId === "dragon")
                 ? "show"
@@ -116,11 +116,11 @@ const MapIcon = () => {
           </h2>
         </Link>
       </Grid>
-      <Grid className='nav-items' item xs={8} sm={6} md={4} lg={4}>
+      <Grid className="nav-items" item xs={8} sm={6} md={4} lg={4}>
         {" "}
-        <Link to='/technologies'>
+        <Link to="/technologies">
           <img
-            className='landing-icons'
+            className="landing-icons"
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
@@ -135,11 +135,11 @@ const MapIcon = () => {
               }
             }}
             src={building}
-            alt='building icon'
-            id='building'
+            alt="building icon"
+            id="building"
           ></img>
           <h2
-            id='building'
+            id="building"
             className={
               isTouchDevice || (isHovered && hoveredIconId === "building")
                 ? "show"
