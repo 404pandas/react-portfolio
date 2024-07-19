@@ -6,7 +6,10 @@ import Ship from "../../components/Ship";
 import "../../assets/css/landing.css";
 
 const Landing = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [landingisHovered, setLandingIsHovered] = useState(false);
+  const [knightNearShip, setKnightNearShip] = useState(false);
+  const [dragonNearShip, setDragonNearShip] = useState(false);
+  const [buildingNearShip, setBuildingNearShip] = useState(false);
 
   useEffect(() => {
     const icons = document.querySelectorAll(".landing-icons");
@@ -28,30 +31,42 @@ const Landing = () => {
         icon.classList.remove("wiggle");
       });
     };
-  }, [isHovered]);
+  }, [landingisHovered]);
 
   const handleIconProximity = (proximity, icon) => {
     if (proximity) {
-      setIsHovered(true);
-      console.log("Proximity detected");
-      icon.classList.add("jump");
-      icon.classList.remove("wiggle");
-    } else {
-      setIsHovered(false);
-      console.log("Proximity not detected");
+      switch (icon.id) {
+        case "knight":
+          setKnightNearShip(proximity);
+          setLandingIsHovered(true);
+          break;
+        case "dragon":
+          setDragonNearShip(proximity);
+          setLandingIsHovered(true);
+          break;
+        case "building":
+          setBuildingNearShip(proximity);
+          setLandingIsHovered(true);
+          break;
+        default:
+          break;
+      }
     }
   };
   return (
     <>
-      <div id='name'>
+      <div id="name">
         <h1>Mary Elenius</h1>
-        <div id='vr' className='subtitles'></div>
-        <div id='subtitle'>
-          <h2 className='subtitles'>Developer. Mother.</h2>
-          <h2 className='subtitles'>Wildlife Rescuer.</h2>
+        <div id="vr" className="subtitles"></div>
+        <div id="subtitle">
+          <h2 className="subtitles">Developer. Mother.</h2>
+          <h2 className="subtitles">Wildlife Rescuer.</h2>
         </div>
       </div>
-      <MapIcon />
+      <MapIcon
+        setLandingIsHovered={setLandingIsHovered}
+        handleIconProximity={handleIconProximity}
+      />
       <Ship onIconProximity={handleIconProximity} />
     </>
   );

@@ -8,7 +8,7 @@ const Ship = ({ onIconProximity }) => {
   const shipRef = useRef(null);
 
   // Arrow key handling for movement
-  const moveStep = 5; // Adjust this value to control movement speed
+  const moveStep = 15; // Adjust this value to control movement speed
 
   useEffect(() => {
     const handleArrowKeys = (event) => {
@@ -38,7 +38,6 @@ const Ship = ({ onIconProximity }) => {
         default:
           return; // do not handle other keys
       }
-      console.log(`New X: ${newX}, New Y: ${newY}`);
 
       // Update ship position
       setPosition({ x: newX, y: newY });
@@ -79,7 +78,8 @@ const Ship = ({ onIconProximity }) => {
           shipCenterY >= iconRect.top &&
           shipCenterY <= iconRect.bottom
         ) {
-          onIconProximity(true, icon);
+          onIconProximity(true, icon.id);
+          console.log(`Proximity detected near ${icon.id}`);
           return;
         }
       });
@@ -90,7 +90,7 @@ const Ship = ({ onIconProximity }) => {
     const intervalId = setInterval(checkProximity, 100);
 
     return () => clearInterval(intervalId);
-  }, [position, onIconProximity]);
+  }, [position]);
 
   const shipStyle = {
     width: "100",
