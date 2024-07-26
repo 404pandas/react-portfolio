@@ -5,11 +5,19 @@ import MapIcon from "../../components/MapIcon";
 import Ship from "../../components/Ship";
 import "../../assets/css/landing.css";
 
+// redux imports
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setKnightNearShip,
+  setDragonNearShip,
+  setBuildingNearShip,
+} from "../../features/iconNearShip/iconNearShipSlice";
+
 const Landing = () => {
-  const [landingisHovered, setLandingIsHovered] = useState(false);
-  const [knightNearShip, setKnightNearShip] = useState(false);
-  const [dragonNearShip, setDragonNearShip] = useState(false);
-  const [buildingNearShip, setBuildingNearShip] = useState(false);
+  const dispatch = useDispatch();
+  const knightNearShip = useSelector((state) => state.icons.knightNearShip);
+  const dragonNearShip = useSelector((state) => state.icons.dragonNearShip);
+  const buildingNearShip = useSelector((state) => state.icons.buildingNearShip);
 
   useEffect(() => {
     const icons = document.querySelectorAll(".landing-icons");
@@ -31,26 +39,21 @@ const Landing = () => {
         icon.classList.remove("wiggle");
       });
     };
-  }, [landingisHovered]);
+  }, [knightNearShip, dragonNearShip, buildingNearShip]);
 
   const handleIconProximity = (proximity, icon) => {
-    if (proximity) {
-      switch (icon.id) {
-        case "knight":
-          setKnightNearShip(proximity);
-          setLandingIsHovered(true);
-          break;
-        case "dragon":
-          setDragonNearShip(proximity);
-          setLandingIsHovered(true);
-          break;
-        case "building":
-          setBuildingNearShip(proximity);
-          setLandingIsHovered(true);
-          break;
-        default:
-          break;
-      }
+    switch (icon) {
+      case "knight":
+        dispatch(setKnightNearShip(proximity));
+        break;
+      case "dragon":
+        dispatch(setDragonNearShip(proximity));
+        break;
+      case "building":
+        dispatch(setBuildingNearShip(proximity));
+        break;
+      default:
+        break;
     }
   };
   return (
@@ -63,10 +66,7 @@ const Landing = () => {
           <h2 className="subtitles">Wildlife Rescuer.</h2>
         </div>
       </div>
-      <MapIcon
-        setLandingIsHovered={setLandingIsHovered}
-        handleIconProximity={handleIconProximity}
-      />
+      <MapIcon handleIconProximity={handleIconProximity} />
       <Ship onIconProximity={handleIconProximity} />
     </>
   );

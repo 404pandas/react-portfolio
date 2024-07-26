@@ -8,13 +8,23 @@ import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
 import "./style.css";
 
-const MapIcon = ({ setLandingIsHovered }) => {
+// redux imports
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setBuildingNearShip,
+  setDragonNearShip,
+  setKnightNearShip,
+} from "../../features/iconNearShip/iconNearShipSlice";
+
+const MapIcon = () => {
+  const dispatch = useDispatch();
+
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredIconId, setHoveredIconId] = useState(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const [knightNearShip, setKnightNearShip] = useState(false);
-  const [dragonNearShip, setDragonNearShip] = useState(false);
-  const [buildingNearShip, setBuildingNearShip] = useState(false);
+  const knightNearShip = useSelector((state) => state.icons.knightNearShip);
+  const dragonNearShip = useSelector((state) => state.icons.dragonNearShip);
+  const buildingNearShip = useSelector((state) => state.icons.buildingNearShip);
 
   function applyRandomClass(e, iconId) {
     const icon = e.target;
@@ -48,23 +58,45 @@ const MapIcon = ({ setLandingIsHovered }) => {
     setIsTouchDevice(isTouchScreen());
   }, []);
 
-  useEffect(() => {
-    if (knightNearShip) {
-      console.log("Ship is near the Knight icon");
+  const handleMouseEnter = (e) => {
+    if (!isTouchDevice) {
+      setHoveredIconId(e.target.id);
+      removeClasses(e, e.target.id);
+      switch (e.target.id) {
+        case "knight":
+          dispatch(setKnightNearShip(true));
+          break;
+        case "dragon":
+          dispatch(setDragonNearShip(true));
+          break;
+        case "building":
+          dispatch(setBuildingNearShip(true));
+          break;
+        default:
+          break;
+      }
     }
-  }, [knightNearShip]);
+  };
 
-  useEffect(() => {
-    if (dragonNearShip) {
-      console.log("Ship is near the Dragon Building icon");
+  const handleMouseLeave = (e) => {
+    if (!isTouchDevice) {
+      setHoveredIconId(null);
+      applyRandomClass(e, e.target.id);
+      switch (e.target.id) {
+        case "knight":
+          dispatch(setKnightNearShip(false));
+          break;
+        case "dragon":
+          dispatch(setDragonNearShip(false));
+          break;
+        case "building":
+          dispatch(setBuildingNearShip(false));
+          break;
+        default:
+          break;
+      }
     }
-  }, [dragonNearShip]);
-
-  useEffect(() => {
-    if (buildingNearShip) {
-      console.log("Ship is near the Building icon");
-    }
-  }, [buildingNearShip]);
+  };
 
   return (
     <Grid container spacing={2} className="flexbox-turn-on" id="icons">
@@ -80,16 +112,13 @@ const MapIcon = ({ setLandingIsHovered }) => {
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
-                setHoveredIconId(e.target.id);
-                removeClasses(e, e.target.id);
-                setLandingIsHovered(true);
+                handleMouseEnter(e);
               }
             }}
             onMouseLeave={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(false);
-                applyRandomClass(e, e.target.id);
-                setLandingIsHovered(false);
+                handleMouseLeave(e);
               }
             }}
           ></img>
@@ -113,16 +142,13 @@ const MapIcon = ({ setLandingIsHovered }) => {
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
-                setLandingIsHovered(true);
-                setHoveredIconId(e.target.id);
-                removeClasses(e, e.target.id);
+                handleMouseEnter(e);
               }
             }}
             onMouseLeave={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(false);
-                setLandingIsHovered(false);
-                applyRandomClass(e, e.target.id);
+                handleMouseLeave(e);
               }
             }}
             src={dragonBuilding}
@@ -149,16 +175,13 @@ const MapIcon = ({ setLandingIsHovered }) => {
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
-                setLandingIsHovered(true);
-                setHoveredIconId(e.target.id);
-                removeClasses(e, e.target.id);
+                handleMouseEnter(e);
               }
             }}
             onMouseLeave={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(false);
-                setLandingIsHovered(false);
-                applyRandomClass(e, e.target.id);
+                handleMouseLeave(e);
               }
             }}
             src={building}

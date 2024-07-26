@@ -1,7 +1,13 @@
 import WithWind from "./WithWind";
 import WithoutWind from "./WithoutWind";
 import React, { useEffect, useState, useRef } from "react";
+
+// redux imports
+import { useDispatch } from "react-redux";
+
 const Ship = ({ onIconProximity }) => {
+  const dispatch = useDispatch();
+
   const [position, setPosition] = useState({ x: 25, y: 25 });
   const [isMoving, setIsMoving] = useState(false);
   const [showWindSails, setShowWindSails] = useState(false);
@@ -73,10 +79,10 @@ const Ship = ({ onIconProximity }) => {
         const shipCenterY = shipRect.top + shipRect.height / 2;
 
         if (
-          shipCenterX >= iconRect.left &&
-          shipCenterX <= iconRect.right &&
-          shipCenterY >= iconRect.top &&
-          shipCenterY <= iconRect.bottom
+          shipCenterX >= iconRect.left + 10 &&
+          shipCenterX <= iconRect.right + 10 &&
+          shipCenterY >= iconRect.top + 10 &&
+          shipCenterY <= iconRect.bottom + 10
         ) {
           onIconProximity(true, icon.id);
           console.log(`Proximity detected near ${icon.id}`);
@@ -87,10 +93,10 @@ const Ship = ({ onIconProximity }) => {
       onIconProximity(false, null);
     };
 
-    const intervalId = setInterval(checkProximity, 100);
+    const intervalId = setInterval(checkProximity, 500);
 
     return () => clearInterval(intervalId);
-  }, [position]);
+  }, [position, onIconProximity]);
 
   const shipStyle = {
     width: "100",
