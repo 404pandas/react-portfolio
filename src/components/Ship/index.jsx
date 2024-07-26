@@ -3,18 +3,34 @@ import WithoutWind from "./WithoutWind";
 import React, { useEffect, useState, useRef } from "react";
 
 // redux imports
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  applyRandomClass,
+  removeClasses,
+} from "../../features/iconClasses/iconClasses";
 
 const Ship = ({ onIconProximity }) => {
-  const dispatch = useDispatch();
-
   const [position, setPosition] = useState({ x: 25, y: 25 });
   const [isMoving, setIsMoving] = useState(false);
   const [showWindSails, setShowWindSails] = useState(false);
+  const [previousProximity, setPreviousProximity] = useState({
+    knight: false,
+    dragon: false,
+    building: false,
+  });
   const shipRef = useRef(null);
+  const dispatch = useDispatch();
+  const iconClasses = useSelector((state) => state.iconClasses);
 
-  // Arrow key handling for movement
-  const moveStep = 15; // Adjust this value to control movement speed
+  const addRandomClass = (e, iconId) => {
+    dispatch(applyRandomClass({ iconId }));
+  };
+
+  const removeClasses = (e, iconId) => {
+    dispatch(removeClasses({ iconId }));
+  };
+
+  const moveStep = 15;
 
   useEffect(() => {
     const handleArrowKeys = (event) => {
@@ -24,28 +40,27 @@ const Ship = ({ onIconProximity }) => {
       let newY = position.y;
 
       switch (keyCode) {
-        case 87: // W key
+        case 87:
           newY -= moveStep;
           setIsMoving(true);
           break;
-        case 65: // A key
+        case 65:
           newX -= moveStep;
           setIsMoving(true);
           break;
-        case 83: // S key
+        case 83:
           newY += moveStep;
           setIsMoving(true);
           break;
-        case 68: // D key
+        case 68:
           event.preventDefault();
           newX += moveStep;
           setIsMoving(true);
           break;
         default:
-          return; // do not handle other keys
+          return;
       }
 
-      // Update ship position
       setPosition({ x: newX, y: newY });
     };
 
@@ -60,18 +75,18 @@ const Ship = ({ onIconProximity }) => {
       document.removeEventListener("keydown", handleArrowKeys);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [position]); // Only re-run the effect if position changes
+  }, [position]);
 
   useEffect(() => {
-    // Toggle wind sails based on isMoving state
     setShowWindSails(isMoving);
   }, [isMoving]);
 
-  // Check proximity to icons with classes .jump or .wiggle
   useEffect(() => {
     const checkProximity = () => {
       const icons = document.querySelectorAll(".landing-icons");
       const shipRect = shipRef.current.getBoundingClientRect();
+
+      let currentProximity = { knight: false, dragon: false, building: false };
 
       icons.forEach((icon) => {
         const iconRect = icon.getBoundingClientRect();
@@ -79,31 +94,48 @@ const Ship = ({ onIconProximity }) => {
         const shipCenterY = shipRect.top + shipRect.height / 2;
 
         if (
-          shipCenterX >= iconRect.left + 10 &&
-          shipCenterX <= iconRect.right + 10 &&
-          shipCenterY >= iconRect.top + 10 &&
-          shipCenterY <= iconRect.bottom + 10
+          shipCenterX >= iconRect.left &&
+          shipCenterX <= iconRect.right &&
+          shipCenterY >= iconRect.top &&
+          shipCenterY <= iconRect.bottom
         ) {
-          onIconProximity(true, icon.id);
-          console.log(`Proximity detected near ${icon.id}`);
-          return;
+          currentProximity[icon.id] = true;
+
+          if (!previousProximity[icon.id]) {
+            addRandomClass({ target: icon }, icon.id);
+          }
+        } else {
+          currentProximity[icon.id] = false;
+
+          if (previousProximity[icon.id]) {
+            removeClasses({ target: icon }, icon.id);
+          }
         }
       });
 
-      onIconProximity(false, null);
+      console.log(onIconProximity);
+      console.log(previousProximity);
+
+      Object.keys(currentProximity).forEach((icon) => {
+        if (currentProximity[icon] !== previousProximity[icon]) {
+          onIconProximity(currentProximity[icon], icon);
+        }
+      });
+
+      setPreviousProximity(currentProximity);
     };
 
     const intervalId = setInterval(checkProximity, 500);
 
     return () => clearInterval(intervalId);
-  }, [position, onIconProximity]);
+  }, [position, onIconProximity, previousProximity]);
 
   const shipStyle = {
     width: "100",
     position: "absolute",
     left: `${position.x}px`,
     top: `${position.y}px`,
-    transition: "left 0.2s, top 0.2s", // Example transition for smooth movement
+    transition: "left 0.2s, top 0.2s",
   };
 
   return (

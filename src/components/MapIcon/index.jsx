@@ -15,37 +15,35 @@ import {
   setDragonNearShip,
   setKnightNearShip,
 } from "../../features/iconNearShip/iconNearShipSlice";
+import {
+  applyRandomClass,
+  removeClasses,
+} from "../../features/iconClasses/iconClasses";
 
-const MapIcon = () => {
+const MapIcon = ({ handleIconProximity }) => {
   const dispatch = useDispatch();
-
   const [isHovered, setIsHovered] = useState(false);
   const [hoveredIconId, setHoveredIconId] = useState(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  // redux state
   const knightNearShip = useSelector((state) => state.icons.knightNearShip);
   const dragonNearShip = useSelector((state) => state.icons.dragonNearShip);
   const buildingNearShip = useSelector((state) => state.icons.buildingNearShip);
+  const iconClasses = useSelector((state) => state.iconClasses);
 
-  function applyRandomClass(e, iconId) {
-    const icon = e.target;
-
-    const randomNumber = Math.random();
-    if (randomNumber < 0.5) {
-      icon.classList.add("jump");
-      icon.classList.remove("wiggle");
-    } else {
-      icon.classList.add("wiggle");
-      icon.classList.remove("jump");
+  const handleMouseEnter = (e) => {
+    if (!isTouchDevice) {
+      const iconId = e.target.id;
+      dispatch(applyRandomClass({ iconId }));
     }
-  }
+  };
 
-  function removeClasses(e, iconId) {
-    const icon = e.target;
-
-    icon.classList.remove("jump");
-    icon.classList.remove("wiggle");
-  }
-
+  const handleMouseLeave = (e) => {
+    if (!isTouchDevice) {
+      const iconId = e.target.id;
+      dispatch(removeClasses({ iconId }));
+    }
+  };
   const isTouchScreen = () => {
     return (
       "ontouchstart" in window ||
@@ -58,45 +56,11 @@ const MapIcon = () => {
     setIsTouchDevice(isTouchScreen());
   }, []);
 
-  const handleMouseEnter = (e) => {
-    if (!isTouchDevice) {
-      setHoveredIconId(e.target.id);
-      removeClasses(e, e.target.id);
-      switch (e.target.id) {
-        case "knight":
-          dispatch(setKnightNearShip(true));
-          break;
-        case "dragon":
-          dispatch(setDragonNearShip(true));
-          break;
-        case "building":
-          dispatch(setBuildingNearShip(true));
-          break;
-        default:
-          break;
-      }
-    }
-  };
-
-  const handleMouseLeave = (e) => {
-    if (!isTouchDevice) {
-      setHoveredIconId(null);
-      applyRandomClass(e, e.target.id);
-      switch (e.target.id) {
-        case "knight":
-          dispatch(setKnightNearShip(false));
-          break;
-        case "dragon":
-          dispatch(setDragonNearShip(false));
-          break;
-        case "building":
-          dispatch(setBuildingNearShip(false));
-          break;
-        default:
-          break;
-      }
-    }
-  };
+  useEffect(() => {
+    handleIconProximity(knightNearShip, "knight");
+    handleIconProximity(dragonNearShip, "dragon");
+    handleIconProximity(buildingNearShip, "building");
+  }, [knightNearShip, dragonNearShip, buildingNearShip]);
 
   return (
     <Grid container spacing={2} className="flexbox-turn-on" id="icons">
@@ -108,7 +72,7 @@ const MapIcon = () => {
             src={knight}
             alt="knight icon"
             id="knight"
-            className="landing-icons"
+            className={`landing-icons ${iconClasses.knight || ""}`}
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
@@ -122,14 +86,7 @@ const MapIcon = () => {
               }
             }}
           ></img>
-          <h2
-            id="knight"
-            className={
-              isTouchDevice || (isHovered && hoveredIconId === "knight")
-                ? "show"
-                : "hide"
-            }
-          >
+          <h2 id="knight" className={iconClasses.knight ? "show" : "hide"}>
             About Me
           </h2>
         </Link>{" "}
@@ -138,7 +95,7 @@ const MapIcon = () => {
         {" "}
         <Link to="/projects">
           <img
-            className="landing-icons"
+            className={`landing-icons ${iconClasses.dragon || ""}`}
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
@@ -155,14 +112,7 @@ const MapIcon = () => {
             alt="dragon building icon"
             id="dragon"
           ></img>
-          <h2
-            id="dragon"
-            className={
-              isTouchDevice || (isHovered && hoveredIconId === "dragon")
-                ? "show"
-                : "hide"
-            }
-          >
+          <h2 id="dragon" className={iconClasses.dragon ? "show" : "hide"}>
             Projects
           </h2>
         </Link>
@@ -171,7 +121,7 @@ const MapIcon = () => {
         {" "}
         <Link to="/technologies">
           <img
-            className="landing-icons"
+            className={`landing-icons ${iconClasses.building || ""}`}
             onMouseEnter={(e) => {
               if (!isTouchDevice) {
                 setIsHovered(true);
@@ -188,14 +138,7 @@ const MapIcon = () => {
             alt="building icon"
             id="building"
           ></img>
-          <h2
-            id="building"
-            className={
-              isTouchDevice || (isHovered && hoveredIconId === "building")
-                ? "show"
-                : "hide"
-            }
-          >
+          <h2 id="building" className={iconClasses.building ? "show" : "hide"}>
             Technologies
           </h2>
         </Link>
