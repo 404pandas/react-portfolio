@@ -1,11 +1,14 @@
 #ship-container {
   position: relative;
+  width: 20% !important;
+  height: 20% !important;
 }
 
 .ship {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 }
 #whole-ship {
   width: 100%;

@@ -3,24 +3,30 @@ import { createSlice } from "@reduxjs/toolkit";
 const iconsSlice = createSlice({
   name: "icons",
   initialState: {
-    knightNearShip: false,
-    dragonNearShip: false,
-    buildingNearShip: false,
+    icons: {
+      knight: { hovered: false, nearShip: false },
+      dragon: { hovered: false, nearShip: false },
+      building: { hovered: false, nearShip: false },
+    },
   },
   reducers: {
-    setKnightNearShip(state, action) {
-      state.knightNearShip = action.payload;
+    setHovered(state, action) {
+      const { icon, hovered } = action.payload;
+      if (state.icons[icon].hovered !== hovered) {
+        state.icons[icon].hovered = hovered;
+        console.log(`setHovered: ${icon} is now ${hovered}`);
+      }
     },
-    setDragonNearShip(state, action) {
-      state.dragonNearShip = action.payload;
-    },
-    setBuildingNearShip(state, action) {
-      state.buildingNearShip = action.payload;
+    setNearShip(state, action) {
+      const { icon, nearShip } = action.payload;
+      if (state.icons[icon].nearShip !== nearShip) {
+        state.icons[icon].nearShip = nearShip;
+        console.log(`setNearShip: ${icon} is now ${nearShip}`);
+      }
     },
   },
 });
 
-export const { setKnightNearShip, setDragonNearShip, setBuildingNearShip } =
-  iconsSlice.actions;
+export const { setHovered, setNearShip } = iconsSlice.actions;
 
 export default iconsSlice.reducer;

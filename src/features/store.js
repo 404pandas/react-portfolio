@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import iconsReducer from "./iconNearShip/iconNearShipSlice";
+import iconsReducer from "../features/iconNearShip/iconNearShipSlice";
 
 export const store = configureStore({
   reducer: {
