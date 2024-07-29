@@ -2,6 +2,7 @@
   position: relative;
   width: 20% !important;
   height: 20% !important;
+  background-color: rgba(rgb(180, 54, 54), green, blue, alpha);
 }
 
 .ship {

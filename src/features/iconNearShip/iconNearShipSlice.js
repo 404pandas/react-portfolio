@@ -4,9 +4,9 @@ const iconsSlice = createSlice({
   name: "icons",
   initialState: {
     icons: {
-      knight: { hovered: false, nearShip: false },
-      dragon: { hovered: false, nearShip: false },
-      building: { hovered: false, nearShip: false },
+      knight: { hovered: false, isNear: false },
+      dragon: { hovered: false, isNear: false },
+      building: { hovered: false, isNear: false },
     },
   },
   reducers: {
@@ -17,12 +17,9 @@ const iconsSlice = createSlice({
         console.log(`setHovered: ${icon} is now ${hovered}`);
       }
     },
-    setNearShip(state, action) {
-      const { icon, nearShip } = action.payload;
-      if (state.icons[icon].nearShip !== nearShip) {
-        state.icons[icon].nearShip = nearShip;
-        console.log(`setNearShip: ${icon} is now ${nearShip}`);
-      }
+    setNearShip: (state, action) => {
+      const { iconId, isNear } = action.payload;
+      state[iconId] = isNear;
     },
   },
 });

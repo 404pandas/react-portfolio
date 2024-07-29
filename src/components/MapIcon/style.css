@@ -14,6 +14,7 @@
 .ind-items {
   display: flex;
   border: 2px solid red; /* Set a fixed border style */
+  background-color: rgba(rgb(187, 95, 95), green, blue, alpha);
 }
 @keyframes grow {
   from {
