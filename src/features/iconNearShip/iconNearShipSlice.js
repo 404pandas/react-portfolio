@@ -3,24 +3,37 @@ import { createSlice } from "@reduxjs/toolkit";
 const iconsSlice = createSlice({
   name: "icons",
   initialState: {
-    knightNearShip: false,
-    dragonNearShip: false,
-    buildingNearShip: false,
+    icons: {
+      knight: { hovered: false, isNear: false, animationClass: "" },
+      dragon: { hovered: false, isNear: false, animationClass: "" },
+      building: { hovered: false, isNear: false, animationClass: "" },
+    },
   },
   reducers: {
-    setKnightNearShip(state, action) {
-      state.knightNearShip = action.payload;
+    setHovered(state, action) {
+      const { icon, hovered } = action.payload;
+      state.icons[icon].hovered = hovered;
+      if (hovered) {
+        const randomClass = Math.random() < 0.5 ? "jump" : "wiggle";
+        state.icons[icon].animationClass = randomClass;
+      } else {
+        state.icons[icon].animationClass = "";
+      }
     },
-    setDragonNearShip(state, action) {
-      state.dragonNearShip = action.payload;
+    // todo- investigate what should and shouldn't be handled by redux
+    setNearShip(state, action) {
+      const { icon, nearShip } = action.payload;
+      state.icons[icon].isNear = nearShip;
+      if (nearShip) {
+        const randomClass = Math.random() < 0.5 ? "jump" : "wiggle";
+        state.icons[icon].animationClass = randomClass;
+      } else {
+        state.icons[icon].animationClass = "";
+      }
     },
-    setBuildingNearShip(state, action) {
-      state.buildingNearShip = action.payload;
-    },
-  },
+  },2
 });
 
-export const { setKnightNearShip, setDragonNearShip, setBuildingNearShip } =
-  iconsSlice.actions;
+export const { setHovered, setNearShip } = iconsSlice.actions;
 
 export default iconsSlice.reducer;

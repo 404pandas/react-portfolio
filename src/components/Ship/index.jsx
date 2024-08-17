@@ -1,41 +1,27 @@
+import React, { useEffect, useState, useRef } from "react";
+import { useDispatch } from "react-redux";
+import {
+  setNearShip,
+  setHovered,
+} from "../../features/iconNearShip/iconNearShipSlice";
+
 import WithWind from "./WithWind";
 import WithoutWind from "./WithoutWind";
-import React, { useEffect, useState, useRef } from "react";
+import "./style.css";
 
-// redux imports
-import { useDispatch, useSelector } from "react-redux";
-import {
-  applyRandomClass,
-  removeClasses,
-} from "../../features/iconClasses/iconClasses";
-
-const Ship = ({ onIconProximity }) => {
+const Ship = () => {
+  const dispatch = useDispatch();
   const [position, setPosition] = useState({ x: 25, y: 25 });
   const [isMoving, setIsMoving] = useState(false);
   const [showWindSails, setShowWindSails] = useState(false);
-  const [previousProximity, setPreviousProximity] = useState({
-    knight: false,
-    dragon: false,
-    building: false,
-  });
+  const [stopMovingTimestamp, setStopMovingTimestamp] = useState(null);
   const shipRef = useRef(null);
-  const dispatch = useDispatch();
-  const iconClasses = useSelector((state) => state.iconClasses);
-
-  const addRandomClass = (e, iconId) => {
-    dispatch(applyRandomClass({ iconId }));
-  };
-
-  const removeClasses = (e, iconId) => {
-    dispatch(removeClasses({ iconId }));
-  };
-
   const moveStep = 15;
+  const [enteredIcons, setEnteredIcons] = useState(new Set()); // Track entered icons
 
   useEffect(() => {
     const handleArrowKeys = (event) => {
       const keyCode = event.keyCode;
-
       let newX = position.x;
       let newY = position.y;
 
@@ -64,7 +50,7 @@ const Ship = ({ onIconProximity }) => {
       setPosition({ x: newX, y: newY });
     };
 
-    const handleKeyUp = (event) => {
+    const handleKeyUp = () => {
       setIsMoving(false);
     };
 
@@ -77,61 +63,65 @@ const Ship = ({ onIconProximity }) => {
     };
   }, [position]);
 
+
   useEffect(() => {
     setShowWindSails(isMoving);
   }, [isMoving]);
 
   useEffect(() => {
     const checkProximity = () => {
-      const icons = document.querySelectorAll(".landing-icons");
+      if (!shipRef.current) return;
+
+      // Calculate ship's bounding rect
       const shipRect = shipRef.current.getBoundingClientRect();
 
-      let currentProximity = { knight: false, dragon: false, building: false };
+      // Check if the ship has stopped moving and the delay has passed
+      const icons = document.querySelectorAll(".landing-icon");
 
       icons.forEach((icon) => {
         const iconRect = icon.getBoundingClientRect();
-        const shipCenterX = shipRect.left + shipRect.width / 2;
-        const shipCenterY = shipRect.top + shipRect.height / 2;
 
-        if (
-          shipCenterX >= iconRect.left &&
-          shipCenterX <= iconRect.right &&
-          shipCenterY >= iconRect.top &&
-          shipCenterY <= iconRect.bottom
-        ) {
-          currentProximity[icon.id] = true;
+        // Check if the shipRect has entered or exited the iconRect
+        const isEntering =
+          shipRect.left < iconRect.right &&
+          shipRect.right > iconRect.left &&
+          shipRect.top < iconRect.bottom &&
+          shipRect.bottom > iconRect.top;
 
-          if (!previousProximity[icon.id]) {
-            addRandomClass({ target: icon }, icon.id);
+        const isExiting =
+          enteredIcons.has(icon.id) &&
+          (shipRect.right < iconRect.left ||
+            shipRect.left > iconRect.right ||
+            shipRect.bottom < iconRect.top ||
+            shipRect.top > iconRect.bottom);
+
+        if (isEntering) {
+          if (!enteredIcons.has(icon.id)) {
+            console.log(`Ship has entered ${icon.id}`);
+            setEnteredIcons((prev) => new Set(prev).add(icon.id));
+            dispatch(setHovered({ icon: icon.id, hovered: true })); // Dispatch setHovered for entering
           }
-        } else {
-          currentProximity[icon.id] = false;
-
-          if (previousProximity[icon.id]) {
-            removeClasses({ target: icon }, icon.id);
-          }
+        } else if (isExiting) {
+          console.log(`Ship has exited ${icon.id}`);
+          setEnteredIcons((prev) => {
+            const newSet = new Set(prev);
+            newSet.delete(icon.id);
+            return newSet;
+          });
+          dispatch(setHovered({ icon: icon.id, hovered: false })); // Dispatch setHovered for exiting
         }
       });
 
-      console.log(onIconProximity);
-      console.log(previousProximity);
-
-      Object.keys(currentProximity).forEach((icon) => {
-        if (currentProximity[icon] !== previousProximity[icon]) {
-          onIconProximity(currentProximity[icon], icon);
-        }
-      });
-
-      setPreviousProximity(currentProximity);
     };
 
-    const intervalId = setInterval(checkProximity, 500);
+    const intervalId = setInterval(checkProximity, 250);
 
     return () => clearInterval(intervalId);
-  }, [position, onIconProximity, previousProximity]);
+  }, [position, isMoving, stopMovingTimestamp]);
+
 
   const shipStyle = {
-    width: "100",
+    width: "100%",
     position: "absolute",
     left: `${position.x}px`,
     top: `${position.y}px`,

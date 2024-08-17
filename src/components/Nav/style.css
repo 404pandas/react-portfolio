@@ -15,6 +15,9 @@
   display: flex;
   flex-direction: column;
 }
+.nav-item {
+  width: max-content;
+}
 
 #home-nav {
   margin-right: 3%;

@@ -11,6 +11,11 @@
   width: 40%;
   color: var(--icons);
 }
+.ind-items {
+  display: flex;
+  border: 2px solid red; /* Set a fixed border style */
+  background-color: rgba(rgb(187, 95, 95), green, blue, alpha);
+}
 @keyframes grow {
   from {
     width: 1px;
@@ -21,11 +26,6 @@
 }
 .grow {
   animation: grow 2s ease forwards;
-}
-.ind-icons {
-  width: 70%;
-  display: flex;
-  justify-content: center;
 }
 #building {
   position: relative;
@@ -74,74 +74,18 @@
 
 /* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
 @media only screen and (max-width: 450px) {
-  #dragon {
-    top: -100px;
-  }
-  #knight {
-    left: 110px;
-    top: -20px;
-  }
-  #building {
-    top: -100px;
-    left: 75px;
-  }
 }
 /* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
 @media only screen and (min-width: 451px) {
-  #dragon {
-    top: -215px;
-  }
-  #knight {
-    left: 150px;
-    top: -100px;
-  }
-  #building {
-    top: -100px;
-    left: 150px;
-  }
 }
 /* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
 @media only screen and (min-width: 600px) {
-  #dragon {
-    top: -43px;
-    left: -130px;
-  }
-  #knight {
-    left: 63px;
-    top: 40px;
-  }
-  #building {
-    top: -27px;
-    left: 50px;
-  }
 }
 /* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
 @media only screen and (min-width: 900px) {
-  #dragon {
-    left: 75px;
-  }
-  #knight {
-  }
-  #building {
-    top: -220px;
-    left: 30px;
-  }
-  .landing-icons {
-    width: 50%;
-  }
 }
 /* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
 @media only screen and (min-width: 992px) {
-  #dragon {
-  }
-  #knight {
-    left: 192px;
-    top: -55px;
-  }
-  #building {
-  }
-  .landing-icons {
-  }
 }
 /* ------------------       Up to screen size 992px (Large Desktop Devices)       ------------------ */
 @media only screen and (min-width: 1200px) {
