@@ -19,7 +19,8 @@ const icons = [
   { id: "building", src: building, text: "Technologies" },
 ];
 
-const MapIcon = () => {
+
+const MapIcon = ({ handleIconProximity }) => {
   const dispatch = useDispatch();
   const iconsState = useSelector((state) => state.icons.icons);
 
@@ -68,6 +69,7 @@ const MapIcon = () => {
             </div>
           </Grid>
         ))}
+
       </Grid>
     </div>
   );
