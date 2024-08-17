@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { setNearShip } from "../../features/iconNearShip/iconNearShipSlice";
+import {
+  setNearShip,
+  setHovered,
+} from "../../features/iconNearShip/iconNearShipSlice";
+
 import WithWind from "./WithWind";
 import WithoutWind from "./WithoutWind";
 import "./style.css";
@@ -92,6 +96,7 @@ const Ship = () => {
           if (!enteredIcons.has(icon.id)) {
             console.log(`Ship has entered ${icon.id}`);
             setEnteredIcons((prev) => new Set(prev).add(icon.id));
+            dispatch(setHovered({ icon: icon.id, hovered: true })); // Dispatch setHovered for entering
           }
         } else if (isExiting) {
           console.log(`Ship has exited ${icon.id}`);
@@ -100,11 +105,12 @@ const Ship = () => {
             newSet.delete(icon.id);
             return newSet;
           });
+          dispatch(setHovered({ icon: icon.id, hovered: false })); // Dispatch setHovered for exiting
         }
       });
     };
 
-    const intervalId = setInterval(checkProximity, 500);
+    const intervalId = setInterval(checkProximity, 250);
 
     return () => clearInterval(intervalId);
   }, [position, isMoving, stopMovingTimestamp]);

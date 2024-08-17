@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setHovered,
   setNearShip,
+  applyRandomClassRedux,
+  removeRandomClassRedux,
 } from "../../features/iconNearShip/iconNearShipSlice";
 import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
@@ -33,10 +35,9 @@ const MapIcon = () => {
   };
 
   const applyRandomClass = (e, icon) => {
-    const element = e.target;
     const randomClass = Math.random() < 0.5 ? "jump" : "wiggle";
-    element.classList.add(randomClass);
-    element.classList.remove(randomClass === "jump" ? "wiggle" : "jump");
+    dispatch(applyRandomClassRedux({ icon, randomClass }));
+    dispatch(removeRandomClassRedux({ icon }));
   };
 
   return (
