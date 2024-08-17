@@ -20,6 +20,7 @@ const iconsSlice = createSlice({
         state.icons[icon].animationClass = "";
       }
     },
+    // todo- investigate what should and shouldn't be handled by redux
     setNearShip(state, action) {
       const { icon, nearShip } = action.payload;
       state.icons[icon].isNear = nearShip;
