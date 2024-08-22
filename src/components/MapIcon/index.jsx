@@ -6,7 +6,7 @@ import {
   setNearShip,
   applyRandomClassRedux,
   removeRandomClassRedux,
-} from "../../features/iconNearShip/iconNearShipSlice";
+} from "../../features/iconNearShip/possibleSimpSolut";
 import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";

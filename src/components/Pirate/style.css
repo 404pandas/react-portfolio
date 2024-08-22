@@ -1,0 +1,8 @@
+.pirate {
+  position: absolute;
+
+  width: 12%;
+  bottom: 12%;
+  right: 9%;
+  z-index: 9010;
+}

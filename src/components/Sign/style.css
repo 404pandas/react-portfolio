@@ -1,0 +1,7 @@
+.sign {
+  position: absolute;
+  z-index: 9001;
+  bottom: 5%;
+  right: 5%;
+  width: 40%;
+}
