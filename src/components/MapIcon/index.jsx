@@ -6,17 +6,22 @@ import {
   setNearShip,
   applyRandomClassRedux,
   removeRandomClassRedux,
-} from "../../features/iconNearShip/iconNearShipSlice";
+} from "../../features/iconNearShip/possibleSimpSolut";
 import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
 import "./style.css";
 import Grid from "@mui/material/Unstable_Grid2";
 
-const icons = [
-  { id: "knight", src: knight, text: "About Me" },
-  { id: "dragon", src: dragonBuilding, text: "Projects" },
-  { id: "building", src: building, text: "Technologies" },
+export const icons = [
+  { id: "knight", src: knight, text: "About Me", route: "about" },
+  { id: "dragon", src: dragonBuilding, text: "Projects", route: "projects" },
+  {
+    id: "building",
+    src: building,
+    text: "Technologies",
+    route: "technologies",
+  },
 ];
 
 

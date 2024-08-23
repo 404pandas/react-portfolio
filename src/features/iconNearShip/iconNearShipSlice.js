@@ -31,7 +31,7 @@ const iconsSlice = createSlice({
         state.icons[icon].animationClass = "";
       }
     },
-  },2
+  },
 });
 
 export const { setHovered, setNearShip } = iconsSlice.actions;

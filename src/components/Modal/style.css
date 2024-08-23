@@ -1,0 +1,20 @@
+#responsive-dialog-title {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+#responsive-dialog-title.dt-1 {
+  margin-left: 5%;
+  font-family: "Merienda", cursive !important;
+}
+.close-btn {
+  position: fixed !important;
+  bottom: 5%;
+  right: 5%;
+  color: var(--brown);
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  background-color: var(--tan) !important;
+}
+.divider {
+  border-color: var(--brown) !important;
+}
