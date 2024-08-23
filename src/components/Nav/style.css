@@ -1,3 +1,4 @@
+/* nav styles */
 #nav {
   z-index: 5;
   background-color: var(--tan);
@@ -7,6 +8,7 @@
   width: fit-content;
   display: flex;
 }
+
 #home {
   align-self: center;
   margin-right: 3%;

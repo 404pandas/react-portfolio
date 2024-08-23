@@ -3,7 +3,7 @@ import "@tensorflow/tfjs-node";
 import * as faceapi from "face-api.js";
 import "./style.css";
 
-// docs- https://justadudewhohacks.github.io/face-api.js/docs/index.html#models
+// docs - https://justadudewhohacks.github.io/face-api.js/docs/index.html#models
 
 const FaceTracker = () => {
   const videoRef = useRef(null);

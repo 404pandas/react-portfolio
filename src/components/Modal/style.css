@@ -1,3 +1,4 @@
+/* modal styles */
 #responsive-dialog-title {
   padding-top: 1%;
   padding-bottom: 1%;
@@ -6,6 +7,7 @@
   margin-left: 5%;
   font-family: "Merienda", cursive !important;
 }
+
 .close-btn {
   position: fixed !important;
   bottom: 5%;

@@ -1,5 +1,3 @@
-import * as React from "react";
-
 // third party modules
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -13,6 +11,7 @@ import Divider from "@mui/material/Divider";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Switch from "@mui/material/Switch";
+import * as React from "react";
 
 // local modules
 import Pirate from "../Pirate";
