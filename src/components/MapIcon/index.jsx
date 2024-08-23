@@ -22,6 +22,7 @@ export const icons = [
     route: "technologies",
   },
 ];
+
 export const animationClasses = [
   "jump",
   "wiggle",
@@ -38,6 +39,7 @@ export const animationClasses = [
   "grow",
 ];
 const MapIcon = () => {
+
   const dispatch = useDispatch();
   const iconsState = useSelector((state) => state.icons.icons);
 
@@ -96,6 +98,7 @@ const MapIcon = () => {
             </div>
           </Grid>
         ))}
+
       </Grid>
     </div>
   );
