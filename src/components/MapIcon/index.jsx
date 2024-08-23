@@ -70,7 +70,7 @@ const MapIcon = () => {
   return (
     <div className="icon-container">
       <Grid container spacing={2} justifyContent="center" alignItems="center">
-        {icons.map(({ id, src, text }) => (
+        {icons.map(({ id, src, text, route }) => (
           <Grid key={id} xs={12} sm={6} md={4} lg={3} className="ind-items">
             <div className="nav-item">
               <Link to={`/${route}`}>
