@@ -34,19 +34,19 @@ const Ship = () => {
       let newY = position.y;
 
       switch (keyCode) {
-        case 87: // W key
+        case 87:
           newY -= moveStep;
           setIsMoving(true);
           break;
-        case 65: // A key
+        case 65:
           newX -= moveStep;
           setIsMoving(true);
           break;
-        case 83: // S key
+        case 83:
           newY += moveStep;
           setIsMoving(true);
           break;
-        case 68: // D key
+        case 68:
           event.preventDefault();
           newX += moveStep;
           setIsMoving(true);
@@ -80,7 +80,10 @@ const Ship = () => {
     };
   }, [position, currentNearIcon, navigate]);
 
-  useEffect(() => setShowWindSails(isMoving), [isMoving]);
+
+  useEffect(() => {
+    setShowWindSails(isMoving);
+  }, [isMoving]);
 
   useEffect(() => {
     const checkProximity = () => {
@@ -137,12 +140,14 @@ const Ship = () => {
           console.log(iconsState);
         }
       });
+
     };
 
     const intervalId = setInterval(checkProximity, 250);
 
     return () => clearInterval(intervalId);
   }, [position, isMoving, stopMovingTimestamp]);
+
 
   const shipStyle = {
     width: "100%",
