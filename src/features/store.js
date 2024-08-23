@@ -4,6 +4,5 @@ import iconsReducer from "./iconNearShip/iconNearShipSlice";
 export const store = configureStore({
   reducer: {
     icons: iconsReducer,
-    iconClasses: iconClassesReducer,
   },
 });
