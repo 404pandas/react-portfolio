@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setHovered,
   setNearShip,
-  applyRandomClassRedux,
-  removeRandomClassRedux,
-} from "../../features/iconNearShip/possibleSimpSolut";
+  setAnimationClass,
+} from "../../features/iconNearShip/iconNearShipSlice";
 import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
@@ -24,10 +23,33 @@ export const icons = [
   },
 ];
 
+export const animationClasses = [
+  "jump",
+  "wiggle",
+  "spin",
+  "pulse",
+  "fade",
+  "swing",
+  "bounce",
+  "flip",
+  "shrink-grow",
+  "blink",
+  "wobble",
+  "grow-shrink",
+  "grow",
+];
+const MapIcon = () => {
 
-const MapIcon = ({ handleIconProximity }) => {
   const dispatch = useDispatch();
   const iconsState = useSelector((state) => state.icons.icons);
+
+  useEffect(() => {
+    icons.forEach(({ id }) => {
+      console.log("------------");
+      console.log(id);
+      applyRandomClass(id);
+    });
+  }, []);
 
   const handleMouseEnter = (e, icon) => {
     dispatch(setHovered({ icon, hovered: true }));
@@ -37,13 +59,15 @@ const MapIcon = ({ handleIconProximity }) => {
   const handleMouseLeave = (e, icon) => {
     dispatch(setHovered({ icon, hovered: false }));
     dispatch(setNearShip({ icon, nearShip: false }));
-    applyRandomClass(e, icon);
+    applyRandomClass(icon);
   };
 
-  const applyRandomClass = (e, icon) => {
-    const randomClass = Math.random() < 0.5 ? "jump" : "wiggle";
-    dispatch(applyRandomClassRedux({ icon, randomClass }));
-    dispatch(removeRandomClassRedux({ icon }));
+  const applyRandomClass = (icon) => {
+    console.log(icon);
+    const randomClass =
+      animationClasses[Math.floor(Math.random() * animationClasses.length)];
+    // apply random class to icon
+    dispatch(setAnimationClass({ icon, animationClass: randomClass }));
   };
 
   return (
@@ -57,7 +81,7 @@ const MapIcon = ({ handleIconProximity }) => {
                   src={src}
                   alt={`${id} icon`}
                   id={id}
-                  className={`landing-icon ${id}Icon`}
+                  className={`landing-icon ${id}Icon ${iconsState[id].animationClass}`}
                   onMouseEnter={(e) => handleMouseEnter(e, id)}
                   onMouseLeave={(e) => handleMouseLeave(e, id)}
                 />

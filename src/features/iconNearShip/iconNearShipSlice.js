@@ -12,28 +12,25 @@ const iconsSlice = createSlice({
   reducers: {
     setHovered(state, action) {
       const { icon, hovered } = action.payload;
-      state.icons[icon].hovered = hovered;
-      if (hovered) {
-        const randomClass = Math.random() < 0.5 ? "jump" : "wiggle";
-        state.icons[icon].animationClass = randomClass;
-      } else {
-        state.icons[icon].animationClass = "";
+      if (state.icons[icon].hovered !== hovered) {
+        state.icons[icon].hovered = hovered;
       }
     },
-    // todo- investigate what should and shouldn't be handled by redux
-    setNearShip(state, action) {
+    setNearShip: (state, action) => {
       const { icon, nearShip } = action.payload;
       state.icons[icon].isNear = nearShip;
-      if (nearShip) {
-        const randomClass = Math.random() < 0.5 ? "jump" : "wiggle";
-        state.icons[icon].animationClass = randomClass;
+    },
+    setAnimationClass: (state, action) => {
+      const { icon, animationClass } = action.payload;
+      if (state.icons[icon]) {
+        state.icons[icon].animationClass = animationClass;
       } else {
-        state.icons[icon].animationClass = "";
       }
     },
   },
 });
 
-export const { setHovered, setNearShip } = iconsSlice.actions;
+export const { setHovered, setNearShip, setAnimationClass } =
+  iconsSlice.actions;
 
 export default iconsSlice.reducer;

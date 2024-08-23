@@ -9,16 +9,25 @@ const Sign = () => {
   const [currentImage, setCurrentImage] = useState(welcome1);
 
   useEffect(() => {
+    let intervalId;
+
     const switchImage = () => {
       const nextImage = images[Math.floor(Math.random() * images.length)];
       setCurrentImage(nextImage);
+
+      const randomInterval = Math.random() * 2000 + 1000; // Random interval between 1 and 3 seconds
+
+      // Clear the previous interval and start a new one
+      clearInterval(intervalId);
+      intervalId = setInterval(switchImage, randomInterval);
     };
 
-    const interval = setInterval(() => {
-      switchImage();
-    }, Math.random() * 1000 + 1000);
+    // Start the initial interval
+    const initialInterval = Math.random() * 2000 + 1000;
+    intervalId = setInterval(switchImage, initialInterval);
 
-    return () => clearInterval(interval);
+    // Cleanup the interval when the component unmounts
+    return () => clearInterval(intervalId);
   }, []);
 
   return (

@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { icons } from "../MapIcon"; // Import the icons array
-
+import { animationClasses } from "../MapIcon";
 import {
   setNearShip,
   setHovered,
+  setAnimationClass,
 } from "../../features/iconNearShip/iconNearShipSlice";
 
 import WithWind from "./WithWind";
@@ -15,6 +16,7 @@ import "./style.css";
 const Ship = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const iconsState = useSelector((state) => state.icons.icons);
 
   const [position, setPosition] = useState({ x: 25, y: 25 });
   const [isMoving, setIsMoving] = useState(false);
@@ -115,13 +117,11 @@ const Ship = () => {
 
         if (isEntering) {
           if (!enteredIcons.has(icon.id)) {
-            console.log(`Ship has entered ${icon.id}`);
             setEnteredIcons((prev) => new Set(prev).add(icon.id));
             dispatch(setHovered({ icon: icon.id, hovered: true })); // Dispatch setHovered for entering
             setCurrentNearIcon(icon.route); // Use icon.route here
           }
         } else if (isExiting) {
-          console.log(`Ship has exited ${icon.id}`);
           setEnteredIcons((prev) => {
             const newSet = new Set(prev);
             newSet.delete(icon.id);
@@ -129,6 +129,15 @@ const Ship = () => {
           });
           dispatch(setHovered({ icon: icon.id, hovered: false })); // Dispatch setHovered for exiting
           setCurrentNearIcon(null); // Reset the currently near icon
+          const randomClass =
+            animationClasses[
+              Math.floor(Math.random() * animationClasses.length)
+            ];
+          console.log(randomClass);
+          dispatch(
+            setAnimationClass({ icon: icon.id, animationClass: randomClass })
+          );
+          console.log(iconsState);
         }
       });
 
