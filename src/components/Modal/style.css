@@ -18,3 +18,7 @@
 .divider {
   border-color: var(--brown) !important;
 }
+
+.i-icon {
+  color: var(--brown);
+}
