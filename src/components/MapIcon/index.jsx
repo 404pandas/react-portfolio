@@ -13,10 +13,15 @@ import building from "../../assets/images/bldg.svg";
 import "./style.css";
 import Grid from "@mui/material/Unstable_Grid2";
 
-const icons = [
-  { id: "knight", src: knight, text: "About Me" },
-  { id: "dragon", src: dragonBuilding, text: "Projects" },
-  { id: "building", src: building, text: "Technologies" },
+export const icons = [
+  { id: "knight", src: knight, text: "About Me", route: "about" },
+  { id: "dragon", src: dragonBuilding, text: "Projects", route: "projects" },
+  {
+    id: "building",
+    src: building,
+    text: "Technologies",
+    route: "technologies",
+  },
 ];
 
 const MapIcon = () => {

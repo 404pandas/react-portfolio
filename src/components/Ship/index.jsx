@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { icons } from "../MapIcon"; // Import the icons array
+
 import {
   setNearShip,
   setHovered,
@@ -11,6 +14,8 @@ import "./style.css";
 
 const Ship = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [position, setPosition] = useState({ x: 25, y: 25 });
   const [isMoving, setIsMoving] = useState(false);
   const [showWindSails, setShowWindSails] = useState(false);
@@ -18,6 +23,7 @@ const Ship = () => {
   const shipRef = useRef(null);
   const moveStep = 15;
   const [enteredIcons, setEnteredIcons] = useState(new Set()); // Track entered icons
+  const [currentNearIcon, setCurrentNearIcon] = useState(null);
 
   useEffect(() => {
     const handleArrowKeys = (event) => {
@@ -43,6 +49,15 @@ const Ship = () => {
           newX += moveStep;
           setIsMoving(true);
           break;
+        case 13: // Enter key
+          if (currentNearIcon) {
+            icons.forEach((icon) => {
+              dispatch(setHovered({ icon: icon.id, hovered: false }));
+            });
+
+            navigate(`/${currentNearIcon}`);
+          }
+          break;
         default:
           return;
       }
@@ -61,7 +76,7 @@ const Ship = () => {
       document.removeEventListener("keydown", handleArrowKeys);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [position]);
+  }, [position, currentNearIcon, navigate]);
 
   useEffect(() => setShowWindSails(isMoving), [isMoving]);
 
@@ -73,10 +88,13 @@ const Ship = () => {
       const shipRect = shipRef.current.getBoundingClientRect();
 
       // Check if the ship has stopped moving and the delay has passed
-      const icons = document.querySelectorAll(".landing-icon");
+      const iconsElements = document.querySelectorAll(".landing-icon");
 
-      icons.forEach((icon) => {
-        const iconRect = icon.getBoundingClientRect();
+      iconsElements.forEach((iconElement) => {
+        const iconRect = iconElement.getBoundingClientRect();
+
+        // Find the icon object that corresponds to this element's id
+        const icon = icons.find((i) => i.id === iconElement.id);
 
         // Check if the shipRect has entered or exited the iconRect
         const isEntering =
@@ -97,6 +115,7 @@ const Ship = () => {
             console.log(`Ship has entered ${icon.id}`);
             setEnteredIcons((prev) => new Set(prev).add(icon.id));
             dispatch(setHovered({ icon: icon.id, hovered: true })); // Dispatch setHovered for entering
+            setCurrentNearIcon(icon.route); // Use icon.route here
           }
         } else if (isExiting) {
           console.log(`Ship has exited ${icon.id}`);
@@ -106,6 +125,7 @@ const Ship = () => {
             return newSet;
           });
           dispatch(setHovered({ icon: icon.id, hovered: false })); // Dispatch setHovered for exiting
+          setCurrentNearIcon(null); // Reset the currently near icon
         }
       });
     };
