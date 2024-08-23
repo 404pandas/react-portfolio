@@ -4,6 +4,7 @@ import Ship from "../../components/Ship";
 import Modal from "../../components/Modal";
 import "../../assets/css/landing.css";
 
+// landing page
 const Landing = () => {
   return (
     <>

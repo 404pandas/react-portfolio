@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// redux
 const iconsSlice = createSlice({
   name: "icons",
   initialState: {
