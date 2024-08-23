@@ -23,7 +23,7 @@ const Pirate = () => {
   return (
     <div>
       <img
-        className=" pirate"
+        className="pirate"
         src={isBlinking ? eyesClosed : eyesOpen}
         alt="Pirate"
       />
