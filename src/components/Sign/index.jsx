@@ -15,18 +15,15 @@ const Sign = () => {
       const nextImage = images[Math.floor(Math.random() * images.length)];
       setCurrentImage(nextImage);
 
-      const randomInterval = Math.random() * 2000 + 1000; // Random interval between 1 and 3 seconds
+      const randomInterval = Math.random() * 2000 + 1000;
 
-      // Clear the previous interval and start a new one
       clearInterval(intervalId);
       intervalId = setInterval(switchImage, randomInterval);
     };
 
-    // Start the initial interval
     const initialInterval = Math.random() * 2000 + 1000;
     intervalId = setInterval(switchImage, initialInterval);
 
-    // Cleanup the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
 
