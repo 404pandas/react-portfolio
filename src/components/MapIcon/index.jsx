@@ -64,7 +64,6 @@ const MapIcon = () => {
     console.log(icon);
     const randomClass =
       animationClasses[Math.floor(Math.random() * animationClasses.length)];
-    // apply random class to icon
     dispatch(setAnimationClass({ icon, animationClass: randomClass }));
   };
 
@@ -74,7 +73,7 @@ const MapIcon = () => {
         {icons.map(({ id, src, text }) => (
           <Grid key={id} xs={12} sm={6} md={4} lg={3} className="ind-items">
             <div className="nav-item">
-              <Link to={`/${id}`}>
+              <Link to={`/${route}`}>
                 <img
                   src={src}
                   alt={`${id} icon`}
