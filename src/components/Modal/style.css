@@ -14,17 +14,13 @@
   right: 5%;
   color: var(--brown);
 }
-#test
-  > div.MuiDialog-container.MuiDialog-scrollPaper.css-hz1bth-MuiDialog-container
-  > div {
+#test > div.MuiDialog-container.MuiDialog-scrollPaper > div {
   position: absolute;
   top: 10%;
   left: 10%;
 }
 
-#test
-  > div.MuiDialog-container.MuiDialog-scrollPaper.css-hz1bth-MuiDialog-container
-  > div {
+#test > div.MuiDialog-container.MuiDialog-scrollPaper > div {
   background-color: var(--tan) !important;
 }
 
