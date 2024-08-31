@@ -1,0 +1,52 @@
+/* ------------------       My Z-Index Is Over 9000       ------------------ */
+/* 9001 - Background */
+/* 9002 - Icons w/o routing */
+/* 9003 - Title */
+/* 9003 - Icons w/ routing */
+/* 9004 - Ship */
+/* 9005 - Modal */
+/* 9006 - Modal Content */
+/* 9007 - Modal Island */
+/* 9008 - Modal Pirate */
+
+#body-z {
+  position: relative;
+  z-index: 9001;
+}
+
+#rIcons-z {
+  z-index: 9002;
+}
+
+#name {
+  position: relative;
+  z-index: 9003;
+}
+
+#mIcons-z {
+  position: relative;
+  z-index: 9004 !important;
+}
+
+#ship-container {
+  position: absolute;
+  z-index: 9004;
+}
+
+.css-zw3mfo-MuiModal-root-MuiDialog-root {
+  z-index: 9005 !important;
+}
+
+#modal-z {
+  z-index: 9007;
+}
+
+#sign-z {
+  position: absolute;
+  z-index: 9008;
+}
+
+#pirate-z {
+  position: absolute;
+  z-index: 9009;
+}

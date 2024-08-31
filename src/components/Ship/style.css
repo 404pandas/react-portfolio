@@ -1,7 +1,7 @@
 #ship-container {
   position: relative;
-  width: 20% !important;
-  height: 20% !important;
+  width: 10rem !important;
+  height: 10rem !important;
   background-color: rgba(rgb(180, 54, 54), green, blue, alpha);
 }
 

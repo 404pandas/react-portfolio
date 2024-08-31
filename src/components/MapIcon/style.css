@@ -1,3 +1,12 @@
+.icon-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 .flexbox-turn-on {
   display: flex;
 }
@@ -222,6 +231,12 @@
 /* ****************************** */
 /*         Media Queries          */
 /* ****************************** */
+
+/* xs, extra-small: 0px
+sm, small: 600px
+md, medium: 900px
+lg, large: 1200px
+xl, extra-large: 1536px */
 
 /* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
 @media only screen and (max-width: 450px) {

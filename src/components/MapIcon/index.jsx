@@ -11,6 +11,7 @@ import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
 import "./style.css";
 import Grid from "@mui/material/Unstable_Grid2";
+import NewReleasesIcon from "@mui/icons-material/NewReleases";
 
 export const icons = [
   { id: "knight", src: knight, text: "About Me", route: "about" },
@@ -74,6 +75,7 @@ const MapIcon = () => {
         {icons.map(({ id, src, text, route }) => (
           <Grid key={id} xs={12} sm={6} md={4} lg={3} className="ind-items">
             <div className="nav-item">
+              <NewReleasesIcon />
               <Link to={`/${route}`}>
                 <img
                   src={src}

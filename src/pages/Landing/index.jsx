@@ -3,6 +3,7 @@ import MapIcon from "../../components/MapIcon";
 import Ship from "../../components/Ship";
 import Modal from "../../components/Modal";
 import "../../assets/css/landing.css";
+import RandomMapIcons from "../../components/RandomMapIcon";
 
 // landing page
 const Landing = () => {
@@ -18,6 +19,7 @@ const Landing = () => {
         </div>
       </div>
       <MapIcon />
+      <RandomMapIcons />
       <Ship />
     </>
   );

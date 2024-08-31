@@ -39,7 +39,6 @@ img {
 
 body {
   background-image: url("../images/background.svg");
-
   background-repeat: no-repeat;
   background-size: cover; /* Make sure the entire image is stretched */
   background-position: center; /* Center the image */

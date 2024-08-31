@@ -1,8 +1,13 @@
 /* sign styles */
-.sign {
+#sign-z {
   position: absolute;
-  z-index: 9001;
-  bottom: 5%;
+  top: 130%;
   right: 5%;
-  width: 40%;
+  width: 40rem;
+  height: 20rem;
+}
+
+.sign {
+  width: 100%;
+  height: 100%;
 }

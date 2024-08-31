@@ -28,7 +28,7 @@ const Sign = () => {
   }, []);
 
   return (
-    <div>
+    <div id="sign-z">
       <img className=" sign" src={currentImage} alt="Welcome Sign" />
     </div>
   );

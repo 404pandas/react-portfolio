@@ -14,9 +14,20 @@
   right: 5%;
   color: var(--brown);
 }
-.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+#test
+  > div.MuiDialog-container.MuiDialog-scrollPaper.css-hz1bth-MuiDialog-container
+  > div {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+#test
+  > div.MuiDialog-container.MuiDialog-scrollPaper.css-hz1bth-MuiDialog-container
+  > div {
   background-color: var(--tan) !important;
 }
+
 .divider {
   border-color: var(--brown) !important;
 }

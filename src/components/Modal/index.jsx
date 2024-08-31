@@ -86,7 +86,7 @@ const Modal = () => {
   const content = language === "pirate" ? pirateContent : englishContent;
 
   return (
-    <React.Fragment>
+    <div id="modal-z">
       <Button
         variant="outlined"
         onClick={handleClickOpen}
@@ -103,6 +103,7 @@ const Modal = () => {
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
+        id="test"
       >
         <DialogActions>
           <Button onClick={handleClose}>
@@ -146,7 +147,7 @@ const Modal = () => {
           <Sign />
         </>
       )}
-    </React.Fragment>
+    </div>
   );
 };
 

@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 // local imports
 import "./assets/css/normalize.css";
 import "./assets/css/style.css";
+import "./assets/css/z-index.css";
 import Page from "./pages/Page";
 
 function App() {
