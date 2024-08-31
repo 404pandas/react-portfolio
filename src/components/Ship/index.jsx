@@ -26,6 +26,25 @@ const Ship = () => {
   const moveStep = 15;
   const [enteredIcons, setEnteredIcons] = useState(new Set()); // Track entered icons
   const [currentNearIcon, setCurrentNearIcon] = useState(null);
+  const [isMediumScreen, setIsMediumScreen] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // runs once because dependency array is empty
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMediumScreen(window.innerWidth >= 900);
+    };
+
+    const checkTouchDevice = () => {
+      setIsTouchDevice(
+        "ontouchstart" in window || navigator.maxTouchPoints > 0
+      );
+    };
+
+    // Run these checks once on component mount
+    checkScreenSize();
+    checkTouchDevice();
+  }, []);
 
   useEffect(() => {
     const handleArrowKeys = (event) => {
@@ -79,7 +98,6 @@ const Ship = () => {
       document.removeEventListener("keyup", handleKeyUp);
     };
   }, [position, currentNearIcon, navigate]);
-
 
   useEffect(() => {
     setShowWindSails(isMoving);
@@ -140,14 +158,12 @@ const Ship = () => {
           console.log(iconsState);
         }
       });
-
     };
 
     const intervalId = setInterval(checkProximity, 250);
 
     return () => clearInterval(intervalId);
   }, [position, isMoving, stopMovingTimestamp]);
-
 
   const shipStyle = {
     width: "100%",
@@ -157,11 +173,11 @@ const Ship = () => {
     transition: "left 0.2s, top 0.2s",
   };
 
-  return (
+  return isMediumScreen && !isTouchDevice ? (
     <div ref={shipRef} id="ship-container" style={shipStyle}>
       {showWindSails ? <WithWind /> : <WithoutWind />}
     </div>
-  );
+  ) : null;
 };
 
 export default Ship;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -42,8 +42,23 @@ export const animationClasses = [
 const MapIcon = () => {
   const dispatch = useDispatch();
   const iconsState = useSelector((state) => state.icons.icons);
+  const [isMediumScreen, setIsMediumScreen] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMediumScreen(window.innerWidth >= 900);
+    };
+
+    const checkTouchDevice = () => {
+      setIsTouchDevice(
+        "ontouchstart" in window || navigator.maxTouchPoints > 0
+      );
+    };
+
+    // Run these checks once on component mount
+    checkScreenSize();
+    checkTouchDevice();
     icons.forEach(({ id }) => {
       console.log("------------");
       console.log(id);
@@ -69,13 +84,28 @@ const MapIcon = () => {
     dispatch(setAnimationClass({ icon, animationClass: randomClass }));
   };
 
+  const shouldShowText = (id) => {
+    return (
+      iconsState[id].hovered ||
+      iconsState[id].nearShip ||
+      (isLargeScreen && !isTouchDevice)
+    );
+  };
+
   return (
     <div className="icon-container">
       <Grid container spacing={2} justifyContent="center" alignItems="center">
         {icons.map(({ id, src, text, route }) => (
-          <Grid key={id} xs={12} sm={6} md={4} lg={3} className="ind-items">
-            <div className="nav-item">
-              <NewReleasesIcon />
+          <Grid
+            key={id}
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            className={`ind-items ind-${route}`}
+          >
+            <div className={`nav-item nav-${route}`}>
+              <NewReleasesIcon className="poi" />
               <Link to={`/${route}`}>
                 <img
                   src={src}
@@ -87,9 +117,11 @@ const MapIcon = () => {
                 />
                 <h2
                   className={
-                    iconsState[id].hovered || iconsState[id].nearShip
-                      ? "show"
-                      : "hide"
+                    iconsState[id].hovered ||
+                    iconsState[id].nearShip ||
+                    (!isMediumScreen && isTouchDevice)
+                      ? "show ic-h2"
+                      : "hide ic-h2"
                   }
                 >
                   {text}

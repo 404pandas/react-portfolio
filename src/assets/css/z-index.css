@@ -38,7 +38,8 @@
 }
 
 #modal-z {
-  z-index: 9007;
+  position: absolute;
+  z-index: 9007 !important;
 }
 
 #sign-z {

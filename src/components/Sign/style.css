@@ -1,8 +1,8 @@
 /* sign styles */
 #sign-z {
   position: absolute;
-  top: 130%;
-  right: 5%;
+  bottom: -45em;
+  right: -86em;
   width: 40rem;
   height: 20rem;
 }
@@ -10,4 +10,51 @@
 .sign {
   width: 100%;
   height: 100%;
+}
+
+/* ****************************** */
+/*         Media Queries          */
+/* ****************************** */
+
+/* xs, extra-small: 0px
+sm, small: 600px
+md, medium: 900px
+lg, large: 1200px
+xl, extra-large: 1536px */
+
+/* xs, extra-small: 0px and up */
+@media (min-width: 0px) {
+  /* Styles for extra-small screens and up */
+  #sign-z {
+    bottom: -65em;
+    right: -45em;
+  }
+}
+
+/* sm, small: 600px and up */
+@media (min-width: 600px) {
+  /* Styles for small screens and up */
+
+  #sign-z {
+    bottom: -50em;
+    right: -37em;
+  }
+}
+
+/* md, medium: 900px and up */
+@media (min-width: 900px) {
+  /* Styles for medium screens and up */
+  #sign-z {
+    bottom: -46em;
+    right: -47em;
+  }
+}
+
+/* lg, large: 1200px and up */
+@media (min-width: 1200px) {
+  /* Styles for large screens and up */
+  #sign-z {
+    bottom: -39em;
+    right: -79em;
+  }
 }

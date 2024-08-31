@@ -34,6 +34,11 @@
   width: 100vw;
 }
 
+.poi {
+  color: black;
+  animation: pulse 1.5s infinite !important;
+}
+
 /* ************* ANIMATIONS ***************** */
 .jump {
   animation: jump 4s infinite alternate !important;
@@ -238,29 +243,69 @@ md, medium: 900px
 lg, large: 1200px
 xl, extra-large: 1536px */
 
-/* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
-@media only screen and (max-width: 450px) {
-}
-/* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
-@media only screen and (min-width: 451px) {
-}
-/* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
-@media only screen and (min-width: 600px) {
-}
-/* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
-@media only screen and (min-width: 900px) {
-}
-/* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
-@media only screen and (min-width: 992px) {
-}
-/* ------------------       Up to screen size 992px (Large Desktop Devices)       ------------------ */
-@media only screen and (min-width: 1200px) {
-  #dragon {
+/* xs, extra-small: 0px and up */
+@media (min-width: 0px) {
+  /* Styles for extra-small screens and up */
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -10%;
   }
-  #knight {
+  .icon-container {
+    margin-top: 25vh;
+    height: 65vh;
   }
-  #building {
+  .nav-item {
+    margin-left: 10%;
   }
-  .landing-icons {
+}
+
+/* sm, small: 600px and up */
+@media (min-width: 600px) {
+  /* Styles for small screens and up */
+  a {
+    margin-left: -40%;
+  }
+  .ic-h2 {
+    font-size: 3rem;
+  }
+}
+
+/* md, medium: 900px and up */
+@media (min-width: 900px) {
+  /* Styles for medium screens and up */
+  img {
+    width: 50%;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -10%;
+  }
+  .icon-container {
+    height: 65vh;
+  }
+  .nav-item {
+    margin-left: 10%;
+  }
+  .ind-about {
+    margin-bottom: -5%;
+  }
+  .ind-technologies {
+    margin-top: 5%;
+  }
+}
+
+/* lg, large: 1200px and up */
+@media (min-width: 1200px) {
+  /* Styles for large screens and up */
+
+  .ind-about {
+    margin-bottom: -15%;
+  }
+  .ind-technologies {
+    margin-top: -15%;
   }
 }

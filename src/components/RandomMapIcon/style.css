@@ -81,29 +81,28 @@ md, medium: 900px
 lg, large: 1200px
 xl, extra-large: 1536px */
 
-/* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
-@media only screen and (max-width: 450px) {
+/* xs, extra-small: 0px and up */
+@media (min-width: 0px) {
+  /* Styles for extra-small screens and up */
 }
-/* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
-@media only screen and (min-width: 451px) {
+
+/* sm, small: 600px and up */
+@media (min-width: 600px) {
+  /* Styles for small screens and up */
 }
-/* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
-@media only screen and (min-width: 600px) {
-}
-/* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
-@media only screen and (min-width: 900px) {
-}
-/* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
-@media only screen and (min-width: 992px) {
-}
-/* ------------------       Up to screen size 992px (Large Desktop Devices)       ------------------ */
-@media only screen and (min-width: 1200px) {
-  #dragon {
+
+/* md, medium: 900px and up */
+@media (min-width: 900px) {
+  /* Styles for medium screens and up */
+  #rIcons-z {
+    height: 65vh;
   }
-  #knight {
-  }
-  #building {
-  }
-  .landing-icons {
+}
+
+/* lg, large: 1200px and up */
+@media (min-width: 1200px) {
+  /* Styles for large screens and up */
+  #rIcons-z {
+    height: 100vh;
   }
 }
