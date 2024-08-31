@@ -27,7 +27,7 @@ xl, extra-large: 1536px */
 @media (min-width: 0px) {
   /* Styles for extra-small screens and up */
   #pirate-z {
-    bottom: -61em;
+    bottom: -70em;
     right: -42em;
   }
 }
