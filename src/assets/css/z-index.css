@@ -33,6 +33,11 @@
   z-index: 9004;
 }
 
+/* seriously this was it? */
+#test {
+  z-index: 9004 !important;
+}
+
 .css-zw3mfo-MuiModal-root-MuiDialog-root {
   z-index: 9005 !important;
 }
