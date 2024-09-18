@@ -11,7 +11,7 @@ import {
 
 import WithWind from "./WithWind";
 import WithoutWind from "./WithoutWind";
-import "./style.css";
+import "./ship.css";
 import Modal from "../Modal";
 
 const Ship = () => {

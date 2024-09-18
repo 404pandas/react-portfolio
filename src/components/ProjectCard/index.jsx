@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 // local imports
-import "./style.css";
+import "./projectcard.css";
 
 const ProjectCard = (props) => {
   console.log("props", props);
@@ -23,17 +23,17 @@ const ProjectCard = (props) => {
         />
         <CardContent>
           <Typography
-            className='expanded-text'
+            className="expanded-text"
             gutterBottom
-            variant='h5'
-            component='div'
+            variant="h5"
+            component="div"
           >
             {project.title}
           </Typography>
           <Typography
-            className='expanded-text'
-            variant='body2'
-            color='text.secondary'
+            className="expanded-text"
+            variant="body2"
+            color="text.secondary"
           >
             {project.description}
           </Typography>
@@ -41,12 +41,12 @@ const ProjectCard = (props) => {
         </CardContent>
         <CardActions>
           {project.deployment && (
-            <Button size='small'>
+            <Button size="small">
               <a href={project.deployment}>Deployment</a>
             </Button>
           )}
           {project.code && (
-            <Button size='small'>
+            <Button size="small">
               <a href={project.code}>Code</a>
             </Button>
           )}

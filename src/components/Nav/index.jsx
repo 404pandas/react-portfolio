@@ -8,7 +8,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 
 // local modules
-import "./style.css";
+import "./nav.css";
 
 const Nav = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);

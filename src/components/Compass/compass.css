@@ -1,0 +1,89 @@
+.compass-container {
+  position: relative;
+  width: 60vw; /* Adjust size as needed */
+  aspect-ratio: 1 / 1; /* Maintain a 1:1 aspect ratio */
+  margin: 0 auto;
+}
+
+.compass-shadow {
+  position: absolute;
+  top: 27%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  animation: pulse 3s infinite;
+  opacity: 0.6;
+}
+
+.compass-blank,
+.compass-direction {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.compass-direction {
+  width: 70%;
+  height: 90%;
+}
+
+.triangle {
+  position: absolute;
+  z-index: -1;
+}
+
+/* North - Keep as it is */
+.triangle.north {
+  top: -17%;
+  left: -33%;
+  transform: translate(0%, 0%) rotateX(158deg);
+  width: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 50vh solid rgba(255, 0, 0, 0.5);
+}
+
+/* East - Position to the right and rotate to point east */
+.triangle.east {
+  top: 50%;
+  left: 50%;
+  transform: translate(-29%, -47%) rotate(-90deg);
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 50vh solid rgba(255, 0, 0, 0.5);
+}
+
+/* South - Position at the bottom and rotate to point south */
+.triangle.south {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%) rotate(0deg);
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 50vh solid rgba(255, 0, 0, 0.5);
+}
+
+/* West - Position to the left and rotate to point west */
+.triangle.west {
+  top: 0;
+  left: -50%;
+  transform: translate(-16%, 9%) rotate(90deg);
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 50vh solid rgba(255, 0, 0, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

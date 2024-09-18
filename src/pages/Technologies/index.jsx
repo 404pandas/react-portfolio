@@ -1,5 +1,6 @@
 // local imports
 import "../../assets/css/technologies.css";
+import Compass from "../../components/Compass";
 
 // external imports
 import Container from "@mui/material/Container";
@@ -9,11 +10,7 @@ const Technologies = () => {
   return (
     <>
       <Container>
-        <Grid container id='tech-cont'>
-          <Grid item>
-            <h1>Technologies grid will go here</h1>
-          </Grid>
-        </Grid>
+        <Compass />
       </Container>
     </>
   );

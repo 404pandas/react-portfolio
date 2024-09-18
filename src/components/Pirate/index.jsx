@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import eyesOpen from "../../assets/images/pirate-eo-mc.svg";
 import eyesClosed from "../../assets/images/pirate-ec-mc.svg";
-import "./style.css";
+import "./pirate.css";
 const Pirate = () => {
   const [isBlinking, setIsBlinking] = useState(false);
 

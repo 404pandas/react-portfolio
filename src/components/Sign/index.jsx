@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import welcome1 from "../../assets/images/welcome-1.svg";
 import welcome2 from "../../assets/images/welcome-2.svg";
 import welcome3 from "../../assets/images/welcome-3.svg";
-import "./style.css";
+import "./sign.css";
 const images = [welcome1, welcome2, welcome3];
 
 const Sign = () => {

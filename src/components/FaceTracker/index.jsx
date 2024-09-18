@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "@tensorflow/tfjs-node";
 import * as faceapi from "face-api.js";
-import "./style.css";
+import "./facetracker.css";
 
 // docs - https://justadudewhohacks.github.io/face-api.js/docs/index.html#models
 

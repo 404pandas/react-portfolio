@@ -16,7 +16,7 @@ import * as React from "react";
 // local modules
 import Pirate from "../Pirate";
 import Sign from "../Sign";
-import "./style.css";
+import "./modal.css";
 
 const Modal = () => {
   const [open, setOpen] = React.useState(

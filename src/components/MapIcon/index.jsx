@@ -9,7 +9,7 @@ import {
 import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
-import "./style.css";
+import "./mapicon.css";
 import Grid from "@mui/material/Unstable_Grid2";
 import NewReleasesIcon from "@mui/icons-material/NewReleases";
 

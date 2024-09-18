@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "./randommapicon.css";
 import alligator from "../../assets/images/alligator.svg";
 import graveyard from "../../assets/images/graveyard.svg";
 import hills from "../../assets/images/hills.svg";
