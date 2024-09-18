@@ -21,7 +21,7 @@ const Pirate = () => {
   }, []);
 
   return (
-    <div id="pirate-z">
+    <div id="pirate-z" className="pir-sign">
       <img
         className="pirate"
         src={isBlinking ? eyesClosed : eyesOpen}

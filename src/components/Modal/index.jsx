@@ -99,6 +99,14 @@ const Modal = () => {
           }}
         />
       </Button>
+      <div>
+        {open && (
+          <div className="modal-decal">
+            <Pirate />
+            <Sign />
+          </div>
+        )}
+      </div>
       <Dialog
         open={open}
         onClose={handleClose}
@@ -141,12 +149,6 @@ const Modal = () => {
           />
         </DialogContent>
       </Dialog>
-      {open && (
-        <>
-          <Pirate />
-          <Sign />
-        </>
-      )}
     </div>
   );
 };

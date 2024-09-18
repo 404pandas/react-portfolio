@@ -1,4 +1,4 @@
-/* ------------------       My Z-Index Is Over 9000       ------------------ */
+/* ------------------       My Z-Index Is Over 9000       ------------------
 /* 9001 - Background */
 /* 9002 - Icons w/o routing */
 /* 9003 - Title */
@@ -33,18 +33,8 @@
   z-index: 9004;
 }
 
-/* seriously this was it? */
 #test {
   z-index: 9004 !important;
-}
-
-.css-zw3mfo-MuiModal-root-MuiDialog-root {
-  z-index: 9005 !important;
-}
-
-#modal-z {
-  position: absolute;
-  z-index: 9007 !important;
 }
 
 #sign-z {
@@ -52,7 +42,13 @@
   z-index: 9008;
 }
 
+/* TODO- debug with dev Dustin Jackson */
 #pirate-z {
   position: absolute;
-  z-index: 9009;
+  z-index: 100000 !important;
+  background-color: black;
+}
+
+.ind-items {
+  z-index: 9003;
 }

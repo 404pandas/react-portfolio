@@ -1,42 +1,82 @@
 [
   {
-    "title": "Project 1",
-    "description": "This is a description of project 1",
-    "code": "https://github.com",
-    "deployment": "https://maryelenius.com",
+    "title": "Password Generator",
+    "description": "A web-based password generator using JavaScript, HTML, and CSS to create secure, random passwords based on user preferences. Features include customizable password length and the option to include special characters.",
+    "code": "https://github.com/404pandas/password-generator",
+    "deployment": "https://pswrd-gen.netlify.app",
     "image": "comingSoon",
     "key": 100
   },
   {
-    "title": "Project 2",
-    "description": "This is a description of project 2",
-    "code": "https://github.com",
-    "deployment": "https://maryelenius.com",
+    "title": "Pooh Weather Dashboard",
+    "description": "An interactive weather dashboard that utilizes the OpenWeatherMap API to provide real-time weather updates. Built with Day.js, GSAP, jQuery, and Materialize for dynamic front-end experiences. Backend functionality is powered by Node.js and npm.",
+    "code": "https://github.com/404pandas/pooh-weather-dashboard",
+    "deployment": "https://pooh-weather-dashboard.netlify.app",
     "image": "comingSoon",
     "key": 101
   },
   {
-    "title": "Project 3",
-    "description": "This is a description of project 3",
-    "code": "https://github.com",
-    "deployment": "https://maryelenius.com",
+    "title": "Workday Scheduler",
+    "description": "A browser-based daily scheduler using Moment.js to manage date and time. This app dynamically updates its interface with HTML and CSS powered by jQuery, allowing users to plan and organize their workday efficiently.",
+    "code": "https://github.com/404pandas/workday-scheduler",
+    "deployment": "https://workday-schedule.netlify.app",
     "image": "comingSoon",
     "key": 102
   },
   {
-    "title": "Project 4",
-    "description": "This is a description of project 4",
-    "code": "https://github.com",
-    "deployment": "https://maryelenius.com",
+    "title": "Coding Quiz",
+    "description": "A timed coding quiz application that tests users' knowledge of JavaScript fundamentals. Built with semantic HTML5, CSS, and vanilla JavaScript, the app provides immediate feedback on quiz answers.",
+    "code": "https://github.com/404pandas/coding-quiz",
+    "deployment": "https://web-coder-quiz.netlify.app",
     "image": "comingSoon",
     "key": 103
   },
   {
-    "title": "Project 5",
-    "description": "This is a description of project 5",
-    "code": "https://github.com",
-    "deployment": "https://maryelenius.com",
+    "title": "Jacob Elenius Professional Website",
+    "description": "A personal portfolio website for Jacob Elenius, showcasing professional experience and projects. Built using HTML, CSS, and JavaScript, with custom tent iconography to reflect outdoor and camping interests.",
+    "code": "https://github.com/404pandas/jacob-elenius",
+    "deployment": "https://app.netlify.com/sites/jacobelenius/overview",
     "image": "comingSoon",
     "key": 104
+  },
+  {
+    "title": "Standard Portfolio",
+    "description": "A professional portfolio website developed using jQuery, Materialize, and GSAP for dynamic interactions. Backend functionality is handled by Node.js, while the front end utilizes day.js and various npm packages for an optimized experience.",
+    "code": "https://github.com/404pandas/404pandas.github.io",
+    "deployment": "https://standard-portfolio.onrender.com",
+    "image": "comingSoon",
+    "key": 105
+  },
+  {
+    "title": "Burn Book Blog",
+    "description": "A blogging platform built with a full stack environment, utilizing technologies like Handlebars, Sequelize, MySQL, and Materialize for user-friendly interaction. Features user authentication, session management, and real-time updates through Express and Node.js.",
+    "code": "https://github.com/404pandas/burn-book-blog",
+    "deployment": "https://burn-book-blog.onrender.com",
+    "image": "comingSoon",
+    "key": 106
+  },
+  {
+    "title": "PWA Kitties",
+    "description": "A progressive web app (PWA) themed around cats, built using Webpack, Babel, and CodeMirror. This text editor application allows users to write and save text offline, with a modern JavaScript framework and responsive design.",
+    "code": "https://github.com/404pandas/pwa-kitties",
+    "deployment": "https://pwa-kitties.onrender.com",
+    "image": "comingSoon",
+    "key": 107
+  },
+  {
+    "title": "MERN Stack Project Setup",
+    "description": "A MERN stack project utilizing MongoDB, Express, React, and Node.js. Integrated with Apollo and GraphQL for seamless data fetching and state management. The project is in the prototype stage and will be deployed after MVP completion.",
+    "code": "https://github.com/404pandas/project-3-setup-guide",
+    "deployment": "https://witcher-9efi.onrender.com",
+    "image": "comingSoon",
+    "key": 108
+  },
+  {
+    "title": "Notetaker Application",
+    "description": "A note-taking web application built for coding bootcamp, leveraging Express and Node.js to create, save, and delete notes. Notes are stored using local database storage, and the project is deployed on Heroku.",
+    "code": "https://github.com/404pandas/notetaker",
+    "deployment": "https://notetaker-irrb.onrender.com",
+    "image": "comingSoon",
+    "key": 109
   }
 ]

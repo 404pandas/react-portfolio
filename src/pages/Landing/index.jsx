@@ -1,7 +1,6 @@
 import React from "react";
 import MapIcon from "../../components/MapIcon";
 import Ship from "../../components/Ship";
-import Modal from "../../components/Modal";
 import "../../assets/css/landing.css";
 import RandomMapIcons from "../../components/RandomMapIcon";
 
@@ -9,7 +8,6 @@ import RandomMapIcons from "../../components/RandomMapIcon";
 const Landing = () => {
   return (
     <>
-      <Modal />
       <div id="name">
         <h1>Mary Elenius</h1>
         <div id="vr" className="subtitles"></div>
