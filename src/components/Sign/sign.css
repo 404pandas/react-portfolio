@@ -5,6 +5,7 @@
   right: -86em;
   width: 40rem;
   height: 20rem;
+  z-index: 50 !important;
 }
 
 .sign {

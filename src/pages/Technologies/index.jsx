@@ -10,6 +10,7 @@ const Technologies = () => {
   return (
     <>
       <Container>
+        <h1>Interactive Compass Coming soon!</h1>
         <Compass />
       </Container>
     </>

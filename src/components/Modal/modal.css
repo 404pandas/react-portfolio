@@ -30,4 +30,5 @@
 
 .i-icon {
   color: var(--brown);
+  z-index: 100 !important;
 }

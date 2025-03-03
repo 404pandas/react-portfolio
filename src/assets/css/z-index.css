@@ -46,7 +46,6 @@
 #pirate-z {
   position: absolute;
   z-index: 100000 !important;
-  background-color: black;
 }
 
 .ind-items {
