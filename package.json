@@ -1,9 +1,12 @@
 {
-  "name": "react-portfolio",
-  "version": "0.1.0",
+  "name": "react-portfolio-root",
   "private": true,
-  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
+<<<<<<< HEAD
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -29,5 +32,14 @@
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10"
+=======
+    "dev": "concurrently \"npm run dev --workspace client\" \"npm run dev --workspace server\"",
+    "build": "npm run build --workspace client",
+    "preview": "npm run preview --workspace client",
+    "start": "npm run start --workspace server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+>>>>>>> 112fdc81 (Finished for now)
   }
 }

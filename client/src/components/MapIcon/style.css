@@ -1,0 +1,156 @@
+.wiggle {
+  animation: wiggle 2s infinite alternate !important;
+}
+.jump {
+  animation: jump 4s infinite alternate !important;
+}
+.flexbox-turn-on {
+  display: flex;
+}
+.landing-icons {
+  width: 40%;
+  color: var(--icons);
+}
+@keyframes grow {
+  from {
+    width: 1px;
+  }
+  to {
+    width: 40%;
+  }
+}
+.grow {
+  animation: grow 2s ease forwards;
+}
+.ind-icons {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+#building {
+  position: relative;
+}
+#knight {
+  position: relative;
+}
+#dragon {
+  position: relative;
+}
+#icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  width: 100vw;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  90% {
+    transform: rotate(0);
+  }
+}
+/* ****************************** */
+/*         Media Queries          */
+/* ****************************** */
+
+/* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
+@media only screen and (max-width: 450px) {
+  #dragon {
+    top: -100px;
+  }
+  #knight {
+    left: 110px;
+    top: -20px;
+  }
+  #building {
+    top: -100px;
+    left: 75px;
+  }
+}
+/* ------------------       Up to screen size 600px (Mobile Devices)       ------------------ */
+@media only screen and (min-width: 451px) {
+  #dragon {
+    top: -215px;
+  }
+  #knight {
+    left: 150px;
+    top: -100px;
+  }
+  #building {
+    top: -100px;
+    left: 150px;
+  }
+}
+/* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
+@media only screen and (min-width: 600px) {
+  #dragon {
+    top: -43px;
+    left: -130px;
+  }
+  #knight {
+    left: 63px;
+    top: 40px;
+  }
+  #building {
+    top: -27px;
+    left: 50px;
+  }
+}
+/* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
+@media only screen and (min-width: 900px) {
+  #dragon {
+    left: 75px;
+  }
+  #knight {
+  }
+  #building {
+    top: -220px;
+    left: 30px;
+  }
+  .landing-icons {
+    width: 50%;
+  }
+}
+/* ------------------       At least screen size 992px (Desktop Devices)       ------------------ */
+@media only screen and (min-width: 992px) {
+  #dragon {
+  }
+  #knight {
+    left: 192px;
+    top: -55px;
+  }
+  #building {
+  }
+  .landing-icons {
+  }
+}
+/* ------------------       Up to screen size 992px (Large Desktop Devices)       ------------------ */
+@media only screen and (min-width: 1200px) {
+  #dragon {
+  }
+  #knight {
+  }
+  #building {
+  }
+  .landing-icons {
+  }
+}
