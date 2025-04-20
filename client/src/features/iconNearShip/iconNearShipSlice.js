@@ -8,6 +8,7 @@ const iconsSlice = createSlice({
       knight: { hovered: false, isNear: false, animationClass: "" },
       dragon: { hovered: false, isNear: false, animationClass: "" },
       building: { hovered: false, isNear: false, animationClass: "" },
+      contact: { hovered: false, isNear: false, animationClass: "" },
     },
   },
   reducers: {

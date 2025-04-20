@@ -9,6 +9,7 @@ import {
 import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
+import knights from "../../assets/images/knights.svg";
 import "./mapicon.css";
 import Grid from "@mui/material/Unstable_Grid2";
 import NewReleasesIcon from "@mui/icons-material/NewReleases";
@@ -22,6 +23,7 @@ export const icons = [
     text: "Technologies",
     route: "technologies",
   },
+  { id: "contact", src: knights, text: "Contact", route: "contact" },
 ];
 
 export const animationClasses = [
@@ -93,8 +95,8 @@ const MapIcon = () => {
   };
 
   return (
-    <div className="icon-container">
-      <Grid container spacing={2} justifyContent="center" alignItems="center">
+    <div className='icon-container'>
+      <Grid container spacing={2} justifyContent='center' alignItems='center'>
         {icons.map(({ id, src, text, route }) => (
           <Grid
             key={id}
@@ -105,7 +107,7 @@ const MapIcon = () => {
             className={`ind-items ind-${route}`}
           >
             <div className={`nav-item nav-${route}`}>
-              <NewReleasesIcon className="poi" />
+              <NewReleasesIcon className='poi' />
               <Link to={`/${route}`}>
                 <img
                   src={src}
