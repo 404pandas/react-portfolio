@@ -2,6 +2,8 @@ import express from "express";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
@@ -16,6 +18,7 @@ app.use(
   })
 );
 
+// 📬 Contact route
 app.post("/api/contact", async (req, res) => {
   const { topic, message, email } = req.body;
 
@@ -42,6 +45,18 @@ app.post("/api/contact", async (req, res) => {
     res.status(500).send({ error: "Email could not be sent" });
   }
 });
+
+// ✅ Serve static files in production
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const clientDistPath = path.join(__dirname, "../client/dist");
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(clientDistPath));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(clientDistPath, "index.html"));
+  });
+}
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
