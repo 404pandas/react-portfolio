@@ -9,6 +9,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.use(
+  cors({
+    origin: ["http://localhost:5001", "http://localhost:5173"],
+    methods: ["POST"],
+  })
+);
+
 app.post("/api/contact", async (req, res) => {
   const { topic, message, email } = req.body;
 
@@ -36,5 +43,5 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

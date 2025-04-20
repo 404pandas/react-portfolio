@@ -1,90 +1,157 @@
-// external imports
+import { useState } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
-// local imports
+// Local helper
 import { validateEmail } from "../../utils/helpers";
 
 function Contact() {
   const [formState, setFormState] = useState({
-    name: "",
+    topic: "",
     email: "",
     message: "",
   });
 
   const [errorMessage, setErrorMessage] = useState("");
-  const { name, email, message } = formState;
+  const { topic, email, message } = formState;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!errorMessage) {
-      console.log("Submit Form", formState);
+
+    if (!errorMessage && topic && email && message) {
+      try {
+        const response = await fetch("http://localhost:5001/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            topic: topic, // or add a separate topic input
+            email,
+            message,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          alert("Message sent successfully!");
+          setFormState({ topic: "", email: "", message: "" });
+        } else {
+          alert(data.error || "Something went wrong.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error sending message.");
+      }
     }
   };
 
   const handleChange = (e) => {
-    if (e.target.name === "email") {
-      const isValid = validateEmail(e.target.value);
+    const { name, value } = e.target;
+
+    if (name === "email") {
+      const isValid = validateEmail(value);
       if (!isValid) {
         setErrorMessage("Your email is invalid.");
       } else {
         setErrorMessage("");
       }
     } else {
-      if (!e.target.value.length) {
-        setErrorMessage(`${e.target.name} is required.`);
+      if (!value.length) {
+        setErrorMessage(`${name} is required.`);
       } else {
         setErrorMessage("");
       }
     }
-    if (!errorMessage) {
-      setFormState({ ...formState, [e.target.name]: e.target.value });
-      console.log("Handle Form", formState);
-    }
+
+    setFormState({ ...formState, [name]: value });
   };
 
   return (
-    <Container>
-      <Grid container id='contact-cont'>
-        <Grid item>
-          <section>
-            <form id='contact-form' onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor='name'>Name:</label>
-                <input
-                  type='text'
-                  name='name'
-                  defaultValue={name}
-                  onBlur={handleChange}
+    <Container
+      maxWidth='md'
+      id='contact-cont'
+      sx={{ paddingTop: "5%", paddingBottom: "5%" }}
+    >
+      <Grid container spacing={4} justifyContent='center'>
+        <Grid item xs={12}>
+          <Typography
+            variant='h4'
+            align='center'
+            gutterBottom
+            sx={{ fontFamily: "'Merienda', cursive" }}
+          >
+            Get in Touch
+          </Typography>
+        </Grid>
+
+        <Grid item xs={12}>
+          <form id='contact-form' onSubmit={handleSubmit}>
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  label='Name'
+                  name='topic'
+                  variant='outlined'
+                  value={topic}
+                  onChange={handleChange}
                 />
-              </div>
-              <div>
-                <label htmlFor='email'>Email address:</label>
-                <input
-                  type='email'
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  label='Email Address'
                   name='email'
-                  defaultValue={email}
-                  onBlur={handleChange}
+                  variant='outlined'
+                  type='email'
+                  value={email}
+                  onChange={handleChange}
                 />
-              </div>
-              <div>
-                <label htmlFor='message'>Message:</label>
-                <textarea
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  label='Message'
                   name='message'
-                  rows='5'
-                  defaultValue={message}
-                  onBlur={handleChange}
+                  variant='outlined'
+                  multiline
+                  rows={5}
+                  value={message}
+                  onChange={handleChange}
                 />
-              </div>
+              </Grid>
+
               {errorMessage && (
-                <div>
-                  <p className='error-text'>{errorMessage}</p>
-                </div>
+                <Grid item xs={12}>
+                  <Typography
+                    variant='body2'
+                    className='error-text'
+                    sx={{ color: "red" }}
+                  >
+                    {errorMessage}
+                  </Typography>
+                </Grid>
               )}
-              <button type='submit'>Submit</button>
-            </form>
-          </section>
+
+              <Grid item xs={12} textAlign='center'>
+                <Button
+                  type='submit'
+                  variant='contained'
+                  sx={{
+                    backgroundColor: "var(--brown)",
+                    "&:hover": { backgroundColor: "var(--dark-tan)" },
+                    fontFamily: "'Lora', serif",
+                    padding: "0.5rem 2rem",
+                  }}
+                >
+                  Submit
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
         </Grid>
       </Grid>
     </Container>
