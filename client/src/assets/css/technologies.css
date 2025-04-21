@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+.commpass-title {
+  margin-top: 11%;
+}
+
 /* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
 @media only screen and (max-width: 600px) {
   #tech-cont {

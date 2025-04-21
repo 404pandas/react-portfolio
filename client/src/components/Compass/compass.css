@@ -7,12 +7,13 @@
 
 .compass-shadow {
   position: absolute;
-  top: 27%;
-  left: 25%;
   width: 50%;
   height: 50%;
   animation: pulse 3s infinite;
   opacity: 0.6;
+  top: 108px !important;
+  left: 101px !important;
+  z-index: 0;
 }
 
 .compass-blank,
@@ -29,68 +30,43 @@
   height: 90%;
 }
 
+.compass-title {
+  float: right;
+}
+
 .triangle {
   position: absolute;
   z-index: -1;
 }
 
-/* North - Keep as it is */
-.triangle.north {
-  top: -17%;
-  left: -33%;
-  transform: translate(0%, 0%) rotateX(158deg);
-  width: 0;
-  height: 0;
-  border-left: 50vw solid transparent;
-  border-right: 50vw solid transparent;
-  border-bottom: 50vh solid rgba(205, 194, 194, 0.5);
-}
-
-/* East - Position to the right and rotate to point east */
-.triangle.east {
-  top: 50%;
-  left: 50%;
-  transform: translate(-29%, -47%) rotate(-90deg);
-  border-left: 50vw solid transparent;
-  border-right: 50vw solid transparent;
-  border-bottom: 50vh solid rgba(205, 194, 194, 0.5);
-}
-
-/* South - Position at the bottom and rotate to point south */
-.triangle.south {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 0%) rotate(0deg);
-  border-left: 50vw solid transparent;
-  border-right: 50vw solid transparent;
-  border-bottom: 50vh solid rgba(205, 194, 194, 0.5);
-}
-
-/* West - Position to the left and rotate to point west */
-.triangle.west {
-  top: 0;
-  left: -50%;
-  transform: translate(-16%, 9%) rotate(90deg);
-  border-left: 50vw solid transparent;
-  border-right: 50vw solid transparent;
-  border-bottom: 50vh solid rgba(205, 194, 194, 0.5);
-}
-
 /* skills */
 
 .skill-text-container {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 60%;
   transform: translate(0%, 0%) scale(0.8);
   opacity: 0;
-  transition: transform 0.5s ease-out, opacity 0.4s ease-in;
+  transition: transform 0.5s ease-out, opacity 0.4s ease-in !important;
   text-align: center;
   color: black;
   font-weight: bold;
   pointer-events: none;
   z-index: 5;
   font-family: "Roboto", sans-serif;
+  align-items: center;
+  background-color: var(--tan) !important;
+  box-shadow: -10px 5px var(--brown) !important;
+  height: 70%;
+  justify-content: space-around;
+}
+
+.skill-text-container.active {
+  opacity: 1;
+  transform: scale(1); /* direction-specific transforms will override this */
 }
 
 .skill-text-container ul {

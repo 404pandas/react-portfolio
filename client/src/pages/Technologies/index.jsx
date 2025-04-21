@@ -10,7 +10,9 @@ const Technologies = () => {
   return (
     <>
       <Container>
-        <h1>Interactive Compass Coming soon!</h1>
+        <h1 className='compass-title'>
+          Hover the direction you would like to navigate!
+        </h1>
         <Compass />
       </Container>
     </>
