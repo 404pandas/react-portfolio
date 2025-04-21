@@ -26,7 +26,7 @@ function Contact() {
         const response = await fetch(
           "http://react-portfolio-iqr5.onrender.com:5001/api/contact",
           {
-            method: "POST",≈
+            method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               topic: topic, // or add a separate topic input
