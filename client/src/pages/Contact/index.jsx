@@ -78,7 +78,12 @@ function Contact() {
       id='contact-cont'
       sx={{ paddingTop: "5%", paddingBottom: "5%" }}
     >
-      <Grid container spacing={4} justifyContent='center'>
+      <Grid
+        container
+        spacing={4}
+        justifyContent='center'
+        flexDirection='column'
+      >
         <Grid item xs={12}>
           <Typography
             variant='h4'
@@ -87,6 +92,14 @@ function Contact() {
             sx={{ fontFamily: "'Merienda', cursive" }}
           >
             Get in Touch
+          </Typography>
+          <Typography
+            variant='h5'
+            align='center'
+            gutterBottom
+            sx={{ fontFamily: "'Merienda', cursive" }}
+          >
+            Under development
           </Typography>
         </Grid>
 

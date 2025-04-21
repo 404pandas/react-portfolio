@@ -27,6 +27,13 @@
 #dragon {
   position: relative;
 }
+
+#contact {
+  width: 40%;
+  color: var(--icons) !important;
+  position: relative;
+}
+
 #icons {
   display: flex;
   justify-content: center;
