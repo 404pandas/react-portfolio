@@ -9,14 +9,11 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
+// ✅ Only use CORS once with correct domain and no port
 app.use(
   cors({
-    origin: [
-      "https://react-portfolio-iqr5.onrender.com:5001",
-      "https://react-portfolio-iqr5.onrender.com:5173",
-    ],
+    origin: "https://react-portfolio-iqr5.onrender.com",
     methods: ["POST"],
   })
 );
@@ -44,22 +41,23 @@ app.post("/api/contact", async (req, res) => {
 
     res.status(200).send({ success: true });
   } catch (err) {
-    console.error(err);
+    console.error("Error sending email:", err);
     res.status(500).send({ error: "Email could not be sent" });
   }
 });
 
-// ✅ Serve static files in production
+// ✅ Serve static files if in production
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const clientDistPath = path.join(__dirname, "../client/dist");
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(clientDistPath));
 
+  // Catch-all to serve React app
   app.get("*", (req, res) => {
     res.sendFile(path.join(clientDistPath, "index.html"));
   });
 }
 
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
