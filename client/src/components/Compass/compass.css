@@ -76,6 +76,69 @@
   border-bottom: 50vh solid rgba(205, 194, 194, 0.5);
 }
 
+/* skills */
+
+.skill-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 0%) scale(0.8);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.4s ease-in;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 5;
+  font-family: "Roboto", sans-serif;
+}
+
+.skill-text-container ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.skill-text-container h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* North */
+.skill-text-container.north {
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -100%) scale(1);
+  opacity: 1;
+}
+
+/* East */
+.skill-text-container.east {
+  top: 50%;
+  left: 90%;
+  transform: translate(0%, -50%) scale(1);
+  opacity: 1;
+  text-align: left;
+}
+
+/* South */
+.skill-text-container.south {
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 100%) scale(1);
+  opacity: 1;
+}
+
+/* West */
+.skill-text-container.west {
+  top: 50%;
+  left: 10%;
+  transform: translate(-100%, -50%) scale(1);
+  opacity: 1;
+  text-align: right;
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);

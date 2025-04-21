@@ -7,6 +7,60 @@ const Compass = () => {
   const [direction, setDirection] = useState(null);
   const compassRef = useRef(null);
 
+  const skillCategories = {
+    north: {
+      title: "Programming Languages",
+      skills: [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Shell Scripting",
+        "CSS3",
+        "HTML5",
+      ],
+    },
+    east: {
+      title: "Front-End Technologies",
+      skills: [
+        "React",
+        "Redux",
+        "Tailwind CSS",
+        "Bootstrap",
+        "Material-UI",
+        "Foundation",
+      ],
+    },
+    south: {
+      title: "Back-End Technologies",
+      skills: [
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "MongoDB",
+        "MySQL",
+        "GraphQL",
+        "Apollo",
+        "Sequelize",
+        "Mongoose",
+      ],
+    },
+    west: {
+      title: "DevOps & Tools",
+      skills: [
+        "GitHub",
+        "GitLab",
+        "Bitbucket",
+        "Docker",
+        "AWS",
+        "CircleCI",
+        "Jest",
+        "GitHub Actions",
+        "Webpack",
+        "Vite",
+      ],
+    },
+  };
+
   const getCompassDirection = (mouseX, mouseY, centerX, centerY) => {
     const deltaX = mouseX - centerX;
     const deltaY = mouseY - centerY;
@@ -43,19 +97,29 @@ const Compass = () => {
   }, []);
 
   return (
-    <div className="compass-container">
+    <div className='compass-container'>
       <img
         src={compassshadow}
-        alt="compass shadow"
-        className="compass-shadow"
+        alt='compass shadow'
+        className='compass-shadow'
       />
       <img
         src={blank}
-        alt="compass blank"
+        alt='compass blank'
         ref={compassRef}
-        className="compass-blank"
+        className='compass-blank'
       />
       {direction && <div className={`triangle ${direction}`}></div>}
+      {direction && (
+        <div className={`skill-text-container ${direction}`}>
+          <h3>{skillCategories[direction].title}</h3>
+          <ul>
+            {skillCategories[direction].skills.map((skill, i) => (
+              <li key={i}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
