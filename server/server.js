@@ -13,7 +13,10 @@ app.use(cors());
 
 app.use(
   cors({
-    origin: ["https://maryelenius.com:5001", "https://maryelenius.com:5173"],
+    origin: [
+      "https://react-portfolio-iqr5.onrender.com:5001",
+      "https://react-portfolio-iqr5.onrender.com:5173",
+    ],
     methods: ["POST"],
   })
 );
