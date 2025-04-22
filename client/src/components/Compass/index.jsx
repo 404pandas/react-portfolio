@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import { Box, Typography, Paper } from "@mui/material";
 import blank from "../../assets/images/compass-blank.png";
 import compassshadow from "../../assets/images/compass-shadow.png";
-import "./compass.css"; // Still applies your original animations/styles
+import "./compass.css";
 
 const Compass = () => {
   const [direction, setDirection] = useState(null);
   const compassRef = useRef(null);
+  const touchStartRef = useRef({ x: 0, y: 0 });
 
   const skillCategories = {
     north: {
@@ -62,16 +63,12 @@ const Compass = () => {
     },
   };
 
-  const getCompassDirection = (mouseX, mouseY, centerX, centerY) => {
-    const deltaX = mouseX - centerX;
-    const deltaY = mouseY - centerY;
-    return Math.abs(deltaX) > Math.abs(deltaY)
-      ? deltaX > 0
-        ? "east"
-        : "west"
-      : deltaY > 0
-      ? "south"
-      : "north";
+  const getCompassDirection = (dx, dy) => {
+    if (Math.abs(dx) > Math.abs(dy)) {
+      return dx > 0 ? "east" : "west";
+    } else {
+      return dy > 0 ? "south" : "north";
+    }
   };
 
   const handleMouseMove = (e) => {
@@ -79,19 +76,45 @@ const Compass = () => {
       const rect = compassRef.current.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      const newDirection = getCompassDirection(
-        e.clientX,
-        e.clientY,
-        centerX,
-        centerY
-      );
+      const deltaX = e.clientX - centerX;
+      const deltaY = e.clientY - centerY;
+      const newDirection = getCompassDirection(deltaX, deltaY);
       setDirection(newDirection);
     }
   };
 
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (e) => {
+    const touch = e.changedTouches[0];
+    const dx = touch.clientX - touchStartRef.current.x;
+    const dy = touch.clientY - touchStartRef.current.y;
+
+    // Ignore tiny swipes
+    if (Math.abs(dx) < 30 && Math.abs(dy) < 30) return;
+
+    const newDirection = getCompassDirection(dx, dy);
+    setDirection(newDirection);
+  };
+
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    const ref = compassRef.current;
+    if (ref) {
+      ref.addEventListener("touchstart", handleTouchStart, { passive: true });
+      ref.addEventListener("touchend", handleTouchEnd, { passive: true });
+    }
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (ref) {
+        ref.removeEventListener("touchstart", handleTouchStart);
+        ref.removeEventListener("touchend", handleTouchEnd);
+      }
+    };
   }, []);
 
   const getPositionStyle = (dir) => {
@@ -153,10 +176,7 @@ const Compass = () => {
         src={compassshadow}
         alt='compass shadow'
         className='compass-shadow'
-        sx={{
-          position: "absolute",
-          zIndex: 0,
-        }}
+        sx={{ position: "absolute", zIndex: 0 }}
       />
       <Box
         component='img'
@@ -170,6 +190,7 @@ const Compass = () => {
           top: 0,
           left: 0,
           zIndex: 1,
+          touchAction: "none", // Prevent default gestures from interfering
         }}
       />
       {direction && (

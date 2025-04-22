@@ -11,7 +11,8 @@ const Technologies = () => {
     <>
       <Container>
         <h1 className='compass-title'>
-          Hover the direction you would like to navigate!
+          Hover or swipe the direction on the compass you would like to
+          navigate!
         </h1>
         <Compass />
       </Container>

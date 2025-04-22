@@ -102,7 +102,7 @@
 .skill-text-container.south {
   bottom: 5%;
   left: 50%;
-  transform: translate(-50%, 100%) scale(1);
+  transform: translate(-50%, 50%) scale(1);
   opacity: 1;
 }
 
@@ -124,5 +124,26 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .skill-text-container.west,
+  .skill-text-container.north,
+  .skill-text-container.south,
+  .skill-text-container.east {
+    transform: translate(-100%, -50%) scale(1);
+  }
+
+  .skill-text-container.south {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .skill-text-container.north {
+    transform: translate(-50%, 0%) scale(1);
+  }
+
+  .skill-text-container.west {
+    transform: translate(0%, -50%) scale(1);
   }
 }
