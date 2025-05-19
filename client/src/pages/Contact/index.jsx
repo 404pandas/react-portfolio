@@ -24,7 +24,7 @@ function Contact() {
     if (!errorMessage && topic && email && message) {
       try {
         const response = await fetch(
-          "http://react-portfolio-iqr5.onrender.com:5001/api/contact",
+          "https://react-portfolio-iqr5.onrender.com:5001/api/contact",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -74,28 +74,28 @@ function Contact() {
 
   return (
     <Container
-      maxWidth='md'
-      id='contact-cont'
+      maxWidth="md"
+      id="contact-cont"
       sx={{ paddingTop: "5%", paddingBottom: "5%" }}
     >
       <Grid
         container
         spacing={4}
-        justifyContent='center'
-        flexDirection='column'
+        justifyContent="center"
+        flexDirection="column"
       >
         <Grid item xs={12}>
           <Typography
-            variant='h4'
-            align='center'
+            variant="h4"
+            align="center"
             gutterBottom
             sx={{ fontFamily: "'Merienda', cursive" }}
           >
             Get in Touch
           </Typography>
           <Typography
-            variant='h5'
-            align='center'
+            variant="h5"
+            align="center"
             gutterBottom
             sx={{ fontFamily: "'Merienda', cursive" }}
           >
@@ -104,14 +104,14 @@ function Contact() {
         </Grid>
 
         <Grid item xs={12}>
-          <form id='contact-form' onSubmit={handleSubmit}>
+          <form id="contact-form" onSubmit={handleSubmit}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <TextField
                   fullWidth
-                  label='Name'
-                  name='topic'
-                  variant='outlined'
+                  label="Name"
+                  name="topic"
+                  variant="outlined"
                   value={topic}
                   onChange={handleChange}
                 />
@@ -119,10 +119,10 @@ function Contact() {
               <Grid item xs={12}>
                 <TextField
                   fullWidth
-                  label='Email Address'
-                  name='email'
-                  variant='outlined'
-                  type='email'
+                  label="Email Address"
+                  name="email"
+                  variant="outlined"
+                  type="email"
                   value={email}
                   onChange={handleChange}
                 />
@@ -130,9 +130,9 @@ function Contact() {
               <Grid item xs={12}>
                 <TextField
                   fullWidth
-                  label='Message'
-                  name='message'
-                  variant='outlined'
+                  label="Message"
+                  name="message"
+                  variant="outlined"
                   multiline
                   rows={5}
                   value={message}
@@ -143,8 +143,8 @@ function Contact() {
               {errorMessage && (
                 <Grid item xs={12}>
                   <Typography
-                    variant='body2'
-                    className='error-text'
+                    variant="body2"
+                    className="error-text"
                     sx={{ color: "red" }}
                   >
                     {errorMessage}
@@ -152,10 +152,10 @@ function Contact() {
                 </Grid>
               )}
 
-              <Grid item xs={12} textAlign='center'>
+              <Grid item xs={12} textAlign="center">
                 <Button
-                  type='submit'
-                  variant='contained'
+                  type="submit"
+                  variant="contained"
                   sx={{
                     backgroundColor: "var(--brown)",
                     "&:hover": { backgroundColor: "var(--dark-tan)" },
