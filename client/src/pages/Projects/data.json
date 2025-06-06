@@ -1,19 +1,19 @@
 [
   {
-    "title": "Password Generator",
-    "description": "A web-based password generator using JavaScript, HTML, and CSS to create secure, random passwords based on user preferences. Features include customizable password length and the option to include special characters.",
-    "code": "https://github.com/404pandas/password-generator",
-    "deployment": "https://pswrd-gen.netlify.app",
-    "image": "comingSoon",
-    "key": 100
+    "title": "Bluey API",
+    "description": "An API for use in developing apps themed around the Bluey TV show. BLUEY™ and character logo™ and © Ludo Studio. Licensed by BBC Studios Distribution Ltd.",
+    "code": "https://github.com/404pandas/blue-dog-api",
+    "deployment": "https://github.com/404pandas/blue-dog-api",
+    "image": "blueyapi",
+    "key": 102
   },
   {
-    "title": "Pooh Weather Dashboard",
-    "description": "An interactive weather dashboard that utilizes the OpenWeatherMap API to provide real-time weather updates. Built with Day.js, GSAP, jQuery, and Materialize for dynamic front-end experiences. Backend functionality is powered by Node.js and npm.",
-    "code": "https://github.com/404pandas/pooh-weather-dashboard",
-    "deployment": "https://pooh-weather-dashboard.netlify.app",
-    "image": "comingSoon",
-    "key": 101
+    "title": "Cortez Cafe",
+    "description": "A browser-based daily scheduler using Moment.js to manage date and time. This app dynamically updates its interface with HTML and CSS powered by jQuery, allowing users to plan and organize their workday efficiently.",
+    "code": "https://github.com/404pandas/workday-scheduler",
+    "deployment": "https://www.cortezcafe.com/",
+    "image": "cortezcafe",
+    "key": 102
   },
   {
     "title": "Workday Scheduler",
@@ -78,5 +78,29 @@
     "deployment": "https://notetaker-irrb.onrender.com",
     "image": "comingSoon",
     "key": 109
+  },
+  {
+    "title": "Password Generator",
+    "description": "A web-based password generator using JavaScript, HTML, and CSS to create secure, random passwords based on user preferences. Features include customizable password length and the option to include special characters.",
+    "code": "https://github.com/404pandas/password-generator",
+    "deployment": "https://pswrd-gen.netlify.app",
+    "image": "comingSoon",
+    "key": 110
+  },
+  {
+    "title": "Password Generator",
+    "description": "A web-based password generator using JavaScript, HTML, and CSS to create secure, random passwords based on user preferences. Features include customizable password length and the option to include special characters.",
+    "code": "https://github.com/404pandas/password-generator",
+    "deployment": "https://pswrd-gen.netlify.app",
+    "image": "comingSoon",
+    "key": 111
+  },
+  {
+    "title": "Pooh Weather Dashboard",
+    "description": "An interactive weather dashboard that utilizes the OpenWeatherMap API to provide real-time weather updates. Built with Day.js, GSAP, jQuery, and Materialize for dynamic front-end experiences. Backend functionality is powered by Node.js and npm.",
+    "code": "https://github.com/404pandas/pooh-weather-dashboard",
+    "deployment": "https://pooh-weather-dashboard.netlify.app",
+    "image": "comingSoon",
+    "key": 112
   }
 ]
