@@ -10,7 +10,6 @@
     "preview": "npm run preview --workspace client",
     "start": "npm run start --workspace server",
     "render-start": "npm run render-start --workspace server"
-
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
