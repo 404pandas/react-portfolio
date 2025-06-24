@@ -34,9 +34,9 @@ const About = () => {
             <p className='about-p'>
               Naturally, upon graduating high school I went to college for
               Zoology and Veterinary Technology. A defining point in my life was
-              when Ib egan work as a Veterinary Technician with my childhood
-              hero,Veterinarian Dayton Williams. Unforuntately, alcoholism and
-              trauma hithard and fast shortly after.
+              when I began work as a Veterinary Technician with my childhood
+              hero, Veterinarian Dayton Williams. Unfortunately, alcoholism and
+              trauma hit hard and fast shortly after.
             </p>
             <img
               className='about-imgs'
@@ -77,7 +77,7 @@ const About = () => {
               Because of the difficult pregnancy and delivery, I became
               physically disabled. Identifying that I could no longer physically
               be a veterinary technician, I went back to school for Computer
-              Science. Now, I enjoys working remotely from Knoxville, Tennessee
+              Science. Now, I enjoy working remotely from Knoxville, Tennessee
               in pajamas and watching Bluey for the 200th time while being a
               full time mom.
             </p>
