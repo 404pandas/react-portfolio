@@ -24,7 +24,7 @@ function Contact() {
     if (!errorMessage && topic && email && message) {
       try {
         const response = await fetch(
-          "https://react-portfolio-iqr5.onrender.com:5001/api/contact",
+          "https://react-portfolio-iqr5.onrender.com/api/contact",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
