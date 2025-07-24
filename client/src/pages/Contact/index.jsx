@@ -46,7 +46,9 @@ function Contact() {
         }
       } catch (err) {
         console.error(err);
-        alert("Error sending message.");
+        alert(
+          "Error sending message. Mary is currently developing this feature."
+        );
       }
     }
   };
