@@ -21,6 +21,7 @@ import simpPort from "../../assets/images/simp-portfolio.png";
 import notetaker from "../../assets/images/notetaker.png";
 import passgen from "../../assets/images/passgen.png";
 import pooh from "../../assets/images/pooh.png";
+import witcherssatchel from "../../assets/images/witcherssatchel.png";
 
 import image1 from "../../assets/images/1.svg";
 import image2 from "../../assets/images/2.svg";
@@ -77,6 +78,7 @@ const imageMap = {
   notetaker,
   passgen,
   pooh,
+  witcherssatchel,
   // image1,
   // image2,
   // image3,
@@ -145,23 +147,23 @@ const Projects = () => {
   return (
     <>
       <Container>
-        <Grid container id='projects-cont'>
-          <ImageList variant='masonry' id='image-list'>
+        <Grid container id="projects-cont">
+          <ImageList variant="masonry" id="image-list">
             {data.slice(0, itemsToShow).map((project, index) => (
               <ImageListItem
                 key={project.key}
                 className={`image-item ${index % 2 === 0 ? "even" : "odd"}`}
               >
-                <div className='image-inner'>
+                <div className="image-inner">
                   <div
-                    className='image-front'
+                    className="image-front"
                     style={{
                       backgroundImage: `url(${imageMap[project.image]})`,
                     }}
                   ></div>
-                  <div className='image-back'>
-                    <Typography variant='h6'>{project.title}</Typography>
-                    <Typography variant='body1'>
+                  <div className="image-back">
+                    <Typography variant="h6">{project.title}</Typography>
+                    <Typography variant="body1">
                       {project.description}
                     </Typography>
                     <IconButton
@@ -180,27 +182,27 @@ const Projects = () => {
       </Container>
       {expandedItem && (
         <div
-          id='expanded-project'
+          id="expanded-project"
           className={expandedItem ? "show" : ""}
           ref={expandedRef}
           onClick={handleClose}
         >
-          <div id='inner-box' onClick={(e) => e.stopPropagation()}>
+          <div id="inner-box" onClick={(e) => e.stopPropagation()}>
             <img
               src={getRandomImage()}
-              alt='pirate themed icon'
-              loading='lazy'
-              id='expanded-image'
+              alt="pirate themed icon"
+              loading="lazy"
+              id="expanded-image"
             />
-            <Typography variant='h6'>{expandedItem.title}</Typography>
-            <Typography variant='body1' className='expanded-text'>
+            <Typography variant="h6">{expandedItem.title}</Typography>
+            <Typography variant="body1" className="expanded-text">
               {expandedItem.description}
             </Typography>
-            <Container id='project-a-cont'>
-              <a className='project-a' href={expandedItem.deployment}>
+            <Container id="project-a-cont">
+              <a className="project-a" href={expandedItem.deployment}>
                 Deployment
               </a>
-              <a className='project-a' href={expandedItem.code}>
+              <a className="project-a" href={expandedItem.code}>
                 Code
               </a>
             </Container>
