@@ -15,7 +15,12 @@ const PhoneScreen = () => {
   };
 
   const handleCall = () => {
-    console.log("Calling:", number || "(no number)");
+    if (!number) {
+      console.log("No number entered!");
+      return;
+    }
+    const digitsOnly = number.replace(/[^0-9]/g, "");
+    window.location.href = `tel:${digitsOnly}`;
   };
 
   const formatNumber = (num) => {
