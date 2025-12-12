@@ -1,0 +1,125 @@
+.phone-shell {
+  width: 350px;
+  height: auto;
+  margin: 4rem auto;
+  background: var(--tan);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  box-shadow: -10px 5px var(--brown);
+  border: 3px solid var(--brown);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-inner {
+  width: 100%;
+  height: 100%;
+  background: var(--dark-tan);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  border: 2px solid var(--brown);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.phone-avatar {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  height: 140px;
+}
+
+.phone-avatar img {
+  width: 110px;
+  height: 110px;
+  filter: drop-shadow(-5px 4px var(--brown));
+}
+
+.phone-display {
+  height: 70px;
+  margin: 0.5rem auto 1.5rem auto;
+  width: 85%;
+  background: var(--white);
+  color: var(--brown);
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--brown);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.15);
+  font-family: "Merienda", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder {
+  opacity: 0.4;
+  font-family: "Lora", serif;
+}
+
+/* Keypad */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0 1.5rem;
+}
+
+.key-btn {
+  background: var(--tan);
+  color: var(--brown);
+  font-size: 2rem;
+  border: 2px solid var(--brown);
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: 0.2s;
+  font-family: "Merienda", cursive;
+}
+
+.key-btn:hover {
+  background: var(--dark-tan);
+  cursor: pointer;
+}
+
+.key-btn:active {
+  background: var(--brown);
+  color: var(--white);
+}
+
+/* Footer buttons */
+.phone-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.delete-btn,
+.call-btn {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--brown);
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--brown);
+  font-family: "Merienda", cursive;
+  background: var(--tan);
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: var(--icons);
+  color: var(--white);
+}
+
+.call-btn {
+  background: #7ac57a;
+  color: var(--black);
+}
+
+.call-btn:hover {
+  background: #95e295;
+}
