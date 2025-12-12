@@ -6,9 +6,8 @@ const PhoneScreen = () => {
   const [number, setNumber] = useState("");
 
   const handlePress = (value) => {
-    // Only allow digits and special keys (*, #)
     if (!/[0-9*#]/.test(value)) return;
-    setNumber((prev) => (prev + value).slice(0, 15)); // limit length
+    setNumber((prev) => (prev + value).slice(0, 15));
   };
 
   const handleDelete = () => {
@@ -19,10 +18,9 @@ const PhoneScreen = () => {
     console.log("Calling:", number || "(no number)");
   };
 
-  // Format number for display with dashes
   const formatNumber = (num) => {
-    const digitsOnly = num.replace(/\D/g, ""); // keep only digits
-    if (digitsOnly.length <= 3) return num; // leave as-is if short
+    const digitsOnly = num.replace(/\D/g, "");
+    if (digitsOnly.length <= 3) return num;
     if (digitsOnly.length <= 6)
       return `${digitsOnly.slice(0, 3)}-${digitsOnly.slice(3)}${num
         .replace(/\d/g, "")
@@ -33,10 +31,8 @@ const PhoneScreen = () => {
     )}-${digitsOnly.slice(6, 10)}${num.replace(/\d/g, "").replace(/-/g, "")}`;
   };
 
-  // Handle keyboard typing
   const handleInputChange = (e) => {
     const value = e.target.value;
-    // Keep only 0-9, *, #
     const filtered = value.replace(/[^0-9*#]/g, "").slice(0, 15);
     setNumber(filtered);
   };
@@ -48,6 +44,13 @@ const PhoneScreen = () => {
         <div className="phone-avatar">
           <img src={pirateImage} alt="Pirate" className="pirate-icon" />
         </div>
+
+        {/* Subtext under the pirate */}
+        <p className="phone-subtext">
+          I'm a React Native developer! Contact me if you're looking for a
+          mobile developer to add to your team!
+        </p>
+        <p className="phone-subtext">(772) 834-2342</p>
 
         {/* Phone Number Input */}
         <div className="phone-display">
