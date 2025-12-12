@@ -180,7 +180,6 @@ const Ship = () => {
       {showWindSails ? <WithWind /> : <WithoutWind />}
       <div className="modals">
         <Modal />
-        <Phone />
       </div>
     </div>
   ) : null;

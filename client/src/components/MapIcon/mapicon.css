@@ -28,6 +28,10 @@
   position: relative;
 }
 
+#phone {
+  position: relative;
+}
+
 #contact {
   width: 40%;
   color: var(--icons) !important;

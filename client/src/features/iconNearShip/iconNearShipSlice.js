@@ -9,6 +9,11 @@ const iconsSlice = createSlice({
       dragon: { hovered: false, isNear: false, animationClass: "" },
       building: { hovered: false, isNear: false, animationClass: "" },
       contact: { hovered: false, isNear: false, animationClass: "" },
+      phone: {
+        hovered: false,
+        isNear: false,
+        animationClass: "",
+      },
     },
   },
   reducers: {

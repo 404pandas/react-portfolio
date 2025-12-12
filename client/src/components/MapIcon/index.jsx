@@ -10,6 +10,7 @@ import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
 import knights from "../../assets/images/knights.svg";
+import phone from "../../assets/images/phone.svg";
 import "./mapicon.css";
 import Grid from "@mui/material/Unstable_Grid2";
 import NewReleasesIcon from "@mui/icons-material/NewReleases";
@@ -24,6 +25,7 @@ export const icons = [
     route: "technologies",
   },
   { id: "contact", src: knights, text: "Contact", route: "contact" },
+  { id: "phone", src: phone, text: "Mobile", route: "phone" },
 ];
 
 export const animationClasses = [
@@ -95,8 +97,8 @@ const MapIcon = () => {
   };
 
   return (
-    <div className='icon-container'>
-      <Grid container spacing={2} justifyContent='center' alignItems='center'>
+    <div className="icon-container">
+      <Grid container spacing={2} justifyContent="center" alignItems="center">
         {icons.map(({ id, src, text, route }) => (
           <Grid
             key={id}
@@ -107,13 +109,15 @@ const MapIcon = () => {
             className={`ind-items ind-${route}`}
           >
             <div className={`nav-item nav-${route}`}>
-              <NewReleasesIcon className='poi' />
+              <NewReleasesIcon className="poi" />
               <Link to={`/${route}`}>
                 <img
                   src={src}
                   alt={`${id} icon`}
                   id={id}
-                  className={`landing-icon ${id}Icon ${iconsState[id].animationClass}`}
+                  className={`landing-icon ${id}Icon ${
+                    iconsState[id]?.animationClass || ""
+                  }`}
                   onMouseEnter={(e) => handleMouseEnter(e, id)}
                   onMouseLeave={(e) => handleMouseLeave(e, id)}
                 />
