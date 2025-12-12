@@ -25,7 +25,9 @@ const Compass = () => {
       title: "Front-End Technologies",
       skills: [
         "React",
+        "React Native",
         "Redux",
+        "Zustand",
         "Tailwind CSS",
         "Bootstrap",
         "Material-UI",
@@ -162,7 +164,7 @@ const Compass = () => {
 
   return (
     <Box
-      className='compass-container'
+      className="compass-container"
       sx={{
         position: "relative",
         width: 400,
@@ -172,18 +174,18 @@ const Compass = () => {
       }}
     >
       <Box
-        component='img'
+        component="img"
         src={compassshadow}
-        alt='compass shadow'
-        className='compass-shadow'
+        alt="compass shadow"
+        className="compass-shadow"
         sx={{ position: "absolute", zIndex: 0 }}
       />
       <Box
-        component='img'
+        component="img"
         src={blank}
-        alt='compass blank'
+        alt="compass blank"
         ref={compassRef}
-        className='compass-blank'
+        className="compass-blank"
         sx={{
           width: "100%",
           position: "absolute",
@@ -199,13 +201,13 @@ const Compass = () => {
           sx={getPositionStyle(direction)}
           elevation={4}
         >
-          <Typography variant='h7' gutterBottom className='tech-title'>
+          <Typography variant="h7" gutterBottom className="tech-title">
             {skillCategories[direction].title}
           </Typography>
           <ul style={{ margin: 0, paddingLeft: 20 }}>
             {skillCategories[direction].skills.map((skill, i) => (
               <li key={i}>
-                <Typography variant='body2'>{skill}</Typography>
+                <Typography variant="body2">{skill}</Typography>
               </li>
             ))}
           </ul>
