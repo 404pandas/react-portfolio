@@ -1,0 +1,7 @@
+#phone-modal-wrapper .i-icon {
+  color: var(--primary-color);
+}
+
+#phone-modal-wrapper .close-btn {
+  margin-right: 20%;
+}

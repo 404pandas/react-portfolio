@@ -13,6 +13,7 @@ import WithWind from "./WithWind";
 import WithoutWind from "./WithoutWind";
 import "./ship.css";
 import Modal from "../Modal";
+import Phone from "../Phone";
 
 const Ship = () => {
   const dispatch = useDispatch();
@@ -175,9 +176,12 @@ const Ship = () => {
   };
 
   return isMediumScreen && !isTouchDevice ? (
-    <div ref={shipRef} id='ship-container' style={shipStyle}>
+    <div ref={shipRef} id="ship-container" style={shipStyle}>
       {showWindSails ? <WithWind /> : <WithoutWind />}
-      <Modal />
+      <div className="modals">
+        <Modal />
+        <Phone />
+      </div>
     </div>
   ) : null;
 };

@@ -18,3 +18,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.modals {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap; /* <-- THIS FIXES IT */
+}

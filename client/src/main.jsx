@@ -12,6 +12,7 @@ import Technologies from "./pages/Technologies";
 import About from "./pages/About";
 import Error from "./pages/Error";
 import Contact from "./pages/Contact";
+import PhoneScreen from "./pages/PhoneScreen";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: "technologies", element: <Technologies /> },
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
+      { path: "phone", element: <PhoneScreen /> },
     ],
   },
 ]);
