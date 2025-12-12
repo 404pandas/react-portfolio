@@ -19,16 +19,26 @@ const PhoneScreen = () => {
     console.log("Calling:", number || "(no number)");
   };
 
-  // Format number for display: 7773333333 -> 777-333-3333
+  // Format number for display with dashes
   const formatNumber = (num) => {
-    const digitsOnly = num.replace(/\D/g, ""); // strip non-digit characters
-    if (digitsOnly.length <= 3) return digitsOnly;
+    const digitsOnly = num.replace(/\D/g, ""); // keep only digits
+    if (digitsOnly.length <= 3) return num; // leave as-is if short
     if (digitsOnly.length <= 6)
-      return `${digitsOnly.slice(0, 3)}-${digitsOnly.slice(3)}`;
+      return `${digitsOnly.slice(0, 3)}-${digitsOnly.slice(3)}${num
+        .replace(/\d/g, "")
+        .replace(/-/g, "")}`;
     return `${digitsOnly.slice(0, 3)}-${digitsOnly.slice(
       3,
       6
-    )}-${digitsOnly.slice(6, 10)}`;
+    )}-${digitsOnly.slice(6, 10)}${num.replace(/\d/g, "").replace(/-/g, "")}`;
+  };
+
+  // Handle keyboard typing
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    // Keep only 0-9, *, #
+    const filtered = value.replace(/[^0-9*#]/g, "").slice(0, 15);
+    setNumber(filtered);
   };
 
   return (
@@ -41,11 +51,13 @@ const PhoneScreen = () => {
 
         {/* Phone Number Input */}
         <div className="phone-display">
-          {number ? (
-            <span>{formatNumber(number)}</span>
-          ) : (
-            <span className="placeholder">Enter Number</span>
-          )}
+          <input
+            type="text"
+            value={formatNumber(number)}
+            onChange={handleInputChange}
+            placeholder="Enter Number"
+            className="phone-input"
+          />
         </div>
 
         {/* Keypad */}

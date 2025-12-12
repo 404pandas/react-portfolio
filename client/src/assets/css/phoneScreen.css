@@ -38,7 +38,7 @@
 }
 
 .phone-display {
-  height: 70px;
+  height: auto;
   margin: 0.5rem auto 1.5rem auto;
   width: 85%;
   background: var(--white);
@@ -122,4 +122,10 @@
 
 .call-btn:hover {
   background: #95e295;
+}
+
+.phone-input {
+  width: 100%;
+  font-size: 60%;
+  text-align: center;
 }
