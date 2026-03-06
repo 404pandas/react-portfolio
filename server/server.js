@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+import { error } from "console";
 
 dotenv.config();
 
@@ -13,7 +14,10 @@ app.use(express.json());
 // ✅ Only use CORS once with correct domain and no port
 app.use(
   cors({
-    origin: "https://react-portfolio-iqr5.onrender.com",
+    origin: [
+      "https://react-portfolio-iqr5.onrender.com",
+      "https://maryelenius.com",
+    ],
     methods: ["POST"],
   })
 );
@@ -31,18 +35,19 @@ app.post("/api/contact", async (req, res) => {
   });
 
   try {
+    console.log("Sending email with:", { topic, message, email });
     await transporter.sendMail({
-      from: email,
+      from: process.env.MAIL_USER,
       to: "mary.panda.jackson@gmail.com",
       subject: `Contact Form: ${topic}`,
-      text: message,
-      replyTo: email,
+      text: `From: ${email}\n\n${message}`, // visitor info inside message
+      replyTo: email, // replies go to visitor
     });
-
     res.status(200).send({ success: true });
+    console.log("Email sent successfully");
   } catch (err) {
     console.error("Error sending email:", err);
-    res.status(500).send({ error: "Email could not be sent" });
+    res.status(500).send({ error: `Email could not be sent. ${err.message}` });
   }
 });
 
