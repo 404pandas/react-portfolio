@@ -2,7 +2,7 @@ import React from "react";
 import MapIcon from "../../components/MapIcon";
 import Ship from "../../components/Ship";
 import "../../assets/css/landing.css";
-import RandomMapIcons from "../../components/RandomMapIcon";
+// import RandomMapIcons from "../../components/RandomMapIcon";
 
 // landing page
 const Landing = () => {
@@ -17,7 +17,7 @@ const Landing = () => {
         </div>
       </div>
       <MapIcon />
-      <RandomMapIcons />
+      {/* <RandomMapIcons /> */}
       <Ship />
     </>
   );

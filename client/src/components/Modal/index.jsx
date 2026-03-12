@@ -98,6 +98,10 @@ const Modal = () => {
             fontSize: 60,
           }}
         />
+        <div className="open-me-container">
+          <span className="open-me-text">Open me</span>
+          <span className="open-me-text">For more info!</span>
+        </div>
       </Button>
       <div>
         {open && (
