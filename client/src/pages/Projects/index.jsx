@@ -22,6 +22,7 @@ import notetaker from "../../assets/images/notetaker.png";
 import passgen from "../../assets/images/passgen.png";
 import pooh from "../../assets/images/pooh.png";
 import witcherssatchel from "../../assets/images/witcherssatchel.png";
+import kitties from "../../assets/images/kitties.png";
 
 import image1 from "../../assets/images/1.svg";
 import image2 from "../../assets/images/2.svg";
@@ -79,6 +80,7 @@ const imageMap = {
   passgen,
   pooh,
   witcherssatchel,
+  kitties,
   // image1,
   // image2,
   // image3,

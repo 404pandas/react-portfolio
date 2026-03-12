@@ -68,7 +68,7 @@
     "description": "A progressive web app (PWA) themed around cats, built using Webpack, Babel, and CodeMirror. This text editor application allows users to write and save text offline, with a modern JavaScript framework and responsive design.",
     "code": "https://github.com/404pandas/pwa-kitties",
     "deployment": "https://pwa-kitties.onrender.com",
-    "image": "comingSoon",
+    "image": "kitties",
     "key": 109
   },
   {
