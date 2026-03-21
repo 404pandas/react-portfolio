@@ -140,3 +140,42 @@
   text-align: center;
   font-size: 0.9rem;
 }
+
+/* 500px and smaller media query */
+@media (max-width: 500px) {
+  .phone-shell {
+    width: 90%;
+    border-radius: 0;
+  }
+
+  .phone-inner {
+    border-radius: 0;
+  }
+
+  .phone-avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .phone-display {
+    font-size: 1.5rem;
+  }
+
+  .key-btn {
+    font-size: 1.5rem;
+  }
+
+  .delete-btn,
+  .call-btn {
+    font-size: 1rem;
+  }
+
+  .phone-input {
+    font-size: 1rem;
+  }
+
+  .phone-subtext,
+  .phone-sub-subtext {
+    font-size: 0.8rem;
+  }
+}
