@@ -3,7 +3,6 @@ import gsap from "gsap";
 import Spread from "./Spread";
 import SinglePage from "./SinglePage";
 import TitlePage from "./TitlePage";
-import PirateSkull from "./PirateSkull";
 import { logs } from "./logs";
 import "./piratelogbook.css";
 
@@ -70,13 +69,11 @@ export default function PirateLogBook() {
             <p>DO NOT ENTER!</p>
           </div>
         ) : page === 1 ? (
-          <PirateSkull />
-        ) : page === 2 ? (
           <TitlePage />
         ) : isMobile ? (
-          <SinglePage logs={logs} page={page - 3} />
+          <SinglePage logs={logs} page={page - 2} />
         ) : (
-          <Spread logs={logs} page={page - 3} rightRef={rightRef} />
+          <Spread logs={logs} page={page - 2} rightRef={rightRef} />
         )}
       </div>
 
