@@ -3,6 +3,7 @@
   width: 60vw; /* Adjust size as needed */
   aspect-ratio: 1 / 1; /* Maintain a 1:1 aspect ratio */
   margin: 0 auto;
+  margin-top: 300px !important;
 }
 
 .compass-shadow {

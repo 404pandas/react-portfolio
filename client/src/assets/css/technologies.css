@@ -9,6 +9,12 @@
   flex-direction: column;
 }
 
+.compass-title {
+  text-align: center;
+  position: absolute;
+  top: 17%;
+}
+
 /* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
 @media only screen and (max-width: 600px) {
   #tech-cont {

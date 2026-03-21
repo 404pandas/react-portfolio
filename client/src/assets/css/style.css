@@ -103,6 +103,19 @@ a {
   display: block;
 }
 
+.spin-compass {
+  animation: spin 0.8s ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* ****************************** */
 /*          ID selectors          */
 /* ****************************** */

@@ -1,5 +1,5 @@
 .phone-shell {
-  width: 350px;
+  width: 500px;
   height: auto;
   margin: 4rem auto;
   background: var(--tan);
@@ -133,4 +133,10 @@
 .phone-subtext {
   padding: 5%;
   text-align: center;
+}
+
+.phone-sub-subtext {
+  padding: 0 5% 5% 5%;
+  text-align: center;
+  font-size: 0.9rem;
 }

@@ -3,7 +3,7 @@ import pirateImage from "../../assets/images/pirate-eo-mc.svg";
 import "../../assets/css/phoneScreen.css";
 
 const PhoneScreen = () => {
-  const [number, setNumber] = useState("");
+  const [number, setNumber] = useState("772-834-2342");
 
   const handlePress = (value) => {
     if (!/[0-9*#]/.test(value)) return;
@@ -55,7 +55,10 @@ const PhoneScreen = () => {
           I'm a React Native developer! Contact me if you're looking for a
           mobile developer to add to your team!
         </p>
-        <p className="phone-subtext">(772) 834-2342</p>
+        <p className="phone-sub-subtext">
+          Click the call button below to call me. Otherwise, replace the number
+          to call just about anyone!
+        </p>
 
         {/* Phone Number Input */}
         <div className="phone-display">
