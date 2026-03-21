@@ -1,0 +1,190 @@
+.book-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 2500px;
+}
+
+.book {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 800px;
+  aspect-ratio: 3 / 2;
+  position: relative;
+}
+
+.spread {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.spread::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.page {
+  width: 50%;
+  height: 100%;
+  background: #e6cfa5;
+  border: 2px solid #5c4632;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.content.flipped {
+  flex-direction: row-reverse;
+}
+
+img {
+  width: 40%;
+  border: 2px solid #333;
+}
+
+.page.cover {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ink-text {
+  font-family: "Pirata One", cursive;
+  font-size: 1.2rem;
+}
+
+.quill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: url("/assets/quill.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.single-page {
+  width: 100%;
+  height: 100%;
+}
+
+.single-page .page {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.content img {
+  width: 45%;
+  height: 80%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+
+.text {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Title Page Layout */
+.page.title {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #f2e2c4 0%, #d1bfa7 100%);
+  position: relative;
+}
+
+/* Inner container */
+.title-inner {
+  text-align: center;
+  max-width: 80%;
+}
+
+/* Main title */
+.page.title h1 {
+  font-family: "Pirata One", cursive;
+  font-size: 3.5rem !important;
+  color: #2b1d0e;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: serif;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #5c4632;
+  opacity: 0.8;
+}
+
+/* Subtle parchment texture overlay */
+.page.title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/paper.png");
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Slight vignette for depth */
+.page.title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+@media only screen and (min-width: 900px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+p {
+  font-size: 1.5rem;
+  text-align: center;
+}

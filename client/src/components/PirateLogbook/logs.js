@@ -1,13 +1,9 @@
-// external imports
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import PirateLogBook from "../../components/PirateLogbook";
-
-const logs = [
+// the dataaaaa
+export const logs = [
   {
     title: "Entry I — Origins",
     content:
-      "Born and raised in Sioux Falls, South Dakota, I’ve always carried a strong instinct to help—especially animals. I was rarely seen without some kind of rescue mission in progress.",
+      "Born and raised in Sioux Falls, South Dakota, I’ve always carried a strong instinct to help—especially animals.",
     image: "/assets/entry1.jpg",
   },
   {
@@ -35,17 +31,3 @@ const logs = [
     image: "/assets/entry5.jpg",
   },
 ];
-
-const About = () => {
-  return (
-    <>
-      <Container>
-        <Grid container id="about-cont" justifyContent={"center"} marginTop={5}>
-          <PirateLogBook logs={logs} />
-        </Grid>
-      </Container>
-    </>
-  );
-};
-
-export default About;

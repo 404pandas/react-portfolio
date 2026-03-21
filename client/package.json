@@ -16,6 +16,7 @@
     "@mui/system": "^5.16.5",
     "@reduxjs/toolkit": "^2.2.6",
     "@vitejs/plugin-react": "^4.3.1",
+    "gsap": "^3.14.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.2",
