@@ -176,77 +176,52 @@
   font-size: 0.78rem !important;
 }
 
-/* ── Accordion / Privacy Policy ── */
-.whois-accordion {
-  background-color: var(--tan) !important;
-  border: 2px solid var(--brown) !important;
-  border-radius: 8px !important;
-  box-shadow: 4px 4px 0 var(--brown) !important;
+/* ── Privacy Policy nav card ── */
+.whois-policy-link {
+  display: block;
+  text-decoration: none;
   margin-bottom: 2rem;
 }
 
-.whois-accordion .MuiAccordionSummary-root {
-  border-radius: 6px;
+.whois-policy-nav {
+  background-color: var(--tan);
+  border: 2px solid var(--brown);
+  border-radius: 8px;
+  padding: 1.4rem 1.75rem;
+  box-shadow: 4px 4px 0 var(--brown);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.whois-accordion h6 {
-  color: var(--black) !important;
+.whois-policy-link:hover .whois-policy-nav {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--brown);
 }
 
-.whois-accordion .MuiSvgIcon-root {
-  color: var(--black);
-}
-
-.whois-policy {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  color: var(--black);
-}
-
-.whois-policy-date {
-  display: block;
-  color: var(--icons) !important;
-  font-size: 0.8rem !important;
-  margin-bottom: 0.5rem;
-}
-
-.whois-policy h6 {
+.whois-policy-nav-title {
   font-family: "Merienda", cursive !important;
   color: var(--black) !important;
-  font-size: 0.95rem !important;
-  margin-top: 0.75rem !important;
+  font-size: 1rem !important;
+  margin-bottom: 0.4rem !important;
 }
 
-.whois-policy p {
+.whois-policy-nav-desc {
+  font-family: "Lora", serif !important;
+  color: var(--black) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.6;
   text-indent: 0 !important;
-  line-height: 1.7;
-  font-size: 0.875rem;
+  margin-bottom: 0.75rem !important;
+}
+
+.whois-policy-nav-arrow {
+  font-family: "Merienda", cursive;
+  font-size: 0.82rem;
+  color: var(--brown);
+  transition: color 0.15s ease;
+}
+
+.whois-policy-link:hover .whois-policy-nav-arrow {
   color: var(--black);
-}
-
-.whois-policy-list {
-  list-style: disc !important;
-  padding-left: 1.5rem !important;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.whois-policy-list li {
-  font-family: "Lora", serif;
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: var(--black);
-}
-
-.whois-policy a {
-  color: var(--black);
-  text-decoration: underline;
-}
-
-.whois-policy a:hover {
-  color: var(--icons);
 }
 
 /* ── Responsive ── */

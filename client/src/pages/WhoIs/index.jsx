@@ -1,20 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import {
-  Container,
-  Typography,
-  Box,
-  Grid,
-  Chip,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  FormControlLabel,
-  Switch,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { Container, Typography, Box, Grid, Chip } from "@mui/material";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { EnglishPolicy, PiratePolicy } from "../../components/PolicyContent";
 import "../../assets/css/whois.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -80,16 +68,7 @@ const tech = [
 ];
 
 export default function WhoIs() {
-  const [pirateMode, setPirateMode] = useState(
-    localStorage.getItem("pirateTalk") === "true"
-  );
   const containerRef = useRef();
-
-  const handlePirateToggle = (e) => {
-    const val = e.target.checked;
-    setPirateMode(val);
-    localStorage.setItem("pirateTalk", val);
-  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -215,9 +194,9 @@ export default function WhoIs() {
         }
       );
 
-      // ── Accordion fades in ──
+      // ── Privacy Policy link fades in ──
       gsap.fromTo(
-        ".whois-accordion",
+        ".whois-policy-link",
         { opacity: 0, y: 22 },
         {
           opacity: 1,
@@ -225,7 +204,7 @@ export default function WhoIs() {
           duration: 0.55,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: ".whois-accordion",
+            trigger: ".whois-policy-link",
             start: "top 90%",
           },
         }
@@ -307,36 +286,22 @@ export default function WhoIs() {
         ))}
       </Box>
 
-      {/* ── Privacy Policy ── */}
+      {/* ── Legal ── */}
       <Typography variant="h6" className="whois-section-title">
         Legal
       </Typography>
-      <Accordion className="whois-accordion">
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="h6">
-            {pirateMode ? "The Captain's Charter of Privacy" : "Privacy Policy"}
+      <Link to="/privacy-policy" className="whois-policy-link">
+        <Box className="whois-policy-nav">
+          <Typography variant="h6" className="whois-policy-nav-title">
+            Privacy Policy
           </Typography>
-        </AccordionSummary>
-        <AccordionDetails className="whois-policy">
-          <FormControlLabel
-            control={
-              <Switch
-                checked={pirateMode}
-                onChange={handlePirateToggle}
-                sx={{
-                  "& .MuiSwitch-switchBase.Mui-checked": { color: "#594b39" },
-                  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
-                    backgroundColor: "#594b39",
-                  },
-                }}
-              />
-            }
-            label="Pirate Talk"
-            sx={{ mb: 2 }}
-          />
-          {pirateMode ? <PiratePolicy /> : <EnglishPolicy />}
-        </AccordionDetails>
-      </Accordion>
+          <Typography variant="body2" className="whois-policy-nav-desc">
+            How Who Is...? handles your data — available in plain English or
+            full Pirate Charter.
+          </Typography>
+          <span className="whois-policy-nav-arrow">Read the Charter →</span>
+        </Box>
+      </Link>
     </Container>
   );
 }
