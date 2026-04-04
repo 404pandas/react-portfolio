@@ -42,7 +42,6 @@ import image15 from "../../assets/images/15.svg";
 import image16 from "../../assets/images/16.svg";
 import image17 from "../../assets/images/17.svg";
 import image18 from "../../assets/images/18.svg";
-import image19 from "../../assets/images/19.svg";
 import image20 from "../../assets/images/20.svg";
 
 const placeholderImages = [
@@ -64,7 +63,6 @@ const placeholderImages = [
   image16,
   image17,
   image18,
-  image19,
   image20,
 ];
 

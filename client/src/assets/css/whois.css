@@ -1,0 +1,261 @@
+/* ─── Who Is...? Page ─────────────────────────────────────── */
+
+.whois-container {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+/* ── Hero ── */
+.whois-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.whois-title {
+  font-family: "Merienda", cursive !important;
+  color: var(--brown);
+  margin-bottom: 1rem !important;
+  font-size: 3rem !important;
+  text-shadow: 3px 3px 0 var(--dark-tan);
+}
+
+.whois-tagline {
+  max-width: 640px;
+  margin: 0 auto 2rem !important;
+  color: var(--brown);
+  font-size: 1.05rem !important;
+  text-indent: 0 !important;
+  line-height: 1.7;
+}
+
+.whois-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.whois-btn {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  border-radius: 6px;
+  font-family: "Merienda", cursive;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background-color: var(--brown);
+  color: var(--tan) !important;
+  border: 2px solid var(--brown);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.whois-btn:hover {
+  background-color: var(--dark-tan);
+  color: var(--brown) !important;
+}
+
+.whois-btn-outline {
+  background-color: transparent;
+  color: var(--brown) !important;
+}
+
+.whois-btn-outline:hover {
+  background-color: var(--brown);
+  color: var(--tan) !important;
+}
+
+.whois-platform {
+  display: block;
+  color: var(--icons);
+  font-size: 0.8rem !important;
+  letter-spacing: 0.05em;
+}
+
+/* ── Section titles ── */
+.whois-section-title {
+  font-family: "Merienda", cursive !important;
+  color: var(--brown) !important;
+  margin-bottom: 1.25rem !important;
+  margin-top: 3rem !important;
+  border-bottom: 2px solid var(--dark-tan);
+  padding-bottom: 0.4rem;
+}
+
+/* ── Screenshots ── */
+.whois-screenshots-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 2rem;
+}
+
+.whois-screenshots-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.whois-screenshots-track::-webkit-scrollbar-track {
+  background: var(--dark-tan);
+  border-radius: 3px;
+}
+
+.whois-screenshots-track::-webkit-scrollbar-thumb {
+  background: var(--brown);
+  border-radius: 3px;
+}
+
+.whois-screenshot-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.whois-screenshot-img {
+  width: auto !important;
+  height: 380px;
+  border-radius: 12px;
+  border: 3px solid var(--brown);
+  box-shadow: 4px 4px 0 var(--dark-tan);
+  display: block;
+  object-fit: cover;
+}
+
+.whois-screenshot-label {
+  color: var(--brown) !important;
+  font-family: "Lora", serif !important;
+  font-size: 0.75rem !important;
+}
+
+/* ── Feature cards ── */
+.whois-feature-card {
+  background-color: var(--tan);
+  border: 2px solid var(--brown);
+  border-radius: 8px;
+  padding: 1.25rem;
+  height: 100%;
+  box-shadow: 4px 4px 0 var(--brown);
+  transition: transform 0.15s;
+}
+
+.whois-feature-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--brown);
+}
+
+.whois-feature-card h6 {
+  color: var(--brown) !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.95rem !important;
+}
+
+.whois-feature-card .MuiTypography-body2 {
+  color: var(--black);
+  line-height: 1.6;
+  font-family: "Lora", serif !important;
+  text-indent: 0 !important;
+  font-size: 0.875rem;
+}
+
+/* ── Tech chips ── */
+.whois-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 4rem;
+}
+
+.whois-chip {
+  background-color: var(--brown) !important;
+  color: var(--tan) !important;
+  font-family: "Lora", serif !important;
+  font-size: 0.78rem !important;
+}
+
+/* ── Accordion / Privacy Policy ── */
+.whois-accordion {
+  background-color: var(--tan) !important;
+  border: 2px solid var(--brown) !important;
+  border-radius: 8px !important;
+  box-shadow: 4px 4px 0 var(--brown) !important;
+  margin-bottom: 2rem;
+}
+
+.whois-accordion .MuiAccordionSummary-root {
+  border-radius: 6px;
+}
+
+.whois-accordion h6 {
+  color: var(--brown) !important;
+}
+
+.whois-accordion .MuiSvgIcon-root {
+  color: var(--brown);
+}
+
+.whois-policy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--black);
+}
+
+.whois-policy-date {
+  display: block;
+  color: var(--icons) !important;
+  font-size: 0.8rem !important;
+  margin-bottom: 0.5rem;
+}
+
+.whois-policy h6 {
+  font-family: "Merienda", cursive !important;
+  color: var(--brown) !important;
+  font-size: 0.95rem !important;
+  margin-top: 0.75rem !important;
+}
+
+.whois-policy p {
+  text-indent: 0 !important;
+  line-height: 1.7;
+  font-size: 0.875rem;
+  color: var(--black);
+}
+
+.whois-policy-list {
+  list-style: disc !important;
+  padding-left: 1.5rem !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.whois-policy-list li {
+  font-family: "Lora", serif;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--black);
+}
+
+.whois-policy a {
+  color: var(--brown);
+  text-decoration: underline;
+}
+
+.whois-policy a:hover {
+  color: var(--icons);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .whois-title {
+    font-size: 2rem !important;
+  }
+
+  .whois-screenshot-img {
+    height: 300px;
+  }
+}

@@ -30,6 +30,7 @@ export default function PirateNav() {
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
     { name: "Mobile", path: "/phone" },
+    { name: "Who Is...?", path: "/whois" },
   ];
 
   const handleMenuOpen = (event) => {

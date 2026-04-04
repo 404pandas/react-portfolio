@@ -11,6 +11,7 @@ import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
 import knights from "../../assets/images/knights.svg";
 import phone from "../../assets/images/phone.svg";
+import whois from "../../assets/images/who-is.svg";
 import "./mapicon.css";
 import Grid from "@mui/material/Unstable_Grid2";
 import NewReleasesIcon from "@mui/icons-material/NewReleases";
@@ -26,6 +27,7 @@ export const icons = [
   },
   { id: "contact", src: knights, text: "Contact", route: "contact" },
   { id: "phone", src: phone, text: "Mobile", route: "phone" },
+  { id: "who-is", src: whois, text: "Who Is?", route: "whois" },
 ];
 
 export const animationClasses = [

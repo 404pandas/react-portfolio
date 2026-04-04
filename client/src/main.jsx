@@ -13,6 +13,8 @@ import About from "./pages/About";
 import Error from "./pages/Error";
 import Contact from "./pages/Contact";
 import PhoneScreen from "./pages/PhoneScreen";
+import WhoIs from "./pages/WhoIs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,8 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "phone", element: <PhoneScreen /> },
+      { path: "whois", element: <WhoIs /> },
+      { path: "privacy-policy", element: <PrivacyPolicy /> },
     ],
   },
 ]);

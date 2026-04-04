@@ -14,6 +14,7 @@ const iconsSlice = createSlice({
         isNear: false,
         animationClass: "",
       },
+      "who-is": { hovered: false, isNear: false, animationClass: "" },
     },
   },
   reducers: {
