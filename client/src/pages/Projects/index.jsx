@@ -22,7 +22,7 @@ import jacob from "../../assets/images/jacob.png";
 import simpPort from "../../assets/images/simp-portfolio.png";
 import notetaker from "../../assets/images/notetaker.png";
 import passgen from "../../assets/images/passgen.png";
-import pooh from "../../assets/images/pooh.png";
+import pooh from "../../assets/images/pooh-walkthrough.gif";
 import witcherssatchel from "../../assets/images/witcherssatchel.png";
 import kitties from "../../assets/images/kitties.png";
 
@@ -47,14 +47,40 @@ import image18 from "../../assets/images/18.svg";
 import image20 from "../../assets/images/20.svg";
 
 const placeholderImages = [
-  image1, image2, image3, image4, image5, image6, image7, image8, image9,
-  image10, image11, image12, image13, image14, image15, image16, image17,
-  image18, image20,
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
+  image16,
+  image17,
+  image18,
+  image20,
 ];
 
 const imageMap = {
-  comingSoon, blueyapi, cortezcafe, scheduler, quiz, jacob, simpPort,
-  notetaker, passgen, pooh, witcherssatchel, kitties,
+  comingSoon,
+  blueyapi,
+  cortezcafe,
+  scheduler,
+  quiz,
+  jacob,
+  simpPort,
+  notetaker,
+  passgen,
+  pooh,
+  witcherssatchel,
+  kitties,
 };
 
 const getRandomImage = () =>
@@ -139,7 +165,9 @@ const Projects = () => {
                   ></div>
                   <div className="image-back">
                     <Typography variant="h6">{project.title}</Typography>
-                    <Typography variant="body1">{project.description}</Typography>
+                    <Typography variant="body1">
+                      {project.description}
+                    </Typography>
                     <IconButton
                       onClick={() => handleExpand(project)}
                       style={{ color: "rgba(0, 0, 0, 0.54)" }}
