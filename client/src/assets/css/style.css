@@ -141,55 +141,8 @@ a {
 #totally-not-a-class {
   position: absolute;
 }
-#expanded-project {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 1;
-  color: var(--white);
-}
-#project-a-cont {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-#expand-icon {
-  color: var(--white);
-}
-#expanded-image {
-  filter: invert(1);
-  width: 20%;
-}
-
 #image-list {
   margin: 15%;
-}
-#inner-box {
-  width: 90%;
-  height: 90%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  padding: 3%;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 1;
-  color: var(--white);
-}
-.project-a {
-  text-align: center;
-  color: var(--white);
-  border: 1px solid var(--white);
-  border-radius: 5px;
-  padding: 3%;
-  display: flex;
 }
 /* ****************************** */
 /*         Media Queries          */

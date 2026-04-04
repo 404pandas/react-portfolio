@@ -16,29 +16,22 @@
 }
 .ind-items {
   display: flex;
+  justify-content: center;
 }
 
-#building {
-  position: relative;
-}
-#knight {
-  position: relative;
-}
-#dragon {
-  position: relative;
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--icons);
 }
 
-#phone {
-  position: relative;
-}
-
-#who-is {
-  position: relative;
-}
-
+#building,
+#knight,
+#dragon,
+#phone,
+#who-is,
 #contact {
-  width: 40%;
-  color: var(--icons) !important;
   position: relative;
 }
 
@@ -50,7 +43,7 @@
 }
 
 .poi {
-  color: black;
+  color: var(--icons);
   animation: pulse 1.5s infinite !important;
 }
 
@@ -260,28 +253,31 @@ xl, extra-large: 1536px */
 
 /* xs, extra-small: 0px and up */
 @media (min-width: 0px) {
-  /* Styles for extra-small screens and up */
-  a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: -10%;
-  }
   .icon-container {
     margin-top: 25vh;
     height: 65vh;
   }
-  .nav-item {
-    margin-left: 10%;
+  .icon-container a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Staggered horizontal layout on mobile (single-column stack) */
+@media (max-width: 599px) {
+  .ind-items:nth-child(odd) {
+    justify-content: flex-start;
+    padding-left: 12%;
+  }
+  .ind-items:nth-child(even) {
+    justify-content: flex-end;
+    padding-right: 12%;
   }
 }
 
 /* sm, small: 600px and up */
 @media (min-width: 600px) {
-  /* Styles for small screens and up */
-  a {
-    margin-left: -40%;
-  }
   .ic-h2 {
     font-size: 3rem;
   }
@@ -289,21 +285,11 @@ xl, extra-large: 1536px */
 
 /* md, medium: 900px and up */
 @media (min-width: 900px) {
-  /* Styles for medium screens and up */
   img {
     width: 50%;
   }
-  a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: -10%;
-  }
   .icon-container {
     height: 65vh;
-  }
-  .nav-item {
-    margin-left: 10%;
   }
   .ind-about {
     margin-bottom: -5%;
@@ -315,8 +301,6 @@ xl, extra-large: 1536px */
 
 /* lg, large: 1200px and up */
 @media (min-width: 1200px) {
-  /* Styles for large screens and up */
-
   .ind-about {
     margin-bottom: -15%;
   }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Typography, Paper } from "@mui/material";
+import gsap from "gsap";
 import blank from "../../assets/images/compass-blank.png";
 import compassshadow from "../../assets/images/compass-shadow.png";
 import "./compass.css";
@@ -8,6 +9,7 @@ const Compass = () => {
   const [direction, setDirection] = useState(null);
   const compassRef = useRef(null);
   const touchStartRef = useRef({ x: 0, y: 0 });
+  const panelRef = useRef(null);
 
   const skillCategories = {
     north: {
@@ -94,14 +96,12 @@ const Compass = () => {
     const touch = e.changedTouches[0];
     const dx = touch.clientX - touchStartRef.current.x;
     const dy = touch.clientY - touchStartRef.current.y;
-
-    // Ignore tiny swipes
     if (Math.abs(dx) < 30 && Math.abs(dy) < 30) return;
-
     const newDirection = getCompassDirection(dx, dy);
     setDirection(newDirection);
   };
 
+  // Mouse / touch listeners
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
     const ref = compassRef.current;
@@ -109,7 +109,6 @@ const Compass = () => {
       ref.addEventListener("touchstart", handleTouchStart, { passive: true });
       ref.addEventListener("touchend", handleTouchEnd, { passive: true });
     }
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       if (ref) {
@@ -118,6 +117,39 @@ const Compass = () => {
       }
     };
   }, []);
+
+  // Compass spin-in on mount
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.fromTo(
+      ".compass-blank",
+      { rotation: -120, scale: 0.75, opacity: 0 },
+      { rotation: 0, scale: 1, opacity: 1, duration: 1.1, ease: "power3.out", delay: 0.2 }
+    ).fromTo(
+      ".compass-shadow",
+      { opacity: 0 },
+      { opacity: 0.6, duration: 0.6 },
+      "-=0.4"
+    );
+    return () => tl.kill();
+  }, []);
+
+  // Skill panel spring-in whenever direction changes
+  useEffect(() => {
+    if (direction && panelRef.current) {
+      gsap.fromTo(
+        panelRef.current,
+        { opacity: 0, y: -14, scale: 0.82 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.45,
+          ease: "back.out(2.2)",
+        }
+      );
+    }
+  }, [direction]);
 
   const getPositionStyle = (dir) => {
     const base = {
@@ -130,33 +162,13 @@ const Compass = () => {
     };
     switch (dir) {
       case "north":
-        return {
-          ...base,
-          top: "5%",
-          left: "50%",
-          transform: "translateX(-50%)",
-        };
+        return { ...base, top: "5%", left: "50%", transform: "translateX(-50%)" };
       case "east":
-        return {
-          ...base,
-          right: "5%",
-          top: "50%",
-          transform: "translateY(-50%)",
-        };
+        return { ...base, right: "5%", top: "50%", transform: "translateY(-50%)" };
       case "south":
-        return {
-          ...base,
-          bottom: "5%",
-          left: "50%",
-          transform: "translateX(-50%)",
-        };
+        return { ...base, bottom: "5%", left: "50%", transform: "translateX(-50%)" };
       case "west":
-        return {
-          ...base,
-          left: "5%",
-          top: "50%",
-          transform: "translateY(-50%)",
-        };
+        return { ...base, left: "5%", top: "50%", transform: "translateY(-50%)" };
       default:
         return base;
     }
@@ -170,7 +182,7 @@ const Compass = () => {
         width: 400,
         height: 400,
         margin: "auto",
-        mt: 4,
+        mt: 1,
       }}
     >
       <Box
@@ -192,21 +204,22 @@ const Compass = () => {
           top: 0,
           left: 0,
           zIndex: 1,
-          touchAction: "none", // Prevent default gestures from interfering
+          touchAction: "none",
         }}
       />
       {direction && (
         <Paper
+          ref={panelRef}
           className={`skill-text-container ${direction}`}
           sx={getPositionStyle(direction)}
           elevation={4}
         >
-          <Typography variant="h7" gutterBottom className="tech-title">
+          <Typography variant="h6" gutterBottom className="tech-title">
             {skillCategories[direction].title}
           </Typography>
           <ul style={{ margin: 0, paddingLeft: 20 }}>
-            {skillCategories[direction].skills.map((skill, i) => (
-              <li key={i}>
+            {skillCategories[direction].skills.map((skill) => (
+              <li key={skill}>
                 <Typography variant="body2">{skill}</Typography>
               </li>
             ))}

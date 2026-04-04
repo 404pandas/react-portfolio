@@ -9,8 +9,11 @@ export default function InkText({ text }) {
     const el = textRef.current;
     el.innerHTML = "";
     let i = 0;
+    let timeoutId;
+    let cancelled = false;
 
     const type = () => {
+      if (cancelled) return;
       if (i < text.length) {
         el.innerHTML += text[i];
         i++;
@@ -18,18 +21,24 @@ export default function InkText({ text }) {
         const width = el.getBoundingClientRect().width;
         gsap.set(quillRef.current, { x: width });
 
-        setTimeout(type, 15);
+        timeoutId = setTimeout(type, 15);
       }
     };
 
     type();
 
-    gsap.to(quillRef.current, {
+    const tween = gsap.to(quillRef.current, {
       rotation: 5,
       yoyo: true,
       repeat: -1,
       duration: 0.2,
     });
+
+    return () => {
+      cancelled = true;
+      clearTimeout(timeoutId);
+      tween.kill();
+    };
   }, [text]);
 
   return (

@@ -127,8 +127,8 @@ const Modal = () => {
         </DialogTitle>
         <Divider variant="middle" className="divider" />
         <DialogContent>
-          {content.contentText.map((text, index) => (
-            <DialogContentText key={index}>{text}</DialogContentText>
+          {content.contentText.map((text) => (
+            <DialogContentText key={text}>{text}</DialogContentText>
           ))}
           <FormControlLabel
             control={

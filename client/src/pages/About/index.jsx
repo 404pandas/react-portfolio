@@ -1,50 +1,26 @@
-// external imports
+import { useEffect } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import gsap from "gsap";
 import PirateLogBook from "../../components/PirateLogbook";
 
-const logs = [
-  {
-    title: "Entry I — Origins",
-    content:
-      "Born and raised in Sioux Falls, South Dakota, I’ve always carried a strong instinct to help—especially animals. I was rarely seen without some kind of rescue mission in progress.",
-    image: "/assets/entry1.jpg",
-  },
-  {
-    title: "Entry II — Discovery",
-    content:
-      "That same instinct led me into technology. What began as curiosity became a passion for building meaningful applications.",
-    image: "/assets/entry2.jpg",
-  },
-  {
-    title: "Entry III — The Voyage",
-    content:
-      "The journey hasn’t always been a straight course, but it shaped me into someone adaptable and persistent.",
-    image: "/assets/entry3.jpg",
-  },
-  {
-    title: "Entry IV — Present Day",
-    content:
-      "I spend time with family, work part-time at a veterinary clinic, and continue learning React Native.",
-    image: "/assets/entry4.jpg",
-  },
-  {
-    title: "Entry V — Current Mission",
-    content:
-      "Building modern full-stack PERN and MERN applications and interactive user experiences.",
-    image: "/assets/entry5.jpg",
-  },
-];
-
 const About = () => {
+  // Book entrance — scales and fades in from slightly below
+  useEffect(() => {
+    const tween = gsap.fromTo(
+      ".book-container",
+      { opacity: 0, y: 28, scale: 0.94 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.85, ease: "power3.out", delay: 0.1 }
+    );
+    return () => tween.kill();
+  }, []);
+
   return (
-    <>
-      <Container>
-        <Grid container id="about-cont" justifyContent={"center"} marginTop={5}>
-          <PirateLogBook logs={logs} />
-        </Grid>
-      </Container>
-    </>
+    <Container>
+      <Grid container id="about-cont" justifyContent="center" marginTop={5}>
+        <PirateLogBook />
+      </Grid>
+    </Container>
   );
 };
 

@@ -12,6 +12,7 @@ export default function PirateLogBook() {
 
   const bookRef = useRef();
   const rightRef = useRef();
+  const tlRef = useRef(null);
 
   const totalPages = logs.length + 3;
 
@@ -30,7 +31,10 @@ export default function PirateLogBook() {
   };
 
   const animateFlip = (cb, reverse = false) => {
+    if (tlRef.current) tlRef.current.kill();
+
     const tl = gsap.timeline();
+    tlRef.current = tl;
 
     if (isMobile) {
       tl.to(bookRef.current, {

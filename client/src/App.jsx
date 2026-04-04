@@ -19,8 +19,6 @@ function App() {
     }
   }, [currentPage]); // Run useEffect whenever currentPage changes
 
-  console.log("app-" + currentPage);
-
   return (
     <main>
       <Page currentPage={currentPage} />

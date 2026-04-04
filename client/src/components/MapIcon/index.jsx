@@ -6,6 +6,7 @@ import {
   setNearShip,
   setAnimationClass,
 } from "../../features/iconNearShip/iconNearShipSlice";
+import gsap from "gsap";
 import knight from "../../assets/images/knight.svg";
 import dragonBuilding from "../../assets/images/dragon-bldg.svg";
 import building from "../../assets/images/bldg.svg";
@@ -45,6 +46,7 @@ export const animationClasses = [
   "grow-shrink",
   "grow",
 ];
+
 const MapIcon = () => {
   const dispatch = useDispatch();
   const iconsState = useSelector((state) => state.icons.icons);
@@ -52,24 +54,47 @@ const MapIcon = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMediumScreen(window.innerWidth >= 900);
-    };
+    const checkScreenSize = () => setIsMediumScreen(window.innerWidth >= 900);
+    const checkTouchDevice = () =>
+      setIsTouchDevice("ontouchstart" in window || navigator.maxTouchPoints > 0);
 
-    const checkTouchDevice = () => {
-      setIsTouchDevice(
-        "ontouchstart" in window || navigator.maxTouchPoints > 0
-      );
-    };
-
-    // Run these checks once on component mount
     checkScreenSize();
     checkTouchDevice();
-    icons.forEach(({ id }) => {
-      console.log("------------");
-      console.log(id);
-      applyRandomClass(id);
-    });
+
+    // Staggered entrance: icons drop in from below with elastic bounce
+    gsap.fromTo(
+      ".landing-icon",
+      { opacity: 0, y: 35 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: {
+          each: 0.1,
+          from: "start",
+          // Clear the y translate after each icon lands so CSS animations take over cleanly
+          onComplete: function () {
+            gsap.set(this.targets()[0], { clearProps: "y" });
+          },
+        },
+        ease: "back.out(1.6)",
+        duration: 0.55,
+        delay: 0.35,
+      }
+    );
+
+    // POI pins fade in after icons
+    gsap.fromTo(
+      ".poi",
+      { opacity: 0 },
+      { opacity: 1, stagger: 0.1, duration: 0.4, delay: 0.85 }
+    );
+
+    // Icon labels fade in last
+    gsap.fromTo(
+      ".ic-h2.show",
+      { opacity: 0 },
+      { opacity: 1, stagger: 0.1, duration: 0.35, delay: 1.0 }
+    );
   }, []);
 
   const handleMouseEnter = (e, icon) => {
@@ -80,22 +105,6 @@ const MapIcon = () => {
   const handleMouseLeave = (e, icon) => {
     dispatch(setHovered({ icon, hovered: false }));
     dispatch(setNearShip({ icon, nearShip: false }));
-    applyRandomClass(icon);
-  };
-
-  const applyRandomClass = (icon) => {
-    console.log(icon);
-    const randomClass =
-      animationClasses[Math.floor(Math.random() * animationClasses.length)];
-    dispatch(setAnimationClass({ icon, animationClass: randomClass }));
-  };
-
-  const shouldShowText = (id) => {
-    return (
-      iconsState[id].hovered ||
-      iconsState[id].nearShip ||
-      (isLargeScreen && !isTouchDevice)
-    );
   };
 
   return (

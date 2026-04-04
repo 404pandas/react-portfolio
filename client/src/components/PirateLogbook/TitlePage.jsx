@@ -12,6 +12,8 @@ export default function TitlePage() {
       .to(textRef.current, { opacity: 0, duration: 0.5, delay: 1 })
       .set(textRef.current, { textContent: "Pirate Log by Mary Elenius" })
       .to(textRef.current, { opacity: 1, duration: 1 });
+
+    return () => tl.kill();
   }, []);
 
   return (

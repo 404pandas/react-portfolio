@@ -14,24 +14,8 @@
 .image-item {
   height: 300px !important;
   width: 300px !important;
-  perspective: 1000px; /* Perspective for the flip effect */
-  animation: cascade 0.5s ease-in-out forwards;
-}
-@keyframes cascade {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.image-item:nth-child(odd) {
-  animation-delay: 0.1s; /* Adjust delay as needed */
-}
-.image-item:nth-child(even) {
-  animation-delay: 0.2s; /* Adjust delay as needed */
+  perspective: 1000px;
+  opacity: 0; /* GSAP animates each card in */
 }
 .image-inner {
   position: relative;
@@ -83,17 +67,13 @@
 #expanded-project {
   position: fixed;
   top: 0;
-  right: -100%; /* Start off-screen */
+  right: 0;
   width: 300px;
   height: 100%;
   background: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  transition: right 0.3s;
   z-index: 1000;
-}
-
-#expanded-project.show {
-  right: 0; /* Slide in on show */
+  /* transform is managed by GSAP (xPercent: 100 = off-screen) */
 }
 
 #expanded-project #inner-box {

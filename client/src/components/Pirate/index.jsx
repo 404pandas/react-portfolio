@@ -6,18 +6,19 @@ const Pirate = () => {
   const [isBlinking, setIsBlinking] = useState(false);
 
   useEffect(() => {
+    let timeoutId;
+
     const handleBlink = () => {
       setIsBlinking(true);
-      setTimeout(() => {
-        setIsBlinking(false);
-      }, 200);
+      timeoutId = setTimeout(() => setIsBlinking(false), 200);
     };
 
-    const blinkInterval = setInterval(() => {
-      handleBlink();
-    }, Math.random() * 3000 + 2000);
+    const blinkInterval = setInterval(handleBlink, Math.random() * 3000 + 2000);
 
-    return () => clearInterval(blinkInterval);
+    return () => {
+      clearInterval(blinkInterval);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import gsap from "gsap";
 import { useNavigate } from "react-router-dom";
 import { icons } from "../MapIcon"; // Import the icons array
 import { animationClasses } from "../MapIcon";
 import {
-  setNearShip,
   setHovered,
   setAnimationClass,
 } from "../../features/iconNearShip/iconNearShipSlice";
@@ -18,7 +18,6 @@ import Phone from "../Phone";
 const Ship = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const iconsState = useSelector((state) => state.icons.icons);
 
   const [position, setPosition] = useState({ x: 25, y: 25 });
   const [isMoving, setIsMoving] = useState(false);
@@ -26,12 +25,15 @@ const Ship = () => {
   const [stopMovingTimestamp, setStopMovingTimestamp] = useState(null);
   const shipRef = useRef(null);
   const moveStep = 15;
-  const [enteredIcons, setEnteredIcons] = useState(new Set()); // Track entered icons
-  const [currentNearIcon, setCurrentNearIcon] = useState(null);
+
+  // Use refs for proximity tracking so the interval always sees fresh values
+  // without needing them in the dep array (avoids stale closure + excess re-runs)
+  const enteredIconsRef = useRef(new Set());
+  const currentNearIconRef = useRef(null);
+
   const [isMediumScreen, setIsMediumScreen] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  // runs once because dependency array is empty
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMediumScreen(window.innerWidth >= 900);
@@ -43,10 +45,24 @@ const Ship = () => {
       );
     };
 
-    // Run these checks once on component mount
     checkScreenSize();
     checkTouchDevice();
+
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  // Entrance animation — plays once when the ship becomes visible
+  useEffect(() => {
+    if (isMediumScreen && !isTouchDevice && shipRef.current) {
+      const tween = gsap.fromTo(
+        shipRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.9, delay: 0.7, ease: "power2.out" }
+      );
+      return () => tween.kill();
+    }
+  }, [isMediumScreen, isTouchDevice]);
 
   useEffect(() => {
     const handleArrowKeys = (event) => {
@@ -73,12 +89,12 @@ const Ship = () => {
           setIsMoving(true);
           break;
         case 13: // Enter key
-          if (currentNearIcon) {
+          if (currentNearIconRef.current) {
             icons.forEach((icon) => {
               dispatch(setHovered({ icon: icon.id, hovered: false }));
             });
 
-            navigate(`/${currentNearIcon}`);
+            navigate(`/${currentNearIconRef.current}`);
           }
           break;
         default:
@@ -99,7 +115,7 @@ const Ship = () => {
       document.removeEventListener("keydown", handleArrowKeys);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [position, currentNearIcon, navigate]);
+  }, [position, navigate]);
 
   useEffect(() => {
     setShowWindSails(isMoving);
@@ -109,19 +125,13 @@ const Ship = () => {
     const checkProximity = () => {
       if (!shipRef.current) return;
 
-      // Calculate ship's bounding rect
       const shipRect = shipRef.current.getBoundingClientRect();
-
-      // Check if the ship has stopped moving and the delay has passed
       const iconsElements = document.querySelectorAll(".landing-icon");
 
       iconsElements.forEach((iconElement) => {
         const iconRect = iconElement.getBoundingClientRect();
-
-        // Find the icon object that corresponds to this element's id
         const icon = icons.find((i) => i.id === iconElement.id);
 
-        // Check if the shipRect has entered or exited the iconRect
         const isEntering =
           shipRect.left < iconRect.right &&
           shipRect.right > iconRect.left &&
@@ -129,35 +139,32 @@ const Ship = () => {
           shipRect.bottom > iconRect.top;
 
         const isExiting =
-          enteredIcons.has(icon.id) &&
+          enteredIconsRef.current.has(icon.id) &&
           (shipRect.right < iconRect.left ||
             shipRect.left > iconRect.right ||
             shipRect.bottom < iconRect.top ||
             shipRect.top > iconRect.bottom);
 
         if (isEntering) {
-          if (!enteredIcons.has(icon.id)) {
-            setEnteredIcons((prev) => new Set(prev).add(icon.id));
-            dispatch(setHovered({ icon: icon.id, hovered: true })); // Dispatch setHovered for entering
-            setCurrentNearIcon(icon.route); // Use icon.route here
+          if (!enteredIconsRef.current.has(icon.id)) {
+            enteredIconsRef.current.add(icon.id);
+            dispatch(setHovered({ icon: icon.id, hovered: true }));
+            currentNearIconRef.current = icon.route;
+            // Start a random animation when the ship enters the icon
+            const randomClass =
+              animationClasses[
+                Math.floor(Math.random() * animationClasses.length)
+              ];
+            dispatch(
+              setAnimationClass({ icon: icon.id, animationClass: randomClass })
+            );
           }
         } else if (isExiting) {
-          setEnteredIcons((prev) => {
-            const newSet = new Set(prev);
-            newSet.delete(icon.id);
-            return newSet;
-          });
-          dispatch(setHovered({ icon: icon.id, hovered: false })); // Dispatch setHovered for exiting
-          setCurrentNearIcon(null); // Reset the currently near icon
-          const randomClass =
-            animationClasses[
-              Math.floor(Math.random() * animationClasses.length)
-            ];
-          console.log(randomClass);
-          dispatch(
-            setAnimationClass({ icon: icon.id, animationClass: randomClass })
-          );
-          console.log(iconsState);
+          enteredIconsRef.current.delete(icon.id);
+          dispatch(setHovered({ icon: icon.id, hovered: false }));
+          currentNearIconRef.current = null;
+          // Clear animation when ship leaves — icon goes back to still
+          dispatch(setAnimationClass({ icon: icon.id, animationClass: "" }));
         }
       });
     };

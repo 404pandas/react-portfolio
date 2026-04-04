@@ -8,6 +8,8 @@ import {
   Grid,
 } from "@mui/material";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import CloseIcon from "@mui/icons-material/Close";
+import gsap from "gsap";
 import data from "./data.json";
 import "../../assets/css/projects.css";
 
@@ -45,87 +47,63 @@ import image18 from "../../assets/images/18.svg";
 import image20 from "../../assets/images/20.svg";
 
 const placeholderImages = [
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-  image13,
-  image14,
-  image15,
-  image16,
-  image17,
-  image18,
-  image20,
+  image1, image2, image3, image4, image5, image6, image7, image8, image9,
+  image10, image11, image12, image13, image14, image15, image16, image17,
+  image18, image20,
 ];
 
 const imageMap = {
-  comingSoon,
-  blueyapi,
-  cortezcafe,
-  scheduler,
-  quiz,
-  jacob,
-  simpPort,
-  notetaker,
-  passgen,
-  pooh,
-  witcherssatchel,
-  kitties,
-  // image1,
-  // image2,
-  // image3,
-  // image4,
-  // image5,
-  // image6,
-  // image7,
-  // image8,
-  // image9,
-  // image10,
-  // image11,
-  // image12,
-  // image13,
-  // image14,
-  // image15,
-  // image16,
-  // image17,
-  // image18,
-  // image19,
-  // image20,
+  comingSoon, blueyapi, cortezcafe, scheduler, quiz, jacob, simpPort,
+  notetaker, passgen, pooh, witcherssatchel, kitties,
 };
 
-const getRandomImage = () => {
-  const randomIndex = Math.floor(Math.random() * placeholderImages.length);
-  return placeholderImages[randomIndex];
-};
+const getRandomImage = () =>
+  placeholderImages[Math.floor(Math.random() * placeholderImages.length)];
 
 const Projects = () => {
   const [expandedItem, setExpandedItem] = useState(null);
   const expandedRef = useRef(null);
   const [itemsToShow, setItemsToShow] = useState(0);
 
+  // Stagger cards in one at a time
   useEffect(() => {
     const timer = setTimeout(() => {
-      setItemsToShow((prevItems) => Math.min(prevItems + 1, data.length));
-    }, 300); // Adjust timing between each item's appearance
-
+      setItemsToShow((prev) => Math.min(prev + 1, data.length));
+    }, 300);
     return () => clearTimeout(timer);
   }, [itemsToShow]);
 
-  const handleExpand = (project) => {
-    setExpandedItem(project);
-  };
+  // GSAP entrance for each card as it's added
+  useEffect(() => {
+    const items = document.querySelectorAll(".image-item");
+    if (items.length > 0) {
+      const last = items[items.length - 1];
+      gsap.fromTo(
+        last,
+        { opacity: 0, y: -36, scale: 0.92 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.48, ease: "back.out(1.5)" }
+      );
+    }
+  }, [itemsToShow]);
 
-  const handleClose = () => {
-    setExpandedItem(null);
-  };
+  // GSAP slide-in when panel mounts (expandedItem just became non-null)
+  useEffect(() => {
+    if (expandedItem) {
+      gsap.fromTo(
+        "#expanded-project",
+        { xPercent: 100 },
+        { xPercent: 0, duration: 0.42, ease: "power3.out" }
+      );
+      gsap.fromTo(
+        "#inner-box > *",
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, stagger: 0.07, ease: "power2.out", delay: 0.2 }
+      );
+    }
+  }, [expandedItem]);
+
+  const handleExpand = (project) => setExpandedItem(project);
+  const handleClose = () => setExpandedItem(null);
 
   const handleClickOutside = (event) => {
     if (
@@ -139,10 +117,8 @@ const Projects = () => {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  });
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -163,9 +139,7 @@ const Projects = () => {
                   ></div>
                   <div className="image-back">
                     <Typography variant="h6">{project.title}</Typography>
-                    <Typography variant="body1">
-                      {project.description}
-                    </Typography>
+                    <Typography variant="body1">{project.description}</Typography>
                     <IconButton
                       onClick={() => handleExpand(project)}
                       style={{ color: "rgba(0, 0, 0, 0.54)" }}
@@ -180,14 +154,19 @@ const Projects = () => {
           </ImageList>
         </Grid>
       </Container>
+
+      {/* Panel is conditionally rendered — GSAP animates it in on mount */}
       {expandedItem && (
-        <div
-          id="expanded-project"
-          className={expandedItem ? "show" : ""}
-          ref={expandedRef}
-          onClick={handleClose}
-        >
-          <div id="inner-box" onClick={(e) => e.stopPropagation()}>
+        <div id="expanded-project" ref={expandedRef}>
+          <div id="inner-box">
+            <IconButton
+              onClick={handleClose}
+              size="small"
+              sx={{ alignSelf: "flex-end", mb: 1 }}
+              aria-label="close"
+            >
+              <CloseIcon />
+            </IconButton>
             <img
               src={getRandomImage()}
               alt="pirate themed icon"

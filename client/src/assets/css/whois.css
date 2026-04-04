@@ -13,7 +13,7 @@
 
 .whois-title {
   font-family: "Merienda", cursive !important;
-  color: var(--brown);
+  color: var(--black);
   margin-bottom: 1rem !important;
   font-size: 3rem !important;
   text-shadow: 3px 3px 0 var(--dark-tan);
@@ -22,7 +22,7 @@
 .whois-tagline {
   max-width: 640px;
   margin: 0 auto 2rem !important;
-  color: var(--brown);
+  color: var(--black);
   font-size: 1.05rem !important;
   text-indent: 0 !important;
   line-height: 1.7;
@@ -51,12 +51,12 @@
 
 .whois-btn:hover {
   background-color: var(--dark-tan);
-  color: var(--brown) !important;
+  color: var(--black) !important;
 }
 
 .whois-btn-outline {
   background-color: transparent;
-  color: var(--brown) !important;
+  color: var(--black) !important;
 }
 
 .whois-btn-outline:hover {
@@ -74,7 +74,7 @@
 /* ── Section titles ── */
 .whois-section-title {
   font-family: "Merienda", cursive !important;
-  color: var(--brown) !important;
+  color: var(--black) !important;
   margin-bottom: 1.25rem !important;
   margin-top: 3rem !important;
   border-bottom: 2px solid var(--dark-tan);
@@ -126,7 +126,7 @@
 }
 
 .whois-screenshot-label {
-  color: var(--brown) !important;
+  color: var(--black) !important;
   font-family: "Lora", serif !important;
   font-size: 0.75rem !important;
 }
@@ -148,7 +148,7 @@
 }
 
 .whois-feature-card h6 {
-  color: var(--brown) !important;
+  color: var(--black) !important;
   margin-bottom: 0.5rem !important;
   font-size: 0.95rem !important;
 }
@@ -190,11 +190,11 @@
 }
 
 .whois-accordion h6 {
-  color: var(--brown) !important;
+  color: var(--black) !important;
 }
 
 .whois-accordion .MuiSvgIcon-root {
-  color: var(--brown);
+  color: var(--black);
 }
 
 .whois-policy {
@@ -213,7 +213,7 @@
 
 .whois-policy h6 {
   font-family: "Merienda", cursive !important;
-  color: var(--brown) !important;
+  color: var(--black) !important;
   font-size: 0.95rem !important;
   margin-top: 0.75rem !important;
 }
@@ -241,7 +241,7 @@
 }
 
 .whois-policy a {
-  color: var(--brown);
+  color: var(--black);
   text-decoration: underline;
 }
 

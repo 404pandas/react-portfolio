@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import gsap from "gsap";
 
-// Local helper
 import { validateEmail } from "../../utils/helpers";
 
 function Contact() {
@@ -14,13 +14,53 @@ function Contact() {
     email: "",
     message: "",
   });
-
   const [errorMessage, setErrorMessage] = useState("");
+  const containerRef = useRef();
   const { topic, email, message } = formState;
+
+  // Entrance animation
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+      tl.fromTo(
+        "#contact-cont h4, #contact-cont .MuiTypography-h4",
+        { opacity: 0, y: -24 },
+        { opacity: 1, y: 0, duration: 0.6 }
+      ).fromTo(
+        ".MuiTextField-root",
+        { opacity: 0, x: -32 },
+        { opacity: 1, x: 0, stagger: 0.15, duration: 0.5 },
+        "-=0.3"
+      ).fromTo(
+        "#contact-cont .MuiButton-root",
+        { scale: 0, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" },
+        "-=0.1"
+      );
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
+  // Shake animation when an error appears
+  useEffect(() => {
+    if (errorMessage) {
+      gsap.fromTo(
+        ".error-text",
+        { x: 0 },
+        {
+          x: 7,
+          yoyo: true,
+          repeat: 5,
+          duration: 0.055,
+          ease: "power2.inOut",
+          clearProps: "x",
+        }
+      );
+    }
+  }, [errorMessage]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!errorMessage && topic && email && message) {
       try {
         const response = await fetch(
@@ -28,64 +68,56 @@ function Contact() {
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              topic: topic, // or add a separate topic input
-              email,
-              message,
-            }),
+            body: JSON.stringify({ topic, email, message }),
           }
         );
-
         const data = await response.json();
-
         if (response.ok) {
-          alert("Message sent successfully!");
+          // Success pulse on the button before alerting
+          gsap.fromTo(
+            "#contact-cont .MuiButton-root",
+            { scale: 1 },
+            {
+              scale: 1.12,
+              yoyo: true,
+              repeat: 1,
+              duration: 0.18,
+              ease: "power2.inOut",
+              onComplete: () => alert("Message sent successfully!"),
+            }
+          );
           setFormState({ topic: "", email: "", message: "" });
         } else {
           alert(data.error || "Something went wrong.");
         }
       } catch (err) {
         console.error(err);
-        alert(
-          "Error sending message: " + (err.message || "Please try again later.")
-        );
+        alert("Error sending message: " + (err.message || "Please try again later."));
       }
     }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     if (name === "email") {
-      const isValid = validateEmail(value);
-      if (!isValid) {
-        setErrorMessage("Your email is invalid.");
-      } else {
-        setErrorMessage("");
-      }
+      setErrorMessage(validateEmail(value) ? "" : "Your email is invalid.");
     } else {
-      if (!value.length) {
-        setErrorMessage(`${name} is required.`);
-      } else {
-        setErrorMessage("");
-      }
+      const fieldLabels = { topic: "Name", message: "Message" };
+      setErrorMessage(
+        !value.length ? `${fieldLabels[name] || name} is required.` : ""
+      );
     }
-
     setFormState({ ...formState, [name]: value });
   };
 
   return (
     <Container
+      ref={containerRef}
       maxWidth="md"
       id="contact-cont"
       sx={{ paddingTop: "5%", paddingBottom: "5%" }}
     >
-      <Grid
-        container
-        spacing={4}
-        justifyContent="center"
-        flexDirection="column"
-      >
+      <Grid container spacing={4} justifyContent="center" flexDirection="column">
         <Grid item xs={12}>
           <Typography
             variant="h4"

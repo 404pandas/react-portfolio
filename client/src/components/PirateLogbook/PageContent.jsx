@@ -6,11 +6,12 @@ export default function PageContent({ data, flip }) {
   const imgRef = useRef();
 
   useEffect(() => {
-    gsap.fromTo(
+    const tween = gsap.fromTo(
       imgRef.current,
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 1 }
     );
+    return () => tween.kill();
   }, [data]);
 
   return (

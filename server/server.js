@@ -26,6 +26,23 @@ app.use(
 app.post("/api/contact", async (req, res) => {
   const { topic, message, email } = req.body;
 
+  if (!topic || !message || !email) {
+    return res.status(400).send({ error: "All fields are required." });
+  }
+
+  if (typeof topic !== "string" || typeof message !== "string" || typeof email !== "string") {
+    return res.status(400).send({ error: "Invalid input." });
+  }
+
+  if (topic.length > 200 || message.length > 5000) {
+    return res.status(400).send({ error: "Input exceeds maximum length." });
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).send({ error: "Invalid email address." });
+  }
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
