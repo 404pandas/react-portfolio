@@ -1,0 +1,239 @@
+/* ── Page wrapper ── */
+#contact-cont {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 16px 60px;
+  min-height: 80vh;
+}
+
+/* ── Parchment scroll card ── */
+.contact-scroll {
+  width: 100%;
+  max-width: 560px;
+  background: var(--tan);
+  border: 2px solid var(--brown);
+  box-shadow: 6px 6px 0 var(--brown);
+  padding: 36px 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Header ── */
+.contact-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: "Merienda", cursive;
+  font-size: 1.6rem;
+  color: var(--black);
+  line-height: 1.2;
+}
+
+.contact-subtitle {
+  font-family: "Lora", serif;
+  font-size: 0.9rem;
+  color: var(--brown);
+  font-style: italic;
+  text-indent: 0 !important;
+}
+
+/* Rope divider */
+.contact-rope {
+  width: 100%;
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--brown) 0px,
+    var(--brown) 6px,
+    transparent 6px,
+    transparent 10px,
+    var(--dark-tan) 10px,
+    var(--dark-tan) 14px,
+    transparent 14px,
+    transparent 18px
+  );
+  opacity: 0.55;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+/* ── Form fields ── */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-family: "Merienda", cursive;
+  font-size: 0.8rem;
+  color: var(--brown);
+  letter-spacing: 0.04em;
+}
+
+.field-input {
+  background: #fff8ee;
+  border: 2px solid var(--brown);
+  color: var(--black);
+  font-family: "Lora", serif;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 3px 3px 0 var(--brown);
+}
+
+.field-input::placeholder {
+  color: var(--dark-tan);
+  font-style: italic;
+}
+
+.field-input:focus {
+  border-color: var(--black);
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* ── Error / Success ── */
+.error-text {
+  font-family: "Lora", serif;
+  font-size: 0.82rem;
+  color: #8b1a1a;
+  font-style: italic;
+  text-indent: 0 !important;
+  border-left: 3px solid #8b1a1a;
+  padding-left: 10px;
+}
+
+.success-text {
+  font-family: "Merienda", cursive;
+  font-size: 0.85rem;
+  color: #2d5a27;
+  text-indent: 0 !important;
+  border-left: 3px solid #2d5a27;
+  padding-left: 10px;
+}
+
+/* ── Submit button ── */
+.contact-submit-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+#contact-submit {
+  font-family: "Merienda", cursive;
+  font-size: 0.9rem;
+  color: var(--tan);
+  background: var(--brown);
+  border: 2px solid var(--brown);
+  padding: 10px 36px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--black);
+  transition: background 0.15s ease, color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.15s ease;
+  letter-spacing: 0.06em;
+}
+
+#contact-submit:hover {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--tan);
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+/* ── Wax seal footer ── */
+.contact-seal-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-rope--bottom {
+  margin-top: 0;
+}
+
+/* Wax seal — same system as privacy policy */
+.contact-wax-seal {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 150, 110, 0.45) 0%, transparent 42%),
+    radial-gradient(circle at 68% 72%, rgba(30, 0, 0, 0.55) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 45%, #c9382b 0%, #9b1c1c 38%, #6b0d0d 70%, #3e0808 100%);
+  border: none;
+  box-shadow:
+    0 6px 18px rgba(100, 10, 10, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.45),
+    inset 3px 3px 7px rgba(255, 130, 100, 0.3),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.55),
+    inset 0 0 16px rgba(0, 0, 0, 0.25);
+  font-family: "Merienda", cursive;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 210, 195, 0.9);
+  letter-spacing: 0.07em;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.75),
+    0 -1px 1px rgba(255, 140, 110, 0.5);
+  transform: rotate(-8deg);
+}
+
+.contact-wax-seal::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 130, 100, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.contact-wax-seal::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px rgba(140, 25, 25, 0.5),
+    0 0 0 7px rgba(90, 10, 10, 0.2);
+  pointer-events: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .contact-scroll {
+    padding: 24px 20px 24px;
+  }
+
+  .contact-title {
+    font-size: 1.3rem;
+  }
+}

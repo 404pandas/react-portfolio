@@ -1,20 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import gsap from "gsap";
-
 import { validateEmail } from "../../utils/helpers";
+import "../../assets/css/contact.css";
 
 function Contact() {
-  const [formState, setFormState] = useState({
-    topic: "",
-    email: "",
-    message: "",
-  });
+  const [formState, setFormState] = useState({ topic: "", email: "", message: "" });
   const [errorMessage, setErrorMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
   const containerRef = useRef();
   const { topic, email, message } = formState;
 
@@ -23,38 +15,45 @@ function Contact() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
       tl.fromTo(
-        "#contact-cont h4, #contact-cont .MuiTypography-h4",
-        { opacity: 0, y: -24 },
-        { opacity: 1, y: 0, duration: 0.6 }
-      ).fromTo(
-        ".MuiTextField-root",
-        { opacity: 0, x: -32 },
-        { opacity: 1, x: 0, stagger: 0.15, duration: 0.5 },
-        "-=0.3"
-      ).fromTo(
-        "#contact-cont .MuiButton-root",
-        { scale: 0, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" },
-        "-=0.1"
-      );
+        ".contact-scroll",
+        { opacity: 0, y: 32, scale: 0.97 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.6 }
+      )
+        .fromTo(
+          ".contact-title",
+          { opacity: 0, y: -18 },
+          { opacity: 1, y: 0, duration: 0.45 },
+          "-=0.3"
+        )
+        .fromTo(
+          ".contact-subtitle",
+          { opacity: 0 },
+          { opacity: 1, duration: 0.4 },
+          "-=0.2"
+        )
+        .fromTo(
+          ".field-group",
+          { opacity: 0, x: -28 },
+          { opacity: 1, x: 0, stagger: 0.12, duration: 0.45 },
+          "-=0.2"
+        )
+        .fromTo(
+          "#contact-submit",
+          { scale: 0, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" },
+          "-=0.1"
+        );
     }, containerRef);
     return () => ctx.revert();
   }, []);
 
-  // Shake animation when an error appears
+  // Shake on error
   useEffect(() => {
     if (errorMessage) {
       gsap.fromTo(
         ".error-text",
         { x: 0 },
-        {
-          x: 7,
-          yoyo: true,
-          repeat: 5,
-          duration: 0.055,
-          ease: "power2.inOut",
-          clearProps: "x",
-        }
+        { x: 7, yoyo: true, repeat: 5, duration: 0.055, ease: "power2.inOut", clearProps: "x" }
       );
     }
   }, [errorMessage]);
@@ -73,130 +72,130 @@ function Contact() {
         );
         const data = await response.json();
         if (response.ok) {
-          // Success pulse on the button before alerting
           gsap.fromTo(
-            "#contact-cont .MuiButton-root",
+            "#contact-submit",
             { scale: 1 },
             {
-              scale: 1.12,
+              scale: 1.1,
               yoyo: true,
               repeat: 1,
               duration: 0.18,
               ease: "power2.inOut",
-              onComplete: () => alert("Message sent successfully!"),
+              onComplete: () => setSubmitted(true),
             }
           );
           setFormState({ topic: "", email: "", message: "" });
         } else {
-          alert(data.error || "Something went wrong.");
+          setErrorMessage(data.error || "Something went wrong.");
         }
       } catch (err) {
-        console.error(err);
-        alert("Error sending message: " + (err.message || "Please try again later."));
+        setErrorMessage("The raven got lost at sea. Try again later.");
       }
     }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (submitted) setSubmitted(false);
     if (name === "email") {
-      setErrorMessage(validateEmail(value) ? "" : "Your email is invalid.");
+      setErrorMessage(validateEmail(value) ? "" : "That address doesn't look seaworthy.");
     } else {
-      const fieldLabels = { topic: "Name", message: "Message" };
-      setErrorMessage(
-        !value.length ? `${fieldLabels[name] || name} is required.` : ""
-      );
+      const labels = { topic: "Yer name", message: "A message" };
+      setErrorMessage(!value.length ? `${labels[name] || name} is required.` : "");
     }
     setFormState({ ...formState, [name]: value });
   };
 
   return (
-    <Container
-      ref={containerRef}
-      maxWidth="md"
-      id="contact-cont"
-      sx={{ paddingTop: "5%", paddingBottom: "5%" }}
-    >
-      <Grid container spacing={4} justifyContent="center" flexDirection="column">
-        <Grid item xs={12}>
-          <Typography
-            variant="h4"
-            align="center"
-            gutterBottom
-            sx={{ fontFamily: "'Merienda', cursive" }}
-          >
-            Get in Touch
-          </Typography>
-        </Grid>
+    <section ref={containerRef} id="contact-cont">
+      <div className="contact-scroll">
 
-        <Grid item xs={12}>
-          <form id="contact-form" onSubmit={handleSubmit}>
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  label="Name"
-                  name="topic"
-                  variant="outlined"
-                  value={topic}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  label="Email Address"
-                  name="email"
-                  variant="outlined"
-                  type="email"
-                  value={email}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  label="Message"
-                  name="message"
-                  variant="outlined"
-                  multiline
-                  rows={5}
-                  value={message}
-                  onChange={handleChange}
-                />
-              </Grid>
+        {/* ── Header ── */}
+        <div className="contact-header">
+          <h2 className="contact-title">Send a Raven</h2>
+          <p className="contact-subtitle">
+            Leave word below and I'll find ye on the tide.
+          </p>
+          <div className="contact-rope" />
+        </div>
 
-              {errorMessage && (
-                <Grid item xs={12}>
-                  <Typography
-                    variant="body2"
-                    className="error-text"
-                    sx={{ color: "red" }}
-                  >
-                    {errorMessage}
-                  </Typography>
-                </Grid>
-              )}
+        {/* ── Form ── */}
+        <form id="contact-form" onSubmit={handleSubmit} noValidate>
 
-              <Grid item xs={12} textAlign="center">
-                <Button
-                  type="submit"
-                  variant="contained"
-                  sx={{
-                    backgroundColor: "var(--brown)",
-                    "&:hover": { backgroundColor: "var(--dark-tan)" },
-                    fontFamily: "'Lora', serif",
-                    padding: "0.5rem 2rem",
-                  }}
-                >
-                  Submit
-                </Button>
-              </Grid>
-            </Grid>
-          </form>
-        </Grid>
-      </Grid>
-    </Container>
+          <div className="field-group">
+            <label className="field-label" htmlFor="contact-topic">
+              Yer Name
+            </label>
+            <input
+              id="contact-topic"
+              className="field-input"
+              name="topic"
+              type="text"
+              placeholder="Captain..."
+              value={topic}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="field-group">
+            <label className="field-label" htmlFor="contact-email">
+              Correspondence Address
+            </label>
+            <input
+              id="contact-email"
+              className="field-input"
+              name="email"
+              type="email"
+              placeholder="where.to.reply@seas.com"
+              value={email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="field-group">
+            <label className="field-label" htmlFor="contact-message">
+              What say ye?
+            </label>
+            <textarea
+              id="contact-message"
+              className="field-input field-textarea"
+              name="message"
+              placeholder="Speak yer piece, sailor..."
+              rows={5}
+              value={message}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {errorMessage && (
+            <p className="error-text">{errorMessage}</p>
+          )}
+
+          {submitted && (
+            <p className="success-text">
+              Yer raven has been dispatched. Fair winds!
+            </p>
+          )}
+
+          <div className="contact-submit-row">
+            <button type="submit" id="contact-submit">
+              Cast to Sea
+            </button>
+          </div>
+
+        </form>
+
+        {/* ── Wax seal footer ── */}
+        <div className="contact-seal-row">
+          <div className="contact-rope contact-rope--bottom" />
+          <div className="contact-wax-seal">ME</div>
+        </div>
+
+      </div>
+    </section>
   );
 }
 
