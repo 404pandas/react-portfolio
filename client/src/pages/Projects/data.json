@@ -1,5 +1,13 @@
 [
   {
+    "title": "Who Is...?",
+    "description": "A co-op trivia game about each other built with React and Socket.IO, allowing players to compete in real-time. The game features chat, 2,000+ questions, and a dynamic interface for an engaging experience.",
+    "code": "https://github.com/404pandas/whois",
+    "deployment": "https://drive.google.com/file/d/1iRiSHn7CZXkd19QYGYbj8HZ6o-kqLqZ_/view?usp=drive_link",
+    "image": "whois",
+    "key": 99
+  },
+  {
     "title": "Witcher's Satchel",
     "description": "A swiss army knife-style mobile app that covers many common utilities needed by a mobile user. Powered by React Native and the creativity of a Witcher.",
     "code": "https://github.com/404pandas/Witchers-Satchel",
@@ -60,7 +68,7 @@
     "description": "A blogging platform built with a full stack environment, utilizing technologies like Handlebars, Sequelize, MySQL, and Materialize for user-friendly interaction. Features user authentication, session management, and real-time updates through Express and Node.js.",
     "code": "https://github.com/404pandas/burn-book-blog",
     "deployment": "https://burn-book-blog.onrender.com",
-    "image": "comingSoon",
+    "image": "burnbook",
     "key": 108
   },
   {

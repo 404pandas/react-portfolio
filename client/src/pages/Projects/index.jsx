@@ -25,6 +25,8 @@ import passgen from "../../assets/images/passgen.png";
 import pooh from "../../assets/images/pooh-walkthrough.gif";
 import witcherssatchel from "../../assets/images/witcherssatchel.png";
 import kitties from "../../assets/images/kitties.png";
+import whois from "../../assets/screenshots/whois.jpg";
+import burnbook from "../../assets/images/burnbook.gif";
 
 import image1 from "../../assets/images/1.svg";
 import image2 from "../../assets/images/2.svg";
@@ -81,6 +83,8 @@ const imageMap = {
   pooh,
   witcherssatchel,
   kitties,
+  whois,
+  burnbook,
 };
 
 const getRandomImage = () =>
