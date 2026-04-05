@@ -80,8 +80,8 @@
     "key": 110
   },
   {
-    "title": "Notetaker Application",
-    "description": "A note-taking web application built for coding bootcamp, leveraging Express and Node.js to create, save, and delete notes. Notes are stored using local database storage, and the project is deployed on Heroku.",
+    "title": "Jaskier's Journal",
+    "description": "A note-taking web application built leveraging Express and Node.js to create, save, and delete notes. Notes are stored using local database storage, and the project is deployed on Heroku.",
     "code": "https://github.com/404pandas/notetaker",
     "deployment": "https://notetaker-irrb.onrender.com",
     "image": "notetaker",
