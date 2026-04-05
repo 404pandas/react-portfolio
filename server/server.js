@@ -52,7 +52,7 @@ app.post("/api/contact", async (req, res) => {
   try {
     console.log("Sending email from:", email, "name:", topic);
     const { error } = await resend.emails.send({
-      from: "Portfolio Contact",
+      from: "Portfolio Contact <onboarding@resend.dev>",
       to: "mary.panda.jackson@gmail.com",
       reply_to: email,
       subject: `Portfolio Contact: ${topic}`,
