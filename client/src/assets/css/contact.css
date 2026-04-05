@@ -155,12 +155,18 @@
   letter-spacing: 0.06em;
 }
 
-#contact-submit:hover {
+#contact-submit:hover:not(:disabled) {
   background: var(--black);
   border-color: var(--black);
   color: var(--tan);
   box-shadow: none;
   transform: translate(4px, 4px);
+}
+
+#contact-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  box-shadow: none;
 }
 
 /* ── Wax seal footer ── */

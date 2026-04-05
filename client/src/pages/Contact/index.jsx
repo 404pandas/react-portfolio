@@ -7,6 +7,7 @@ function Contact() {
   const [formState, setFormState] = useState({ topic: "", email: "", message: "" });
   const [errorMessage, setErrorMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const containerRef = useRef();
   const { topic, email, message } = formState;
 
@@ -61,6 +62,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!errorMessage && topic && email && message) {
+      setSending(true);
       try {
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/api/contact`,
@@ -90,6 +92,8 @@ function Contact() {
         }
       } catch (err) {
         setErrorMessage("The raven got lost at sea. Try again later.");
+      } finally {
+        setSending(false);
       }
     }
   };
@@ -181,8 +185,8 @@ function Contact() {
           )}
 
           <div className="contact-submit-row">
-            <button type="submit" id="contact-submit">
-              Cast to Sea
+            <button type="submit" id="contact-submit" disabled={sending}>
+              {sending ? "Dispatching Raven..." : "Cast to Sea"}
             </button>
           </div>
 
