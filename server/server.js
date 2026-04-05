@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://react-portfolio-iqr5.onrender.com",
+      "https://react-portfolio-azoy.onrender.com",
       "https://maryelenius.com",
     ],
     methods: ["POST"],
@@ -29,7 +29,11 @@ app.post("/api/contact", async (req, res) => {
     return res.status(400).send({ error: "All fields are required." });
   }
 
-  if (typeof topic !== "string" || typeof message !== "string" || typeof email !== "string") {
+  if (
+    typeof topic !== "string" ||
+    typeof message !== "string" ||
+    typeof email !== "string"
+  ) {
     return res.status(400).send({ error: "Invalid input." });
   }
 
