@@ -1,39 +1,34 @@
 #tech-cont {
-  z-index: 5;
-  background-color: var(--tan);
-  box-shadow: -10px 5px var(--brown);
-  margin-left: 10%;
-  padding: 2%;
-  width: 80%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 2% 3rem;
+  width: 100%;
 }
 
 .compass-title {
-  font-size: 1rem !important;
-  font-weight: normal;
+  font-family: "Lora", serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 400;
+  font-style: italic;
   text-align: center;
-  opacity: 0; /* GSAP fades this in — prevents flash before animation runs */
+  color: var(--brown);
+  opacity: 0; /* GSAP fades in */
+  background: var(--tan);
+  border-top: 1px solid var(--brown);
+  border-bottom: 1px solid var(--brown);
+  padding: 0.5rem 1.5rem;
+  letter-spacing: 0.04em;
+  max-width: 520px;
+  text-indent: 0 !important;
 }
 
-/* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
 @media only screen and (max-width: 600px) {
   #tech-cont {
-    margin-top: 10% !important;
+    margin-top: 5%;
   }
-
-  .commpass-title {
-    margin-top: 11%;
-    top: 23%;
-    position: absolute;
-  }
-}
-/* ------------------       At least screen size 600px (Tablet Devices)       ------------------ */
-@media only screen and (min-width: 600px) {
-  /* .about-sect {
-      flex-direction: column !important;
-    } */
-  #tech-cont {
-    margin-top: 5% !important;
+  .compass-title {
+    font-size: 0.78rem !important;
+    padding: 0.4rem 1rem;
   }
 }

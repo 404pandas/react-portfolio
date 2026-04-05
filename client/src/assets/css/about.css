@@ -1,21 +1,16 @@
 #about-cont {
   z-index: 5;
-  background-color: var(--tan);
-  box-shadow: -10px 5px var(--brown);
-  margin-left: 10%;
-  padding: 2%;
-  width: 80%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 2rem 2%;
+  width: 100%;
 }
 #about-cont > div:nth-child(odd) {
   flex-direction: row-reverse !important;
 }
 .about-sect > img:nth-child(even) {
   margin-right: 3%;
-}
-.about-sect > img:nth-child(even) {
   margin-left: 3%;
 }
 .about-sect {

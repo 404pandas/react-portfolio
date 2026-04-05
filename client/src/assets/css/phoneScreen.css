@@ -1,7 +1,58 @@
+/* ── Page wrapper ── */
+.phone-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.phone-page-header {
+  text-align: center;
+  max-width: 480px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone-page-title {
+  font-family: "Pirata One", cursive;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--brown);
+  text-shadow: 3px 3px 0 var(--dark-tan);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.phone-page-rope {
+  width: 100%;
+  height: 8px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--brown) 0px, var(--brown) 6px,
+    transparent 6px, transparent 10px,
+    var(--dark-tan) 10px, var(--dark-tan) 14px,
+    transparent 14px, transparent 18px
+  );
+  opacity: 0.55;
+  border-radius: 4px;
+}
+
+.phone-page-desc {
+  font-family: "Lora", serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--brown);
+  text-indent: 0 !important;
+  margin: 0;
+}
+
+/* ── Phone shell ── */
 .phone-shell {
   width: 500px;
   height: auto;
-  margin: 4rem auto;
+  margin: 0 auto;
   background: var(--tan);
   border-radius: 2rem;
   padding: 1.5rem;
@@ -116,12 +167,14 @@
 }
 
 .call-btn {
-  background: #7ac57a;
-  color: var(--black);
+  background: var(--icons);
+  color: var(--tan);
+  border-color: var(--brown);
 }
 
 .call-btn:hover {
-  background: #95e295;
+  background: var(--brown);
+  color: var(--tan);
 }
 
 .phone-input {

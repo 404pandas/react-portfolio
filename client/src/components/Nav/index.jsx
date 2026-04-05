@@ -67,7 +67,7 @@ export default function PirateNav() {
             component={Link}
             to="/"
             className="nav-link-item"
-            sx={{ textDecoration: "none", color: "#DADAD2", fontWeight: "bold" }}
+            sx={{ textDecoration: "none", color: "var(--tan)", fontWeight: "bold", fontFamily: "'Merienda', cursive" }}
           >
             Home
           </Typography>
@@ -82,8 +82,10 @@ export default function PirateNav() {
                   className="nav-link-item"
                   sx={{
                     textDecoration: "none",
-                    color: "#DADAD2",
-                    "&:hover": { color: "#F2C800" },
+                    color: "var(--tan)",
+                    fontFamily: "'Merienda', cursive",
+                    fontSize: "0.9rem",
+                    "&:hover": { color: "var(--dark-tan)" },
                   }}
                 >
                   {link.name}
@@ -108,7 +110,7 @@ export default function PirateNav() {
                     onClick={handleMenuClose}
                     component={Link}
                     to={link.path}
-                    sx={{ color: "#010302", fontWeight: "bold" }}
+                    sx={{ color: "var(--black)", fontFamily: "'Merienda', cursive", fontWeight: "bold" }}
                   >
                     {link.name}
                   </MenuItem>

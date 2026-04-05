@@ -1,0 +1,124 @@
+/* ── Error Page ── */
+#error-cont {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px 60px;
+  min-height: 70vh;
+}
+
+.error-card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--tan);
+  border: 2px solid var(--brown);
+  box-shadow: 6px 6px 0 var(--brown);
+  padding: 40px 44px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+/* Giant "Oops!" */
+#error-cont h1 {
+  font-family: "Pirata One", cursive;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  color: var(--brown);
+  line-height: 1;
+  text-shadow: 4px 4px 0 var(--dark-tan);
+  margin: 0;
+}
+
+/* Rope divider */
+.error-rope {
+  width: 100%;
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--brown) 0px,
+    var(--brown) 6px,
+    transparent 6px,
+    transparent 10px,
+    var(--dark-tan) 10px,
+    var(--dark-tan) 14px,
+    transparent 14px,
+    transparent 18px
+  );
+  opacity: 0.55;
+  border-radius: 4px;
+}
+
+#error-cont p {
+  font-family: "Lora", serif;
+  font-size: 0.95rem;
+  color: var(--black);
+  line-height: 1.7;
+  text-indent: 0 !important;
+  margin: 0;
+}
+
+#error-cont p i {
+  font-style: italic;
+  color: var(--brown);
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Wax seal */
+.error-seal {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 150, 110, 0.45) 0%, transparent 42%),
+    radial-gradient(circle at 68% 72%, rgba(30, 0, 0, 0.55) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 45%, #c9382b 0%, #9b1c1c 38%, #6b0d0d 70%, #3e0808 100%);
+  box-shadow:
+    0 6px 18px rgba(100, 10, 10, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.45),
+    inset 3px 3px 7px rgba(255, 130, 100, 0.3),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.55),
+    inset 0 0 16px rgba(0, 0, 0, 0.25);
+  font-family: "Merienda", cursive;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 210, 195, 0.9);
+  letter-spacing: 0.07em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75), 0 -1px 1px rgba(255, 140, 110, 0.5);
+  transform: rotate(-8deg);
+  margin-top: 8px;
+}
+
+.error-seal::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 130, 100, 0.2);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.error-seal::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px rgba(140, 25, 25, 0.5),
+    0 0 0 7px rgba(90, 10, 10, 0.2);
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .error-card {
+    padding: 28px 20px 24px;
+  }
+}

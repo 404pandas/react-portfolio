@@ -1,11 +1,9 @@
 import { useEffect } from "react";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import gsap from "gsap";
 import PirateLogBook from "../../components/PirateLogbook";
+import "../../assets/css/about.css";
 
 const About = () => {
-  // Book entrance — scales and fades in from slightly below
   useEffect(() => {
     const tween = gsap.fromTo(
       ".book-container",
@@ -16,11 +14,9 @@ const About = () => {
   }, []);
 
   return (
-    <Container>
-      <Grid container id="about-cont" justifyContent="center" marginTop={5}>
-        <PirateLogBook />
-      </Grid>
-    </Container>
+    <div id="about-cont">
+      <PirateLogBook />
+    </div>
   );
 };
 

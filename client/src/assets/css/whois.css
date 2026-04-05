@@ -1,8 +1,9 @@
 /* ─── Who Is...? Page ─────────────────────────────────────── */
 
 .whois-container {
-  padding-top: 3rem;
-  padding-bottom: 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
 }
 
 /* ── Hero ── */
@@ -131,15 +132,28 @@
   font-size: 0.75rem !important;
 }
 
+/* ── Feature grid ── */
+.whois-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .whois-features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .whois-features-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Feature cards ── */
 .whois-feature-card {
   background-color: var(--tan);
   border: 2px solid var(--brown);
-  border-radius: 8px;
   padding: 1.25rem;
-  height: 100%;
   box-shadow: 4px 4px 0 var(--brown);
-  transition: transform 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s;
 }
 
 .whois-feature-card:hover {
@@ -147,18 +161,20 @@
   box-shadow: 6px 6px 0 var(--brown);
 }
 
-.whois-feature-card h6 {
-  color: var(--black) !important;
-  margin-bottom: 0.5rem !important;
-  font-size: 0.95rem !important;
+.whois-feature-card h3 {
+  font-family: "Merienda", cursive;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
-.whois-feature-card .MuiTypography-body2 {
+.whois-feature-card p {
   color: var(--black);
   line-height: 1.6;
-  font-family: "Lora", serif !important;
+  font-family: "Lora", serif;
   text-indent: 0 !important;
   font-size: 0.875rem;
+  margin: 0;
 }
 
 /* ── Tech chips ── */
@@ -170,10 +186,13 @@
 }
 
 .whois-chip {
-  background-color: var(--brown) !important;
-  color: var(--tan) !important;
-  font-family: "Lora", serif !important;
-  font-size: 0.78rem !important;
+  display: inline-block;
+  background-color: var(--brown);
+  color: var(--tan);
+  font-family: "Lora", serif;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--brown);
 }
 
 /* ── Privacy Policy nav card ── */
@@ -198,19 +217,19 @@
 }
 
 .whois-policy-nav-title {
-  font-family: "Merienda", cursive !important;
-  color: var(--black) !important;
-  font-size: 1rem !important;
-  margin-bottom: 0.4rem !important;
+  font-family: "Merienda", cursive;
+  color: var(--black);
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
 }
 
 .whois-policy-nav-desc {
-  font-family: "Lora", serif !important;
-  color: var(--black) !important;
-  font-size: 0.875rem !important;
+  font-family: "Lora", serif;
+  color: var(--black);
+  font-size: 0.875rem;
   line-height: 1.6;
   text-indent: 0 !important;
-  margin-bottom: 0.75rem !important;
+  margin: 0 0 0.75rem;
 }
 
 .whois-policy-nav-arrow {

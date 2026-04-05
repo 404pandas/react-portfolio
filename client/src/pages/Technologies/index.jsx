@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import "../../assets/css/technologies.css";
 import Compass from "../../components/Compass";
-import Container from "@mui/material/Container";
 
 const Technologies = () => {
   useEffect(() => {
@@ -16,15 +15,12 @@ const Technologies = () => {
   }, []);
 
   return (
-    <>
-      <Container>
-        <h1 className="compass-title">
-          Hover or swipe the direction on the compass you would like to
-          navigate!
-        </h1>
-        <Compass />
-      </Container>
-    </>
+    <div id="tech-cont">
+      <p className="compass-title">
+        Hover or swipe the direction on the compass you would like to navigate!
+      </p>
+      <Compass />
+    </div>
   );
 };
 

@@ -14,6 +14,11 @@
   width: 40%;
   color: var(--icons);
 }
+
+/* Tint all SVG icon images to #2f2513 */
+.landing-icon {
+  filter: invert(10%) sepia(30%) saturate(900%) hue-rotate(6deg) brightness(40%) contrast(95%);
+}
 .ind-items {
   display: flex;
   justify-content: center;

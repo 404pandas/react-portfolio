@@ -100,11 +100,14 @@ const MapIcon = () => {
   const handleMouseEnter = (e, icon) => {
     dispatch(setHovered({ icon, hovered: true }));
     dispatch(setNearShip({ icon, nearShip: true }));
+    const randomClass = animationClasses[Math.floor(Math.random() * animationClasses.length)];
+    dispatch(setAnimationClass({ icon, animationClass: randomClass }));
   };
 
   const handleMouseLeave = (e, icon) => {
     dispatch(setHovered({ icon, hovered: false }));
     dispatch(setNearShip({ icon, nearShip: false }));
+    dispatch(setAnimationClass({ icon, animationClass: "" }));
   };
 
   return (

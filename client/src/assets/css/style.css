@@ -1,7 +1,7 @@
 /*       Global CSS styling       */
 
 /* Imports fonts from Google */
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merienda:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merienda:wght@300..900&family=Pirata+One&display=swap");
 
 /* ****************************** */
 /*       Universal selector       */
@@ -121,22 +121,65 @@ a {
 /* ****************************** */
 #name {
   background-color: var(--tan);
-  box-shadow: -10px 5px var(--brown);
-  margin: 10% 0 0 10%;
-  padding: 2%;
+  margin: 5% 0 0 6%;
+  padding: 1.6rem 2.2rem 1.8rem;
   width: max-content;
-  display: flex;
-}
-#name > * {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-#vr {
-  border-left: 2px solid var(--brown);
-}
-#subtitle {
+  max-width: 88vw;
   display: flex;
   align-items: center;
+  gap: 0;
+  /* Double-border manifest look */
+  border: 3px solid var(--brown);
+  outline: 6px solid var(--tan);
+  box-shadow:
+    0 0 0 9px var(--brown),
+    8px 8px 0 9px var(--brown);
+  position: relative;
+}
+
+/* Decorative corner marks */
+#name::before,
+#name::after {
+  content: "✦";
+  position: absolute;
+  font-size: 0.7rem;
+  color: var(--brown);
+  opacity: 0.6;
+}
+#name::before { top: 5px; left: 8px; }
+#name::after  { bottom: 5px; right: 8px; }
+
+#name h1 {
+  font-family: "Pirata One", cursive !important;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  color: var(--brown);
+  letter-spacing: 0.04em;
+  padding-right: 1.4rem;
+  white-space: nowrap;
+}
+
+#vr {
+  border-left: 2px solid var(--brown);
+  align-self: stretch;
+  margin: 0 1.4rem;
+  opacity: 0.7;
+}
+
+#subtitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+#subtitle h2 {
+  font-family: "Lora", serif !important;
+  font-size: clamp(0.7rem, 1.8vw, 1rem) !important;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--brown);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 #totally-not-a-class {
   position: absolute;

@@ -55,7 +55,7 @@
   font-weight: bold;
   pointer-events: none;
   z-index: 5;
-  font-family: "Roboto", sans-serif;
+  font-family: "Lora", serif;
   align-items: center;
   background-color: var(--tan) !important;
   box-shadow: -10px 5px var(--brown) !important;
