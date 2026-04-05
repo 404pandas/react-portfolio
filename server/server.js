@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
+      "http://localhost:3000",
       "https://react-portfolio-azoy.onrender.com",
       "https://maryelenius.com",
     ],
