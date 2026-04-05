@@ -20,7 +20,7 @@ import scheduler from "../../assets/images/scheduler.png";
 import quiz from "../../assets/images/quiz.png";
 import jacob from "../../assets/images/jacob.png";
 import simpPort from "../../assets/images/simp-portfolio.png";
-import notetaker from "../../assets/images/notetaker.png";
+import notetaker from "../../assets/images/jaskiersjournal.gif";
 import passgen from "../../assets/images/passgen.png";
 import pooh from "../../assets/images/pooh-walkthrough.gif";
 import witcherssatchel from "../../assets/images/witcherssatchel.png";
