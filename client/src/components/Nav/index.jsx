@@ -59,7 +59,7 @@ export default function PirateNav() {
     <div ref={navRef}>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#594b39", borderBottom: "2px solid #0d0d0d" }}
+        sx={{ backgroundColor: "var(--brown)", borderBottom: "2px solid var(--black)" }}
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography

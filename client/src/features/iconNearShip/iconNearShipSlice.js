@@ -32,7 +32,6 @@ const iconsSlice = createSlice({
       const { icon, animationClass } = action.payload;
       if (state.icons[icon]) {
         state.icons[icon].animationClass = animationClass;
-      } else {
       }
     },
   },

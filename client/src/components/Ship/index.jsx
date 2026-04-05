@@ -66,34 +66,41 @@ const Ship = () => {
 
   useEffect(() => {
     const handleArrowKeys = (event) => {
-      const keyCode = event.keyCode;
+      const { key } = event;
       let newX = position.x;
       let newY = position.y;
 
-      switch (keyCode) {
-        case 87:
+      switch (key) {
+        case "w":
+        case "W":
+        case "ArrowUp":
           newY -= moveStep;
           setIsMoving(true);
           break;
-        case 65:
+        case "a":
+        case "A":
+        case "ArrowLeft":
           newX -= moveStep;
           setIsMoving(true);
           break;
-        case 83:
+        case "s":
+        case "S":
+        case "ArrowDown":
           newY += moveStep;
           setIsMoving(true);
           break;
-        case 68:
+        case "d":
+        case "D":
+        case "ArrowRight":
           event.preventDefault();
           newX += moveStep;
           setIsMoving(true);
           break;
-        case 13: // Enter key
+        case "Enter":
           if (currentNearIconRef.current) {
             icons.forEach((icon) => {
               dispatch(setHovered({ icon: icon.id, hovered: false }));
             });
-
             navigate(`/${currentNearIconRef.current}`);
           }
           break;
