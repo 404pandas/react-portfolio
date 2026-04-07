@@ -11,7 +11,7 @@ import quiz from "../../assets/images/quiz.png";
 import jacob from "../../assets/images/jacob.png";
 import simpPort from "../../assets/images/simp-portfolio.png";
 import notetaker from "../../assets/images/jaskiersjournal.gif";
-import passgen from "../../assets/images/passgen.png";
+import passgen from "../../assets/images/passwordgenerator.gif";
 import pooh from "../../assets/images/pooh-walkthrough.gif";
 import witcherssatchel from "../../assets/images/witcherssatchel.png";
 import kitties from "../../assets/images/kitties.png";
@@ -75,8 +75,12 @@ function ProjectCard({ project, imageSrc, onSelect }) {
           {/* Placeholder always rendered; hidden once GIF is loaded + hovered */}
           {(!hovered || !gifLoaded) && (
             <div className="project-card-placeholder">
-              <span className="project-card-placeholder-title">{project.title}</span>
-              {hovered && !gifLoaded && <span className="project-card-spinner" />}
+              <span className="project-card-placeholder-title">
+                {project.title}
+              </span>
+              {hovered && !gifLoaded && (
+                <span className="project-card-spinner" />
+              )}
             </div>
           )}
           {/* GIF img: only gets a src once hovered — no download until then */}
@@ -84,7 +88,9 @@ function ProjectCard({ project, imageSrc, onSelect }) {
             <img
               src={imageSrc}
               alt={project.title}
-              className={`project-card-img${gifLoaded ? "" : " project-card-img--loading"}`}
+              className={`project-card-img${
+                gifLoaded ? "" : " project-card-img--loading"
+              }`}
               onLoad={() => setGifLoaded(true)}
               draggable={false}
             />
