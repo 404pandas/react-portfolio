@@ -5,7 +5,7 @@ import "../../assets/css/projects.css";
 
 import comingSoon from "../../assets/images/coming-soon.jpg";
 import blueyapi from "../../assets/images/blueyapi.png";
-import cortezcafe from "../../assets/images/cortezcafe.png";
+import cortezcafe from "../../assets/images/cortezcafe.gif";
 import scheduler from "../../assets/images/scheduler.png";
 import quiz from "../../assets/images/quiz.png";
 import jacob from "../../assets/images/jacob.png";
