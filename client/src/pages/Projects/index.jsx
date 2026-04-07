@@ -18,6 +18,7 @@ import kitties from "../../assets/images/kitties.png";
 import whois from "../../assets/screenshots/whois.jpg";
 import burnbook from "../../assets/images/burnbook.gif";
 import novigradunderground from "../../assets/images/novigradunderground.gif";
+import standardPorfolio from "../../assets/images/standard_portfolio.gif";
 
 const imageMap = {
   comingSoon,
@@ -35,6 +36,7 @@ const imageMap = {
   whois,
   burnbook,
   novigradunderground,
+  standardPorfolio,
 };
 
 const isGif = (src) =>

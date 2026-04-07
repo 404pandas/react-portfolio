@@ -60,7 +60,7 @@
     "description": "A professional portfolio website developed using jQuery, Materialize, and GSAP for dynamic interactions. Backend functionality is handled by Node.js, while the front end utilizes day.js and various npm packages for an optimized experience.",
     "code": "https://github.com/404pandas/404pandas.github.io",
     "deployment": "https://standard-portfolio.onrender.com",
-    "image": "simpPort",
+    "image": "standardPorfolio",
     "key": 107
   },
   {
