@@ -17,6 +17,7 @@ import witcherssatchel from "../../assets/images/witcherssatchel.png";
 import kitties from "../../assets/images/kitties.png";
 import whois from "../../assets/screenshots/whois.jpg";
 import burnbook from "../../assets/images/burnbook.gif";
+import novigradunderground from "../../assets/images/novigradunderground.gif";
 
 const imageMap = {
   comingSoon,
@@ -33,6 +34,7 @@ const imageMap = {
   kitties,
   whois,
   burnbook,
+  novigradunderground,
 };
 
 const isGif = (src) =>
@@ -41,7 +43,9 @@ const isGif = (src) =>
 // ── ProjectCard ──────────────────────────────────────────────────────────────
 function ProjectCard({ project, imageSrc, onSelect }) {
   const [hovered, setHovered] = useState(false);
-  const [poster, setPoster] = useState(() => (isGif(imageSrc) ? null : imageSrc));
+  const [poster, setPoster] = useState(() =>
+    isGif(imageSrc) ? null : imageSrc
+  );
 
   useEffect(() => {
     if (!isGif(imageSrc)) return;
@@ -59,9 +63,13 @@ function ProjectCard({ project, imageSrc, onSelect }) {
         if (!cancelled) setPoster(imageSrc);
       }
     };
-    img.onerror = () => { if (!cancelled) setPoster(imageSrc); };
+    img.onerror = () => {
+      if (!cancelled) setPoster(imageSrc);
+    };
     img.src = imageSrc;
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [imageSrc]);
 
   return (
@@ -70,13 +78,15 @@ function ProjectCard({ project, imageSrc, onSelect }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => onSelect(project)}
-      onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onSelect(project)}
+      onKeyDown={(e) =>
+        (e.key === "Enter" || e.key === " ") && onSelect(project)
+      }
       role="button"
       tabIndex={0}
       aria-label={`Open ${project.title}`}
     >
       <img
-        src={hovered ? imageSrc : (poster || imageSrc)}
+        src={hovered ? imageSrc : poster || imageSrc}
         alt={project.title}
         className="project-card-img"
         draggable={false}
@@ -100,7 +110,14 @@ const Projects = () => {
     gsap.fromTo(
       ".project-card",
       { opacity: 0, y: -24, scale: 0.9 },
-      { opacity: 1, y: 0, scale: 1, stagger: 0.055, duration: 0.4, ease: "back.out(1.4)" }
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        stagger: 0.055,
+        duration: 0.4,
+        ease: "back.out(1.4)",
+      }
     );
   }, []);
 

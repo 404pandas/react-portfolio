@@ -80,11 +80,11 @@
     "key": 109
   },
   {
-    "title": "MERN Stack Project Setup",
-    "description": "A MERN stack project utilizing MongoDB, Express, React, and Node.js. Integrated with Apollo and GraphQL for seamless data fetching and state management. The project is in the prototype stage and will be deployed after MVP completion.",
-    "code": "https://github.com/404pandas/project-3-setup-guide",
-    "deployment": "https://witcher-9efi.onrender.com",
-    "image": "comingSoon",
+    "title": "Novigrad Underground",
+    "description": "A MERN stack project utilizing MongoDB, Express, React, and Node.js. Integrated with Apollo and GraphQL for seamless data fetching and state management. The application features user authentication, session management, and dynamic content rendering, providing an immersive experience for users interested in the world of The Witcher.",
+    "code": "https://github.com/404pandas/novigradunderground",
+    "deployment": "https://novigradunderground.onrender.com/",
+    "image": "novigradunderground",
     "key": 110
   },
   {
