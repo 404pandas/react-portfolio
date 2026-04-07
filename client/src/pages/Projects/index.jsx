@@ -8,7 +8,7 @@ import blueyapi from "../../assets/images/blueyapi.png";
 import cortezcafe from "../../assets/images/cortezcafe.gif";
 import scheduler from "../../assets/images/contractboard.gif";
 import quiz from "../../assets/images/quiz.png";
-import jacob from "../../assets/images/jacob.png";
+import jacob from "../../assets/images/jacobelenius.gif";
 import simpPort from "../../assets/images/simp-portfolio.png";
 import notetaker from "../../assets/images/jaskiersjournal.gif";
 import passgen from "../../assets/images/passwordgenerator.gif";
