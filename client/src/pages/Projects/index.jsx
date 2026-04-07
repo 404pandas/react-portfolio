@@ -43,39 +43,56 @@ const isGif = (src) =>
   typeof src === "string" && src.toLowerCase().endsWith(".gif");
 
 // ── ProjectCard ──────────────────────────────────────────────────────────────
+// Static images: always shown, native lazy loading.
+// GIFs: IntersectionObserver fires canvas extraction only when the card enters
+// the viewport — nothing downloads until the card is actually visible.
+// Grayscale first-frame poster shown at rest; full animation plays on hover.
 function ProjectCard({ project, imageSrc, onSelect }) {
   const [hovered, setHovered] = useState(false);
-  const [poster, setPoster] = useState(() =>
-    isGif(imageSrc) ? null : imageSrc
-  );
+  const [poster, setPoster] = useState(() => (isGif(imageSrc) ? null : imageSrc));
+  const cardRef = useRef(null);
+  const gif = isGif(imageSrc);
 
   useEffect(() => {
-    if (!isGif(imageSrc)) return;
+    if (!gif) return; // static images need no extraction
+
     let cancelled = false;
-    const img = new Image();
-    img.onload = () => {
-      if (cancelled) return;
-      try {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.naturalWidth || 300;
-        canvas.height = img.naturalHeight || 200;
-        canvas.getContext("2d").drawImage(img, 0, 0);
-        if (!cancelled) setPoster(canvas.toDataURL());
-      } catch {
-        if (!cancelled) setPoster(imageSrc);
-      }
-    };
-    img.onerror = () => {
-      if (!cancelled) setPoster(imageSrc);
-    };
-    img.src = imageSrc;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return;
+        observer.disconnect();
+
+        const img = new Image();
+        img.onload = () => {
+          if (cancelled) return;
+          try {
+            const canvas = document.createElement("canvas");
+            canvas.width = img.naturalWidth || 300;
+            canvas.height = img.naturalHeight || 200;
+            canvas.getContext("2d").drawImage(img, 0, 0);
+            if (!cancelled) setPoster(canvas.toDataURL());
+          } catch {
+            if (!cancelled) setPoster(imageSrc);
+          }
+        };
+        img.onerror = () => { if (!cancelled) setPoster(imageSrc); };
+        img.src = imageSrc;
+      },
+      { rootMargin: "150px" } // start extraction just before card scrolls into view
+    );
+
+    if (cardRef.current) observer.observe(cardRef.current);
+
     return () => {
       cancelled = true;
+      observer.disconnect();
     };
-  }, [imageSrc]);
+  }, [imageSrc, gif]);
 
   return (
     <div
+      ref={cardRef}
       className={`project-card${hovered ? " is-hovered" : ""}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -87,12 +104,19 @@ function ProjectCard({ project, imageSrc, onSelect }) {
       tabIndex={0}
       aria-label={`Open ${project.title}`}
     >
-      <img
-        src={hovered ? imageSrc : poster || imageSrc}
-        alt={project.title}
-        className="project-card-img"
-        draggable={false}
-      />
+      {!poster ? (
+        <div className="project-card-placeholder">
+          <span className="project-card-placeholder-title">{project.title}</span>
+        </div>
+      ) : (
+        <img
+          src={hovered ? imageSrc : poster}
+          alt={project.title}
+          className="project-card-img"
+          loading="lazy"
+          draggable={false}
+        />
+      )}
       <div className="project-card-label">
         <span className="project-card-title">{project.title}</span>
       </div>
