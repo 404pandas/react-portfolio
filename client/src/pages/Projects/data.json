@@ -25,8 +25,8 @@
   },
   {
     "title": "Cortez Cafe",
-    "description": "A browser-based daily scheduler using Moment.js to manage date and time. This app dynamically updates its interface with HTML and CSS powered by jQuery, allowing users to plan and organize their workday efficiently.",
-    "code": "https://github.com/404pandas/workday-scheduler",
+    "description": "A website for Cortez Cafe. Built with HTML, CSS, and JavaScript, the site features a responsive design and interactive elements to enhance user experience. The project showcases the cafe's menu, location, and contact information.",
+    "code": "https://github.com/404pandas/cortez-cafe",
     "deployment": "https://www.cortezcafe.com/",
     "image": "cortezcafe",
     "key": 102
