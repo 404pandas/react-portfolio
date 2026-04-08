@@ -76,7 +76,25 @@ There are no prerequisites for this portfolio! Simply visit the deployed site [h
 
 This portfolio is optimized for smaller screens!
 
-https://github.com/404pandas/react-portfolio/assets/113853550/30a3aab9-dc70-411e-ac08-950c8ef3def0
+<img width="1512" height="735" alt="Screenshot 2026-04-08 at 3 32 56 PM" src="https://github.com/user-attachments/assets/4cc61344-718a-4cdf-9319-4b9a231e61eb" />
+
+<img width="1512" height="732" alt="Screenshot 2026-04-08 at 3 33 16 PM" src="https://github.com/user-attachments/assets/cab6834f-5480-4bf8-ad57-3ed53c1684fb" />
+
+<img width="1512" height="734" alt="Screenshot 2026-04-08 at 3 33 39 PM" src="https://github.com/user-attachments/assets/2f2c2cea-df00-46fd-9042-9e91a2aabb3d" />
+
+<img width="1511" height="736" alt="Screenshot 2026-04-08 at 3 34 02 PM" src="https://github.com/user-attachments/assets/6595cee0-6c55-479d-8ef6-6e683b9b24d4" />
+
+<img width="1512" height="737" alt="Screenshot 2026-04-08 at 3 34 16 PM" src="https://github.com/user-attachments/assets/d230c412-78e6-4f8a-85af-5f86b5a62274" />
+
+<img width="1511" height="735" alt="Screenshot 2026-04-08 at 3 34 41 PM" src="https://github.com/user-attachments/assets/70c1416d-dc59-44ed-b224-6ee02998883c" />
+
+<img width="1512" height="729" alt="Screenshot 2026-04-08 at 3 35 00 PM" src="https://github.com/user-attachments/assets/74e71f36-9f61-4686-840d-a06530cdbe45" />
+
+<img width="1498" height="738" alt="Screenshot 2026-04-08 at 3 36 23 PM" src="https://github.com/user-attachments/assets/b744c604-1d3e-49a0-b140-434d5e442931" />
+
+<img width="1509" height="734" alt="Screenshot 2026-04-08 at 3 36 39 PM" src="https://github.com/user-attachments/assets/e0678f90-95af-4218-82a3-5ccbb6216f82" />
+
+<img width="1511" height="735" alt="Screenshot 2026-04-08 at 3 36 55 PM" src="https://github.com/user-attachments/assets/b68e5db0-5c25-4f2c-a86e-cad6b93a022f" />
 
 <!-- ROADMAP -->
 
