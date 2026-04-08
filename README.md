@@ -5,7 +5,7 @@
 [![Forks](https://img.shields.io/github/forks/404pandas/react-portfolio.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/react-portfolio/network/members)
 [![Stargazers](https://img.shields.io/github/stars/404pandas/react-portfolio.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/react-portfolio/stargazers)
 [![Issues](https://img.shields.io/github/issues/404pandas/react-portfolio.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/react-portfolio/issues)
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=plastic&logo=appveyor&logo=linkedin&colorB=555)](https://linkedin.com/in/LinkedInUsername)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=plastic&logo=appveyor&logo=linkedin&colorB=555)](https://linkedin.com/in/404pandas)
 
 </div>
 
@@ -17,7 +17,7 @@
     <a href="https://github.com/404pandas/react-portfolio"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://404pandas.netlify.app/">View Deployment</a>
+    <a href="https://maryelenius.com/">View Deployment</a>
     ·
     <a href="https://github.com/404pandas/react-portfolio/issues">Report Bug</a>
     ·
@@ -70,7 +70,7 @@
 
 ### Prerequisites
 
-There are no prerequisites for this portfolio! Simply visit the deployed site [here](https://404pandas.netlify.app).
+There are no prerequisites for this portfolio! Simply visit the deployed site [here](https://www.maryelenius.com).
 
 ## Usage
 
@@ -87,13 +87,6 @@ https://github.com/404pandas/react-portfolio/assets/113853550/30a3aab9-dc70-411e
 - [x] Landing Page
 - [x] About Page
 - [x] Projects Page
-- [x] Interactive D&D About Me page
-- [ ] Tech Interview page
-  - [x] Layout
-  - [x] JSON pull
-  - [ ] Fill in data
-  - [ ] Filter functionality
-  - [ ] Need to review functionality
 
 See the [open issues](https://github.com/404pandas/react-portfolio/issues) for a full list of proposed features (and known issues).
 
@@ -133,7 +126,3 @@ Deployed Site: [https://maryelenius.com](https://maryelenius.com)
 ## Acknowledgments
 
 A special shout out to my daughter, Yennefer! She proves every day that she's small but mighty!!
-
-Common ReactJS Interview Questions and Answers pulled from the following amazing prep resources:
-
-- [Interviewbit.com](https://www.interviewbit.com/react-interview-questions/)
