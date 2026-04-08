@@ -14,7 +14,6 @@ import notetaker from "../../assets/images/jaskiersjournal.gif";
 import passgen from "../../assets/images/passwordgenerator.gif";
 import pooh from "../../assets/images/pooh-walkthrough.gif";
 import witcherssatchel from "../../assets/images/witcherssatchel.png";
-import kitties from "../../assets/images/kitties.png";
 import whois from "../../assets/screenshots/whois.jpg";
 import burnbook from "../../assets/images/burnbook.gif";
 import novigradunderground from "../../assets/images/novigradunderground.gif";
@@ -32,7 +31,6 @@ const imageMap = {
   passgen,
   pooh,
   witcherssatchel,
-  kitties,
   whois,
   burnbook,
   novigradunderground,
@@ -191,6 +189,12 @@ const Projects = () => {
               src={imageMap[expandedItem.image]}
               alt={expandedItem.title}
               id="expanded-image"
+              className={
+                expandedItem.image === "whois" ||
+                expandedItem.image === "witcherssatchel"
+                  ? "expanded-image expanded-image--small"
+                  : "expanded-image"
+              }
             />
 
             <h2 className="expanded-title">{expandedItem.title}</h2>

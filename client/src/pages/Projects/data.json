@@ -72,14 +72,6 @@
     "key": 108
   },
   {
-    "title": "PWA Kitties",
-    "description": "A progressive web app (PWA) themed around cats, built using Webpack, Babel, and CodeMirror. This text editor application allows users to write and save text offline, with a modern JavaScript framework and responsive design.",
-    "code": "https://github.com/404pandas/pwa-kitties",
-    "deployment": "https://pwa-kitties.onrender.com",
-    "image": "kitties",
-    "key": 109
-  },
-  {
     "title": "Novigrad Underground",
     "description": "A MERN stack project utilizing MongoDB, Express, React, and Node.js. Integrated with Apollo and GraphQL for seamless data fetching and state management. The application features user authentication, session management, and dynamic content rendering, providing an immersive experience for users interested in the world of The Witcher.",
     "code": "https://github.com/404pandas/novigradunderground",

@@ -82,7 +82,9 @@
 }
 
 @keyframes card-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* GIF img hidden until loaded */
@@ -172,6 +174,22 @@
   display: block;
   border: 2px solid var(--brown);
   box-shadow: 3px 3px 0 var(--brown);
+}
+
+#expanded-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid var(--brown);
+  box-shadow: 3px 3px 0 var(--brown);
+}
+
+/* Special case for oversized screenshots */
+.expanded-image--small {
+  max-width: 420px; /* tweak this */
+  margin: 0 auto; /* center it */
+  max-height: 500px;
+  width: 70% !important;
 }
 
 /* Title */
