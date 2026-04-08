@@ -7,7 +7,7 @@ import comingSoon from "../../assets/images/coming-soon.jpg";
 import blueyapi from "../../assets/images/blueyapi.png";
 import cortezcafe from "../../assets/images/cortezcafe.gif";
 import scheduler from "../../assets/images/contractboard.gif";
-import quiz from "../../assets/images/quiz.png";
+import quiz from "../../assets/images/codingquiz.gif";
 import jacob from "../../assets/images/jacobelenius.gif";
 import simpPort from "../../assets/images/simp-portfolio.png";
 import notetaker from "../../assets/images/jaskiersjournal.gif";
