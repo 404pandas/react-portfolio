@@ -4,7 +4,7 @@ import data from "./data.json";
 import "../../assets/css/projects.css";
 
 import comingSoon from "../../assets/images/coming-soon.jpg";
-import blueyapi from "../../assets/images/bluey.gif";
+import blueyapi from "../../assets/images/blueyapi.gif";
 import cortezcafe from "../../assets/images/cortezcafe.gif";
 import scheduler from "../../assets/images/contractboard.gif";
 import quiz from "../../assets/images/codingquiz.gif";
