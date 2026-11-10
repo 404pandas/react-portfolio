@@ -101,20 +101,18 @@ const Compass = () => {
     setDirection(newDirection);
   };
 
-  // Mouse / touch listeners
+  // Mouse / touch listeners — scoped to the compass itself so moving the
+  // cursor elsewhere on the page no longer flips the skill panel.
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
     const ref = compassRef.current;
-    if (ref) {
-      ref.addEventListener("touchstart", handleTouchStart, { passive: true });
-      ref.addEventListener("touchend", handleTouchEnd, { passive: true });
-    }
+    if (!ref) return;
+    ref.addEventListener("mousemove", handleMouseMove);
+    ref.addEventListener("touchstart", handleTouchStart, { passive: true });
+    ref.addEventListener("touchend", handleTouchEnd, { passive: true });
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (ref) {
-        ref.removeEventListener("touchstart", handleTouchStart);
-        ref.removeEventListener("touchend", handleTouchEnd);
-      }
+      ref.removeEventListener("mousemove", handleMouseMove);
+      ref.removeEventListener("touchstart", handleTouchStart);
+      ref.removeEventListener("touchend", handleTouchEnd);
     };
   }, []);
 
@@ -174,13 +172,27 @@ const Compass = () => {
     }
   };
 
+  const order = ["north", "east", "south", "west"];
+
+  // Arrow keys move between the direction buttons (roving focus).
+  const handleDirKeyDown = (e, dir) => {
+    const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+    if (!step) return;
+    e.preventDefault();
+    const next = order[(order.indexOf(dir) + step + order.length) % order.length];
+    setDirection(next);
+    document.getElementById(`compass-dir-${next}`)?.focus();
+  };
+
   return (
+    <>
     <Box
       className="compass-container"
       sx={{
         position: "relative",
-        width: 400,
-        height: 400,
+        width: "min(90vw, 400px)",
+        height: "min(90vw, 400px)",
+        maxWidth: "100%",
         margin: "auto",
         mt: 1,
       }}
@@ -188,14 +200,14 @@ const Compass = () => {
       <Box
         component="img"
         src={compassshadow}
-        alt="compass shadow"
+        alt=""
         className="compass-shadow"
         sx={{ position: "absolute", zIndex: 0 }}
       />
       <Box
         component="img"
         src={blank}
-        alt="compass blank"
+        alt=""
         ref={compassRef}
         className="compass-blank"
         sx={{
@@ -211,6 +223,10 @@ const Compass = () => {
         <Paper
           ref={panelRef}
           className={`skill-text-container ${direction}`}
+          id="compass-panel"
+          role="region"
+          aria-live="polite"
+          aria-label={skillCategories[direction].title}
           sx={getPositionStyle(direction)}
           elevation={4}
         >
@@ -227,6 +243,27 @@ const Compass = () => {
         </Paper>
       )}
     </Box>
+    <div className="compass-dirs" role="group" aria-label="Skill categories">
+      {order.map((dir) => (
+        <button
+          key={dir}
+          id={`compass-dir-${dir}`}
+          type="button"
+          className={`compass-dir${direction === dir ? " is-active" : ""}`}
+          aria-pressed={direction === dir}
+          aria-controls="compass-panel"
+          tabIndex={direction ? (direction === dir ? 0 : -1) : dir === "north" ? 0 : -1}
+          onClick={() => setDirection(dir)}
+          onKeyDown={(e) => handleDirKeyDown(e, dir)}
+        >
+          <span className="compass-dir-letter" aria-hidden="true">
+            {dir[0].toUpperCase()}
+          </span>
+          {skillCategories[dir].title.replace(" Technologies", "")}
+        </button>
+      ))}
+    </div>
+    </>
   );
 };
 

@@ -146,3 +146,84 @@
     transform: translate(0%, -50%) scale(1);
   }
 }
+
+/* ── Direction buttons (keyboard / screen reader / tap friendly) ── */
+.compass-dirs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.25rem auto 2rem;
+  max-width: 560px;
+  padding: 0 16px;
+}
+
+.compass-dir {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.4rem;
+  background: var(--tan);
+  color: var(--brown);
+  border: 2px solid var(--brown);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--brown);
+  font-family: "Merienda", cursive;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
+}
+
+.compass-dir-letter {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--brown);
+  color: var(--tan);
+  font-family: "Pirata One", cursive;
+  font-size: 1rem;
+}
+
+.compass-dir:hover,
+.compass-dir.is-active {
+  background: var(--dark-tan);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--brown);
+}
+
+.compass-dir:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: 2px;
+}
+
+.compass-dirs {
+  position: relative;
+  z-index: 10; /* above the skill panel */
+}
+
+/* Desktop: the South panel hangs below the compass, so leave it room */
+@media only screen and (min-width: 601px) {
+  .compass-dirs {
+    margin-top: 9rem;
+  }
+}
+
+/* Phones: let the panel grow to fit long lists instead of overflowing */
+@media only screen and (max-width: 600px) {
+  .skill-text-container {
+    width: 78%;
+    height: auto;
+    padding-bottom: 1rem !important;
+  }
+  .skill-text-container ul {
+    padding-left: 0 !important;
+  }
+}
+
+/* Skill list items render as <p>; drop the global paragraph indent */
+.skill-text-container p {
+  text-indent: 0 !important;
+}

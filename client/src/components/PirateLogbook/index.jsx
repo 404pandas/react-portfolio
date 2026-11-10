@@ -14,7 +14,11 @@ export default function PirateLogBook() {
   const rightRef = useRef();
   const tlRef = useRef(null);
 
-  const totalPages = logs.length + 3;
+  // Pages: 0 = cover, 1 = title, then one page per log entry.
+  // Desktop spreads show logs[page-2] + logs[page-1], so the last useful
+  // desktop page is logs.length; mobile shows one entry per page and needs
+  // to reach logs.length + 1. The old `logs.length + 3` left dead blank pages.
+  const lastPage = isMobile ? logs.length + 1 : logs.length;
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -23,7 +27,7 @@ export default function PirateLogBook() {
   }, []);
 
   const nextPage = () => {
-    if (page < totalPages) animateFlip(() => setPage((p) => p + 1));
+    if (page < lastPage) animateFlip(() => setPage((p) => p + 1));
   };
 
   const prevPage = () => {
@@ -82,8 +86,12 @@ export default function PirateLogBook() {
       </div>
 
       <div className="controls">
-        <button onClick={prevPage}>◀</button>
-        <button onClick={nextPage}>▶</button>
+        <button onClick={prevPage} aria-label="Previous page" disabled={page === 0}>
+          ◀
+        </button>
+        <button onClick={nextPage} aria-label="Next page" disabled={page >= lastPage}>
+          ▶
+        </button>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ const WithWind = () => {
   return (
     <>
       {" "}
-      <img src={withWind} id="withWind" className="ship"></img>
+      <img src={withWind} id="withWind" className="ship" alt="" />
     </>
   );
 };

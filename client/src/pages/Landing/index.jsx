@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import MapIcon from "../../components/MapIcon";
 import Ship from "../../components/Ship";
+import SocialDock from "../../components/SocialDock";
 import "../../assets/css/landing.css";
 
 const Landing = () => {
@@ -55,6 +56,7 @@ const Landing = () => {
       </div>
       <MapIcon />
       <Ship />
+      <SocialDock />
     </div>
   );
 };

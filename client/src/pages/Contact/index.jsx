@@ -59,55 +59,67 @@ function Contact() {
     }
   }, [errorMessage]);
 
+  const validateField = (name, value) => {
+    if (name === "email") {
+      return validateEmail(value) ? "" : "That address doesn't look seaworthy.";
+    }
+    const labels = { topic: "Yer name", message: "A message" };
+    return value.trim() ? "" : `${labels[name] || name} is required.`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!errorMessage && topic && email && message) {
-      setSending(true);
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/contact`,
+    if (sending) return;
+
+    // Surface a reason instead of silently doing nothing on an empty field.
+    const firstError =
+      validateField("topic", topic) ||
+      validateField("email", email) ||
+      validateField("message", message);
+    if (firstError) {
+      setErrorMessage(firstError);
+      return;
+    }
+
+    setErrorMessage("");
+    setSending(true);
+    try {
+      const apiBase = import.meta.env.VITE_API_URL || "";
+      const response = await fetch(`${apiBase}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ topic, email, message }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        gsap.fromTo(
+          "#contact-submit",
+          { scale: 1 },
           {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ topic, email, message }),
+            scale: 1.1,
+            yoyo: true,
+            repeat: 1,
+            duration: 0.18,
+            ease: "power2.inOut",
+            onComplete: () => setSubmitted(true),
           }
         );
-        const data = await response.json();
-        if (response.ok) {
-          gsap.fromTo(
-            "#contact-submit",
-            { scale: 1 },
-            {
-              scale: 1.1,
-              yoyo: true,
-              repeat: 1,
-              duration: 0.18,
-              ease: "power2.inOut",
-              onComplete: () => setSubmitted(true),
-            }
-          );
-          setFormState({ topic: "", email: "", message: "" });
-        } else {
-          setErrorMessage(data.error || "Something went wrong.");
-        }
-      } catch (err) {
-        setErrorMessage("The raven got lost at sea. Try again later.");
-      } finally {
-        setSending(false);
+        setFormState({ topic: "", email: "", message: "" });
+      } else {
+        setErrorMessage(data.error || "Something went wrong.");
       }
+    } catch (err) {
+      setErrorMessage("The raven got lost at sea. Try again later.");
+    } finally {
+      setSending(false);
     }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (submitted) setSubmitted(false);
-    if (name === "email") {
-      setErrorMessage(validateEmail(value) ? "" : "That address doesn't look seaworthy.");
-    } else {
-      const labels = { topic: "Yer name", message: "A message" };
-      setErrorMessage(!value.length ? `${labels[name] || name} is required.` : "");
-    }
-    setFormState({ ...formState, [name]: value });
+    setFormState((prev) => ({ ...prev, [name]: value }));
+    setErrorMessage(validateField(name, value));
   };
 
   return (

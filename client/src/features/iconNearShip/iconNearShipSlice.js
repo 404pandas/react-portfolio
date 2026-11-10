@@ -15,18 +15,19 @@ const iconsSlice = createSlice({
         animationClass: "",
       },
       "who-is": { hovered: false, isNear: false, animationClass: "" },
+      fsf: { hovered: false, isNear: false, animationClass: "" },
     },
   },
   reducers: {
     setHovered(state, action) {
       const { icon, hovered } = action.payload;
-      if (state.icons[icon].hovered !== hovered) {
+      if (state.icons[icon] && state.icons[icon].hovered !== hovered) {
         state.icons[icon].hovered = hovered;
       }
     },
     setNearShip: (state, action) => {
       const { icon, nearShip } = action.payload;
-      state.icons[icon].isNear = nearShip;
+      if (state.icons[icon]) state.icons[icon].isNear = nearShip;
     },
     setAnimationClass: (state, action) => {
       const { icon, animationClass } = action.payload;

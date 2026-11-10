@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { useRouteError } from "react-router-dom";
+import { Link, isRouteErrorResponse, useRouteError } from "react-router-dom";
 import gsap from "gsap";
 import "../../assets/css/error.css";
 
 export default function Error() {
   const error = useRouteError();
-  console.error(error);
+  const isNotFound = isRouteErrorResponse(error) && error.status === 404;
+  if (!isNotFound) console.error(error);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -25,14 +26,21 @@ export default function Error() {
   return (
     <div id="error-cont">
       <div className="error-card">
-        <h1>Oops!</h1>
+        <h1>{isNotFound ? "Lost at Sea!" : "Oops!"}</h1>
         <div className="error-rope" />
-        <p>Sorry, an unexpected error has occurred.</p>
         <p>
-          <i>{error.statusText || error.message}</i>
+          {isNotFound
+            ? "There be no page charted at these coordinates."
+            : "Sorry, an unexpected error has occurred."}
+        </p>
+        <p>
+          <i>{error?.statusText || error?.message || "Unknown error"}</i>
         </p>
         <div className="error-rope" />
-        <div className="error-seal">404</div>
+        <Link to="/" className="error-home">
+          Return to port
+        </Link>
+        <div className="error-seal">{isNotFound ? "404" : "!"}</div>
       </div>
     </div>
   );

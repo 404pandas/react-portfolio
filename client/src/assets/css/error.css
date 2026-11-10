@@ -122,3 +122,21 @@
     padding: 28px 20px 24px;
   }
 }
+
+.error-home {
+  display: inline-block;
+  margin: 0.75rem auto 0;
+  padding: 0.45rem 1.2rem;
+  background: var(--brown);
+  color: var(--tan);
+  border: 2px solid var(--black);
+  box-shadow: 3px 3px 0 var(--black);
+  font-family: "Merienda", cursive;
+  font-weight: 700;
+}
+
+.error-home:hover,
+.error-home:focus-visible {
+  background: var(--dark-tan);
+  color: var(--black);
+}

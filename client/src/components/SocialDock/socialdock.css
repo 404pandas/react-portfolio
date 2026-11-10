@@ -1,0 +1,64 @@
+.social-dock {
+  position: fixed;
+  left: 24px;
+  bottom: 20px;
+  z-index: 50;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.social-dock-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  background: var(--brown);
+  color: var(--tan);
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--black);
+  font-family: "Merienda", cursive;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
+}
+
+.social-dock-link:hover,
+.social-dock-link:focus-visible {
+  background: var(--dark-tan);
+  color: var(--black);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--black);
+}
+
+.social-dock-link:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: 2px;
+}
+
+.social-dock-link span {
+  font-family: inherit;
+}
+
+/* Phones: compact icon-only pills so the dock doesn't cover map icons */
+@media (max-width: 599px) {
+  .social-dock {
+    left: auto;
+    right: 14px;
+    bottom: 14px;
+    flex-direction: column;
+  }
+  .social-dock-link {
+    padding: 0.55rem;
+  }
+  .social-dock-link span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}

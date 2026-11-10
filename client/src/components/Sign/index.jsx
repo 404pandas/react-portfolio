@@ -9,6 +9,7 @@ const Sign = () => {
   const [currentImage, setCurrentImage] = useState(welcome1);
 
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let intervalId;
 
     const switchImage = () => {

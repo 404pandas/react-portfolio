@@ -31,113 +31,184 @@
   color: var(--icons);
 }
 
-#building,
-#knight,
-#dragon,
-#phone,
-#who-is,
-#contact {
+.icon-container a {
+  position: relative;
+  outline: none;
+}
+
+.icon-container a:focus-visible .icon-stage {
+  outline: 3px dashed var(--brown);
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+
+/* ── Icon layers ── */
+.icon-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.icon-float,
+.icon-art {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  will-change: transform;
+}
+
+.icon-art {
+  transform-style: preserve-3d;
+}
+
+.icon-art .landing-icon {
   position: relative;
 }
 
-#icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 10%;
-  width: 100vw;
+/* The pantry jar is drawn squarer than the other icons; scale it to match */
+.icon-art .fsfIcon {
+  width: 34%;
+}
+@media (max-width: 899px) {
+  .icon-art .fsfIcon {
+    width: 22%;
+  }
 }
 
+/* Point-of-interest marker keeps a gentle pulse */
 .poi {
   color: var(--icons);
-  animation: pulse 1.5s infinite !important;
-}
-
-/* ************* ANIMATIONS ***************** */
-.jump {
-  animation: jump 4s infinite alternate !important;
-}
-.wiggle {
-  animation: wiggle 2s infinite alternate !important;
-}
-
-.grow {
-  animation: grow 2s ease forwards;
-}
-
-.spin {
-  animation: spin 2s linear infinite;
-}
-
-.pulse {
   animation: pulse 1.5s infinite;
 }
 
-.fade {
-  animation: fade 1s infinite;
+/* "New!" ribbon on fresh destinations */
+.icon-new {
+  position: absolute;
+  top: 2%;
+  right: 8%;
+  z-index: 3;
+  padding: 0.15rem 0.55rem;
+  background: #a3261b;
+  color: var(--tan);
+  font-family: "Pirata One", cursive;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  border: 2px solid var(--black);
+  box-shadow: 2px 2px 0 var(--black);
+  transform: rotate(-8deg);
+  pointer-events: none;
 }
 
-.swing {
-  animation: swing 1s ease-in-out infinite;
+/* ── Water ripples under the active icon ── */
+.icon-ripples {
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  width: 70%;
+  aspect-ratio: 4 / 1;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
-.bounce {
-  animation: bounce 1s ease infinite;
+.icon-ripples i {
+  position: absolute;
+  inset: 0;
+  border: 3px solid rgba(66, 50, 44, 0.55);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.3);
 }
 
-.flip {
-  animation: flip 2s linear infinite;
+.is-active .icon-ripples i {
+  animation: ripple 1.8s ease-out infinite;
+}
+.is-active .icon-ripples i:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.is-active .icon-ripples i:nth-child(3) {
+  animation-delay: 1.2s;
 }
 
-.shrink-grow {
-  animation: shrink-grow 1.5s ease-in-out infinite;
-}
-
-.blink {
-  animation: blink 1s step-start infinite;
-}
-
-.wobble {
-  animation: wobble 1s ease-in-out infinite;
-}
-
-.grow-shrink {
-  animation: grow-shrink 2s ease-in-out infinite;
-}
-
-@keyframes jump {
+@keyframes ripple {
   0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10%);
+    opacity: 0.85;
+    transform: scale(0.3);
   }
   100% {
-    transform: translateY(0);
+    opacity: 0;
+    transform: scale(1.35);
   }
 }
 
-@keyframes wiggle {
-  0% {
-    transform: rotate(0);
-  }
-  30% {
-    transform: rotate(-5deg);
-  }
-  60% {
-    transform: rotate(5deg);
-  }
-  90% {
-    transform: rotate(0);
-  }
+/* ── "X marks the spot" ── */
+.icon-x {
+  position: absolute;
+  width: 55%;
+  max-width: 160px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.icon-x path {
+  fill: none;
+  stroke: #a3261b;
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  filter: drop-shadow(2px 3px 0 rgba(13, 13, 13, 0.6));
+}
+
+/* ── Treasure sparks ── */
+.icon-spark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* gold coin */
+.icon-spark--0 {
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff3b0, #e0a526 60%, #8a5a12);
+  border: 1px solid #5a3b0c;
+}
+/* four-point star */
+.icon-spark--1 {
+  background: #ffd25e;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+}
+/* gem */
+.icon-spark--2 {
+  width: 11px;
+  height: 11px;
+  background: linear-gradient(135deg, #7fe0d2, #1d6b62);
+  transform: rotate(45deg);
+  border: 1px solid #0d3b35;
+}
+
+/* ── Labels: ink wipes in from the left when active ── */
+.ic-h2 {
+  display: block;
+  color: var(--black);
+  text-align: center;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.is-active .ic-h2,
+.ic-h2.is-always {
+  clip-path: inset(0 0 0 0);
 }
 
 @keyframes pulse {
@@ -150,102 +221,16 @@
   }
 }
 
-@keyframes fade {
-  0%,
-  100% {
-    opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+  .poi,
+  .is-active .icon-ripples i {
+    animation: none;
   }
-  50% {
-    opacity: 0;
-  }
-}
-
-@keyframes swing {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(15deg);
-  }
-  100% {
-    transform: rotate(0deg);
+  .ic-h2 {
+    transition: none;
   }
 }
 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes flip {
-  0% {
-    transform: rotateY(0);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-@keyframes shrink-grow {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.8);
-  }
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.1;
-  }
-}
-
-@keyframes wobble {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-10px);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  75% {
-    transform: translateX(-5px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes grow-shrink {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-}
-@keyframes grow {
-  from {
-    width: 1px;
-  }
-  to {
-    width: 40%;
-  }
-}
 /* ****************************** */
 /*         Media Queries          */
 /* ****************************** */

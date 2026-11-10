@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import PageContent from "../PageContent";
 
-import { capitalizeFirstLetter } from "../../utils/helpers";
+import { removeHyphensAndCapitalize } from "../../utils/helpers";
 import Nav from "../../components/Nav";
 import { Outlet } from "react-router-dom";
 
@@ -11,8 +11,8 @@ function Page({ currentPage }) {
   const pageName = currentPage.substring(1);
 
   useEffect(() => {
-    // Set the document title using the helper function
-    document.title = capitalizeFirstLetter(pageName || "Home");
+    // "privacy-policy" -> "Privacy Policy", "" -> "Home"
+    document.title = removeHyphensAndCapitalize(pageName) || "Home";
   }, [pageName]);
 
   return (

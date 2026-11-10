@@ -51,7 +51,7 @@ const Modal = () => {
   const handleLanguageToggle = (event) => {
     const isPirate = event.target.checked;
     setLanguage(isPirate ? "pirate" : "english");
-    localStorage.setItem("pirateTalk", isPirate);
+    localStorage.setItem("pirateTalk", String(isPirate));
   };
 
   const handleDoNotShowAgain = (event) => {

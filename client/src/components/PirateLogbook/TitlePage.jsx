@@ -10,7 +10,13 @@ export default function TitlePage() {
 
     tl.fromTo(textRef.current, { opacity: 0 }, { opacity: 1, duration: 1 })
       .to(textRef.current, { opacity: 0, duration: 0.5, delay: 1 })
-      .set(textRef.current, { textContent: "Pirate Log by Mary Elenius" })
+      // gsap.set can't write textContent on a DOM node (it routes through
+      // CSSPlugin), so swap the text in a plain callback instead.
+      .call(() => {
+        if (textRef.current) {
+          textRef.current.textContent = "Pirate Log by Mary Elenius";
+        }
+      })
       .to(textRef.current, { opacity: 1, duration: 1 });
 
     return () => tl.kill();

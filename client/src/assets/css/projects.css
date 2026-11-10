@@ -28,6 +28,11 @@
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
+.project-card:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: 3px;
+}
+
 .project-card:hover,
 .project-card:focus-visible {
   transform: translate(-2px, -2px);
@@ -49,28 +54,29 @@
   filter: none;
 }
 
-/* GIF placeholder — visible until GIF is loaded */
-.project-card-placeholder {
+/* Logos: show the whole image instead of cropping */
+.project-card-img--contain {
+  object-fit: contain;
+  background: #fff;
+}
+
+/* Walkthrough video fades in over the poster once it can play */
+.project-card-video {
   position: absolute;
   inset: 0;
-  background: var(--dark-tan);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
-.project-card-placeholder-title {
-  font-family: "Merienda", cursive;
-  font-size: 0.78rem;
-  color: var(--brown);
-  text-align: center;
-  line-height: 1.4;
+.project-card-video.is-ready {
+  opacity: 1;
 }
 
-/* Spinner shown while GIF is downloading on hover */
+/* Small spinner while a walkthrough downloads */
 .project-card-spinner {
   display: block;
   width: 22px;
@@ -81,16 +87,27 @@
   animation: card-spin 0.7s linear infinite;
 }
 
+.project-card-spinner--corner {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--tan);
+}
+
 @keyframes card-spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-/* GIF img hidden until loaded */
-.project-card-img--loading {
-  opacity: 0;
-  position: absolute;
+/* Touch screens have no hover: show color + titles all the time */
+@media (hover: none) {
+  .project-card-img {
+    filter: none;
+  }
+  .project-card-label {
+    transform: translateY(0);
+  }
 }
 
 /* Parchment nameplate slides up on hover */
@@ -160,6 +177,12 @@
   justify-content: center;
 }
 
+.expanded-close:focus-visible,
+.project-a:focus-visible {
+  outline: 3px solid var(--black);
+  outline-offset: 2px;
+}
+
 .expanded-close:hover {
   background: var(--brown);
   color: var(--tan);
@@ -168,14 +191,6 @@
 }
 
 /* Project image in sidebar */
-#expanded-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 2px solid var(--brown);
-  box-shadow: 3px 3px 0 var(--brown);
-}
-
 #expanded-image {
   width: 100%;
   height: auto;

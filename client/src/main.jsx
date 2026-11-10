@@ -6,6 +6,16 @@ import { store } from "./features/store.js";
 
 // local imports
 import App from "./App.jsx";
+import gsap from "gsap";
+
+// Respect "reduce motion": GSAP's entrance/page animations complete almost
+// instantly instead of flying things around. Components that loop forever
+// (map icons, the welcome sign) also check this and skip their loops.
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const applyMotionPref = () =>
+  gsap.globalTimeline.timeScale(reduceMotion.matches ? 50 : 1);
+applyMotionPref();
+reduceMotion.addEventListener?.("change", applyMotionPref);
 import Landing from "./pages/Landing";
 import Projects from "./pages/Projects";
 import Technologies from "./pages/Technologies";
@@ -15,6 +25,7 @@ import Contact from "./pages/Contact";
 import PhoneScreen from "./pages/PhoneScreen";
 import WhoIs from "./pages/WhoIs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import FeedSiouxFalls from "./pages/FeedSiouxFalls";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +41,7 @@ const router = createBrowserRouter([
       { path: "phone", element: <PhoneScreen /> },
       { path: "whois", element: <WhoIs /> },
       { path: "privacy-policy", element: <PrivacyPolicy /> },
+      { path: "feed-sioux-falls", element: <FeedSiouxFalls /> },
     ],
   },
 ]);

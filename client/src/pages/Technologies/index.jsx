@@ -17,7 +17,7 @@ const Technologies = () => {
   return (
     <div id="tech-cont">
       <p className="compass-title">
-        Hover or swipe the direction on the compass you would like to navigate!
+        Hover, swipe, or pick a heading below to chart a course through my skills!
       </p>
       <Compass />
     </div>

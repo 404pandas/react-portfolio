@@ -12,6 +12,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import CompassCalibrationIcon from "@mui/icons-material/CompassCalibration";
 import gsap from "gsap";
+import { socialLinks } from "../../utils/links";
 
 export default function PirateNav() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -19,7 +20,7 @@ export default function PirateNav() {
   const navRef = useRef();
 
   useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 900);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1100);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -44,6 +45,7 @@ export default function PirateNav() {
   }, []);
 
   const links = [
+    { name: "Feed Sioux Falls", path: "/feed-sioux-falls" },
     { name: "Projects", path: "/projects" },
     { name: "Technologies", path: "/technologies" },
     { name: "About", path: "/about" },
@@ -73,7 +75,7 @@ export default function PirateNav() {
           </Typography>
 
           {isDesktop ? (
-            <Box sx={{ display: "flex", gap: 4 }}>
+            <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
               {links.map((link) => (
                 <Typography
                   key={link.name}
@@ -91,10 +93,39 @@ export default function PirateNav() {
                   {link.name}
                 </Typography>
               ))}
+              {socialLinks.map((link) => (
+                <Typography
+                  key={link.id}
+                  component="a"
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="nav-link-item"
+                  sx={{
+                    textDecoration: "none",
+                    color: "var(--brown)",
+                    backgroundColor: "var(--tan)",
+                    borderRadius: "999px",
+                    px: 1.25,
+                    fontFamily: "'Merienda', cursive",
+                    fontSize: "0.85rem",
+                    fontWeight: "bold",
+                    "&:hover": { backgroundColor: "var(--dark-tan)" },
+                  }}
+                >
+                  {link.label}
+                </Typography>
+              ))}
             </Box>
           ) : (
             <div>
-              <IconButton color="inherit" onClick={handleMenuOpen}>
+              <IconButton
+                color="inherit"
+                onClick={handleMenuOpen}
+                aria-label={anchorEl ? "Close menu" : "Open menu"}
+                aria-haspopup="true"
+                aria-expanded={Boolean(anchorEl)}
+              >
                 {anchorEl ? <CloseIcon /> : <CompassCalibrationIcon />}
               </IconButton>
               <Menu
@@ -113,6 +144,19 @@ export default function PirateNav() {
                     sx={{ color: "var(--black)", fontFamily: "'Merienda', cursive", fontWeight: "bold" }}
                   >
                     {link.name}
+                  </MenuItem>
+                ))}
+                {socialLinks.map((link) => (
+                  <MenuItem
+                    key={link.id}
+                    onClick={handleMenuClose}
+                    component="a"
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    sx={{ color: "var(--brown)", fontFamily: "'Merienda', cursive", fontWeight: "bold" }}
+                  >
+                    {link.label} ↗
                   </MenuItem>
                 ))}
               </Menu>

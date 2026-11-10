@@ -5,8 +5,10 @@ import { EnglishPolicy, PiratePolicy } from "../../components/PolicyContent";
 import "../../assets/css/privacypolicy.css";
 
 export default function PrivacyPolicy() {
+  // Match the site-wide default (pirate) unless the visitor has explicitly
+  // switched to plain English via this page or the intro modal.
   const [pirateMode, setPirateMode] = useState(
-    localStorage.getItem("pirateTalk") === "true"
+    localStorage.getItem("pirateTalk") !== "false"
   );
   const pageRef = useRef();
 
@@ -58,7 +60,7 @@ export default function PrivacyPolicy() {
 
   const handleToggle = (pirate) => {
     setPirateMode(pirate);
-    localStorage.setItem("pirateTalk", pirate);
+    localStorage.setItem("pirateTalk", String(pirate));
   };
 
   return (

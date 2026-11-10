@@ -1,0 +1,47 @@
+/* ─── Feed Sioux Falls page ───────────────────────────────────
+   Layout comes from whois.css; this only covers what's unique. */
+
+.fsf-logo {
+  /* Override the global `img { width: 30% }` */
+  width: min(420px, 85%) !important;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+  background: #fff;
+  border: 3px solid var(--brown);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--dark-tan);
+  padding: 0.75rem;
+}
+
+.fsf-mission {
+  max-width: 640px;
+  margin: 0 auto 1rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff8ee;
+  border-left: 6px solid var(--brown);
+  box-shadow: 4px 4px 0 var(--dark-tan);
+  font-family: "Merienda", cursive;
+  font-size: 1.15rem;
+  color: var(--black);
+  text-align: center;
+}
+
+.fsf-mission cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: "Lora", serif;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--icons);
+}
+
+/* Keeps a real <h1> for screen readers/SEO while the logo is the visual title */
+.fsf-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

@@ -182,3 +182,8 @@ p {
   font-size: 1.5rem;
   text-align: center;
 }
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

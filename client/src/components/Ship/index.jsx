@@ -1,13 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import gsap from "gsap";
-import { useNavigate } from "react-router-dom";
-import { icons } from "../MapIcon"; // Import the icons array
-import { animationClasses } from "../MapIcon";
-import {
-  setHovered,
-  setAnimationClass,
-} from "../../features/iconNearShip/iconNearShipSlice";
+import { icons, DIG_EVENT } from "../MapIcon";
+import { setHovered } from "../../features/iconNearShip/iconNearShipSlice";
 
 import WithWind from "./WithWind";
 import WithoutWind from "./WithoutWind";
@@ -15,16 +10,15 @@ import "./ship.css";
 import Modal from "../Modal";
 import Phone from "../Phone";
 
+const MOVE_STEP = 15;
+
 const Ship = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [position, setPosition] = useState({ x: 25, y: 25 });
   const [isMoving, setIsMoving] = useState(false);
   const [showWindSails, setShowWindSails] = useState(false);
-  const [stopMovingTimestamp, setStopMovingTimestamp] = useState(null);
   const shipRef = useRef(null);
-  const moveStep = 15;
 
   // Use refs for proximity tracking so the interval always sees fresh values
   // without needing them in the dep array (avoids stale closure + excess re-runs)
@@ -65,64 +59,66 @@ const Ship = () => {
   }, [isMediumScreen, isTouchDevice]);
 
   useEffect(() => {
-    const handleArrowKeys = (event) => {
+    const handleKeyDown = (event) => {
       const { key } = event;
-      let newX = position.x;
-      let newY = position.y;
 
+      if (key === "Enter") {
+        if (currentNearIconRef.current) {
+          // MapIcon plays the "X marks the spot" dig, then navigates.
+          window.dispatchEvent(
+            new CustomEvent(DIG_EVENT, { detail: currentNearIconRef.current })
+          );
+        }
+        return;
+      }
+
+      let dx = 0;
+      let dy = 0;
       switch (key) {
         case "w":
         case "W":
         case "ArrowUp":
-          newY -= moveStep;
-          setIsMoving(true);
+          dy = -MOVE_STEP;
           break;
         case "a":
         case "A":
         case "ArrowLeft":
-          newX -= moveStep;
-          setIsMoving(true);
+          dx = -MOVE_STEP;
           break;
         case "s":
         case "S":
         case "ArrowDown":
-          newY += moveStep;
-          setIsMoving(true);
+          dy = MOVE_STEP;
           break;
         case "d":
         case "D":
         case "ArrowRight":
-          event.preventDefault();
-          newX += moveStep;
-          setIsMoving(true);
-          break;
-        case "Enter":
-          if (currentNearIconRef.current) {
-            icons.forEach((icon) => {
-              dispatch(setHovered({ icon: icon.id, hovered: false }));
-            });
-            navigate(`/${currentNearIconRef.current}`);
-          }
+          dx = MOVE_STEP;
           break;
         default:
           return;
       }
 
-      setPosition({ x: newX, y: newY });
+      // Stop the arrow keys from scrolling the page while sailing.
+      if (key.startsWith("Arrow")) event.preventDefault();
+      setIsMoving(true);
+      // Functional update: holding a key stacks steps instead of repeatedly
+      // recomputing from a stale `position` snapshot.
+      setPosition((prev) => ({ x: prev.x + dx, y: prev.y + dy }));
     };
 
     const handleKeyUp = () => {
       setIsMoving(false);
     };
 
-    document.addEventListener("keydown", handleArrowKeys);
+    document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
 
     return () => {
-      document.removeEventListener("keydown", handleArrowKeys);
+      document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [position, navigate]);
+  }, [dispatch]);
 
   useEffect(() => {
     setShowWindSails(isMoving);
@@ -138,6 +134,7 @@ const Ship = () => {
       iconsElements.forEach((iconElement) => {
         const iconRect = iconElement.getBoundingClientRect();
         const icon = icons.find((i) => i.id === iconElement.id);
+        if (!icon) return;
 
         const isEntering =
           shipRect.left < iconRect.right &&
@@ -157,21 +154,11 @@ const Ship = () => {
             enteredIconsRef.current.add(icon.id);
             dispatch(setHovered({ icon: icon.id, hovered: true }));
             currentNearIconRef.current = icon.route;
-            // Start a random animation when the ship enters the icon
-            const randomClass =
-              animationClasses[
-                Math.floor(Math.random() * animationClasses.length)
-              ];
-            dispatch(
-              setAnimationClass({ icon: icon.id, animationClass: randomClass })
-            );
           }
         } else if (isExiting) {
           enteredIconsRef.current.delete(icon.id);
           dispatch(setHovered({ icon: icon.id, hovered: false }));
           currentNearIconRef.current = null;
-          // Clear animation when ship leaves — icon goes back to still
-          dispatch(setAnimationClass({ icon: icon.id, animationClass: "" }));
         }
       });
     };
@@ -179,7 +166,8 @@ const Ship = () => {
     const intervalId = setInterval(checkProximity, 250);
 
     return () => clearInterval(intervalId);
-  }, [position, isMoving, stopMovingTimestamp]);
+    // Reads live values off the DOM and refs, so it only needs to be set up once.
+  }, [dispatch]);
 
   const shipStyle = {
     width: "100%",

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 206" fill="none" stroke="#42322c" stroke-linecap="round" stroke-linejoin="round">
+  <!-- lid -->
+  <rect x="58" y="14" width="84" height="26" rx="6" fill="#42322c" />
+  <path d="M68 22h10M86 22h10M104 22h10M122 22h10" stroke="#ffdea8" stroke-width="3" />
+  <!-- neck -->
+  <path d="M64 40v10c0 6-4 9-10 13" stroke-width="7" />
+  <path d="M136 40v10c0 6 4 9 10 13" stroke-width="7" />
+  <!-- jar body, slightly wobbly like ink -->
+  <path d="M54 63c-14 9-22 22-22 40v62c0 17 11 27 28 27h80c17 0 28-10 28-27v-62c0-18-8-31-22-40" stroke-width="7" />
+  <!-- glass highlights -->
+  <path d="M48 112v44" stroke-width="5" />
+  <path d="M48 168v6" stroke-width="5" />
+  <!-- heart -->
+  <path d="M100 168c-5-5-34-22-34-44 0-11 8-19 18-19 7 0 13 4 16 10 3-6 9-10 16-10 10 0 18 8 18 19 0 22-29 39-34 44z" fill="#42322c" stroke-width="4" />
+  <!-- tag string + tag -->
+  <path d="M142 46c14 2 24 8 30 18" stroke-width="4" />
+  <path d="M166 62l16-4 8 14-14 8z" fill="#42322c" stroke-width="3" />
+  <!-- hand-drawn hatch marks -->
+  <path d="M40 186l-8 6M168 186l8 6M28 98l-8-4M172 98l8-4" stroke-width="4" />
+</svg>

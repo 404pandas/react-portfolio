@@ -1,0 +1,21 @@
+# Single Render web service: Express serves the API *and* the built React app.
+# The old split (Netlify frontend + Render API) is gone — one origin, no CORS.
+services:
+  - type: web
+    name: react-portfolio
+    runtime: node
+    plan: free
+    # `npm install` at the repo root installs both workspaces; `npm run build`
+    # runs the client's vite build into client/dist, which server.js then serves.
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      # Set this in the Render dashboard (Environment tab) — never commit it.
+      - key: RESEND_API_KEY
+        sync: false

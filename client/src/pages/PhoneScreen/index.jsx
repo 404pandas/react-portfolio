@@ -3,36 +3,37 @@ import gsap from "gsap";
 import pirateImage from "../../assets/images/pirate-eo-mc.svg";
 import "../../assets/css/phoneScreen.css";
 
+// `number` is always stored normalized: digits plus * and #, no separators.
+const MAX_LEN = 15;
+const clean = (value) => value.replace(/[^0-9*#]/g, "").slice(0, MAX_LEN);
+
 const PhoneScreen = () => {
-  const [number, setNumber] = useState("772-834-2342");
+  const [number, setNumber] = useState("7728342342");
 
   const handlePress = (value) => {
     if (!/[0-9*#]/.test(value)) return;
-    setNumber((prev) => (prev + value).slice(0, 15));
+    setNumber((prev) => clean(prev + value));
   };
 
   const handleDelete = () => setNumber((prev) => prev.slice(0, -1));
 
   const handleCall = () => {
     if (!number) return;
-    const digitsOnly = number.replace(/[^0-9]/g, "");
-    window.location.href = `tel:${digitsOnly}`;
+    window.location.href = `tel:${number}`;
   };
 
   const handleKeyPress = (value) => handlePress(value);
 
+  // Groups digits as XXX-XXX-XXXX and keeps every remaining character
+  // instead of silently dropping anything past the 10th digit.
   const formatNumber = (num) => {
-    const digitsOnly = num.replace(/\D/g, "");
-    if (digitsOnly.length <= 3) return num;
-    if (digitsOnly.length <= 6)
-      return `${digitsOnly.slice(0, 3)}-${digitsOnly.slice(3)}`;
-    return `${digitsOnly.slice(0, 3)}-${digitsOnly.slice(3, 6)}-${digitsOnly.slice(6, 10)}`;
+    if (/[*#]/.test(num)) return num;
+    if (num.length <= 3) return num;
+    if (num.length <= 6) return `${num.slice(0, 3)}-${num.slice(3)}`;
+    return `${num.slice(0, 3)}-${num.slice(3, 6)}-${num.slice(6)}`;
   };
 
-  const handleInputChange = (e) => {
-    const filtered = e.target.value.replace(/[^0-9*#]/g, "").slice(0, 15);
-    setNumber(filtered);
-  };
+  const handleInputChange = (e) => setNumber(clean(e.target.value));
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });

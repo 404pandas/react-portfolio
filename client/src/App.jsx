@@ -13,9 +13,11 @@ function App() {
 
   useEffect(() => {
     document.body.className = ""; // Clear any existing classes
-    const className = currentPage.replace("/", ""); // Remove leading '/'
+    // "/" -> "", "/privacy-policy" -> "privacy-policy", "/a/b" -> "a-b"
+    // (a raw slash in the string would throw from classList.add).
+    const className = currentPage.split("/").filter(Boolean).join("-");
     if (className) {
-      document.body.classList.add(className); // Add class specific to the current page if it's not empty
+      document.body.classList.add(className);
     }
   }, [currentPage]); // Run useEffect whenever currentPage changes
 
